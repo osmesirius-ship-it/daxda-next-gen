@@ -1,0 +1,23 @@
+replicaCount: 3
+
+image:
+  repository: daxda/daxda-guard-proxy
+  pullPolicy: IfNotPresent
+  tag: "1.0.0"
+
+service:
+  type: ClusterIP
+  port: 8082
+
+resources:
+  limits:
+    cpu: 2000m
+    memory: 2Gi
+  requests:
+    cpu: 500m
+    memory: 512Mi
+
+env:
+  DAXDA_DOMAIN: "finance"
+  DAXDA_AIRGAPPED_MODE: "true"
+  DAXDA_LOG_LEVEL: "INFO"

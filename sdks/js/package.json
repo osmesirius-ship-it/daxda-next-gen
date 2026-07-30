@@ -1,0 +1,21 @@
+{
+  "name": "daxda-guard-js",
+  "version": "1.0.0",
+  "description": "Node.js & TypeScript SDK for DAXDA Guard Air-Gapped Synchronous AI Governance (Cl(7,0) Multivector Algebra)",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "node test_daxda_guard_node.js"
+  },
+  "keywords": [
+    "daxda",
+    "security",
+    "ai-governance",
+    "geometric-algebra",
+    "typescript",
+    "nextjs",
+    "nodejs"
+  ],
+  "author": "DAXDA Systems Engineering Team",
+  "license": "Apache-2.0"
+}

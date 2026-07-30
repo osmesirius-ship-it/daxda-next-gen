@@ -1,0 +1,12 @@
+apiVersion: v2
+name: daxda-guard-helm
+description: Production Kubernetes Helm Chart for DAXDA Guard Sidecar Proxy & Governance Runtime
+type: application
+version: 1.0.0
+appVersion: "12.0.1"
+keywords:
+  - daxda
+  - security
+  - sidecar-proxy
+  - ai-governance
+  - kubernetes

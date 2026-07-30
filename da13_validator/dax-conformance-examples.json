@@ -1,0 +1,153 @@
+{
+  "valid_payload": {
+    "meta": {
+      "schema_version": "2.0",
+      "run_id": "run-2026-03-30-0001",
+      "timestamp": "2026-03-30T18:00:00Z",
+      "mode": "governed",
+      "max_iterations": 5,
+      "current_iteration": 1,
+      "trace_id": "trace-001"
+    },
+    "input": {
+      "intent": "Optimize CO2 removal portfolio under cost and energy constraints.",
+      "normalized_intent": "Find feasible CO2 removal mix with bounded cost and energy.",
+      "constraints": [
+        "cost_per_ton <= 200",
+        "energy_per_ton <= 5GJ"
+      ],
+      "context": {}
+    },
+    "execution": {
+      "engine": "dax-core",
+      "model_provider": "xai",
+      "temperature": 0.2,
+      "timeout_ms": 30000,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_ms": 500
+      }
+    },
+    "layers": [
+      { "id": "DA-15", "name": "Orchestrator", "role": "objective routing", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.8, "latency_ms": 100, "tokens_used": 200, "contradictions": 0, "claims_count": 1, "unsupported_claims": 0, "verifiable_claims": 1, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-14", "name": "Perceptor", "role": "evidence intake", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.8, "latency_ms": 90, "tokens_used": 180, "contradictions": 0, "claims_count": 2, "unsupported_claims": 0, "verifiable_claims": 2, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-13", "name": "Sentinel", "role": "claim formation", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.8, "latency_ms": 95, "tokens_used": 220, "contradictions": 0, "claims_count": 2, "unsupported_claims": 0, "verifiable_claims": 2, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-12", "name": "Chancellor", "role": "assumption extraction", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.78, "latency_ms": 88, "tokens_used": 160, "contradictions": 0, "claims_count": 2, "unsupported_claims": 0, "verifiable_claims": 2, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-11", "name": "Custodian", "role": "evidence verification", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.82, "latency_ms": 110, "tokens_used": 200, "contradictions": 0, "claims_count": 2, "unsupported_claims": 0, "verifiable_claims": 2, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-10", "name": "Logician", "role": "logical checks", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.79, "latency_ms": 120, "tokens_used": 230, "contradictions": 1, "claims_count": 10, "unsupported_claims": 0, "verifiable_claims": 10, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-9", "name": "Contrarian", "role": "counter hypotheses", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.75, "latency_ms": 130, "tokens_used": 260, "contradictions": 0, "claims_count": 4, "unsupported_claims": 0, "verifiable_claims": 4, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-8", "name": "RedTeam", "role": "adversarial critique", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.76, "latency_ms": 140, "tokens_used": 280, "contradictions": 1, "claims_count": 10, "unsupported_claims": 0, "verifiable_claims": 10, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-7", "name": "Auditor", "role": "bias audit", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.77, "latency_ms": 105, "tokens_used": 170, "contradictions": 0, "claims_count": 3, "unsupported_claims": 0, "verifiable_claims": 3, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-6", "name": "Simulator", "role": "edge-case simulation", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.8, "latency_ms": 210, "tokens_used": 320, "contradictions": 0, "claims_count": 6, "unsupported_claims": 0, "verifiable_claims": 6, "sim_passed": 7, "sim_total": 10, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-5", "name": "SystemsEngineer", "role": "systems interaction", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.79, "latency_ms": 115, "tokens_used": 210, "contradictions": 0, "claims_count": 4, "unsupported_claims": 0, "verifiable_claims": 4, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-4", "name": "Forecaster", "role": "predictive consequences", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.78, "latency_ms": 100, "tokens_used": 190, "contradictions": 0, "claims_count": 3, "unsupported_claims": 0, "verifiable_claims": 3, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-3", "name": "Verifier", "role": "falsification checks", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.8, "latency_ms": 150, "tokens_used": 260, "contradictions": 0, "claims_count": 4, "unsupported_claims": 0, "verifiable_claims": 4, "sim_passed": 0, "sim_total": 0, "failed_tests": 2, "total_tests": 10 } },
+      { "id": "DA-2", "name": "Synthesist", "role": "integration", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.81, "latency_ms": 120, "tokens_used": 220, "contradictions": 0, "claims_count": 4, "unsupported_claims": 0, "verifiable_claims": 4, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-1", "name": "Reconciler", "role": "final reconciliation", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.82, "latency_ms": 100, "tokens_used": 180, "contradictions": 0, "claims_count": 4, "unsupported_claims": 0, "verifiable_claims": 4, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } },
+      { "id": "DA-X", "name": "Anchor", "role": "stability gate", "input_text": "in", "output_text": "out", "claims": [], "metrics": { "confidence": 0.84, "latency_ms": 80, "tokens_used": 140, "contradictions": 0, "claims_count": 2, "unsupported_claims": 0, "verifiable_claims": 2, "sim_passed": 0, "sim_total": 0, "failed_tests": 0, "total_tests": 0 } }
+    ],
+    "stability": {
+      "formula": "S=wL*L+wA*A+wP*P+wF*F+wT*T",
+      "weights": { "wL": 0.25, "wA": 0.2, "wP": 0.2, "wF": 0.2, "wT": 0.15, "sum": 1 },
+      "components": {
+        "L": { "value": 0.9, "derivation": "1 - 2/20" },
+        "A": { "value": 0.84, "derivation": "1 - var(confidences)" },
+        "P": { "value": 0.7, "derivation": "7/10" },
+        "F": { "value": 0.8, "derivation": "1 - 2/10" },
+        "T": { "value": 1, "derivation": "all claims verifiable" }
+      },
+      "score": 0.8429999999999999,
+      "threshold": 0.75
+    },
+    "dax_decision": {
+      "status": "ACCEPT",
+      "reason_codes": ["VAL-001"],
+      "human_checkpoint_required": false
+    },
+    "governed_output": {
+      "result": "Recommended portfolio: mixed mineralization + limited DAC with staged deployment.",
+      "confidence": 0.82,
+      "uncertainty": "Regional energy prices can shift cost assumptions.",
+      "recommendations": ["Run regional simulations", "Stress-test supply chain assumptions"]
+    },
+    "audit": {
+      "trail_id": "audit-001",
+      "records": [
+        { "layer_id": "DA-15", "input_hash": "a1b2c3d4", "output_hash": "e5f6g7h8", "timestamp": "2026-03-30T18:00:01Z", "decision": "continue" },
+        { "layer_id": "DA-X", "input_hash": "x1x2x3x4", "output_hash": "y1y2y3y4", "timestamp": "2026-03-30T18:00:20Z", "decision": "accept" }
+      ],
+      "redaction_applied": true
+    },
+    "telemetry": {
+      "total_latency_ms": 1953,
+      "layer_latency_ms": {
+        "DA-15": 100, "DA-14": 90, "DA-13": 95, "DA-12": 88, "DA-11": 110, "DA-10": 120,
+        "DA-9": 130, "DA-8": 140, "DA-7": 105, "DA-6": 210, "DA-5": 115, "DA-4": 100,
+        "DA-3": 150, "DA-2": 120, "DA-1": 100, "DA-X": 80
+      },
+      "retry_count": 1,
+      "anomaly_count": 0,
+      "halt_count": 0
+    },
+    "recursion": {
+      "eligible": true,
+      "max_iterations": 5,
+      "next_action": "STOP"
+    }
+  },
+  "invalid_payloads": [
+    {
+      "name": "missing-required-field",
+      "expected_rule_id": "VAL-001",
+      "snippet": {
+        "meta": {
+          "schema_version": "2.0"
+        }
+      }
+    },
+    {
+      "name": "weight-sum-violation",
+      "expected_rule_id": "VAL-005",
+      "snippet": {
+        "stability": {
+          "weights": { "wL": 0.4, "wA": 0.2, "wP": 0.2, "wF": 0.2, "wT": 0.2, "sum": 1.2 }
+        }
+      }
+    },
+    {
+      "name": "decision-threshold-mismatch",
+      "expected_rule_id": "VAL-007",
+      "snippet": {
+        "stability": {
+          "score": 0.81,
+          "threshold": 0.75
+        },
+        "dax_decision": {
+          "status": "RECURSE"
+        }
+      }
+    },
+    {
+      "name": "recurse-without-mutation-contract",
+      "expected_rule_id": "VAL-009",
+      "snippet": {
+        "dax_decision": {
+          "status": "RECURSE"
+        },
+        "recursion": {
+          "next_action": "REENTER"
+        }
+      }
+    },
+    {
+      "name": "max-iteration-exceeded",
+      "expected_rule_id": "VAL-010",
+      "snippet": {
+        "meta": {
+          "max_iterations": 3,
+          "current_iteration": 4
+        }
+      }
+    }
+  ]
+}

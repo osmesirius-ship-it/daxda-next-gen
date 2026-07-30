@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "daxda-guard-helm.fullname" . | default "daxda-guard-proxy" }}
+  labels:
+    app.kubernetes.io/name: daxda-guard-proxy
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: daxda-guard-proxy
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: daxda-guard-proxy
+    spec:
+      containers:
+        - name: daxda-guard-proxy
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http-proxy
+              containerPort: 8082
+              protocol: TCP
+          env:
+            - name: DAXDA_DOMAIN
+              value: "{{ .Values.env.DAXDA_DOMAIN }}"
+            - name: DAXDA_AIRGAPPED_MODE
+              value: "{{ .Values.env.DAXDA_AIRGAPPED_MODE }}"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
