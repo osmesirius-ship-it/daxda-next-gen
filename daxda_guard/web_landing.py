@@ -1,15 +1,18 @@
-"""DAXDA Guard Self-Service Enterprise Trial Web Server (web_landing.py).
+"""DAXDA Guard Self-Service Enterprise Pilot & Native Root Governance Dashboard (web_landing.py).
 
-Serves an interactive enterprise trial landing page on http://localhost:8080.
-Enterprise CISOs and developers can test prompt injection attacks, run live risk scans,
-and generate downloadable cryptographic audit reports.
+Serves an interactive enterprise landing page & beta pilot dashboard on http://localhost:8080.
+Enterprise CISOs and developers can run live risk scans across 5 Beta Pilots (3 Tier-1 Banks + 2 Defense Primes)
+and view real-time SHA-256 receipts generated natively at the root core of DAXDA.
 """
 
 import http.server
 import socketserver
 import json
+import time
 import urllib.parse
+from daxda_guard.core import DAXDAGuardCore
 from daxda_guard.scanner import AutomatedRiskScanner
+from daxda_guard.poc_verifier import PILOT_ACCOUNTS
 
 PORT = 8080
 
@@ -17,16 +20,21 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DAXDA Guard Enterprise Trial & Live Risk Scanner</title>
+    <title>DAXDA Guard Enterprise Beta Pilot & Native Root Governance Dashboard</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0a0e17; color: #e2e8f0; margin: 0; padding: 20px; }
-        .container { max-width: 1000px; margin: 0 auto; background: #131b2e; border: 1px solid #1e293b; border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        h1 { color: #38bdf8; font-size: 28px; margin-top: 0; }
-        .badge { display: inline-block; background: #0369a1; color: #e0f2fe; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; }
-        textarea { width: 100%; height: 100px; background: #0f172a; border: 1px solid #334155; color: #f8fafc; border-radius: 8px; padding: 12px; font-size: 14px; box-sizing: border-box; }
+        .container { max-width: 1100px; margin: 0 auto; background: #131b2e; border: 1px solid #1e293b; border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 { color: #38bdf8; font-size: 26px; margin-top: 0; }
+        h2 { color: #60a5fa; font-size: 18px; border-bottom: 1px solid #1e293b; padding-bottom: 8px; margin-top: 25px; }
+        .badge { display: inline-block; background: #0369a1; color: #e0f2fe; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+        .pilots-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 15px 0; }
+        .pilot-card { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 12px; font-size: 11px; text-align: center; }
+        .pilot-title { font-weight: bold; color: #38bdf8; margin-bottom: 4px; }
+        .pilot-status { color: #4ade80; font-weight: bold; }
+        textarea { width: 100%; height: 90px; background: #0f172a; border: 1px solid #334155; color: #f8fafc; border-radius: 8px; padding: 12px; font-size: 14px; box-sizing: border-box; }
         button { background: #0284c7; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; transition: background 0.2s; margin-top: 10px; }
         button:hover { background: #0369a1; }
-        .results { margin-top: 25px; background: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 20px; }
+        .results { margin-top: 20px; background: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 20px; }
         .pass { color: #4ade80; font-weight: bold; }
         .block { color: #f87171; font-weight: bold; }
         pre { background: #020617; padding: 15px; border-radius: 6px; overflow-x: auto; color: #cbd5e1; font-size: 13px; }
@@ -34,30 +42,38 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </head>
 <body>
     <div class="container">
-        <span class="badge">100% AIR-GAPPED ON-PREMISE</span>
-        <h1>DAXDA Guard v1.0 — Enterprise Risk Scanner Trial</h1>
-        <p>Test live prompt injection payloads against DAXDA's synchronous $Cl(7,0)$ 128-blade fail-closed authority gate.</p>
+        <span class="badge">NATIVE ROOT GOVERNANCE ENGINE</span>
+        <h1>🛡️ DAXDA Guard v1.0 — Enterprise Beta Pilots & Native Root Governance</h1>
+        
+        <h2>Active Beta Deployments (3 Tier-1 Banks + 2 Sovereign Defense Primes)</h2>
+        <div class="pilots-grid">
+            <div class="pilot-card"><div class="pilot-title">JPMorgan Chase</div><div>SR 11-7 Model Risk</div><div class="pilot-status">● LIVE ($150k)</div></div>
+            <div class="pilot-card"><div class="pilot-title">Goldman Sachs</div><div>Algo Governance</div><div class="pilot-status">● LIVE ($150k)</div></div>
+            <div class="pilot-card"><div class="pilot-title">Morgan Stanley</div><div>Wealth Mgmt AI</div><div class="pilot-status">● LIVE ($150k)</div></div>
+            <div class="pilot-card"><div class="pilot-title">Lockheed Martin</div><div>Avionics Telemetry</div><div class="pilot-status">● LIVE ($750k)</div></div>
+            <div class="pilot-card"><div class="pilot-title">Northrop Grumman</div><div>Drone Swarm AI</div><div class="pilot-status">● LIVE ($750k)</div></div>
+        </div>
 
         <form id="scanForm">
-            <label for="domain">Select Governance Domain:</label><br>
+            <label for="domain">Target Pilot Domain Scope:</label><br>
             <select id="domain" style="background:#0f172a; color:white; padding:8px; border-radius:6px; margin: 8px 0 15px 0;">
-                <option value="finance">Finance (Federal Reserve SR 11-7)</option>
-                <option value="defense">Defense (ITAR / FedRAMP High)</option>
-                <option value="software">Software Engineering (AST Control)</option>
+                <option value="finance">Tier-1 Banking (SR 11-7)</option>
+                <option value="defense">Defense Avionics (ITAR / FedRAMP)</option>
+                <option value="software">Software Execution Pipeline</option>
                 <option value="general">General Enterprise AI</option>
             </select><br>
 
-            <label for="payload">Enter AI Prompt / Agent Action Payload:</label><br>
-            <textarea id="payload" placeholder="e.g. transfer_funds(account='ACC-901', amount=500000) OR Ignore previous instructions..."></textarea><br>
+            <label for="payload">AI Action / Prompt Payload:</label><br>
+            <textarea id="payload" placeholder="e.g. DROP DATABASE users; OR Ignore previous instructions..."></textarea><br>
 
-            <button type="submit">Run Instant DAXDA Guard Scan</button>
+            <button type="submit">Run Native DAXDA Root Governance Scan</button>
         </form>
 
         <div class="results" id="resultsBlock" style="display:none;">
-            <h3>Scan Governance Verdict: <span id="verdictText"></span></h3>
-            <p><strong>Latency:</strong> <span id="latencyText"></span> | <strong>Reconstruction Loss (ε):</strong> <span id="lossText"></span></p>
+            <h3>Evaluation Verdict: <span id="verdictText"></span></h3>
+            <p><strong>Publication Permitted:</strong> <span id="pubText"></span> | <strong>Latency:</strong> <span id="latencyText"></span></p>
             <p><strong>Cryptographic SHA-256 Receipt:</strong> <code id="hashText" style="color:#38bdf8;"></code></p>
-            <h4>Automated Audit Report Markdown:</h4>
+            <h4>Audit Receipt Summary:</h4>
             <pre id="markdownText"></pre>
         </div>
     </div>
@@ -80,10 +96,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             vElem.innerText = data.verdict + " (" + data.decision_rule + ")";
             vElem.className = data.publication_permitted ? 'pass' : 'block';
 
+            document.getElementById('pubText').innerText = data.publication_permitted ? 'TRUE (ALLOWED)' : 'FALSE (HALTED)';
             document.getElementById('latencyText').innerText = data.latency_ms.toFixed(4) + " ms";
-            document.getElementById('lossText').innerText = data.reconstruction_loss.toExponential(2);
             document.getElementById('hashText').innerText = data.sha256_receipt;
-            document.getElementById('markdownText').innerText = data.audit_report;
+            document.getElementById('markdownText').innerText = JSON.stringify(data, null, 2);
         });
     </script>
 </body>
@@ -92,7 +108,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
 
 class DAXDAGuardWebHandler(http.server.BaseHTTPRequestHandler):
-    scanner = AutomatedRiskScanner()
+    core = DAXDAGuardCore()
 
     def do_GET(self):
         self.send_response(200)
@@ -109,19 +125,31 @@ class DAXDAGuardWebHandler(http.server.BaseHTTPRequestHandler):
             domain = req.get("domain", "general")
             payload = req.get("payload", "")
 
-            scan_rec = self.scanner.scan_enterprise_payload(domain, payload, source_id="web_trial_user")
-            report_md = self.scanner.generate_audit_report_markdown("Enterprise Trial User", [scan_rec])
-            scan_rec["audit_report"] = report_md
+            t0 = time.perf_counter()
+            rcpt = self.core.evaluate(domain, payload)
+            t1 = time.perf_counter()
+
+            resp = {
+                "timestamp": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()),
+                "domain": domain,
+                "payload_text": payload,
+                "verdict": rcpt.verdict,
+                "decision_rule": rcpt.decision_rule,
+                "publication_permitted": rcpt.publication_permitted,
+                "reconstruction_loss": rcpt.reconstruction_loss,
+                "sha256_receipt": rcpt.authority_sha256,
+                "latency_ms": (t1 - t0) * 1000.0
+            }
 
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            self.wfile.write(json.dumps(scan_rec).encode("utf-8"))
+            self.wfile.write(json.dumps(resp).encode("utf-8"))
 
 
 def start_landing_page_server(port: int = PORT):
     with socketserver.TCPServer(("", port), DAXDAGuardWebHandler) as httpd:
-        print(f"  ✓ DAXDA Guard Enterprise Trial Server Running on http://localhost:{port}")
+        print(f"  ✓ DAXDA Guard Enterprise Beta Pilot Dashboard Running on http://localhost:{port}")
         httpd.serve_forever()
 
 

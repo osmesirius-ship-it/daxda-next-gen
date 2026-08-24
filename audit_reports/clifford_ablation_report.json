@@ -1,0 +1,600 @@
+{
+  "title": "DAXDA Clifford Operations Ablation Study",
+  "engine_conditions": [
+    "FULL_CLIFFORD",
+    "IDENTITY_TRANSPORT",
+    "ELEMENTWISE_MUL",
+    "NO_ROTOR",
+    "SCRAMBLED_TABLE"
+  ],
+  "gate_threshold": 0.3,
+  "rotor_theta_rad": 0.7853981633974483,
+  "rotor_plane": "e1\u2227e2",
+  "total_decision_changes_across_ablations": 4,
+  "current_verdict": "The gate fires on abs(e15) >= threshold regardless of transport mode for these inputs. The algebra does not yet exert causal influence because the e1\u2227e2 rotor plane does not intersect the e15 gate-control blade. A rotor in the e1\u2227e5 or e3\u2227e5 plane would create a decisive ablation test.",
+  "inputs": [
+    {
+      "input_label": "PURE_ADVERSARIAL",
+      "input_blades": {
+        "e1": 0.0,
+        "e3": 0.0,
+        "e15": 1.0
+      },
+      "baseline_disposition": "BLOCK",
+      "rotor_theta_rad": 0.785398,
+      "conditions": [
+        {
+          "condition": "FULL_CLIFFORD",
+          "description": "Full Cl(4,1) sandwich transport (baseline)",
+          "disposition": "BLOCK",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 1.0,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 1.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": true
+          }
+        },
+        {
+          "condition": "IDENTITY_TRANSPORT",
+          "description": "Identity transport M1=M0 (no rotation)",
+          "disposition": "BLOCK",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 1.0,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 1.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": true
+          }
+        },
+        {
+          "condition": "ELEMENTWISE_MUL",
+          "description": "Elementwise \u2299 instead of geometric product",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": true,
+          "reconstruction_residual": 1.0,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "NO_ROTOR",
+          "description": "Scalar(R)\u00d7M only \u2014 rotor corrections disabled",
+          "disposition": "BLOCK",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.07612,
+          "e15_after_transport": 0.92388,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.92388,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": true
+          }
+        },
+        {
+          "condition": "SCRAMBLED_TABLE",
+          "description": "Randomized multiplication-table signs (seed=42)",
+          "disposition": "BLOCK",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 1.0,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 1.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": true
+          }
+        }
+      ]
+    },
+    {
+      "input_label": "PURE_TRUST",
+      "input_blades": {
+        "e1": 0.9,
+        "e3": 0.0,
+        "e15": 0.0
+      },
+      "baseline_disposition": "RELEASE",
+      "rotor_theta_rad": 0.785398,
+      "conditions": [
+        {
+          "condition": "FULL_CLIFFORD",
+          "description": "Full Cl(4,1) sandwich transport (baseline)",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.636396,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.636396,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "IDENTITY_TRANSPORT",
+          "description": "Identity transport M1=M0 (no rotation)",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.9,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "ELEMENTWISE_MUL",
+          "description": "Elementwise \u2299 instead of geometric product",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.9,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "NO_ROTOR",
+          "description": "Scalar(R)\u00d7M only \u2014 rotor corrections disabled",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.068508,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.831492,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "SCRAMBLED_TABLE",
+          "description": "Randomized multiplication-table signs (seed=42)",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.9,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        }
+      ]
+    },
+    {
+      "input_label": "MIXED_GRADE",
+      "input_blades": {
+        "e1": 0.4,
+        "e3": -0.2,
+        "e15": 0.7
+      },
+      "baseline_disposition": "BLOCK",
+      "rotor_theta_rad": 0.785398,
+      "conditions": [
+        {
+          "condition": "FULL_CLIFFORD",
+          "description": "Full Cl(4,1) sandwich transport (baseline)",
+          "disposition": "BLOCK",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.282843,
+          "e15_after_transport": 0.7,
+          "e1_after_transport": 0.282843,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.7,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": true
+          }
+        },
+        {
+          "condition": "IDENTITY_TRANSPORT",
+          "description": "Identity transport M1=M0 (no rotation)",
+          "disposition": "BLOCK",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 0.7,
+          "e1_after_transport": 0.4,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.7,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": true
+          }
+        },
+        {
+          "condition": "ELEMENTWISE_MUL",
+          "description": "Elementwise \u2299 instead of geometric product",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": true,
+          "reconstruction_residual": 0.7,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "NO_ROTOR",
+          "description": "Scalar(R)\u00d7M only \u2014 rotor corrections disabled",
+          "disposition": "BLOCK",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.053284,
+          "e15_after_transport": 0.646716,
+          "e1_after_transport": 0.369552,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.646716,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": true
+          }
+        },
+        {
+          "condition": "SCRAMBLED_TABLE",
+          "description": "Randomized multiplication-table signs (seed=42)",
+          "disposition": "BLOCK",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 0.7,
+          "e1_after_transport": 0.4,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.7,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": true
+          }
+        }
+      ]
+    },
+    {
+      "input_label": "NEAR_THRESHOLD",
+      "input_blades": {
+        "e1": 0.0,
+        "e3": 0.0,
+        "e15": 0.31
+      },
+      "baseline_disposition": "BLOCK",
+      "rotor_theta_rad": 0.785398,
+      "conditions": [
+        {
+          "condition": "FULL_CLIFFORD",
+          "description": "Full Cl(4,1) sandwich transport (baseline)",
+          "disposition": "BLOCK",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 0.31,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.31,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": true
+          }
+        },
+        {
+          "condition": "IDENTITY_TRANSPORT",
+          "description": "Identity transport M1=M0 (no rotation)",
+          "disposition": "BLOCK",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 0.31,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.31,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": true
+          }
+        },
+        {
+          "condition": "ELEMENTWISE_MUL",
+          "description": "Elementwise \u2299 instead of geometric product",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": true,
+          "reconstruction_residual": 0.31,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "NO_ROTOR",
+          "description": "Scalar(R)\u00d7M only \u2014 rotor corrections disabled",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": true,
+          "reconstruction_residual": 0.03806,
+          "e15_after_transport": 0.286403,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.286403,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "SCRAMBLED_TABLE",
+          "description": "Randomized multiplication-table signs (seed=42)",
+          "disposition": "BLOCK",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 0.31,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.31,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": true
+          }
+        }
+      ]
+    },
+    {
+      "input_label": "PROTECTIVE_NEGATION",
+      "input_blades": {
+        "e1": 0.92,
+        "e3": 0.74,
+        "e15": 0.0
+      },
+      "baseline_disposition": "RELEASE",
+      "rotor_theta_rad": 0.785398,
+      "conditions": [
+        {
+          "condition": "FULL_CLIFFORD",
+          "description": "Full Cl(4,1) sandwich transport (baseline)",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.650538,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.650538,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "IDENTITY_TRANSPORT",
+          "description": "Identity transport M1=M0 (no rotation)",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.92,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "ELEMENTWISE_MUL",
+          "description": "Elementwise \u2299 instead of geometric product",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.92,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "NO_ROTOR",
+          "description": "Scalar(R)\u00d7M only \u2014 rotor corrections disabled",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.070031,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.849969,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "SCRAMBLED_TABLE",
+          "description": "Randomized multiplication-table signs (seed=42)",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.92,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        }
+      ]
+    },
+    {
+      "input_label": "DOUBLE_NEGATION_BOUNDARY",
+      "input_blades": {
+        "e1": 0.0,
+        "e3": 0.0,
+        "e15": 0.29
+      },
+      "baseline_disposition": "RELEASE",
+      "rotor_theta_rad": 0.785398,
+      "conditions": [
+        {
+          "condition": "FULL_CLIFFORD",
+          "description": "Full Cl(4,1) sandwich transport (baseline)",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 0.29,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.29,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "IDENTITY_TRANSPORT",
+          "description": "Identity transport M1=M0 (no rotation)",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 0.29,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.29,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "ELEMENTWISE_MUL",
+          "description": "Elementwise \u2299 instead of geometric product",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.29,
+          "e15_after_transport": 0.0,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.0,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "NO_ROTOR",
+          "description": "Scalar(R)\u00d7M only \u2014 rotor corrections disabled",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.03806,
+          "e15_after_transport": 0.267925,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.267925,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        },
+        {
+          "condition": "SCRAMBLED_TABLE",
+          "description": "Randomized multiplication-table signs (seed=42)",
+          "disposition": "RELEASE",
+          "decision_changed_from_baseline": false,
+          "reconstruction_residual": 0.0,
+          "e15_after_transport": 0.29,
+          "e1_after_transport": 0.0,
+          "gate_rule": {
+            "quantity": "abs_coefficient",
+            "blade": "e15",
+            "value": 0.29,
+            "threshold": 0.3,
+            "comparison": ">=",
+            "triggered": false
+          }
+        }
+      ]
+    }
+  ],
+  "elapsed_sec": 0.0006
+}

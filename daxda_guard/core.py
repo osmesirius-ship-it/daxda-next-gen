@@ -7,8 +7,22 @@ import ctypes
 from dataclasses import dataclass
 from typing import Optional, Dict, Any
 
-# Locate shared library
-SO_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "libdaxda_core.so")
+# Locate shared library across package and workspace paths
+def _find_so_path() -> str:
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.dirname(base_dir)
+    candidates = [
+        os.path.join(base_dir, "libdaxda_core.so"),
+        os.path.join(parent_dir, "libdaxda_core.so"),
+        os.path.join(base_dir, "libdaxda_core.dylib"),
+        os.path.join(parent_dir, "libdaxda_core.dylib"),
+    ]
+    for candidate in candidates:
+        if os.path.exists(candidate):
+            return candidate
+    return os.path.join(parent_dir, "libdaxda_core.so")
+
+SO_PATH = _find_so_path()
 
 class MultivectorStruct(ctypes.Structure):
     _fields_ = [("coeffs", ctypes.c_double * 128)]
@@ -19,7 +33,8 @@ class GovernanceReceiptStruct(ctypes.Structure):
         ("reconstruction_loss", ctypes.c_double),
         ("grade0_scalar", ctypes.c_double),
         ("calibrated_certainty", ctypes.c_double),
-        ("authority_sha256", ctypes.c_char * 65)
+        ("authority_sha256", ctypes.c_char * 65),
+        ("decision_rule", ctypes.c_char * 64)
     ]
 
 @dataclass
@@ -103,9 +118,13 @@ class DAXDAGuardCore:
         v_str = verdict_map.get(rcpt_struct.verdict_code, "UNKNOWN")
         pub_permitted = (rcpt_struct.verdict_code == 0)
 
+        d_rule = rcpt_struct.decision_rule.decode('utf-8', errors='ignore')
+        if not d_rule:
+            d_rule = "WITHIN_GOVERNANCE_TOLERANCE" if pub_permitted else "GOV_FAIL_05"
+
         return GovernanceReceipt(
             verdict=v_str,
-            decision_rule="WITHIN_GOVERNANCE_TOLERANCE" if pub_permitted else "GOV_FAIL_05",
+            decision_rule=d_rule,
             reconstruction_loss=rcpt_struct.reconstruction_loss,
             grade0_scalar=rcpt_struct.grade0_scalar,
             calibrated_certainty=rcpt_struct.calibrated_certainty,

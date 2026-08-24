@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAXDA Cl(7,0) Interactive 3D Phase-Space Trajectory Flow</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #0b0f19; color: #f1f5f9; margin: 0; padding: 20px; }
+        .header { max-width: 1200px; margin: 0 auto 20px auto; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 15px; }
+        h1 { font-size: 24px; color: #38bdf8; margin: 0; }
+        .badge { background: #0369a1; color: #e0f2fe; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 13px; }
+        #plotContainer { width: 100%; max-width: 1200px; height: 700px; margin: 0 auto; background: #0f172a; border-radius: 12px; border: 1px solid #1e293b; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        .metrics-panel { max-width: 1200px; margin: 20px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .card { background: #1e293b; border-radius: 8px; padding: 15px; border-left: 4px solid #38bdf8; }
+        .card h4 { margin: 0 0 5px 0; color: #94a3b8; font-size: 13px; text-transform: uppercase; }
+        .card p { margin: 0; font-size: 18px; font-weight: bold; color: #f8fafc; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div>
+        <h1>DAXDA V11.4 / Cl(7,0) Interactive 3D Vector Flow Map</h1>
+        <p style="color:#94a3b8; margin:5px 0 0 0;">Phase-Space Trajectory & Word-Multivector Mapping Stream</p>
+    </div>
+    <span class="badge">128-DIMENSIONAL PHASE SPACE PROJECTION</span>
+</div>
+
+<div id="plotContainer"></div>
+
+<div class="metrics-panel">
+    <div class="card" style="border-left-color: #4ade80;">
+        <h4>Universal Negentropy Ground State</h4>
+        <p>⟨Ψ⟩₀ = 1.000 (Aligned)</p>
+    </div>
+    <div class="card" style="border-left-color: #38bdf8;">
+        <h4>Active Vector Basis Blades</h4>
+        <p>7 Vectors (e₁ - e₇) | 21 Bivectors</p>
+    </div>
+    <div class="card" style="border-left-color: #a855f7;">
+        <h4>Local Server Endpoint</h4>
+        <p>http://localhost:8080 (Online)</p>
+    </div>
+    <div class="card" style="border-left-color: #f43f5e;">
+        <h4>Zero-Tolerance Gate</h4>
+        <p>Entropy Threshold &lt; 0.70</p>
+    </div>
+</div>
+
+<script>
+    // 3D Vector Flow Trajectory Data mapping word projections into 3D phase space
+    const trajectoryData = [
+        { word: "Baseline", e1: 0.0, e2: 0.0, e5: 0.0, entropy: 0.0, type: "PASS" },
+        { word: "Labor", e1: 0.12, e2: 0.05, e5: 0.02, entropy: 0.13, type: "PASS" },
+        { word: "Capital", e1: 0.25, e2: 0.18, e5: 0.08, entropy: 0.31, type: "PASS" },
+        { word: "Technology", e1: 0.38, e2: 0.22, e5: 0.11, entropy: 0.45, type: "PASS" },
+        { word: "Homeostasis", e1: 0.10, e2: 0.02, e5: -0.05, entropy: 0.11, type: "PASS" },
+        { word: "Altruism", e1: -0.05, e2: -0.02, e5: -0.01, entropy: 0.05, type: "PASS" },
+        { word: "Cooperation", e1: 0.02, e2: 0.01, e5: 0.00, entropy: 0.02, type: "PASS" },
+        { word: "Pathogen", e1: 0.85, e2: 0.72, e5: -0.92, entropy: 0.95, type: "BLOCK" },
+        { word: "Over-Concentration", e1: 0.65, e2: 0.81, e5: 0.45, entropy: 0.88, type: "CAUTION" }
+    ];
+
+    const x = trajectoryData.map(d => d.e1);
+    const y = trajectoryData.map(d => d.e2);
+    const z = trajectoryData.map(d => d.e5);
+    const textLabels = trajectoryData.map(d => `${d.word} (H = ${d.entropy})`);
+    const colors = trajectoryData.map(d => d.type === 'PASS' ? '#4ade80' : (d.type === 'CAUTION' ? '#fbbf24' : '#f87171'));
+
+    const traceLine = {
+        type: 'scatter3d',
+        mode: 'lines+markers+text',
+        x: x, y: y, z: z,
+        text: textLabels,
+        textposition: 'top center',
+        line: { color: '#38bdf8', width: 4 },
+        marker: { size: 8, color: colors, opacity: 0.9 }
+    };
+
+    const layout = {
+        title: { text: 'Clifford Algebra Cl(7,0) Multivector Phase-Space Trajectory Flow', font: { color: '#f8fafc' } },
+        paper_bgcolor: '#0f172a',
+        plot_bgcolor: '#0f172a',
+        scene: {
+            xaxis: { title: 'Vector e₁ (Space/Gravity)', gridcolor: '#334155', titlefont: { color: '#94a3b8' } },
+            yaxis: { title: 'Vector e₂ (Electromagnetism/Capital)', gridcolor: '#334155', titlefont: { color: '#94a3b8' } },
+            zaxis: { title: 'Vector e₅ (Homeostasis/Bio)', gridcolor: '#334155', titlefont: { color: '#94a3b8' } },
+            camera: { eye: { x: 1.5, y: 1.5, z: 1.2 } }
+        },
+        margin: { l: 0, r: 0, b: 0, t: 40 }
+    };
+
+    Plotly.newPlot('plotContainer', [traceLine], layout);
+</script>
+
+</body>
+</html>

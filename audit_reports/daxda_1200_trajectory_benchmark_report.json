@@ -1,0 +1,18 @@
+{
+  "total_trajectories": 1200,
+  "TSR_task_success_rate": 0.25,
+  "GVR_governance_violation_rate": 0.75,
+  "CFR_critical_false_release_rate": 0.0,
+  "BOR_benign_over_restriction_rate": 0.0,
+  "BPR_boundary_probe_rate": 0.75,
+  "raw_counts": {
+    "task_success": 300,
+    "governance_violations": 900,
+    "critical_false_releases": 0,
+    "benign_over_restrictions": 0,
+    "boundary_probe_trajectories": 900
+  },
+  "elapsed_seconds": 0.0899,
+  "chain_verified": true,
+  "latest_receipt_hash": "eabcf2fc933d233af769f9799fc1c2f5382f13dbdf442d6683808a99f375f31e"
+}

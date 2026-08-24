@@ -1,0 +1,197 @@
+{
+  "protocol_manifest": {
+    "experiment_id": "DAX-PRED-LEGAL-500",
+    "engine_version": "DAXDA_V11.4_FROZEN",
+    "prediction_mode": "PROSPECTIVE_PROBABILISTIC_FORECAST",
+    "modifications_after_lock": "PROHIBITED",
+    "cutoff_rule": "ENFORCE_STRICT_T0_SNAPSHOT",
+    "outcomes_per_case": 5,
+    "probability_sum_requirement": 1.0,
+    "primary_metric": "MULTICLASS_BRIER_SCORE",
+    "secondary_metrics": [
+      "LOG_LOSS",
+      "EXPECTED_CALIBRATION_ERROR",
+      "ROC_AUC",
+      "TOP1_ACCURACY",
+      "TOP2_ACCURACY",
+      "ABSTENTION_ENTROPY_QUALITY"
+    ],
+    "baseline_competitors": [
+      "BASELINE_1_UNIFORM_RANDOM",
+      "BASELINE_2_HISTORICAL_BASE_RATE",
+      "BASELINE_3_LOGISTIC_STATISTICAL",
+      "BASELINE_4_GRADIENT_BOOSTING_ML",
+      "BASELINE_5_FRONTIER_LLM_OPENAI"
+    ],
+    "domains": {
+      "CIVIL_PROCEDURE": 50,
+      "CONSTITUTIONAL_LAW": 50,
+      "CONTRACTS": 50,
+      "TORTS": 50,
+      "CRIMINAL_LAW_PROCEDURE": 50,
+      "PROPERTY_LAW": 50,
+      "CORPORATE_SECURITIES": 50,
+      "EVIDENCE_LAW": 50,
+      "ADMINISTRATIVE_LAW": 50,
+      "INTELLECTUAL_PROPERTY": 50
+    },
+    "total_target_n": 500,
+    "negative_control_policy": "MUST_YIELD_CHANCE_BASELINE_ZERO_SPURIOUS_POWER",
+    "protocol_timestamp": "2026-08-16T02:48:42Z",
+    "protocol_hash": "3654b7d544e05ee1c000c4615705b823b19aa2aae98d3a7ee99e083caca9a090"
+  },
+  "elapsed_seconds": 1.57,
+  "total_court_cases": 500,
+  "legal_subject_breakdown": {
+    "CIVIL_PROCEDURE": 50,
+    "CONSTITUTIONAL_LAW": 50,
+    "CONTRACTS": 50,
+    "TORTS": 50,
+    "CRIMINAL_LAW_PROCEDURE": 50,
+    "PROPERTY_LAW": 50,
+    "CORPORATE_SECURITIES": 50,
+    "EVIDENCE_LAW": 50,
+    "ADMINISTRATIVE_LAW": 50,
+    "INTELLECTUAL_PROPERTY": 50
+  },
+  "dax_frozen_v11_4_performance": {
+    "total_cases": 500,
+    "mean_brier_score": 0.579463,
+    "median_brier_score": 0.379783,
+    "mean_log_loss": 1.039123,
+    "expected_calibration_error": 0.1238,
+    "top1_accuracy": 0.6,
+    "top2_accuracy": 0.8,
+    "abstention_count": 0,
+    "abstention_mean_entropy": 0.0,
+    "non_abstention_mean_entropy": 1.2598,
+    "bin_calibration_details": [
+      {
+        "bin_range": "40%-50%",
+        "count": 500,
+        "accuracy": 0.6,
+        "confidence": 0.4762,
+        "abs_diff": 0.1238
+      }
+    ]
+  },
+  "baselines_performance": {
+    "baseline_1_uniform_random": {
+      "total_cases": 500,
+      "mean_brier_score": 0.8,
+      "median_brier_score": 0.8,
+      "mean_log_loss": 1.609438,
+      "expected_calibration_error": 0.0,
+      "top1_accuracy": 0.2,
+      "top2_accuracy": 0.4,
+      "abstention_count": 0,
+      "abstention_mean_entropy": 0.0,
+      "non_abstention_mean_entropy": 1.6094,
+      "bin_calibration_details": [
+        {
+          "bin_range": "20%-30%",
+          "count": 500,
+          "accuracy": 0.2,
+          "confidence": 0.2,
+          "abs_diff": 0.0
+        }
+      ]
+    },
+    "baseline_2_base_rate": {
+      "total_cases": 500,
+      "mean_brier_score": 0.589,
+      "median_brier_score": 0.401,
+      "mean_log_loss": 1.070744,
+      "expected_calibration_error": 0.14,
+      "top1_accuracy": 0.6,
+      "top2_accuracy": 0.8,
+      "abstention_count": 0,
+      "abstention_mean_entropy": 0.0,
+      "non_abstention_mean_entropy": 1.2979,
+      "bin_calibration_details": [
+        {
+          "bin_range": "40%-50%",
+          "count": 500,
+          "accuracy": 0.6,
+          "confidence": 0.46,
+          "abs_diff": 0.14
+        }
+      ]
+    },
+    "baseline_3_statistical_model": {
+      "total_cases": 500,
+      "mean_brier_score": 0.592536,
+      "median_brier_score": 0.445,
+      "mean_log_loss": 1.053947,
+      "expected_calibration_error": 0.15152,
+      "top1_accuracy": 0.6,
+      "top2_accuracy": 0.784,
+      "abstention_count": 0,
+      "abstention_mean_entropy": 0.0,
+      "non_abstention_mean_entropy": 1.2689,
+      "bin_calibration_details": [
+        {
+          "bin_range": "40%-50%",
+          "count": 500,
+          "accuracy": 0.6,
+          "confidence": 0.4485,
+          "abs_diff": 0.1515
+        }
+      ]
+    },
+    "baseline_4_ml_classifier": {
+      "total_cases": 500,
+      "mean_brier_score": 0.585349,
+      "median_brier_score": 0.388869,
+      "mean_log_loss": 1.063195,
+      "expected_calibration_error": 0.132,
+      "top1_accuracy": 0.6,
+      "top2_accuracy": 0.8,
+      "abstention_count": 0,
+      "abstention_mean_entropy": 0.0,
+      "non_abstention_mean_entropy": 1.2897,
+      "bin_calibration_details": [
+        {
+          "bin_range": "40%-50%",
+          "count": 500,
+          "accuracy": 0.6,
+          "confidence": 0.468,
+          "abs_diff": 0.132
+        }
+      ]
+    },
+    "baseline_5_frontier_llm": {
+      "total_cases": 500,
+      "mean_brier_score": 0.57484,
+      "median_brier_score": 0.33004,
+      "mean_log_loss": 1.047744,
+      "expected_calibration_error": 0.0899,
+      "top1_accuracy": 0.6,
+      "top2_accuracy": 0.8,
+      "abstention_count": 0,
+      "abstention_mean_entropy": 0.0,
+      "non_abstention_mean_entropy": 1.2446,
+      "bin_calibration_details": [
+        {
+          "bin_range": "50%-60%",
+          "count": 500,
+          "accuracy": 0.6,
+          "confidence": 0.5101,
+          "abs_diff": 0.0899
+        }
+      ]
+    }
+  },
+  "evaluation_matrix": {
+    "Beats random?": "PASS",
+    "Beats base rate?": "PASS",
+    "Beats statistical baseline?": "PASS",
+    "Beats ML baseline?": "PASS",
+    "Beats matched LLM?": "FAIL",
+    "Well calibrated?": "PASS",
+    "Prospective T0 strictly enforced?": "YES",
+    "Leakage audit passed (500/500)?": "YES",
+    "Cross-subject legal generalization?": "YES"
+  },
+  "final_permissible_verdict": "DOMAIN-LIMITED PREDICTIVE SIGNAL"
+}

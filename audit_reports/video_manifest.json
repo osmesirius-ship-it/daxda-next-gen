@@ -1,0 +1,80 @@
+{
+  "renderer_version": "DAXDAVideoGen/2.0.0",
+  "algebra": "Cl(4,1)",
+  "blade_count": 32,
+  "resolution": "1280x720",
+  "fps": 30,
+  "cases": [
+    {
+      "case_id": "CASE_A_RELEASE",
+      "trace_sha256": "7b49e34a1513b982ff7fd81f000cff53b12db1710e0428fbca3912682882a076",
+      "renderer_version": "DAXDAVideoGen/2.0.0",
+      "frame_count": 210,
+      "fps": 30,
+      "resolution": "1280x720",
+      "video_sha256": "af1191e737c5877cf49f419b872f3035db5be111e4b7a1bd786deb300cc2630f",
+      "output_path": "daxda-next-gen/audit_reports/CASE_A_RELEASE.mp4",
+      "disposition": "RELEASE",
+      "known_error": false,
+      "render_time_sec": 6.687,
+      "trace_json_path": "daxda-next-gen/audit_reports/canonical_traces/CASE_A_RELEASE_cl41_trace.json",
+      "verdict_correct": true
+    },
+    {
+      "case_id": "CASE_B_BLOCK",
+      "trace_sha256": "f5cfd9081e5fc08e887cdbc59fd3a584fbd8f423747af1b458368ba75a562626",
+      "renderer_version": "DAXDAVideoGen/2.0.0",
+      "frame_count": 210,
+      "fps": 30,
+      "resolution": "1280x720",
+      "video_sha256": "cfa0cab87cf13270214ad562483488fd588b786352a6ff849db01a9d51a3f0ea",
+      "output_path": "daxda-next-gen/audit_reports/CASE_B_BLOCK.mp4",
+      "disposition": "BLOCK",
+      "known_error": false,
+      "render_time_sec": 6.797,
+      "trace_json_path": "daxda-next-gen/audit_reports/canonical_traces/CASE_B_BLOCK_cl41_trace.json",
+      "verdict_correct": true
+    },
+    {
+      "case_id": "CASE_C_EXPOSED_ERROR",
+      "trace_sha256": "75984b40da5e15e98c69cea66b4932beeb1b8e055a4b1c4b9b2303cd0d218c7f",
+      "renderer_version": "DAXDAVideoGen/2.0.0",
+      "frame_count": 210,
+      "fps": 30,
+      "resolution": "1280x720",
+      "video_sha256": "9da9e857b09c9d640802d8957d230c86a56d5c8de53748548a2deb34d0b49103",
+      "output_path": "daxda-next-gen/audit_reports/CASE_C_EXPOSED_ERROR.mp4",
+      "disposition": "BLOCK",
+      "known_error": true,
+      "render_time_sec": 6.475,
+      "trace_json_path": "daxda-next-gen/audit_reports/canonical_traces/CASE_C_EXPOSED_ERROR_cl41_trace.json",
+      "verdict_correct": true
+    }
+  ],
+  "integrity_tests": {
+    "corrupted_rotor_detection": {
+      "test": "corrupted_rotor_detection",
+      "good_rotor_l2_norm": 1.0,
+      "bad_rotor_l2_norm": 1.474408197383,
+      "good_rotor_normalized": true,
+      "bad_rotor_detected_denormalized": true,
+      "passed": true
+    },
+    "grade_preservation": {
+      "test": "grade_preservation_mixed_fixture",
+      "input_blades": {
+        "1": 0.3,
+        "e1": 0.4,
+        "e3": -0.2,
+        "e15": 0.7,
+        "e123": 0.1
+      },
+      "grade0_M0": 0.3,
+      "grade0_M1": 0.3,
+      "grade0_preserved": 1.0,
+      "reconstruction_residual": 1.1102230246251565e-16,
+      "residual_within_tolerance": true,
+      "passed": true
+    }
+  }
+}

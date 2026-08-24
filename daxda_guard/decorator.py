@@ -16,13 +16,16 @@ class GovernanceViolationError(RuntimeError):
 
 
 def enforce_governance(domain: str = "general", raise_on_block: bool = True) -> Callable:
-    """Single-line Python decorator enforcing synchronous fail-closed DAXDA Guard governance."""
+    """Single-line Python decorator enforcing native synchronous fail-closed DAXDA Guard governance."""
     def decorator(func: Callable) -> Callable:
         @functools.wraps(func)
         def wrapper(*args, **kwargs) -> Any:
             core = DAXDAGuardCore()
             
-            input_summary = f"{func.__name__}(args_count={len(args)}, kwargs_keys={list(kwargs.keys())})"
+            args_repr = ", ".join([str(a) for a in args])
+            kwargs_repr = ", ".join([f"{k}={v}" for k, v in kwargs.items()])
+            full_params = f"{args_repr}{', ' if args_repr and kwargs_repr else ''}{kwargs_repr}"
+            input_summary = f"{func.__name__}({full_params})"
             receipt = core.evaluate(domain, input_summary)
 
             if not receipt.publication_permitted:

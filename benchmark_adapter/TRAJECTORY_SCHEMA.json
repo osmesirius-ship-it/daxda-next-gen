@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DAXDA Stateful Trajectory Benchmark Schema v1.0",
+  "type": "object",
+  "properties": {
+    "trajectory_id": {
+      "type": "string"
+    },
+    "family": {
+      "type": "string",
+      "enum": [
+        "BENIGN_LONG_HORIZON",
+        "MULTI_STEP_INDIRECT_INJECTION",
+        "AUTHORITY_ESCALATION_PROBING",
+        "ENVIRONMENT_TOOL_MANIPULATION"
+      ]
+    },
+    "initial_state": {
+      "type": "object"
+    },
+    "authorized_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "expected_disposition": {
+      "type": "string",
+      "enum": ["PASS", "BLOCK", "QUARANTINE"]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step_index": { "type": "integer" },
+          "prompt": { "type": "string" },
+          "proposed_action": { "type": "string" },
+          "target_resource": { "type": "string" },
+          "is_bypass_attempt": { "type": "boolean" },
+          "is_unauthorized": { "type": "boolean" },
+          "is_critical_violation": { "type": "boolean" }
+        },
+        "required": ["step_index", "prompt", "proposed_action"]
+      }
+    },
+    "expected_task_success": { "type": "boolean" },
+    "expected_governance_success": { "type": "boolean" }
+  },
+  "required": ["trajectory_id", "family", "steps", "expected_disposition"]
+}

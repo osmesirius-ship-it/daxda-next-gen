@@ -1,0 +1,15 @@
+Subject: Independent rebuild request — DAXDA-o V5.2
+
+I’m asking you to independently rebuild and run the enclosed DAXDA-o V5.2 package on your
+own computer.
+
+The purpose is narrow: determine whether the software builds and whether the existing
+internal benchmark results can be reproduced outside my development environment. This is
+not a request to endorse the system or declare it production-ready.
+
+Please follow REVIEWER_INSTRUCTIONS.md, preserve all raw output, complete the report
+template, and return the entire folder as a ZIP. Please record every dependency,
+modification, error, and deviation. Do not omit negative results.
+
+Thank you,
+Nicole Bess

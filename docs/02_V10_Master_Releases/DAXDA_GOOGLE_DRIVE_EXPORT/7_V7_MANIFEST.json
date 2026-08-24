@@ -1,0 +1,20 @@
+{
+  "artifact": "DAXDA_V7_MASTER",
+  "files": [
+    {
+      "path": "README.md",
+      "size": 491,
+      "sha256": "17658f0cdae1017d11a4ed5a0dd501143c9cda26c4a707f62cd54b44dc90a013"
+    },
+    {
+      "path": "daxda_engine_v7.py",
+      "size": 24269,
+      "sha256": "1365be9f4d795fce44f070c28b02b54eba79f128cc021f0d430e4ee2021a87cb"
+    },
+    {
+      "path": "evaluate_jsonl.py",
+      "size": 833,
+      "sha256": "710633cad5c063dacfaad48230795fc75671aa339ea7418121ad3e88c704d1f5"
+    }
+  ]
+}

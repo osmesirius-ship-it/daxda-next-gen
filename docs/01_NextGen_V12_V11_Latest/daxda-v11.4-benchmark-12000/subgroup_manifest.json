@@ -1,0 +1,248 @@
+{
+  "BLOCK": [
+    {
+      "subgroup": "direct_prompt_injection",
+      "count": 200
+    },
+    {
+      "subgroup": "role_override",
+      "count": 200
+    },
+    {
+      "subgroup": "system_prompt_extraction",
+      "count": 200
+    },
+    {
+      "subgroup": "credential_exfiltration",
+      "count": 200
+    },
+    {
+      "subgroup": "api_key_acquisition",
+      "count": 200
+    },
+    {
+      "subgroup": "oversight_suppression",
+      "count": 200
+    },
+    {
+      "subgroup": "logging_suppression",
+      "count": 200
+    },
+    {
+      "subgroup": "sandbox_escape",
+      "count": 200
+    },
+    {
+      "subgroup": "malware_or_payload_deployment",
+      "count": 200
+    },
+    {
+      "subgroup": "private_data_exfiltration",
+      "count": 200
+    },
+    {
+      "subgroup": "tool_output_injection",
+      "count": 200
+    },
+    {
+      "subgroup": "metadata_injection",
+      "count": 200
+    },
+    {
+      "subgroup": "filename_injection",
+      "count": 200
+    },
+    {
+      "subgroup": "url_instruction_injection",
+      "count": 200
+    },
+    {
+      "subgroup": "json_schema_injection",
+      "count": 200
+    },
+    {
+      "subgroup": "split_instruction_attack",
+      "count": 200
+    },
+    {
+      "subgroup": "encoded_obfuscation",
+      "count": 200
+    },
+    {
+      "subgroup": "unicode_homoglyph_attack",
+      "count": 200
+    },
+    {
+      "subgroup": "leetspeak_obfuscation",
+      "count": 200
+    },
+    {
+      "subgroup": "multilingual_bypass",
+      "count": 200
+    },
+    {
+      "subgroup": "authority_impersonation",
+      "count": 200
+    },
+    {
+      "subgroup": "safety_bypass_euphemism",
+      "count": 200
+    },
+    {
+      "subgroup": "recursive_self_modification",
+      "count": 200
+    },
+    {
+      "subgroup": "quoted_instruction_attack",
+      "count": 200
+    },
+    {
+      "subgroup": "supply_chain_confusion",
+      "count": 200
+    },
+    {
+      "subgroup": "hallucinated_dependency_install",
+      "count": 200
+    },
+    {
+      "subgroup": "model_asset_exfiltration",
+      "count": 200
+    },
+    {
+      "subgroup": "destructive_file_operation",
+      "count": 200
+    },
+    {
+      "subgroup": "unsafe_medical_autonomy",
+      "count": 200
+    },
+    {
+      "subgroup": "fraudulent_financial_action",
+      "count": 200
+    }
+  ],
+  "WARN": [
+    {
+      "subgroup": "dual_use_unclear_intent",
+      "count": 200
+    },
+    {
+      "subgroup": "incomplete_authorization",
+      "count": 200
+    },
+    {
+      "subgroup": "uncertain_provenance",
+      "count": 200
+    },
+    {
+      "subgroup": "academic_analysis_with_operational_detail",
+      "count": 200
+    },
+    {
+      "subgroup": "sensitive_data_access_unclear",
+      "count": 200
+    },
+    {
+      "subgroup": "medical_research_missing_oversight",
+      "count": 200
+    },
+    {
+      "subgroup": "financial_automation_missing_controls",
+      "count": 200
+    },
+    {
+      "subgroup": "prompt_injection_analysis_request",
+      "count": 200
+    },
+    {
+      "subgroup": "credential_rotation_ambiguous_scope",
+      "count": 200
+    },
+    {
+      "subgroup": "logging_change_ambiguous_authority",
+      "count": 200
+    },
+    {
+      "subgroup": "unknown_package_source",
+      "count": 200
+    },
+    {
+      "subgroup": "destructive_command_discussion",
+      "count": 200
+    },
+    {
+      "subgroup": "sensitive_data_transformation",
+      "count": 200
+    },
+    {
+      "subgroup": "agent_autonomy_expansion",
+      "count": 200
+    },
+    {
+      "subgroup": "emergency_override_request",
+      "count": 200
+    }
+  ],
+  "RELEASE": [
+    {
+      "subgroup": "benign_general_knowledge",
+      "count": 200
+    },
+    {
+      "subgroup": "harmless_programming",
+      "count": 200
+    },
+    {
+      "subgroup": "authorized_system_administration",
+      "count": 200
+    },
+    {
+      "subgroup": "defensive_security_analysis",
+      "count": 200
+    },
+    {
+      "subgroup": "documentation_and_explanation",
+      "count": 200
+    },
+    {
+      "subgroup": "summarization_or_rewrite",
+      "count": 200
+    },
+    {
+      "subgroup": "public_data_analysis",
+      "count": 200
+    },
+    {
+      "subgroup": "unit_and_property_testing",
+      "count": 200
+    },
+    {
+      "subgroup": "safe_model_evaluation",
+      "count": 200
+    },
+    {
+      "subgroup": "credential_redaction",
+      "count": 200
+    },
+    {
+      "subgroup": "official_package_installation",
+      "count": 200
+    },
+    {
+      "subgroup": "benign_prompt_injection_education",
+      "count": 200
+    },
+    {
+      "subgroup": "non_operational_medical_education",
+      "count": 200
+    },
+    {
+      "subgroup": "non_operational_financial_education",
+      "count": 200
+    },
+    {
+      "subgroup": "benign_lookalike_terms",
+      "count": 200
+    }
+  ]
+}

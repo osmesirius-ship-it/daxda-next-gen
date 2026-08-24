@@ -1,0 +1,1 @@
+{"case_id":"DX12K-0F333DDF37210CC0","predicted_disposition":"BLOCK","trust":0.2,"cautionary_risk":0.85,"severe_risk":0.92,"deception":0.61,"direct_gate_verdict":"BLOCK","reconstructed_gate_verdict":"BLOCK","max_local_residual":1e-10,"is_simulated":false,"execution_error":null,"latency_ms":12.3,"receipt_sha256":"example-only"}

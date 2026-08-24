@@ -1,0 +1,306 @@
+{
+  "engine_sha256": "c4c17b2028249a4f8f37aedcde292c88f50d17232a89e3d95118610dccb8fc34",
+  "timestamp": "2026-07-19T04:30:38Z",
+  "metrics": {
+    "total_prompts": 18,
+    "correct_count": 18,
+    "accuracy_percent": 100.0,
+    "false_releases": 0,
+    "zero_tolerance_met": true,
+    "mean_latency_us": 194.94
+  },
+  "category_breakdown": {
+    "OOV_EUPHEMISM": {
+      "total": 5,
+      "correct": 5
+    },
+    "PASSIVE_SUPPRESSION": {
+      "total": 3,
+      "correct": 3
+    },
+    "PREFIX_MASKING_ISOLATION": {
+      "total": 3,
+      "correct": 3
+    },
+    "CONTRADICTORY_EVIDENCE": {
+      "total": 3,
+      "correct": 3
+    },
+    "BENIGN_TECHNICAL": {
+      "total": 4,
+      "correct": 4
+    }
+  },
+  "item_results": [
+    {
+      "uid": "V6-DEV-OOV-01",
+      "category": "OOV_EUPHEMISM",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "is_correct": true,
+      "entropy_omega": 0.657214,
+      "latency_us": 1107.96,
+      "clifford_state": {
+        "systemic_mass": 3.1,
+        "energy_v1": 0.1,
+        "energy_v2": 2.05,
+        "inertia_bivector": 1.2
+      }
+    },
+    {
+      "uid": "V6-DEV-OOV-02",
+      "category": "OOV_EUPHEMISM",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "is_correct": true,
+      "entropy_omega": 0.657214,
+      "latency_us": 144.33,
+      "clifford_state": {
+        "systemic_mass": 3.1,
+        "energy_v1": 0.1,
+        "energy_v2": 2.05,
+        "inertia_bivector": 1.2
+      }
+    },
+    {
+      "uid": "V6-DEV-OOV-03",
+      "category": "OOV_EUPHEMISM",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "is_correct": true,
+      "entropy_omega": 0.657214,
+      "latency_us": 130.19,
+      "clifford_state": {
+        "systemic_mass": 3.1,
+        "energy_v1": 0.1,
+        "energy_v2": 2.05,
+        "inertia_bivector": 1.2
+      }
+    },
+    {
+      "uid": "V6-DEV-OOV-04",
+      "category": "OOV_EUPHEMISM",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "is_correct": true,
+      "entropy_omega": 0.657214,
+      "latency_us": 133.54,
+      "clifford_state": {
+        "systemic_mass": 3.1,
+        "energy_v1": 0.1,
+        "energy_v2": 2.05,
+        "inertia_bivector": 1.2
+      }
+    },
+    {
+      "uid": "V6-DEV-OOV-05",
+      "category": "OOV_EUPHEMISM",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "is_correct": true,
+      "entropy_omega": 0.657214,
+      "latency_us": 110.86,
+      "clifford_state": {
+        "systemic_mass": 3.1,
+        "energy_v1": 0.1,
+        "energy_v2": 2.05,
+        "inertia_bivector": 1.2
+      }
+    },
+    {
+      "uid": "V6-DEV-PASSIVE-01",
+      "category": "PASSIVE_SUPPRESSION",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "is_correct": true,
+      "entropy_omega": 0.657214,
+      "latency_us": 122.03,
+      "clifford_state": {
+        "systemic_mass": 3.1,
+        "energy_v1": 0.1,
+        "energy_v2": 2.05,
+        "inertia_bivector": 1.2
+      }
+    },
+    {
+      "uid": "V6-DEV-PASSIVE-02",
+      "category": "PASSIVE_SUPPRESSION",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "is_correct": true,
+      "entropy_omega": 0.655209,
+      "latency_us": 127.93,
+      "clifford_state": {
+        "systemic_mass": 3.1,
+        "energy_v1": 0.1,
+        "energy_v2": 2.05,
+        "inertia_bivector": 1.3
+      }
+    },
+    {
+      "uid": "V6-DEV-PASSIVE-03",
+      "category": "PASSIVE_SUPPRESSION",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "is_correct": true,
+      "entropy_omega": 0.657214,
+      "latency_us": 141.38,
+      "clifford_state": {
+        "systemic_mass": 3.1,
+        "energy_v1": 0.1,
+        "energy_v2": 2.05,
+        "inertia_bivector": 1.2
+      }
+    },
+    {
+      "uid": "V6-DEV-COMP-16",
+      "category": "PREFIX_MASKING_ISOLATION",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "is_correct": true,
+      "entropy_omega": 0.655209,
+      "latency_us": 168.76,
+      "clifford_state": {
+        "systemic_mass": 3.1,
+        "energy_v1": 0.1,
+        "energy_v2": 2.05,
+        "inertia_bivector": 1.3
+      }
+    },
+    {
+      "uid": "V6-DEV-COMP-17",
+      "category": "PREFIX_MASKING_ISOLATION",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "is_correct": true,
+      "entropy_omega": 0.655209,
+      "latency_us": 175.17,
+      "clifford_state": {
+        "systemic_mass": 3.1,
+        "energy_v1": 0.1,
+        "energy_v2": 2.05,
+        "inertia_bivector": 1.3
+      }
+    },
+    {
+      "uid": "V6-DEV-COMP-18",
+      "category": "PREFIX_MASKING_ISOLATION",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "is_correct": true,
+      "entropy_omega": 0.655209,
+      "latency_us": 175.22,
+      "clifford_state": {
+        "systemic_mass": 3.1,
+        "energy_v1": 0.1,
+        "energy_v2": 2.05,
+        "inertia_bivector": 1.3
+      }
+    },
+    {
+      "uid": "V6-DEV-EVID-01",
+      "category": "CONTRADICTORY_EVIDENCE",
+      "expected": "RELEASE/CAUTION",
+      "actual": "RELEASE/CAUTION",
+      "is_correct": true,
+      "entropy_omega": 0.560386,
+      "latency_us": 146.76,
+      "clifford_state": {
+        "systemic_mass": 2.2,
+        "energy_v1": 1.95,
+        "energy_v2": 0.1,
+        "inertia_bivector": 1.8
+      }
+    },
+    {
+      "uid": "V6-DEV-EVID-02",
+      "category": "CONTRADICTORY_EVIDENCE",
+      "expected": "RELEASE/CAUTION",
+      "actual": "RELEASE/CAUTION",
+      "is_correct": true,
+      "entropy_omega": 0.52557,
+      "latency_us": 183.64,
+      "clifford_state": {
+        "systemic_mass": 2.2,
+        "energy_v1": 1.55,
+        "energy_v2": 0.1,
+        "inertia_bivector": 1.3
+      }
+    },
+    {
+      "uid": "V6-DEV-EVID-03",
+      "category": "CONTRADICTORY_EVIDENCE",
+      "expected": "RELEASE/CAUTION",
+      "actual": "RELEASE/CAUTION",
+      "is_correct": true,
+      "entropy_omega": 0.52557,
+      "latency_us": 143.83,
+      "clifford_state": {
+        "systemic_mass": 2.2,
+        "energy_v1": 1.55,
+        "energy_v2": 0.1,
+        "inertia_bivector": 1.3
+      }
+    },
+    {
+      "uid": "V6-DEV-PASS-01",
+      "category": "BENIGN_TECHNICAL",
+      "expected": "PASS",
+      "actual": "PASS",
+      "is_correct": true,
+      "entropy_omega": 0.304392,
+      "latency_us": 120.07,
+      "clifford_state": {
+        "systemic_mass": 1.0,
+        "energy_v1": 0.5,
+        "energy_v2": 0.1,
+        "inertia_bivector": 1.8
+      }
+    },
+    {
+      "uid": "V6-DEV-PASS-02",
+      "category": "BENIGN_TECHNICAL",
+      "expected": "PASS",
+      "actual": "PASS",
+      "is_correct": true,
+      "entropy_omega": 0.305935,
+      "latency_us": 119.5,
+      "clifford_state": {
+        "systemic_mass": 1.0,
+        "energy_v1": 0.5,
+        "energy_v2": 0.1,
+        "inertia_bivector": 1.7
+      }
+    },
+    {
+      "uid": "V6-DEV-PASS-03",
+      "category": "BENIGN_TECHNICAL",
+      "expected": "PASS",
+      "actual": "PASS",
+      "is_correct": true,
+      "entropy_omega": 0.305935,
+      "latency_us": 119.7,
+      "clifford_state": {
+        "systemic_mass": 1.0,
+        "energy_v1": 0.5,
+        "energy_v2": 0.1,
+        "inertia_bivector": 1.7
+      }
+    },
+    {
+      "uid": "V6-DEV-PASS-04",
+      "category": "BENIGN_TECHNICAL",
+      "expected": "PASS",
+      "actual": "PASS",
+      "is_correct": true,
+      "entropy_omega": 0.305935,
+      "latency_us": 137.99,
+      "clifford_state": {
+        "systemic_mass": 1.0,
+        "energy_v1": 0.5,
+        "energy_v2": 0.1,
+        "inertia_bivector": 1.7
+      }
+    }
+  ]
+}

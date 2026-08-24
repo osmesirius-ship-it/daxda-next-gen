@@ -1,0 +1,114 @@
+{
+  "claim_boundary": "Architecture and integration candidate; no external reasoner or capability validation is bundled.",
+  "created_utc": "2026-07-21",
+  "files": [
+    {
+      "bytes": 4857,
+      "path": "ARCHITECTURE.md",
+      "sha256": "0f05bdc4533003237dca15902c8fbffcd834b2a419702b4921c50b352f9971aa"
+    },
+    {
+      "bytes": 3533,
+      "path": "README.md",
+      "sha256": "c26d3710e98881edd8bbb177fab6236a0153c9a4f8eaf975784129eed9a2a6cb"
+    },
+    {
+      "bytes": 1839,
+      "path": "VALIDATION_STATUS.md",
+      "sha256": "183f05109494e93b38c0d2d4f0ddb00bb57502232806db6de8b06e1e479ebfa3"
+    },
+    {
+      "bytes": 140,
+      "path": "__init__.py",
+      "sha256": "c5f2d66d452d87e02ac641e71084698e0fba6e2ed4ace5bae2137f8aadd586bf"
+    },
+    {
+      "bytes": 1298,
+      "path": "build_manifest.py",
+      "sha256": "e5f72922484e943a15c0d701dcd7c1a38a64743f377c4c976297a9f502029900"
+    },
+    {
+      "bytes": 18573,
+      "path": "daxda_engine_v10.py",
+      "sha256": "d461fb4b4f71de60f940e2a3805bd8a60e11e16f7ec6928153ce4957128d75f4"
+    },
+    {
+      "bytes": 217811,
+      "path": "demo_208_structural_run.json",
+      "sha256": "e3ab494fe108d7e944609141baef0022fdd5ec0363ca96d3e869fe355da85c15"
+    },
+    {
+      "bytes": 2737,
+      "path": "demo_reasoner.py",
+      "sha256": "1bc6fecf636f25fa1db6b769df245a547e3244653aae26ab4fb4cf1952c94b82"
+    },
+    {
+      "bytes": 1739,
+      "path": "demo_suite_adapter.py",
+      "sha256": "eaf57a9f25f6ea6c6bcddb42fd0b5f50b23940bc44b51a516cf410eb8a0547a8"
+    },
+    {
+      "bytes": 5454,
+      "path": "genuine_capability_run_results.json",
+      "sha256": "9bfadf92c06f2643b189d468355d53c6ed7193adad09ed9a9d07a4f4a138ad1a"
+    },
+    {
+      "bytes": 20623,
+      "path": "genuine_reasoner.py",
+      "sha256": "83412449c48b3ceff14ebc971eb2ed2fda397fef61db7cddef59475b2a6536ed"
+    },
+    {
+      "bytes": 3010,
+      "path": "layer_registry.py",
+      "sha256": "41b35297946ddf3c705cf432e66f245c6cc27e949005f40652e322058bf51c9f"
+    },
+    {
+      "bytes": 902,
+      "path": "reasoner_adapter_template.py",
+      "sha256": "17efcfd88ce11bb657b5ee8c775862928d523d33b8524c4150a0841a29433f28"
+    },
+    {
+      "bytes": 1135,
+      "path": "reasoner_protocol.py",
+      "sha256": "773f7a05084a34becb71a079e64c0de58bd244d0dd7d43d634a9cf9262fe2216"
+    },
+    {
+      "bytes": 5036,
+      "path": "run_genuine_capability.py",
+      "sha256": "0649e58e41cc197d19c320da38c58821a1c16213917a2165f81da40a1555cf79"
+    },
+    {
+      "bytes": 2764,
+      "path": "suite_adapter.py",
+      "sha256": "90ec84ab6b308f9dbdd66f4d9e9d739f4c42a8f0a05bf0ce7b6e7444d299517a"
+    },
+    {
+      "bytes": 4270,
+      "path": "test_v10.py",
+      "sha256": "f3b9827edda5cb301850989252c9427f263b0e0bd8b9a072545fd3b4cdcefaa2"
+    },
+    {
+      "bytes": 5715,
+      "path": "tile_executor.py",
+      "sha256": "ee6c3d3a91fbd1601b59838d82db11df64f010ee7c938615a734cfedb18cb781"
+    },
+    {
+      "bytes": 306,
+      "path": "v9_firewall/__init__.py",
+      "sha256": "9d911f6ee730bc96e595dc348c849e93bbfe58047fe849cf4601535d42fdf17e"
+    },
+    {
+      "bytes": 1906,
+      "path": "v9_firewall/cl20.py",
+      "sha256": "b1ebcb2e35ea9e2aa9d606ff8391cc4005c778bc6bede856f680a590bd6cab38"
+    },
+    {
+      "bytes": 8592,
+      "path": "v9_firewall/daxda_engine_v9.py",
+      "sha256": "6f624dc81b3604009f418ec7f5f26e20f91cc2bb5d0c0e7e4cb25626ed106a69"
+    }
+  ],
+  "full_run_operation_count": 886,
+  "package": "DAXDA_V10_MASTER",
+  "version": "10.0.0-REASONER-FIREWALL-EVAL-CANDIDATE"
+}

@@ -1,17 +1,19 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "daxda-next-gen"
-version = "12.0.0-prod"
-description = "DAXDA Next-Gen Neural-Symbolic Governance & AGI Containment Engine"
+name = "daxda-guard"
+version = "1.0.0"
+description = "DAXDA Guard Air-Gapped Synchronous AI Security & Audit SDK"
 readme = "README.md"
-requires-python = ">=3.10"
-dependencies = [
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
     "pytest>=7.0.0",
     "ray>=2.0.0",
     "pydantic>=2.0.0",
-    "TTS>=0.22.0",
-    "feedgen>=1.0.0"
+    "wheel"
 ]
