@@ -16,7 +16,7 @@ The DAXDA engine proposes a fundamental geometric shift. Rather than treating sp
 ## 2. DAXDA First-Principles Geometry
 
 ### 2.1 The DAXDA Manifold
-In DAXDA geometry, the universe is modeled as a discrete, scale-free network $ \mathcal{N}(V, E) $, where vertices $V$ represent quanta of spacetime (Planckian volumes) and edges $E$ represent entanglement links. The macroscopic limit of this network yields a continuous manifold $ \mathcal{M} $ equipped with a dynamic metric tensor $ g_{\mu\nu} $. 
+In DAXDA geometry, the universe is modeled as a discrete, scale-free network $ \maåthcal{N}(V, E) $, where vertices $V$ represent quanta of spacetime (Planckian volumes) and edges $E$ represent entanglement links. The macroscopic limit of this network yields a continuous manifold $ \mathcal{M} $ equipped with a dynamic metric tensor $ g_{\mu\nu} $. 
 
 The DAXDA action $ \mathcal{S}_{DAXDA} $ modifies the standard Einstein-Hilbert action by introducing a topological recycling term $ \mathcal{R}_{recyc} $:
 $$ \mathcal{S}_{DAXDA} = \frac{1}{16\pi G} \int d^4x \sqrt{-g} \left( R - 2\Lambda + \alpha \mathcal{R}_{recyc} \right) + \mathcal{S}_{matter} $$
