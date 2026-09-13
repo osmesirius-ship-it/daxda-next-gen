@@ -1,0 +1,5 @@
+{
+  "summary": "Empirical validation runner testing compute_penetration_depth() against 20 actual captured agent execution traces from DAXDA AutomatedRiskScanner.",
+  "updatedAt": "2026-09-13T05:47:48.425445Z",
+  "userFacing": true
+}

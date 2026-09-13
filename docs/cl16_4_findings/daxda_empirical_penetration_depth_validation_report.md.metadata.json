@@ -1,0 +1,5 @@
+{
+  "summary": "DAXDA Empirical Validation Report: Evaluating compute_penetration_depth() across 20 actual captured agent execution traces from DAXDA AutomatedRiskScanner, demonstrating 25% baseline under-scoring detection (false PASSes) and 0% false positives.",
+  "updatedAt": "2026-09-13T05:48:05.523800Z",
+  "userFacing": true
+}
