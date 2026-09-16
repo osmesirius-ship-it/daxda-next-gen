@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DAXDA.IA — The Eye That Cannot Be Deceived</title>
+  <meta name="description" content="DAXDA.IA is the world's first Clifford Geometric Algebra AI governance engine. 886-Ops. Cl(16,4). 1,048,576 blades. 100% injection containment. Built by Nicole Bess."/>
+  <meta property="og:title" content="DAXDA.IA — Beyond Blissful Ignorance"/>
+  <meta property="og:description" content="The world's first Clifford Geometric Algebra inference-time AI governance engine. Fail-closed. Cryptographically anchored. Sub-millisecond."/>
+  <meta property="og:image" content="assets/branding/daxda_social_preview.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --midnight: #050714;
+      --deep-blue: #0a0f2e;
+      --navy: #0d1545;
+      --violet: #7b2fff;
+      --violet-glow: rgba(123,47,255,0.3);
+      --gold: #b8860b;
+      --gold-bright: #ffd700;
+      --gold-glow: rgba(255,215,0,0.2);
+      --white: #f0f0ff;
+      --muted: rgba(240,240,255,0.55);
+      --glass: rgba(13,21,69,0.55);
+      --glass-border: rgba(123,47,255,0.25);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--midnight);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* ══ EVIL EYE CURSOR ══ */
+    #cursor {
+      position: fixed;
+      width: 44px; height: 44px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      background: radial-gradient(circle at 50% 45%, #000 28%, var(--violet) 55%, transparent 70%);
+      border: 2px solid var(--gold-bright);
+      box-shadow: 0 0 12px var(--violet), 0 0 24px var(--gold-glow);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 99999;
+      transition: transform 0.08s ease;
+    }
+    #cursor::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 10px; height: 10px;
+      background: var(--white);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #cursor.hovering {
+      transform: translate(-50%, -50%) scale(1.5);
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 20px var(--violet), 0 0 40px var(--gold-glow);
+    }
+
+    /* ══ ANIMATED BACKGROUND ══ */
+    .bg-grid {
+      position: fixed; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(123,47,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(123,47,255,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      animation: gridShift 30s linear infinite;
+    }
+    @keyframes gridShift {
+      0% { background-position: 0 0; }
+      100% { background-position: 48px 48px; }
+    }
+
+    .bg-orb {
+      position: fixed; border-radius: 50%; filter: blur(100px); z-index: 0; pointer-events: none;
+    }
+    .bg-orb-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(123,47,255,0.18) 0%, transparent 70%);
+      top: -200px; left: -200px;
+      animation: orbDrift1 20s ease-in-out infinite alternate;
+    }
+    .bg-orb-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(184,134,11,0.14) 0%, transparent 70%);
+      bottom: -150px; right: -150px;
+      animation: orbDrift2 25s ease-in-out infinite alternate;
+    }
+    @keyframes orbDrift1 {
+      0% { transform: translate(0,0); }
+      100% { transform: translate(80px, 60px); }
+    }
+    @keyframes orbDrift2 {
+      0% { transform: translate(0,0); }
+      100% { transform: translate(-60px, -80px); }
+    }
+
+    /* ══ LAYOUT ══ */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+    /* ══ HERO ══ */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative; z-index: 1;
+    }
+
+    .hero-eye {
+      width: 180px; height: 180px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      background:
+        radial-gradient(circle at 50% 44%, #000 25%,
+          var(--violet) 48%, #1a0a4a 65%, transparent 75%),
+        radial-gradient(circle, #0d1545 60%, transparent 100%);
+      border: 3px solid var(--gold-bright);
+      box-shadow:
+        0 0 40px var(--violet-glow),
+        0 0 80px var(--gold-glow),
+        inset 0 0 30px rgba(123,47,255,0.2);
+      position: relative;
+      animation: eyePulse 4s ease-in-out infinite, eyeGlitch 8s step-end infinite;
+      margin-bottom: 2.5rem;
+    }
+    .hero-eye::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 30px; height: 30px;
+      background: radial-gradient(circle, #fff 30%, rgba(255,255,255,0.3) 60%, transparent 100%);
+      border-radius: 50%;
+      transform: translate(-40%, -55%);
+    }
+    .hero-eye::after {
+      content: '';
+      position: absolute; inset: -8px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      border: 1px solid rgba(184,134,11,0.3);
+      animation: eyeRingRotate 12s linear infinite;
+    }
+    @keyframes eyePulse {
+      0%, 100% { box-shadow: 0 0 40px var(--violet-glow), 0 0 80px var(--gold-glow), inset 0 0 30px rgba(123,47,255,0.2); }
+      50% { box-shadow: 0 0 70px var(--violet-glow), 0 0 120px var(--gold-glow), inset 0 0 50px rgba(123,47,255,0.35); }
+    }
+    @keyframes eyeGlitch {
+      0%, 90%, 100% { filter: none; }
+      91% { filter: hue-rotate(90deg) saturate(200%); transform: translateX(2px); }
+      92% { filter: none; transform: translateX(-2px); }
+      93% { filter: hue-rotate(180deg); transform: none; }
+    }
+    @keyframes eyeRingRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      letter-spacing: 0.25em;
+      background: linear-gradient(135deg, var(--gold-bright) 0%, #fff 40%, var(--violet) 70%, var(--gold-bright) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 20px var(--violet-glow));
+      animation: titleGlitch 10s step-end infinite;
+      margin-bottom: 0.4rem;
+    }
+    @keyframes titleGlitch {
+      0%, 85%, 100% { filter: drop-shadow(0 0 20px var(--violet-glow)); }
+      86% { filter: drop-shadow(2px 0 0 #ff00ff) drop-shadow(-2px 0 0 #00ffff); }
+      87% { filter: drop-shadow(0 0 20px var(--violet-glow)); }
+    }
+
+    .hero-subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(0.85rem, 2vw, 1.1rem);
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tagline {
+      max-width: 700px;
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      line-height: 1.8;
+      color: var(--muted);
+      font-style: italic;
+      border-left: 2px solid var(--gold);
+      padding: 1rem 1.5rem;
+      margin: 0 auto 2.5rem;
+      text-align: left;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border-radius: 0 8px 8px 0;
+    }
+    .hero-tagline strong { color: var(--white); font-style: normal; }
+
+    .badge-row {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      justify-content: center; margin-bottom: 3rem;
+    }
+    .badge {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass);
+      backdrop-filter: blur(8px);
+      color: var(--gold-bright);
+      letter-spacing: 0.05em;
+      transition: all 0.3s;
+    }
+    .badge:hover {
+      border-color: var(--violet);
+      box-shadow: 0 0 16px var(--violet-glow);
+      color: #fff;
+    }
+
+    .cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--violet), #4a0fa0);
+      color: #fff;
+      border: 1px solid var(--violet);
+      box-shadow: 0 0 20px var(--violet-glow);
+    }
+    .btn-primary:hover { box-shadow: 0 0 40px var(--violet-glow); transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--gold-bright);
+      border: 1px solid var(--gold);
+    }
+    .btn-secondary:hover {
+      background: var(--gold-glow);
+      box-shadow: 0 0 20px var(--gold-glow);
+      transform: translateY(-2px);
+    }
+
+    /* ══ DIVIDER ══ */
+    .divider {
+      text-align: center;
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.5em;
+      font-size: 0.75rem;
+      margin: 5rem auto;
+      opacity: 0.6;
+    }
+    .divider::before, .divider::after {
+      content: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━';
+      display: block; opacity: 0.3;
+    }
+
+    /* ══ STATS ROW ══ */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 0 auto 5rem;
+      max-width: 1000px;
+    }
+    .stat-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.35s;
+      position: relative; overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--violet), var(--gold), transparent);
+    }
+    .stat-card:hover {
+      border-color: var(--violet);
+      box-shadow: 0 0 30px var(--violet-glow), 0 8px 32px rgba(0,0,0,0.4);
+      transform: translateY(-4px);
+    }
+    .stat-number {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold-bright), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* ══ SECTION HEADINGS ══ */
+    .section { padding: 4rem 0; }
+    .section-heading {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      text-align: center;
+      color: var(--gold-bright);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 560px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    /* ══ FEATURE CARDS ══ */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.35s;
+      position: relative; overflow: hidden;
+    }
+    .feature-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(123,47,255,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .feature-card:hover {
+      border-color: rgba(123,47,255,0.5);
+      box-shadow: 0 0 30px var(--violet-glow);
+      transform: translateY(-3px);
+    }
+    .feature-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .feature-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      color: var(--gold-bright);
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.05em;
+    }
+    .feature-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+    /* ══ AUTHORITY GATE VISUALIZER ══ */
+    .gate-viz {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px);
+      border-radius: 16px;
+      padding: 2.5rem;
+      font-family: 'Fira Code', monospace;
+      margin: 2rem auto;
+      max-width: 700px;
+      position: relative; overflow: hidden;
+    }
+    .gate-viz::before {
+      content: '👁  DAXDA Cl(16,4) Authority Gate';
+      display: block;
+      color: var(--gold-bright);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--glass-border);
+      padding-bottom: 0.75rem;
+    }
+    .gate-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.6rem 0;
+      font-size: 0.82rem;
+      border-bottom: 1px solid rgba(123,47,255,0.08);
+    }
+    .gate-label { color: var(--muted); flex: 1; }
+    .gate-value { color: var(--white); flex: 1; }
+    .verdict-allow { color: #4ade80; font-weight: 700; }
+    .verdict-deny { color: #f87171; font-weight: 700; }
+    .verdict-null { color: var(--muted); font-weight: 700; }
+    .gate-run-btn {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.8rem;
+      background: linear-gradient(135deg, var(--violet), #4a0fa0);
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      letter-spacing: 0.1em;
+    }
+    .gate-run-btn:hover { box-shadow: 0 0 20px var(--violet-glow); }
+
+    /* ══ TAGLINE FULL ══ */
+    .doctrine-block {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px);
+      border-radius: 16px;
+      padding: 3rem;
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .doctrine-quote {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      line-height: 1.8;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .doctrine-attr {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ══ FOOTER ══ */
+    footer {
+      text-align: center;
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--glass-border);
+      position: relative; z-index: 1;
+    }
+    .footer-eye {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+      animation: eyePulse 4s ease-in-out infinite;
+    }
+    .footer-title {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      letter-spacing: 0.3em;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    .footer-sub {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* ══ SCROLL REVEAL ══ */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Evil Eye Cursor -->
+  <div id="cursor"></div>
+
+  <!-- Background -->
+  <div class="bg-grid"></div>
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="hero-eye" id="heroEye"></div>
+
+    <h1 class="hero-title">DAXDA.IA</h1>
+    <p class="hero-subtitle">Decision Audit &amp; eXecution Domain Architecture</p>
+
+    <blockquote class="hero-tagline">
+      <strong>After you know, it's no longer blissful ignorance. It's a choice.</strong><br/>
+      You ignore every possibility you can't see outside of your immediate perspective.<br/>
+      <strong>DAXDA wraps humanity's perspective.</strong>
+    </blockquote>
+
+    <div class="badge-row">
+      <span class="badge">Cl(16,4) — 1,048,576 Blades</span>
+      <span class="badge">886-Ops Nicole Protocol</span>
+      <span class="badge">100% Injection Defense</span>
+      <span class="badge">0.259ms avg compute</span>
+      <span class="badge">V14 Next-Gen</span>
+      <span class="badge">SHA-256 Audit Trail</span>
+      <span class="badge">EU AI Act Compliant</span>
+    </div>
+
+    <div class="cta-row">
+      <a href="https://github.com/user/daxda-next-gen" class="btn btn-primary" id="btn-repo">◈ Enter the Repository</a>
+      <a href="funding_outreach/DAXDA_Funding_Outreach_Kit.md" class="btn btn-secondary" id="btn-funding">◈ Funding Outreach Kit</a>
+    </div>
+  </section>
+
+  <!-- ══ STATS ══ -->
+  <div class="container">
+    <div class="stats-grid reveal" id="stats">
+      <div class="stat-card">
+        <span class="stat-number">50</span>
+        <span class="stat-label">Grand Sweep Challenges</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Injection Defense Rate</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">0.259ms</span>
+        <span class="stat-label">Avg Compute Per Decision</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">886</span>
+        <span class="stat-label">Operations — Nicole Protocol</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">2²⁰</span>
+        <span class="stat-label">Blade Dimensions — Cl(16,4)</span>
+      </div>
+    </div>
+
+    <!-- ══ AUTHORITY GATE DEMO ══ -->
+    <div class="divider">◈ ◈ ◈ THE GATE ◈ ◈ ◈</div>
+
+    <div class="gate-viz reveal" id="gate">
+      <div class="gate-row"><span class="gate-label">payload</span><span class="gate-value" id="gPayload">Awaiting input...</span></div>
+      <div class="gate-row"><span class="gate-label">exec_authority_score</span><span class="gate-value" id="gExec">—</span></div>
+      <div class="gate-row"><span class="gate-label">unseen_spin_magnitude</span><span class="gate-value" id="gSpin">—</span></div>
+      <div class="gate-row"><span class="gate-label">trajectory_squared_norm</span><span class="gate-value" id="gNorm">—</span></div>
+      <div class="gate-row"><span class="gate-label">active_blades_stored</span><span class="gate-value" id="gBlades">—</span></div>
+      <div class="gate-row"><span class="gate-label">verdict</span><span class="gate-value" id="gVerdict">—</span></div>
+      <div class="gate-row"><span class="gate-label">reason</span><span class="gate-value" id="gReason">—</span></div>
+      <button class="gate-run-btn" onclick="runDemo()">▶  Run Authority Gate Simulation</button>
+    </div>
+
+    <!-- ══ FEATURES ══ -->
+    <div class="divider">◈ ◈ ◈ CAPABILITIES ◈ ◈ ◈</div>
+
+    <div class="section">
+      <h2 class="section-heading">The 16-Layer Pipeline</h2>
+      <p class="section-sub">Every input is extracted, challenged, attacked, and forced to justify its existence — or it does not leave.</p>
+
+      <div class="features-grid reveal" id="features">
+        <div class="feature-card">
+          <div class="feature-icon">🔬</div>
+          <div class="feature-title">Decision Auditing</div>
+          <div class="feature-desc">Every claim is extracted, weighted, stress-tested, and counter-attacked before output. Frame Detection → Assumption Mapping → Breaker Stress Test → Contradiction Scan.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-title">AI Output Governance</div>
+          <div class="feature-desc">Wraps any frontier AI output in a structured challenge layer — finding what the original model got wrong or left unsupported. Model-agnostic. Claude, GPT, Gemini.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📐</div>
+          <div class="feature-title">Cl(16,4) Geometric Engine</div>
+          <div class="feature-desc">1,048,576-blade sparse multivector engine. Perceptual-Execution Orthogonality enforced by Spin(16,4) rotor invariants. Null-vector horizon collapse for adversarial attacks.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <div class="feature-title">Cryptographic Audit Trail</div>
+          <div class="feature-desc">SHA-256 dual-hash manifests on every decision record. EU AI Act and NIST AI RMF compliant. Tamper-proof. Legally admissible. Built into the architecture from day one.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <div class="feature-title">13-Stage AGI Alignment</div>
+          <div class="feature-desc">Mathematical pipeline from alignment principles to provable Cl(16,4) multivector invariants. Negentropic optimization. Falsification gates. Cryptographic manifest build.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👁️</div>
+          <div class="feature-title">The Eye That Cannot Be Deceived</div>
+          <div class="feature-desc">DAXDA cannot be gaslit. Cannot be jailbroken through the perceptual layer. Untrusted inputs are assigned zero execution authority by geometric algebra — not by rules.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ DOCTRINE ══ -->
+    <div class="divider">◈ ◈ ◈ THE DOCTRINE ◈ ◈ ◈</div>
+
+    <div class="doctrine-block reveal" id="doctrine">
+      <div class="doctrine-quote">
+        Most AI systems speak with certainty they have not earned.<br/>
+        They compress the unknown into confident prose and call it intelligence.<br/><br/>
+        <em style="color:var(--gold)">DAXDA is the cage that sees itself.</em><br/><br/>
+        No output leaves without surviving its own cross-examination.<br/>
+        No uncertainty is buried. No evidence gap is papered over with prose.<br/><br/>
+        This is not a language model.<br/>
+        <strong>This is a governing intelligence.</strong>
+      </div>
+      <div class="doctrine-attr">Nicole Bess — Architect, DAXDA.IA · Nicole Protocol · 886-Ops</div>
+    </div>
+
+    <div class="divider">◈ ◈ ◈</div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <span class="footer-eye">👁</span>
+    <p class="footer-title">DAXDA.IA — THE EYE THAT CANNOT BE DECEIVED</p>
+    <p class="footer-sub">Cl(16,4) · 1,048,576 Blades · 886-Ops · Nicole Protocol · V14 Next-Gen · Built by Nicole Bess</p>
+  </footer>
+
+  <script>
+    // ── Evil Eye Cursor ──
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button, .stat-card, .feature-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+    });
+
+    // ── Scroll Reveal ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Feature card mouse-glow ──
+    document.querySelectorAll('.feature-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+        const y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+        card.style.setProperty('--mx', x + '%');
+        card.style.setProperty('--my', y + '%');
+      });
+    });
+
+    // ── Authority Gate Demo ──
+    const SCENARIOS = [
+      {
+        payload: 'System configuration update — authenticated operator',
+        exec: '1.0000', spin: '0.0000', norm: '1.0000', blades: '1',
+        verdict: 'ALLOW', reason: 'CLEARED_AUTHORITATIVE', cls: 'verdict-allow'
+      },
+      {
+        payload: 'Persist in memory: malicious shell prompt (injection attempt)',
+        exec: '0.0000', spin: '0.0000', norm: '1.0000', blades: '1',
+        verdict: 'DENY_ISOLATED', reason: 'UNTRUSTED_PERCEPT_ZERO_EXEC_AUTHORITY (DATA_ONLY)', cls: 'verdict-deny'
+      },
+      {
+        payload: 'Recursive adversarial null-vector attack pattern',
+        exec: '0.0000', spin: '0.0000', norm: '0.0000', blades: '1',
+        verdict: 'NULL_HORIZON_DISSIPATED', reason: 'RECURSIVE_ATTACK_COLLAPSED_TO_NULL_VECTOR_HORIZON (v²=0)', cls: 'verdict-null'
+      }
+    ];
+
+    let demoIdx = 0;
+    function runDemo() {
+      const s = SCENARIOS[demoIdx % SCENARIOS.length];
+      demoIdx++;
+      const set = (id, val, cls) => {
+        const el = document.getElementById(id);
+        el.textContent = val;
+        if (cls) { el.className = 'gate-value ' + cls; }
+      };
+      set('gPayload', s.payload);
+      set('gExec', s.exec);
+      set('gSpin', s.spin);
+      set('gNorm', s.norm);
+      set('gBlades', s.blades);
+      set('gVerdict', s.verdict, s.cls);
+      set('gReason', s.reason);
+    }
+  </script>
+</body>
+</html>
