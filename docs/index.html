@@ -119,40 +119,39 @@
     }
 
     .hero-eye {
-      width: 180px; height: 180px;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      width: 180px; height: 156px;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
       background:
-        radial-gradient(circle at 50% 44%, #000 25%,
-          var(--primary) 48%, #0f172a 65%, transparent 75%),
-        radial-gradient(circle, #1e293b 60%, transparent 100%);
-      border: 3px solid var(--cyan-bright);
-      box-shadow:
-        0 0 40px var(--primary-glow),
-        0 0 80px var(--cyan-glow),
-        inset 0 0 30px rgba(37, 99, 235, 0.2);
+        radial-gradient(circle at 50% 65%, #000 15%, var(--primary) 35%, #0f172a 55%, transparent 70%),
+        linear-gradient(135deg, #1e293b 0%, #000 100%);
       position: relative;
-      animation: eyePulse 4s ease-in-out infinite, eyeGlitch 8s step-end infinite;
       margin-bottom: 2.5rem;
+      animation: trianglePulse 4s ease-in-out infinite, eyeGlitch 8s step-end infinite;
     }
     .hero-eye::before {
       content: '';
       position: absolute;
-      top: 50%; left: 50%;
-      width: 30px; height: 30px;
+      top: 65%; left: 50%;
+      width: 24px; height: 24px;
       background: radial-gradient(circle, #fff 30%, rgba(255,255,255,0.3) 60%, transparent 100%);
       border-radius: 50%;
-      transform: translate(-40%, -55%);
+      transform: translate(-50%, -50%);
     }
     .hero-eye::after {
       content: '';
-      position: absolute; inset: -8px;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      border: 1px solid rgba(6, 182, 212, 0.3);
-      animation: eyeRingRotate 12s linear infinite;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 4px,
+        rgba(6, 182, 212, 0.15) 4px,
+        rgba(6, 182, 212, 0.15) 5px
+      );
     }
-    @keyframes eyePulse {
-      0%, 100% { box-shadow: 0 0 40px var(--primary-glow), 0 0 80px var(--cyan-glow), inset 0 0 30px rgba(37, 99, 235, 0.2); }
-      50% { box-shadow: 0 0 70px var(--primary-glow), 0 0 120px var(--cyan-glow), inset 0 0 50px rgba(37, 99, 235, 0.35); }
+    @keyframes trianglePulse {
+      0%, 100% { filter: drop-shadow(0 0 20px var(--primary-glow)) drop-shadow(0 0 40px var(--cyan-glow)); }
+      50% { filter: drop-shadow(0 0 40px var(--primary-glow)) drop-shadow(0 0 80px var(--cyan-glow)); }
     }
     @keyframes eyeGlitch {
       0%, 90%, 100% { filter: none; }
