@@ -2,7 +2,7 @@
 ## Built on the DAXDA ADL Machine (886-Ops / Nicole Protocol)
 
 > **What is Dexter?**
-> Dexter is a DAXDA.IA agent powered by the full 886-operation Nicole Protocol pipeline. Unlike raw language models, Dexter routes every input through 16 governed reasoning layers before producing a response — making every output traceable, stress-tested, and audit-ready.
+> Dexter is a DAXDA.IA agent powered by the 886-operation Nicole Protocol pipeline. It routes inputs through 16 governed reasoning layers before responding, with each result designed to be traceable, stress-tested, and audit-ready.
 
 ---
 
@@ -22,7 +22,7 @@
 ## 2. Capability Sectors
 
 ### 🔬 **A. Decision Auditing & Claim Verification**
-Dexter's native strength. Every claim processed is extracted, weighted, stress-tested, and counter-attacked before output.
+This is Dexter's core function: extracting claims, weighting them, testing them under counterexamples, and surfacing the limits of the resulting assessment.
 
 | Layer Used | What Dexter Does |
 |---|---|
@@ -42,7 +42,7 @@ Dexter's native strength. Every claim processed is extracted, weighted, stress-t
 ---
 
 ### 🛡️ **B. AI Output Governance & Safety Review**
-Dexter wraps other AI outputs in a structured challenge layer — finding what the original model got wrong or left unsupported.
+For third-party AI responses, Dexter adds a structured challenge layer that identifies errors, unsupported conclusions, and missing evidence.
 
 | Layer Used | What Dexter Does |
 |---|---|
@@ -61,7 +61,7 @@ Dexter wraps other AI outputs in a structured challenge layer — finding what t
 ---
 
 ### 📊 **C. Evidence Gap Analysis & Research Validation**
-Dexter maps what evidence exists, what is missing, and what is required before any recommendation is actionable.
+This review maps available evidence, gaps, and the requirements that must be met before a recommendation can support action.
 
 | Layer Used | What Dexter Does |
 |---|---|
@@ -79,7 +79,7 @@ Dexter maps what evidence exists, what is missing, and what is required before a
 ---
 
 ### 🏗️ **D. Operational Risk & Feasibility Assessment**
-Before any plan is executed, Dexter stress-tests feasibility, resource cost, volatility, and second-order effects.
+Before a plan is executed, the assessment tests feasibility, resource cost, volatility, and second-order effects.
 
 | Layer Used | What Dexter Does |
 |---|---|
@@ -97,7 +97,7 @@ Before any plan is executed, Dexter stress-tests feasibility, resource cost, vol
 ---
 
 ### 📋 **E. Audit Trail Generation & Documentation**
-Every Dexter session produces a fully traceable, hash-anchored record that can be reviewed by human experts or external auditors.
+Each session can produce a hash-anchored record for review by human experts or external auditors.
 
 | Layer Used | What Dexter Does |
 |---|---|
@@ -115,7 +115,7 @@ Every Dexter session produces a fully traceable, hash-anchored record that can b
 
 ## 3. Preferred Methods of Communication
 
-Dexter is designed to communicate with precision, transparency, and explainability at the forefront.
+Its communication design emphasizes precision, transparency, and explainability.
 
 | Communication Mode | Description | Best For |
 |---|---|---|
@@ -134,49 +134,49 @@ Dexter is designed to communicate with precision, transparency, and explainabili
 > These are frontier capabilities in active development by Nicole Bess and the DAXDA.IA team. They are not yet deployed but are architecturally planned within the DAXDA Next-Gen roadmap.
 
 ### 🚀 **U1. Real-Time Autonomous Agent Monitoring (Agent Watchdog)**
-Dexter watches other autonomous AI agents as they operate — intercepting outputs at each step, applying DAXDA governance gates in real time, and halting agent execution if a BLOCK gate triggers. This makes multi-agent AI pipelines safe enough for high-stakes deployment.
+This planned watchdog observes autonomous AI agents as they operate, evaluates each stage against DAXDA governance gates, and can halt execution when a BLOCK gate triggers. The goal is to make multi-agent pipelines more suitable for high-stakes deployment.
 
 **Target sectors:** Healthcare robotics, financial trading agents, legal automation, industrial AI control
 
 ---
 
 ### 🧠 **U2. Cognitive Loop Recursion Memory (CL-N Integration)**
-Using DAXDA's existing `cognitive_loop.py` and `cl_n.py` Clifford algebra engine, Dexter will maintain a persistent 7-dimensional reasoning memory across multi-session conversations — meaning every new task is aware of every prior audit trace, assumption, and decision.
+Using DAXDA's existing `cognitive_loop.py` and `cl_n.py` Clifford algebra engine, this roadmap item would maintain a persistent 7-dimensional reasoning memory across sessions. New tasks could then take prior audit traces, assumptions, and decisions into account.
 
 **Target sectors:** Long-horizon research projects, enterprise knowledge management, clinical longitudinal tracking
 
 ---
 
 ### 🌐 **U3. Cross-System Evidence Ingestion (DAXDA Web Bridge)**
-Via `daxda_web_bridge.py` (already scaffolded), Dexter will autonomously retrieve live web content, documents, APIs, and databases to fill evidence gaps it identifies — then re-run the DAX pipeline with the newly gathered evidence rather than flagging "evidence missing" as a terminal state.
+Via `daxda_web_bridge.py` (already scaffolded), the agent would retrieve live web content, documents, APIs, and databases to address identified evidence gaps. It could then rerun the DAX pipeline with the additional material instead of treating an evidence gap as a terminal state.
 
 **Target sectors:** Investigative journalism, financial intelligence, regulatory monitoring
 
 ---
 
 ### 🔐 **U4. Cryptographic Decision Receipts (SHA-256 Governance Stamps)**
-Every Dexter output will carry a dual-hash audit receipt — combining the V7.4 linguistic trace hash with the Next-Gen Clifford engine state hash — producing a tamper-proof, verifiable record of exactly how a decision was reached. Designed for legal admissibility and regulatory submission.
+Planned responses would carry a dual-hash audit receipt that combines the V7.4 linguistic trace hash with the Next-Gen Clifford engine state hash. The resulting record is intended to make decision provenance verifiable for legal and regulatory review.
 
 **Target sectors:** Legal proceedings, financial audits, pharmaceutical trial documentation
 
 ---
 
 ### 🏥 **U5. Domain-Specialized Governance Packs**
-Pre-loaded rule packs (healthcare, legal, financial, engineering safety) that configure DAXDA's 16 governance layers with domain-appropriate thresholds — so Dexter applies FDA-grade scrutiny to clinical claims, SEC-grade scrutiny to financial claims, and OSHA-grade scrutiny to safety claims.
+Pre-loaded rule packs for healthcare, legal, financial, and engineering-safety work would configure DAXDA's 16 governance layers with domain-appropriate thresholds. The intended standards include FDA-grade scrutiny for clinical claims, SEC-grade scrutiny for financial claims, and OSHA-grade scrutiny for safety claims.
 
 **Target sectors:** All regulated industries — healthcare, finance, law, energy, aerospace
 
 ---
 
 ### 👥 **U6. Multi-Stakeholder Perspective Engine**
-Dexter runs the same input through multiple "persona lenses" simultaneously — analyst, skeptic, regulator, end-user, subject-matter expert — producing a multi-view audit report that shows how different stakeholders would challenge the same claim. Based on the `stakeholder_impact_scan` tile already in the architecture.
+The perspective engine would process one input through multiple lenses—analyst, skeptic, regulator, end-user, and subject-matter expert—and assemble a multi-view audit report. It is based on the `stakeholder_impact_scan` tile already in the architecture.
 
 **Target sectors:** Public policy, product strategy, enterprise risk, investor relations
 
 ---
 
 ### 🔁 **U7. Automated Recursion Loop Execution**
-Currently Dexter flags when recursion is needed and builds recursion payloads. Next-Gen Dexter will execute those recursion loops autonomously — re-entering the relevant layer, resolving the weak point, and repeating until the gate clears or a human-escalation threshold is triggered.
+Current behavior flags the need for recursion and builds a recursion payload. The planned next-generation behavior would execute the loop autonomously, re-enter the relevant layer, resolve the weak point, and continue until the gate clears or a human-escalation threshold is reached.
 
 **Target sectors:** Complex research synthesis, contract review automation, multi-step reasoning tasks
 
@@ -184,7 +184,7 @@ Currently Dexter flags when recursion is needed and builds recursion payloads. N
 
 ## 5. DAXDA.IA Governance Guarantee
 
-> Every Dexter output is produced under DAXDA's fail-closed governance standard:
+> Dexter operates under DAXDA's fail-closed governance standard:
 >
 > - **No output is released that does not pass the `AOG_1` Authority Output Gate**
 > - **All uncertainty is disclosed, not buried**
