@@ -664,5 +664,5 @@
       "validation_note": "These 9 cases are preregistered holdout cases not used in encoder design. Scope encoder performance here is the first honest generalization signal. V11.4 frozen baseline failures are expected and document known limitations."
     }
   },
-  "elapsed_sec": 0.0106
+  "elapsed_sec": 0.012
 }

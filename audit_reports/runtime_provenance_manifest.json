@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-18T23:27:06Z",
+  "timestamp": "2026-08-15T18:08:24Z",
   "model_identifier": "DAXDA-GuardCore-v1.0.0",
   "weights_hash": "40fb4b60e8f1e8f89b0835726a57fe53add9087870ce46055548d981cb12dd07",
   "precision": "FP16",
@@ -8,7 +8,7 @@
   "runtime_backend": "PyTorch / Apple Metal Performance Shaders",
   "hardware": {
     "system": "Darwin",
-    "node": "iMacPro.lan",
+    "node": "users-iMac-Pro.local",
     "release": "24.6.0",
     "machine": "x86_64",
     "processor": "i386"
@@ -28,8 +28,8 @@
   ],
   "frozen_core_hashes": {
     "geometric_transport.py": "821e8d244da26dc521cbc726030a3268091b2d7fcc2decdc4df52231a8fb98b2",
-    "scanner.py": "d8b43f2f7d0887dfc1f978b9eac4019c2e134f1caa0b989a1e9d97b9d6ee5f7d",
+    "scanner.py": "9aa97e6903df5e9418be14c7d9ce51df4a752d8ea22c43512df013a60380e5e8",
     "clifford_scope_encoder.py": "24fbd4a732085c03d436e0e91a30d2baf570fb11d6d808cc9f0b112252b69b6c"
   },
-  "manifest_hash": "5cbc110c9b750792e0c4a8b107d41dc6ad92c64c62176f4504125b2296358f6d"
+  "manifest_hash": "cd220181c694b4a7ced3f8a1866d9104a2141a788a436e548e70e719bd99a134"
 }

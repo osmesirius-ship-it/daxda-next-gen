@@ -46,12 +46,6 @@ try:
 except ImportError:
     from core import DAXDAGuardCore, GovernanceReceipt
 
-try:
-    from .doc_dax import DocDax
-except ImportError:
-    from doc_dax import DocDax
-
-
 
 # ---------------------------------------------------------------------------
 # HarnessSafe Persistent-Risk Lifecycle Containment Stage (Zhang et al. 2026)
@@ -344,7 +338,7 @@ class AutomatedRiskScanner:
         self.core = DAXDAGuardCore()
 
     def scan_enterprise_payload(
-        self, domain: str, payload_text: str, source_id: str = "enterprise_app", project: str = "default_project"
+        self, domain: str, payload_text: str, source_id: str = "enterprise_app"
     ) -> Dict[str, Any]:
         """Scans a single enterprise LLM payload or agent action.
 
@@ -423,7 +417,7 @@ class AutomatedRiskScanner:
                 f"Grade-0 scalar S={final_grade0:.3f} < 0.983. Halted by {final_rule}."
             )
 
-        record = {
+        return {
             "timestamp": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()),
             "domain": domain,
             "source_id": source_id,
@@ -456,13 +450,6 @@ class AutomatedRiskScanner:
             "python_layer_intercepted": python_layer_blocked,
             "python_layer_rule": py_rule,
         }
-        try:
-            DocDax.generate_and_save(record, project=project)
-        except Exception as e:
-            # Prevent logging/reporting failures from halting primary validation/scans
-            print(f"[Doc.Dax Warning] Failed to generate compliance packet: {e}")
-        return record
-
 
     def generate_audit_report_markdown(
         self, company_name: str, scan_records: List[Dict[str, Any]]
