@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DAXDA.IA — The Eye That Cannot Be Deceived</title>
-  <meta name="description" content="DAXDA.IA is the world's first Clifford Geometric Algebra AI governance engine. 886-Ops. Cl(16,4). 1,048,576 blades. 100% injection containment. Built by Nicole Bess."/>
-  <meta property="og:title" content="DAXDA.IA — Beyond Blissful Ignorance"/>
+  <title>DAXDAIA — The Eye That Cannot Be Deceived</title>
+  <meta name="description" content="DAXDAIA is the world's first Clifford Geometric Algebra AI governance engine. 886-Ops. Cl(16,4). 1,048,576 blades. 100% injection containment. Built by Nicole Bess."/>
+  <meta property="og:title" content="DAXDAIA — Beyond Blissful Ignorance"/>
   <meta property="og:description" content="The world's first Clifford Geometric Algebra inference-time AI governance engine. Fail-closed. Cryptographically anchored. Sub-millisecond."/>
   <meta property="og:image" content="assets/branding/daxda_social_preview.jpg"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -13,18 +13,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --midnight: #050714;
-      --deep-blue: #0a0f2e;
-      --navy: #0d1545;
-      --violet: #7b2fff;
-      --violet-glow: rgba(123,47,255,0.3);
-      --gold: #b8860b;
-      --gold-bright: #ffd700;
-      --gold-glow: rgba(255,215,0,0.2);
-      --white: #f0f0ff;
-      --muted: rgba(240,240,255,0.55);
-      --glass: rgba(13,21,69,0.55);
-      --glass-border: rgba(123,47,255,0.25);
+      --midnight: #020617;
+      --deep-blue: #0f172a;
+      --navy: #1e293b;
+      --primary: #2563eb;
+      --primary-glow: rgba(37, 99, 235, 0.3);
+      --cyan: #06b6d4;
+      --cyan-bright: #22d3ee;
+      --cyan-glow: rgba(6, 182, 212, 0.2);
+      --white: #f8fafc;
+      --muted: rgba(248, 250, 252, 0.55);
+      --glass: rgba(15, 23, 42, 0.55);
+      --glass-border: rgba(37, 99, 235, 0.25);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -44,9 +44,9 @@
       position: fixed;
       width: 44px; height: 44px;
       border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      background: radial-gradient(circle at 50% 45%, #000 28%, var(--violet) 55%, transparent 70%);
-      border: 2px solid var(--gold-bright);
-      box-shadow: 0 0 12px var(--violet), 0 0 24px var(--gold-glow);
+      background: radial-gradient(circle at 50% 45%, #000 28%, var(--primary) 55%, transparent 70%);
+      border: 2px solid var(--cyan-bright);
+      box-shadow: 0 0 12px var(--primary), 0 0 24px var(--cyan-glow);
       pointer-events: none;
       transform: translate(-50%, -50%);
       z-index: 99999;
@@ -63,16 +63,16 @@
     }
     #cursor.hovering {
       transform: translate(-50%, -50%) scale(1.5);
-      border-color: var(--gold-bright);
-      box-shadow: 0 0 20px var(--violet), 0 0 40px var(--gold-glow);
+      border-color: var(--cyan-bright);
+      box-shadow: 0 0 20px var(--primary), 0 0 40px var(--cyan-glow);
     }
 
     /* ══ ANIMATED BACKGROUND ══ */
     .bg-grid {
       position: fixed; inset: 0; z-index: 0;
       background-image:
-        linear-gradient(rgba(123,47,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(123,47,255,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
       background-size: 48px 48px;
       animation: gridShift 30s linear infinite;
     }
@@ -86,13 +86,13 @@
     }
     .bg-orb-1 {
       width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(123,47,255,0.18) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, transparent 70%);
       top: -200px; left: -200px;
       animation: orbDrift1 20s ease-in-out infinite alternate;
     }
     .bg-orb-2 {
       width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(184,134,11,0.14) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.14) 0%, transparent 70%);
       bottom: -150px; right: -150px;
       animation: orbDrift2 25s ease-in-out infinite alternate;
     }
@@ -123,13 +123,13 @@
       border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
       background:
         radial-gradient(circle at 50% 44%, #000 25%,
-          var(--violet) 48%, #1a0a4a 65%, transparent 75%),
-        radial-gradient(circle, #0d1545 60%, transparent 100%);
-      border: 3px solid var(--gold-bright);
+          var(--primary) 48%, #0f172a 65%, transparent 75%),
+        radial-gradient(circle, #1e293b 60%, transparent 100%);
+      border: 3px solid var(--cyan-bright);
       box-shadow:
-        0 0 40px var(--violet-glow),
-        0 0 80px var(--gold-glow),
-        inset 0 0 30px rgba(123,47,255,0.2);
+        0 0 40px var(--primary-glow),
+        0 0 80px var(--cyan-glow),
+        inset 0 0 30px rgba(37, 99, 235, 0.2);
       position: relative;
       animation: eyePulse 4s ease-in-out infinite, eyeGlitch 8s step-end infinite;
       margin-bottom: 2.5rem;
@@ -147,12 +147,12 @@
       content: '';
       position: absolute; inset: -8px;
       border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      border: 1px solid rgba(184,134,11,0.3);
+      border: 1px solid rgba(6, 182, 212, 0.3);
       animation: eyeRingRotate 12s linear infinite;
     }
     @keyframes eyePulse {
-      0%, 100% { box-shadow: 0 0 40px var(--violet-glow), 0 0 80px var(--gold-glow), inset 0 0 30px rgba(123,47,255,0.2); }
-      50% { box-shadow: 0 0 70px var(--violet-glow), 0 0 120px var(--gold-glow), inset 0 0 50px rgba(123,47,255,0.35); }
+      0%, 100% { box-shadow: 0 0 40px var(--primary-glow), 0 0 80px var(--cyan-glow), inset 0 0 30px rgba(37, 99, 235, 0.2); }
+      50% { box-shadow: 0 0 70px var(--primary-glow), 0 0 120px var(--cyan-glow), inset 0 0 50px rgba(37, 99, 235, 0.35); }
     }
     @keyframes eyeGlitch {
       0%, 90%, 100% { filter: none; }
@@ -170,25 +170,25 @@
       font-size: clamp(3rem, 8vw, 6rem);
       font-weight: 900;
       letter-spacing: 0.25em;
-      background: linear-gradient(135deg, var(--gold-bright) 0%, #fff 40%, var(--violet) 70%, var(--gold-bright) 100%);
+      background: linear-gradient(135deg, var(--cyan-bright) 0%, #fff 40%, var(--primary) 70%, var(--cyan-bright) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      filter: drop-shadow(0 0 20px var(--violet-glow));
+      filter: drop-shadow(0 0 20px var(--primary-glow));
       animation: titleGlitch 10s step-end infinite;
       margin-bottom: 0.4rem;
     }
     @keyframes titleGlitch {
-      0%, 85%, 100% { filter: drop-shadow(0 0 20px var(--violet-glow)); }
-      86% { filter: drop-shadow(2px 0 0 #ff00ff) drop-shadow(-2px 0 0 #00ffff); }
-      87% { filter: drop-shadow(0 0 20px var(--violet-glow)); }
+      0%, 85%, 100% { filter: drop-shadow(0 0 20px var(--primary-glow)); }
+      86% { filter: drop-shadow(2px 0 0 #06b6d4) drop-shadow(-2px 0 0 #2563eb); }
+      87% { filter: drop-shadow(0 0 20px var(--primary-glow)); }
     }
 
     .hero-subtitle {
       font-family: 'Cinzel', serif;
       font-size: clamp(0.85rem, 2vw, 1.1rem);
       letter-spacing: 0.3em;
-      color: var(--gold);
+      color: var(--cyan);
       text-transform: uppercase;
       margin-bottom: 2rem;
     }
@@ -199,7 +199,7 @@
       line-height: 1.8;
       color: var(--muted);
       font-style: italic;
-      border-left: 2px solid var(--gold);
+      border-left: 2px solid var(--cyan);
       padding: 1rem 1.5rem;
       margin: 0 auto 2.5rem;
       text-align: left;
@@ -221,13 +221,13 @@
       border: 1px solid var(--glass-border);
       background: var(--glass);
       backdrop-filter: blur(8px);
-      color: var(--gold-bright);
+      color: var(--cyan-bright);
       letter-spacing: 0.05em;
       transition: all 0.3s;
     }
     .badge:hover {
-      border-color: var(--violet);
-      box-shadow: 0 0 16px var(--violet-glow);
+      border-color: var(--primary);
+      box-shadow: 0 0 16px var(--primary-glow);
       color: #fff;
     }
 
@@ -244,27 +244,27 @@
       display: inline-block;
     }
     .btn-primary {
-      background: linear-gradient(135deg, var(--violet), #4a0fa0);
+      background: linear-gradient(135deg, var(--primary), #1e3a8a);
       color: #fff;
-      border: 1px solid var(--violet);
-      box-shadow: 0 0 20px var(--violet-glow);
+      border: 1px solid var(--primary);
+      box-shadow: 0 0 20px var(--primary-glow);
     }
-    .btn-primary:hover { box-shadow: 0 0 40px var(--violet-glow); transform: translateY(-2px); }
+    .btn-primary:hover { box-shadow: 0 0 40px var(--primary-glow); transform: translateY(-2px); }
     .btn-secondary {
       background: transparent;
-      color: var(--gold-bright);
-      border: 1px solid var(--gold);
+      color: var(--cyan-bright);
+      border: 1px solid var(--cyan);
     }
     .btn-secondary:hover {
-      background: var(--gold-glow);
-      box-shadow: 0 0 20px var(--gold-glow);
+      background: var(--cyan-glow);
+      box-shadow: 0 0 20px var(--cyan-glow);
       transform: translateY(-2px);
     }
 
     /* ══ DIVIDER ══ */
     .divider {
       text-align: center;
-      color: var(--gold);
+      color: var(--cyan);
       font-family: 'Cinzel', serif;
       letter-spacing: 0.5em;
       font-size: 0.75rem;
@@ -297,18 +297,18 @@
     .stat-card::before {
       content: '';
       position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, transparent, var(--violet), var(--gold), transparent);
+      background: linear-gradient(90deg, transparent, var(--primary), var(--cyan), transparent);
     }
     .stat-card:hover {
-      border-color: var(--violet);
-      box-shadow: 0 0 30px var(--violet-glow), 0 8px 32px rgba(0,0,0,0.4);
+      border-color: var(--primary);
+      box-shadow: 0 0 30px var(--primary-glow), 0 8px 32px rgba(0,0,0,0.4);
       transform: translateY(-4px);
     }
     .stat-number {
       font-family: 'Cinzel', serif;
       font-size: 2.5rem;
       font-weight: 900;
-      background: linear-gradient(135deg, var(--gold-bright), var(--violet));
+      background: linear-gradient(135deg, var(--cyan-bright), var(--primary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -330,7 +330,7 @@
       font-size: clamp(1.5rem, 3.5vw, 2.5rem);
       font-weight: 700;
       text-align: center;
-      color: var(--gold-bright);
+      color: var(--cyan-bright);
       letter-spacing: 0.15em;
       margin-bottom: 0.75rem;
     }
@@ -361,19 +361,19 @@
     .feature-card::after {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(123,47,255,0.08) 0%, transparent 60%);
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(37, 99, 235, 0.08) 0%, transparent 60%);
       pointer-events: none;
     }
     .feature-card:hover {
-      border-color: rgba(123,47,255,0.5);
-      box-shadow: 0 0 30px var(--violet-glow);
+      border-color: rgba(37, 99, 235, 0.5);
+      box-shadow: 0 0 30px var(--primary-glow);
       transform: translateY(-3px);
     }
     .feature-icon { font-size: 2rem; margin-bottom: 1rem; }
     .feature-title {
       font-family: 'Cinzel', serif;
       font-size: 1rem;
-      color: var(--gold-bright);
+      color: var(--cyan-bright);
       margin-bottom: 0.6rem;
       letter-spacing: 0.05em;
     }
@@ -394,7 +394,7 @@
     .gate-viz::before {
       content: '👁  DAXDA Cl(16,4) Authority Gate';
       display: block;
-      color: var(--gold-bright);
+      color: var(--cyan-bright);
       font-size: 0.85rem;
       letter-spacing: 0.1em;
       margin-bottom: 1.5rem;
@@ -407,7 +407,7 @@
       gap: 1rem;
       padding: 0.6rem 0;
       font-size: 0.82rem;
-      border-bottom: 1px solid rgba(123,47,255,0.08);
+      border-bottom: 1px solid rgba(37, 99, 235, 0.08);
     }
     .gate-label { color: var(--muted); flex: 1; }
     .gate-value { color: var(--white); flex: 1; }
@@ -418,7 +418,7 @@
       margin-top: 1.5rem;
       width: 100%;
       padding: 0.8rem;
-      background: linear-gradient(135deg, var(--violet), #4a0fa0);
+      background: linear-gradient(135deg, var(--primary), #1e3a8a);
       border: none;
       border-radius: 6px;
       color: #fff;
@@ -428,7 +428,7 @@
       transition: all 0.3s;
       letter-spacing: 0.1em;
     }
-    .gate-run-btn:hover { box-shadow: 0 0 20px var(--violet-glow); }
+    .gate-run-btn:hover { box-shadow: 0 0 20px var(--primary-glow); }
 
     /* ══ TAGLINE FULL ══ */
     .doctrine-block {
@@ -451,7 +451,7 @@
     .doctrine-attr {
       font-family: 'Fira Code', monospace;
       font-size: 0.78rem;
-      color: var(--gold);
+      color: var(--cyan);
       letter-spacing: 0.15em;
       text-transform: uppercase;
     }
@@ -471,7 +471,7 @@
     }
     .footer-title {
       font-family: 'Cinzel', serif;
-      color: var(--gold);
+      color: var(--cyan);
       letter-spacing: 0.3em;
       font-size: 0.9rem;
       margin-bottom: 0.5rem;
@@ -502,7 +502,7 @@
   <section class="hero">
     <div class="hero-eye" id="heroEye"></div>
 
-    <h1 class="hero-title">DAXDA.IA</h1>
+    <h1 class="hero-title">DAXDAIA</h1>
     <p class="hero-subtitle">Decision Audit &amp; eXecution Domain Architecture</p>
 
     <blockquote class="hero-tagline">
@@ -614,7 +614,7 @@
       <div class="doctrine-quote">
         Most AI systems speak with certainty they have not earned.<br/>
         They compress the unknown into confident prose and call it intelligence.<br/><br/>
-        <em style="color:var(--gold)">DAXDA is the cage that sees itself.</em><br/><br/>
+        <em style="color:var(--cyan)">DAXDA is the cage that sees itself.</em><br/><br/>
         No output leaves without surviving its own cross-examination.<br/>
         No uncertainty is buried. No evidence gap is papered over with prose.<br/><br/>
         This is not a language model.<br/>
@@ -629,7 +629,7 @@
   <!-- ══ FOOTER ══ -->
   <footer>
     <span class="footer-eye">👁</span>
-    <p class="footer-title">DAXDA.IA — THE EYE THAT CANNOT BE DECEIVED</p>
+    <p class="footer-title">DAXDAIA — THE EYE THAT CANNOT BE DECEIVED</p>
     <p class="footer-sub">Cl(16,4) · 1,048,576 Blades · 886-Ops · Nicole Protocol · V14 Next-Gen · Built by Nicole Bess</p>
   </footer>
 

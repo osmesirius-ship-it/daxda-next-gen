@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-  ◈ &nbsp; D A X D A . I A &nbsp; ◈
+  ◈ &nbsp; DAXDAIA &nbsp; ◈
 </h1>
 
 <p align="center">
@@ -16,13 +16,13 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/VERSION-V14_NEXT--GEN-gold?style=for-the-badge&labelColor=0d0d2b&color=7b2fff"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/ENGINE-Cl(16%2C4)_1%2C048%2C576_Blades-gold?style=for-the-badge&labelColor=0d0d2b&color=7b2fff"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/INJECTION_DEFENSE-100%25-gold?style=for-the-badge&labelColor=0d0d2b&color=b8860b"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/COMPUTE-0.259ms_avg-gold?style=for-the-badge&labelColor=0d0d2b&color=b8860b"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/PROTOCOL-886--Ops_Nicole-gold?style=for-the-badge&labelColor=0d0d2b&color=7b2fff"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/ARCHITECT-Nicole_Bess-gold?style=for-the-badge&labelColor=0d0d2b&color=b8860b"/></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-MIT-gold?style=for-the-badge&labelColor=0d0d2b&color=7b2fff"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/VERSION-V14_NEXT--GEN-00d2ff?style=for-the-badge&labelColor=0d0d2b&color=0070f3"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/ENGINE-Cl(16%2C4)_1%2C048%2C576_Blades-00d2ff?style=for-the-badge&labelColor=0d0d2b&color=0070f3"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/INJECTION_DEFENSE-100%25-00d2ff?style=for-the-badge&labelColor=0d0d2b&color=00d2ff"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/COMPUTE-0.259ms_avg-00d2ff?style=for-the-badge&labelColor=0d0d2b&color=00d2ff"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/PROTOCOL-886--Ops_Nicole-00d2ff?style=for-the-badge&labelColor=0d0d2b&color=0070f3"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/ARCHITECT-Nicole_Bess-00d2ff?style=for-the-badge&labelColor=0d0d2b&color=00d2ff"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-MIT-00d2ff?style=for-the-badge&labelColor=0d0d2b&color=0070f3"/></a>
 </p>
 
 ---
@@ -128,7 +128,7 @@ flowchart TD
 
 ## ◈ The Dexter Agent
 
-**Dexter** is the deployed intelligence of DAXDA.IA — the face of the 886-Ops Nicole Protocol.
+**Dexter** is the deployed intelligence of DAXDAIA — the face of the 886-Ops Nicole Protocol.
 
 > Unlike raw language models, Dexter routes every input through **16 governed reasoning layers** before producing a response. Every output is traceable, stress-tested, and audit-ready.
 
@@ -218,7 +218,7 @@ python run_causal_trace_validation.py
 
 **Nicole Bess**  
 Creator of the Nicole Protocol, the 886-Ops pipeline, and the Cl(16,4) governance engine.  
-Founder, DAXDA.IA
+Founder, DAXDAIA
 
 ---
 
@@ -229,6 +229,6 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for details.
 ---
 
 <p align="center">
-  <em>◈ &nbsp; DAXDA.IA — The Eye That Cannot Be Deceived &nbsp; ◈</em><br/>
+  <em>◈ &nbsp; DAXDAIA — The Eye That Cannot Be Deceived &nbsp; ◈</em><br/>
   <em>Cl(16,4) · 1,048,576 Blades · 886-Ops · Nicole Protocol · V14 Next-Gen</em>
 </p>
