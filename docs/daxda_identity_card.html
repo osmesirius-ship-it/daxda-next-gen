@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DAXDAIA Identity & UBI Clearance Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Fira+Code:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #020617;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .print-instruction {
+      margin-bottom: 2rem;
+      color: #06b6d4;
+      font-family: 'Fira Code', monospace;
+      text-align: center;
+    }
+
+    .card-container {
+      width: 3.375in;
+      height: 2.125in;
+      background: linear-gradient(135deg, #0a0f2e 0%, #050714 100%);
+      border: 1px solid #0070f3;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.4), inset 0 0 10px rgba(6, 182, 212, 0.2);
+      padding: 0.2in;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-container::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: 
+        linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+      background-size: 10px 10px;
+      pointer-events: none;
+    }
+
+    /* Abstract Triangle background */
+    .card-container::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; right: -20px;
+      width: 150px; height: 150px;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      background: linear-gradient(180deg, rgba(37, 99, 235, 0.2) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      z-index: 1;
+    }
+
+    .title {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      color: #3aefff;
+      margin: 0;
+    }
+
+    .subtitle {
+      font-family: 'Fira Code', monospace;
+      font-size: 6px;
+      color: #0070f3;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+      text-transform: uppercase;
+    }
+
+    .chip {
+      width: 35px;
+      height: 25px;
+      background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #475569;
+    }
+    
+    .chip::before {
+      content: '';
+      position: absolute;
+      top: 5px; bottom: 5px; left: 10px; right: 10px;
+      border: 1px solid #64748b;
+      border-radius: 2px;
+    }
+
+    .body-content {
+      z-index: 1;
+    }
+
+    .owner-name {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin: 0 0 2px 0;
+    }
+
+    .clearance-level {
+      font-family: 'Fira Code', monospace;
+      font-size: 8px;
+      color: #3aefff;
+      margin: 0;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      z-index: 1;
+    }
+
+    .hash {
+      font-family: 'Fira Code', monospace;
+      font-size: 6px;
+      color: rgba(255,255,255,0.4);
+      width: 150px;
+      word-wrap: break-word;
+    }
+
+    .engine-tag {
+      font-family: 'Fira Code', monospace;
+      font-size: 7px;
+      color: #0070f3;
+      text-align: right;
+    }
+
+    /* Print specific styles */
+    @media print {
+      body {
+        background: white;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .print-instruction {
+        display: none;
+      }
+      .card-container {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-instruction">
+    Print at 100% scale. Dimensions: 3.375" x 2.125" (Standard CR80 Credit Card Size)<br>
+    Ctrl+P / Cmd+P to print.
+  </div>
+
+  <div class="card-container">
+    <div class="header">
+      <div>
+        <h1 class="title">DAXDAIA</h1>
+        <div class="subtitle">Autonomous UBI Clearinghouse</div>
+      </div>
+      <div class="chip"></div>
+    </div>
+
+    <div class="body-content">
+      <p class="owner-name">NICOLE BESS</p>
+      <p class="clearance-level">CLEARANCE: ARCHITECT (EXEC: 1.0000)</p>
+    </div>
+
+    <div class="footer">
+      <div class="hash">
+        SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      </div>
+      <div class="engine-tag">
+        Cl(16,4)<br>886-OPS
+      </div>
+    </div>
+  </div>
+</body>
+</html>
