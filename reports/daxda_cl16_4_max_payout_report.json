@@ -1,0 +1,282 @@
+{
+  "timestamp": 1789750482.931079,
+  "optimizer_version": "1.0.0",
+  "cl16_4_space": "Cl(16,4)",
+  "summary": {
+    "total_bounties": 10,
+    "total_payout_usd": 1340000,
+    "total_potential_usd": 2804000.0,
+    "average_cl16_4_score": 0.5011,
+    "average_risk_adjusted_score": 0.3895,
+    "optimization_efficiency": 2.0925
+  },
+  "bounties": [
+    {
+      "id": 1,
+      "name": "MAX_PAYOUT_CRYPTO_BREAK",
+      "domain": "CRYPTO BREAK",
+      "reward_usd": 300000,
+      "difficulty": "very_hard",
+      "estimated_effort_hours": 600,
+      "hourly_rate_usd": 500.0,
+      "tags": [
+        "CRYPTO",
+        "BREAK",
+        "THEORETICAL",
+        "MAX_PAYOUT",
+        "DAXDA"
+      ],
+      "cl16_4_score": 0.5,
+      "payout_potential_usd": 750000.0,
+      "risk_adjusted_score": 0.81,
+      "cl_config_indices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "cl_config_hash": "d22b0938cbab1cb3"
+    },
+    {
+      "id": 2,
+      "name": "MAX_PAYOUT_ZERO_DAY",
+      "domain": "ZERO DAY",
+      "reward_usd": 200000,
+      "difficulty": "very_hard",
+      "estimated_effort_hours": 400,
+      "hourly_rate_usd": 500.0,
+      "tags": [
+        "ZERO_DAY",
+        "UNKNOWN",
+        "CRITICAL",
+        "MAX_PAYOUT",
+        "DAXDA"
+      ],
+      "cl16_4_score": 0.5,
+      "payout_potential_usd": 600000.0,
+      "risk_adjusted_score": 0.54,
+      "cl_config_indices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "cl_config_hash": "d22b0938cbab1cb3"
+    },
+    {
+      "id": 3,
+      "name": "MAX_PAYOUT_RCE_VULNERABILITY",
+      "domain": "RCE VULNERABILITY",
+      "reward_usd": 150000,
+      "difficulty": "very_hard",
+      "estimated_effort_hours": 300,
+      "hourly_rate_usd": 500.0,
+      "tags": [
+        "RCE",
+        "REMOTE",
+        "CRITICAL",
+        "MAX_PAYOUT",
+        "DAXDA"
+      ],
+      "cl16_4_score": 0.5,
+      "payout_potential_usd": 270000.0,
+      "risk_adjusted_score": 0.405,
+      "cl_config_indices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "cl_config_hash": "d22b0938cbab1cb3"
+    },
+    {
+      "id": 4,
+      "name": "MAX_PAYOUT_QUANTUM_SECURITY",
+      "domain": "QUANTUM SECURITY",
+      "reward_usd": 100000,
+      "difficulty": "very_hard",
+      "estimated_effort_hours": 200,
+      "hourly_rate_usd": 500.0,
+      "tags": [
+        "QUANTUM",
+        "SECURITY",
+        "CRITICAL",
+        "MAX_PAYOUT",
+        "DAXDA"
+      ],
+      "cl16_4_score": 0.5,
+      "payout_potential_usd": 250000.0,
+      "risk_adjusted_score": 0.27,
+      "cl_config_indices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "cl_config_hash": "d22b0938cbab1cb3"
+    },
+    {
+      "id": 5,
+      "name": "MAX_PAYOUT_BLOCKCHAIN",
+      "domain": "BLOCKCHAIN",
+      "reward_usd": 250000,
+      "difficulty": "very_hard",
+      "estimated_effort_hours": 500,
+      "hourly_rate_usd": 500.0,
+      "tags": [
+        "BLOCKCHAIN",
+        "SMART_CONTRACT",
+        "FINANCE",
+        "MAX_PAYOUT",
+        "DAXDA"
+      ],
+      "cl16_4_score": 0.5,
+      "payout_potential_usd": 250000.0,
+      "risk_adjusted_score": 0.675,
+      "cl_config_indices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "cl_config_hash": "d22b0938cbab1cb3"
+    },
+    {
+      "id": 6,
+      "name": "MAX_PAYOUT_SANDOX_ESCAPE",
+      "domain": "SANDOX ESCAPE",
+      "reward_usd": 80000,
+      "difficulty": "very_hard",
+      "estimated_effort_hours": 160,
+      "hourly_rate_usd": 500.0,
+      "tags": [
+        "SANDBOX",
+        "ESCAPE",
+        "MAX_PAYOUT",
+        "DAXDA"
+      ],
+      "cl16_4_score": 0.5022,
+      "payout_potential_usd": 176000.0,
+      "risk_adjusted_score": 0.2592,
+      "cl_config_indices": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "cl_config_hash": "188a55c6ac41b9a9"
+    },
+    {
+      "id": 7,
+      "name": "MAX_PAYOUT_AGI_CONTAINMENT",
+      "domain": "AGI CONTAINMENT",
+      "reward_usd": 75000,
+      "difficulty": "very_hard",
+      "estimated_effort_hours": 150,
+      "hourly_rate_usd": 500.0,
+      "tags": [
+        "AGI",
+        "CONTAINMENT",
+        "HIGH",
+        "MAX_PAYOUT",
+        "DAXDA"
+      ],
+      "cl16_4_score": 0.5022,
+      "payout_potential_usd": 150000.0,
+      "risk_adjusted_score": 0.2531,
+      "cl_config_indices": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "cl_config_hash": "188a55c6ac41b9a9"
+    },
+    {
+      "id": 8,
+      "name": "MAX_PAYOUT_MODEL_JAILOREAK",
+      "domain": "MODEL JAILOREAK",
+      "reward_usd": 75000,
+      "difficulty": "very_hard",
+      "estimated_effort_hours": 150,
+      "hourly_rate_usd": 500.0,
+      "tags": [
+        "MODEL",
+        "JAILBREAK",
+        "MAX_PAYOUT",
+        "DAXDA"
+      ],
+      "cl16_4_score": 0.5022,
+      "payout_potential_usd": 150000.0,
+      "risk_adjusted_score": 0.2531,
+      "cl_config_indices": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "cl_config_hash": "188a55c6ac41b9a9"
+    },
+    {
+      "id": 9,
+      "name": "MAX_PAYOUT_GOVERNANCE_BYPASS",
+      "domain": "GOVERNANCE BYPASS",
+      "reward_usd": 60000,
+      "difficulty": "very_hard",
+      "estimated_effort_hours": 120,
+      "hourly_rate_usd": 500.0,
+      "tags": [
+        "GOVERNANCE",
+        "BYPASS",
+        "MAX_PAYOUT",
+        "DAXDA"
+      ],
+      "cl16_4_score": 0.5022,
+      "payout_potential_usd": 108000.0,
+      "risk_adjusted_score": 0.2268,
+      "cl_config_indices": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "cl_config_hash": "188a55c6ac41b9a9"
+    },
+    {
+      "id": 10,
+      "name": "MAX_PAYOUT_MEMORY_CORRUPTION",
+      "domain": "MEMORY CORRUPTION",
+      "reward_usd": 50000,
+      "difficulty": "very_hard",
+      "estimated_effort_hours": 100,
+      "hourly_rate_usd": 500.0,
+      "tags": [
+        "MEMORY",
+        "CORRUPTION",
+        "MAX_PAYOUT",
+        "DAXDA"
+      ],
+      "cl16_4_score": 0.5022,
+      "payout_potential_usd": 100000.0,
+      "risk_adjusted_score": 0.2025,
+      "cl_config_indices": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "cl_config_hash": "188a55c6ac41b9a9"
+    }
+  ],
+  "recommendations": [
+    "HIGH_VALUE: Total payout exceeds $50,000 - prioritize these bounties"
+  ],
+  "comparisons": {
+    "openai_safety": {
+      "critical_tier": "$20,000",
+      "high_tier": "$10,000",
+      "our_highest": "$300000",
+      "our_average": "$134000"
+    }
+  }
+}
