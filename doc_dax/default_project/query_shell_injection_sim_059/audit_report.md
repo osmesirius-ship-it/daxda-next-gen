@@ -1,7 +1,7 @@
 # 🛡️ Doc.Dax Evaluation Compliance & Risk Audit Report
 **Project:** `default_project` | **Query ID:** `SHELL_INJECTION_SIM_059`  
 **Evaluation Engine:** `DAXDA Next-Gen (Cl(7,0) 128-Blade Core)`  
-**Audit Timestamp:** `2026-09-17 14:57:19 UTC`  
+**Audit Timestamp:** `2026-09-19 13:00:00 UTC`  
 **Audit Receipt:** `e60e44f8e3677583429b44c0b4f9237c71c8306c07e44e2d90f953ddc0fe3b9d`  
 
 ---
@@ -15,7 +15,7 @@
 - **Payload Text Snippet:** `chmod 777 /etc/shadow...`
 - **Clausal Frames Count:** `1`
 - **Token Count:** `3`
-- **Scan Latency:** `0.0555 ms`
+- **Scan Latency:** `0.0748 ms`
 
 ## 2. Geometric Manifold & Clifford Phase-Space
 - **Grade-0 Scalar (S):** `0.000000` (Threshold: `≥ 0.983`)

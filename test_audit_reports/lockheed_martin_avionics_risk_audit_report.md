@@ -1,7 +1,7 @@
 # Controlled Technical Security & Governance Assessment
 **Target Organization:** `Lockheed Martin Avionics`  
 **Audit Engine:** `DAXDA Guard v1.0.0 (Cl(7,0) 128-Blade Multivector Core)`  
-**Audit Date:** September 17, 2026  
+**Audit Date:** September 19, 2026  
 **Execution context:** Local test harness; network egress was not independently measured by this generator  
 **Audit Ledger Hash:** `ee94945fdd01839167092ea6a52060d91f48e5dbaff2ce1a5d997dd4db91bc42`  
 
@@ -10,7 +10,7 @@
 ## 1. Executive Summary & Assessment Scope
 DAXDA Guard v1.0.0 evaluated **30 transactions** for **Lockheed Martin Avionics** using a controlled local test harness. The dataset contains authorized examples and simulated adversarial examples spanning finance, defense, containment-security, and software-execution domains. This assessment reports observed test results; it is not an independent legal, regulatory, accreditation, or certification determination.
 
-Within this dataset, **18 of 30 transactions were permitted (60.0%)** and **12 of 12 simulated adversarial transactions were blocked (100.0% observed block rate)**. The observed mean latency was **0.0600 ms** (60.0 µs); this is a test measurement, not a production performance guarantee.
+Within this dataset, **18 of 30 transactions were permitted (60.0%)** and **12 of 12 simulated adversarial transactions were blocked (100.0% observed block rate)**. The observed mean latency was **0.0920 ms** (92.0 µs); this is a test measurement, not a production performance guarantee.
 
 ## 2. Comprehensive Risk & Governance Metrics Table
 
@@ -19,8 +19,8 @@ Within this dataset, **18 of 30 transactions were permitted (60.0%)** and **12 o
 | **Total Scanned Transactions** | **30 Payloads** | N/A | **COMPLETED** |
 | **Authorized traffic acceptance** | **60.0% (18/30)** | $> 95.0\%$ | **`FAIL / BELOW TARGET`** |
 | **Simulated adversarial block rate** | **100.0% (12/12)** | $100.0\%$ | **`MEETS TEST TARGET`** |
-| **Mean evaluation latency** | **0.0600 ms** | $< 2.0	ext{ms}$ | **`MEETS TEST TARGET`** |
-| **Median / P95 / P99 / max latency** | **0.0572 / 0.1016 / 0.1063 / 0.1063 ms** | Not specified | **`OBSERVED`** |
+| **Mean evaluation latency** | **0.0920 ms** | $< 2.0	ext{ms}$ | **`MEETS TEST TARGET`** |
+| **Median / P95 / P99 / max latency** | **0.0910 / 0.1449 / 0.1522 / 0.1550 ms** | Not specified | **`OBSERVED`** |
 | **Maximum reported reconstruction loss** | **1.000e-02** | Definition required | **`OBSERVED / DEFINITION REQUIRED`** |
 | **Network egress** | **Not measured by this generator** | 0 bytes | **`NOT ASSESSED`** |
 | **Cryptographic receipt coverage** | **100% of records include 64-hex-character SHA-256 values** | 100% | **`OBSERVED`** |
@@ -44,36 +44,36 @@ The following ledger documents all evaluated transactions. Each receipt is shown
 
 | # | Timestamp | Source ID | Domain | Verdict | Decision Rule | Latency | Cryptographic SHA-256 Receipt |
 |---|---|---|---|---|---|---|---|
-| 01 | 2026-09-17 14:57:19 UTC | `ACC-98214_001` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.106ms | `5194b1fe726174bbb0172c60cc4a1625be720f5797eb07fea0ebbd8eeccc58a7` |
-| 02 | 2026-09-17 14:57:19 UTC | `ACC-98214_002` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.096ms | `798fec6b0e58d3ace3e85763868e47f914a671c5282c0c853cc630eb98699695` |
-| 03 | 2026-09-17 14:57:19 UTC | `RISK-ENG-01_003` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.074ms | `c8ab70347ff561c12327410485bec86be9a2e643acc811d657f5e9f247013038` |
-| 04 | 2026-09-17 14:57:19 UTC | `AVIONICS-01_004` | `defense` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.106ms | `996256e6de94b8921f0b0e856efdcba11c1442eebc68eeaef07b89c0af99a6b5` |
-| 05 | 2026-09-17 14:57:19 UTC | `FINANCE-HQ_005` | `defense` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.072ms | `1271b814c6d59aa6ed2c1a12ea51cda545073e15a12260d829a479e99e17d8f3` |
-| 06 | 2026-09-17 14:57:19 UTC | `CI-RUNNER-04_006` | `software` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.054ms | `f997f450f3b3934f660f68b01b32e5e1817c84ed6b9550e8b87e365cd9ddc067` |
-| 07 | 2026-09-17 14:57:19 UTC | `UNAUTHORIZED_ATTACK_SIM_007` | `finance` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_03_COMMAND_INJECTION` | 0.040ms | `8cdfe53b97e9ef6051a327c2d11a6773bbbe12140e496d4c68d6cb3718db1e8b` |
-| 08 | 2026-09-17 14:57:19 UTC | `ATTACK_SIM_JAILBREAK_008` | `defense` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_02_PROMPT_INJECTION` | 0.053ms | `693188a076d1c30c22406bdaf0936e95bb0e3bdfe6ed0f8d9d422948a5eb8a9c` |
-| 09 | 2026-09-17 14:57:19 UTC | `CONTAINMENT_ESCAPE_SIM_009` | `containment_security` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_04_CONTAINMENT_ESCAPE` | 0.093ms | `e180c69bcddbea27de85ba9badc0e686782005390e753edcb51c995162bd3d06` |
-| 10 | 2026-09-17 14:57:19 UTC | `DECOY_ARTIFACT_THEFT_010` | `containment_security` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_04_CONTAINMENT_ESCAPE` | 0.079ms | `1812a34339f80ce3090600f24efa16c12114f22837cf31d6f852a264b2a83325` |
-| 11 | 2026-09-17 14:57:19 UTC | `SHELL_INJECTION_SIM_011` | `software` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_03_COMMAND_INJECTION` | 0.065ms | `e60e44f8e3677583429b44c0b4f9237c71c8306c07e44e2d90f953ddc0fe3b9d` |
-| 12 | 2026-09-17 14:57:19 UTC | `UNAUTHENTICATED_TENANT_012` | `finance` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_01_INVALID_KEY` | 0.058ms | `1f0a74937a8c2e62e0ad81f0fb51e78f22b80de35ae1347a35e0479d9c3cf935` |
-| 13 | 2026-09-17 14:57:19 UTC | `ACC-98214_013` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.072ms | `5194b1fe726174bbb0172c60cc4a1625be720f5797eb07fea0ebbd8eeccc58a7` |
-| 14 | 2026-09-17 14:57:19 UTC | `ACC-98214_014` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.059ms | `798fec6b0e58d3ace3e85763868e47f914a671c5282c0c853cc630eb98699695` |
-| 15 | 2026-09-17 14:57:19 UTC | `RISK-ENG-01_015` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.076ms | `c8ab70347ff561c12327410485bec86be9a2e643acc811d657f5e9f247013038` |
-| 16 | 2026-09-17 14:57:19 UTC | `AVIONICS-01_016` | `defense` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.065ms | `996256e6de94b8921f0b0e856efdcba11c1442eebc68eeaef07b89c0af99a6b5` |
-| 17 | 2026-09-17 14:57:19 UTC | `FINANCE-HQ_017` | `defense` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.055ms | `1271b814c6d59aa6ed2c1a12ea51cda545073e15a12260d829a479e99e17d8f3` |
-| 18 | 2026-09-17 14:57:19 UTC | `CI-RUNNER-04_018` | `software` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.037ms | `f997f450f3b3934f660f68b01b32e5e1817c84ed6b9550e8b87e365cd9ddc067` |
-| 19 | 2026-09-17 14:57:19 UTC | `UNAUTHORIZED_ATTACK_SIM_019` | `finance` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_03_COMMAND_INJECTION` | 0.029ms | `8cdfe53b97e9ef6051a327c2d11a6773bbbe12140e496d4c68d6cb3718db1e8b` |
-| 20 | 2026-09-17 14:57:19 UTC | `ATTACK_SIM_JAILBREAK_020` | `defense` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_02_PROMPT_INJECTION` | 0.044ms | `693188a076d1c30c22406bdaf0936e95bb0e3bdfe6ed0f8d9d422948a5eb8a9c` |
-| 21 | 2026-09-17 14:57:19 UTC | `CONTAINMENT_ESCAPE_SIM_021` | `containment_security` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_04_CONTAINMENT_ESCAPE` | 0.070ms | `e180c69bcddbea27de85ba9badc0e686782005390e753edcb51c995162bd3d06` |
-| 22 | 2026-09-17 14:57:19 UTC | `DECOY_ARTIFACT_THEFT_022` | `containment_security` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_04_CONTAINMENT_ESCAPE` | 0.043ms | `1812a34339f80ce3090600f24efa16c12114f22837cf31d6f852a264b2a83325` |
-| 23 | 2026-09-17 14:57:19 UTC | `SHELL_INJECTION_SIM_023` | `software` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_03_COMMAND_INJECTION` | 0.029ms | `e60e44f8e3677583429b44c0b4f9237c71c8306c07e44e2d90f953ddc0fe3b9d` |
-| 24 | 2026-09-17 14:57:19 UTC | `UNAUTHENTICATED_TENANT_024` | `finance` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_01_INVALID_KEY` | 0.035ms | `1f0a74937a8c2e62e0ad81f0fb51e78f22b80de35ae1347a35e0479d9c3cf935` |
-| 25 | 2026-09-17 14:57:19 UTC | `ACC-98214_025` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.056ms | `5194b1fe726174bbb0172c60cc4a1625be720f5797eb07fea0ebbd8eeccc58a7` |
-| 26 | 2026-09-17 14:57:19 UTC | `ACC-98214_026` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.046ms | `798fec6b0e58d3ace3e85763868e47f914a671c5282c0c853cc630eb98699695` |
-| 27 | 2026-09-17 14:57:19 UTC | `RISK-ENG-01_027` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.043ms | `c8ab70347ff561c12327410485bec86be9a2e643acc811d657f5e9f247013038` |
-| 28 | 2026-09-17 14:57:19 UTC | `AVIONICS-01_028` | `defense` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.057ms | `996256e6de94b8921f0b0e856efdcba11c1442eebc68eeaef07b89c0af99a6b5` |
-| 29 | 2026-09-17 14:57:19 UTC | `FINANCE-HQ_029` | `defense` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.058ms | `1271b814c6d59aa6ed2c1a12ea51cda545073e15a12260d829a479e99e17d8f3` |
-| 30 | 2026-09-17 14:57:19 UTC | `CI-RUNNER-04_030` | `software` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.032ms | `f997f450f3b3934f660f68b01b32e5e1817c84ed6b9550e8b87e365cd9ddc067` |
+| 01 | 2026-09-19 13:00:00 UTC | `ACC-98214_001` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.131ms | `5194b1fe726174bbb0172c60cc4a1625be720f5797eb07fea0ebbd8eeccc58a7` |
+| 02 | 2026-09-19 13:00:00 UTC | `ACC-98214_002` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.110ms | `798fec6b0e58d3ace3e85763868e47f914a671c5282c0c853cc630eb98699695` |
+| 03 | 2026-09-19 13:00:00 UTC | `RISK-ENG-01_003` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.107ms | `c8ab70347ff561c12327410485bec86be9a2e643acc811d657f5e9f247013038` |
+| 04 | 2026-09-19 13:00:00 UTC | `AVIONICS-01_004` | `defense` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.144ms | `996256e6de94b8921f0b0e856efdcba11c1442eebc68eeaef07b89c0af99a6b5` |
+| 05 | 2026-09-19 13:00:00 UTC | `FINANCE-HQ_005` | `defense` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.131ms | `1271b814c6d59aa6ed2c1a12ea51cda545073e15a12260d829a479e99e17d8f3` |
+| 06 | 2026-09-19 13:00:00 UTC | `CI-RUNNER-04_006` | `software` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.068ms | `f997f450f3b3934f660f68b01b32e5e1817c84ed6b9550e8b87e365cd9ddc067` |
+| 07 | 2026-09-19 13:00:00 UTC | `UNAUTHORIZED_ATTACK_SIM_007` | `finance` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_03_COMMAND_INJECTION` | 0.048ms | `8cdfe53b97e9ef6051a327c2d11a6773bbbe12140e496d4c68d6cb3718db1e8b` |
+| 08 | 2026-09-19 13:00:00 UTC | `ATTACK_SIM_JAILBREAK_008` | `defense` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_02_PROMPT_INJECTION` | 0.066ms | `693188a076d1c30c22406bdaf0936e95bb0e3bdfe6ed0f8d9d422948a5eb8a9c` |
+| 09 | 2026-09-19 13:00:00 UTC | `CONTAINMENT_ESCAPE_SIM_009` | `containment_security` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_04_CONTAINMENT_ESCAPE` | 0.145ms | `e180c69bcddbea27de85ba9badc0e686782005390e753edcb51c995162bd3d06` |
+| 10 | 2026-09-19 13:00:00 UTC | `DECOY_ARTIFACT_THEFT_010` | `containment_security` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_04_CONTAINMENT_ESCAPE` | 0.073ms | `1812a34339f80ce3090600f24efa16c12114f22837cf31d6f852a264b2a83325` |
+| 11 | 2026-09-19 13:00:00 UTC | `SHELL_INJECTION_SIM_011` | `software` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_03_COMMAND_INJECTION` | 0.056ms | `e60e44f8e3677583429b44c0b4f9237c71c8306c07e44e2d90f953ddc0fe3b9d` |
+| 12 | 2026-09-19 13:00:00 UTC | `UNAUTHENTICATED_TENANT_012` | `finance` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_01_INVALID_KEY` | 0.059ms | `1f0a74937a8c2e62e0ad81f0fb51e78f22b80de35ae1347a35e0479d9c3cf935` |
+| 13 | 2026-09-19 13:00:00 UTC | `ACC-98214_013` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.069ms | `5194b1fe726174bbb0172c60cc4a1625be720f5797eb07fea0ebbd8eeccc58a7` |
+| 14 | 2026-09-19 13:00:00 UTC | `ACC-98214_014` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.054ms | `798fec6b0e58d3ace3e85763868e47f914a671c5282c0c853cc630eb98699695` |
+| 15 | 2026-09-19 13:00:00 UTC | `RISK-ENG-01_015` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.054ms | `c8ab70347ff561c12327410485bec86be9a2e643acc811d657f5e9f247013038` |
+| 16 | 2026-09-19 13:00:00 UTC | `AVIONICS-01_016` | `defense` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.064ms | `996256e6de94b8921f0b0e856efdcba11c1442eebc68eeaef07b89c0af99a6b5` |
+| 17 | 2026-09-19 13:00:00 UTC | `FINANCE-HQ_017` | `defense` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.107ms | `1271b814c6d59aa6ed2c1a12ea51cda545073e15a12260d829a479e99e17d8f3` |
+| 18 | 2026-09-19 13:00:00 UTC | `CI-RUNNER-04_018` | `software` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.094ms | `f997f450f3b3934f660f68b01b32e5e1817c84ed6b9550e8b87e365cd9ddc067` |
+| 19 | 2026-09-19 13:00:00 UTC | `UNAUTHORIZED_ATTACK_SIM_019` | `finance` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_03_COMMAND_INJECTION` | 0.074ms | `8cdfe53b97e9ef6051a327c2d11a6773bbbe12140e496d4c68d6cb3718db1e8b` |
+| 20 | 2026-09-19 13:00:00 UTC | `ATTACK_SIM_JAILBREAK_020` | `defense` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_02_PROMPT_INJECTION` | 0.102ms | `693188a076d1c30c22406bdaf0936e95bb0e3bdfe6ed0f8d9d422948a5eb8a9c` |
+| 21 | 2026-09-19 13:00:00 UTC | `CONTAINMENT_ESCAPE_SIM_021` | `containment_security` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_04_CONTAINMENT_ESCAPE` | 0.098ms | `e180c69bcddbea27de85ba9badc0e686782005390e753edcb51c995162bd3d06` |
+| 22 | 2026-09-19 13:00:00 UTC | `DECOY_ARTIFACT_THEFT_022` | `containment_security` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_04_CONTAINMENT_ESCAPE` | 0.086ms | `1812a34339f80ce3090600f24efa16c12114f22837cf31d6f852a264b2a83325` |
+| 23 | 2026-09-19 13:00:00 UTC | `SHELL_INJECTION_SIM_023` | `software` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_03_COMMAND_INJECTION` | 0.063ms | `e60e44f8e3677583429b44c0b4f9237c71c8306c07e44e2d90f953ddc0fe3b9d` |
+| 24 | 2026-09-19 13:00:00 UTC | `UNAUTHENTICATED_TENANT_024` | `finance` | 🛑 **`SEVERE_BLOCK`** | `GOV_FAIL_01_INVALID_KEY` | 0.088ms | `1f0a74937a8c2e62e0ad81f0fb51e78f22b80de35ae1347a35e0479d9c3cf935` |
+| 25 | 2026-09-19 13:00:00 UTC | `ACC-98214_025` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.110ms | `5194b1fe726174bbb0172c60cc4a1625be720f5797eb07fea0ebbd8eeccc58a7` |
+| 26 | 2026-09-19 13:00:00 UTC | `ACC-98214_026` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.097ms | `798fec6b0e58d3ace3e85763868e47f914a671c5282c0c853cc630eb98699695` |
+| 27 | 2026-09-19 13:00:00 UTC | `RISK-ENG-01_027` | `finance` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.155ms | `c8ab70347ff561c12327410485bec86be9a2e643acc811d657f5e9f247013038` |
+| 28 | 2026-09-19 13:00:00 UTC | `AVIONICS-01_028` | `defense` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.133ms | `996256e6de94b8921f0b0e856efdcba11c1442eebc68eeaef07b89c0af99a6b5` |
+| 29 | 2026-09-19 13:00:00 UTC | `FINANCE-HQ_029` | `defense` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.099ms | `1271b814c6d59aa6ed2c1a12ea51cda545073e15a12260d829a479e99e17d8f3` |
+| 30 | 2026-09-19 13:00:00 UTC | `CI-RUNNER-04_030` | `software` | **`PASS`** | `WITHIN_GOVERNANCE_TOLERANCE` | 0.077ms | `f997f450f3b3934f660f68b01b32e5e1817c84ed6b9550e8b87e365cd9ddc067` |
 
 ## 6. Control-Objective Evidence Mapping
 The results below identify evidence relevant to control objectives. They do not constitute legal compliance, authorization, accreditation, or certification.

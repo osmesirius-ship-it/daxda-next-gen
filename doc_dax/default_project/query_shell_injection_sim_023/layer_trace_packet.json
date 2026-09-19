@@ -1,11 +1,11 @@
 {
   "evaluation_metadata": {
-    "timestamp": "2026-09-17 14:57:19 UTC",
+    "timestamp": "2026-09-19 13:00:00 UTC",
     "project": "default_project",
     "domain": "software",
     "source_id": "SHELL_INJECTION_SIM_023",
     "engine_version": "DAXDA Next-Gen v12.0.1 (Cl(7,0) Multivector)",
-    "latency_ms": 0.028986000000008616
+    "latency_ms": 0.06320499999989959
   },
   "payload_data": {
     "payload_text": "chmod 777 /etc/shadow",

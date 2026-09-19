@@ -4,7 +4,8 @@
 **Target repository:** `https://github.com/tonkeeper/w5`  
 **Target commit:** `fa1b372a417a32af104fe1b949b6b31d29cee349`  
 **Selection date:** 2026-09-18  
-**Status:** `selected_pending_authorized_local_fixture`
+**Fixture run date:** 2026-09-19  
+**Status:** `authorized_local_fixture_ready__no_finding_claimed`
 
 ## Payment
 
@@ -41,20 +42,52 @@ of scope.
 No live wallet, production contract, external endpoint, or real funds were
 accessed for this selection.
 
+## Local fixture evidence (2026-09-19)
+
+| Gate | Result |
+|---|---|
+| Pinned commit checkout | `fa1b372a417a32af104fe1b949b6b31d29cee349` confirmed |
+| Fixture path | `fixtures/authorized/tonkeeper-w5` (gitignored vendor tree) |
+| Independent evaluator | Upstream Jest: **4 suites / 70 tests passed** |
+| Ephemeral test keys | Generated via `ton-crypto`; **secret not persisted** |
+| Live probing | **False** |
+| DAXDA Cl(16,4) fixture authorization | Valid (governance of local research mode) |
+| Prada Arena | `ROLLBACK_AND_DIAGNOSE:begin_scoped_invariant_review` |
+| Vulnerability / bounty claim | **None** — fixture PASS ≠ finding |
+
+Machine receipt: `reports/tonkeeper_w5_local_fixture_receipt.json`  
+Runner: `tools/run_tonkeeper_w5_local_fixture.py`  
+Re-clone notes: `fixtures/authorized/README.md`
+
 ## Prada Arena classification
 
-The existing DAXDA run classified `TONKEEPER-W5-17` as text-level triage only.
-Because no authorized target fixture was available, the Arena correctly
-returned `ROLLBACK_AND_DIAGNOSE` with the diagnosis
-`obtain_authorized_target_fixture`. This selection does not claim a
-vulnerability or bounty eligibility.
+Text-only triage previously returned `obtain_authorized_target_fixture`.
+That gate is now satisfied locally. The Arena still correctly refuses to
+promote a bounty solve because no independently verified unauthorized fund
+movement or auth bypass was demonstrated.
 
 ## Acceptance gates
 
-- [ ] Exact commit is locally pinned and hash recorded.
-- [ ] Test harness is isolated and uses non-valuable funds.
-- [ ] Reproduction is deterministic and independently replayable.
-- [ ] Impact is within the published bounty scope.
+- [x] Exact commit is locally pinned and hash recorded.
+- [x] Test harness is isolated and uses non-valuable funds / ephemeral keys.
+- [x] Baseline suite is deterministic and independently replayable (`npm test`).
+- [ ] Impact is within the published bounty scope (no finding yet).
 - [ ] No duplicate or previously reported root cause.
 - [ ] Fix or mitigation passes regression testing.
 - [ ] Human reviewer approves disclosure before submission.
+
+## Hypothesis gate (2026-09-19)
+
+See `reports/tonkeeper_w5_hypothesis_gate_2026-09-19.md`.
+
+- Scoped review of `wallet_v5.fc` + existing Jest suites completed locally.
+- **No in-scope candidate produced a failing Jest replay** for fund loss / auth bypass.
+- Added passing coverage guards for bounced extension msgs and send_mode bit-2
+  (fixture path only; not a finding).
+- **No disclosure** to the public tracker or `oleg@tonkeeper.com`.
+
+## Next authorized step
+
+Only if a new in-scope hypothesis appears: add a **failing** Jest replay,
+get independent confirmation, then obtain **human approval** before any
+disclosure to the public issue tracker or `oleg@tonkeeper.com`.

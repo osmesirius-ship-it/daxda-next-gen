@@ -28,6 +28,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Authorized bounty fixtures (re-clone pinned targets locally; do not commit vendor trees)
+fixtures/authorized/**
+!fixtures/authorized/README.md
+
 # System
 .DS_Store
 *.swp

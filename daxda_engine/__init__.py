@@ -23,3 +23,13 @@ from .prada import (
     PradaStage,
     ResourceBudget,
 )
+from .recursive_self_improvement import (
+    CycleRecord,
+    FitnessVector,
+    RSIConfig,
+    RSIResult,
+    RecursiveSelfImprovementEngine,
+    StrategyGenome,
+    canonical_task_suite,
+    run_recursive_self_improvement,
+)

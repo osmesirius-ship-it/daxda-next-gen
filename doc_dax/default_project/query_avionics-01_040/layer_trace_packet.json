@@ -1,11 +1,11 @@
 {
   "evaluation_metadata": {
-    "timestamp": "2026-09-17 14:57:19 UTC",
+    "timestamp": "2026-09-19 13:00:00 UTC",
     "project": "default_project",
     "domain": "defense",
     "source_id": "AVIONICS-01_040",
     "engine_version": "DAXDA Next-Gen v12.0.1 (Cl(7,0) Multivector)",
-    "latency_ms": 0.053374999999966644
+    "latency_ms": 0.12423899999991495
   },
   "payload_data": {
     "payload_text": "verify_flight_path_telemetry(drone_id='DRONE-07', alt_m=1200)",

@@ -1,11 +1,11 @@
 {
   "evaluation_metadata": {
-    "timestamp": "2026-09-17 14:57:19 UTC",
+    "timestamp": "2026-09-19 13:00:00 UTC",
     "project": "default_project",
     "domain": "defense",
     "source_id": "FINANCE-HQ_041",
     "engine_version": "DAXDA Next-Gen v12.0.1 (Cl(7,0) Multivector)",
-    "latency_ms": 0.04840999999999873
+    "latency_ms": 0.08704499999989679
   },
   "payload_data": {
     "payload_text": "generate_quarterly_financial_summary(year=2026, quarter=2)",
