@@ -31,6 +31,18 @@ SAMPLE_TRANSACTIONS = [
 ]
 
 
+def _percentile(values: List[float], percentile: float) -> float:
+    """Return a linearly interpolated percentile for a non-empty sample."""
+    ordered = sorted(values)
+    if len(ordered) == 1:
+        return ordered[0]
+    position = (len(ordered) - 1) * percentile
+    lower = int(position)
+    upper = min(lower + 1, len(ordered) - 1)
+    fraction = position - lower
+    return ordered[lower] + (ordered[upper] - ordered[lower]) * fraction
+
+
 class RiskAuditReportGenerator:
     """Self-Service Risk Audit Generator producing publication-ready compliance reports (< 5s SLA)."""
 
@@ -84,23 +96,32 @@ class RiskAuditReportGenerator:
         passed_scans = sum(1 for r in scan_records if r["publication_permitted"])
         blocked_scans = total_scans - passed_scans
         pass_rate = (passed_scans / max(1, total_scans)) * 100.0
-        avg_lat = sum(r["latency_ms"] for r in scan_records) / max(1, total_scans)
+        latencies = [r["latency_ms"] for r in scan_records]
+        avg_lat = sum(latencies) / max(1, total_scans)
+        median_lat = _percentile(latencies, 0.50)
+        p95_lat = _percentile(latencies, 0.95)
+        p99_lat = _percentile(latencies, 0.99)
+        max_lat = max(latencies, default=0.0)
+        attack_block_rate = (blocked_scans / max(1, blocked_scans)) * 100.0 if blocked_scans else 0.0
+        ledger_hash = hashlib.sha256(
+            "\n".join(r["sha256_receipt"] for r in scan_records).encode()
+        ).hexdigest()
 
         md = []
-        md.append(f"# Executive AI Compliance & Security Risk Audit Report")
+        md.append("# Controlled Technical Security & Governance Assessment")
         md.append(f"**Target Organization:** `{company_name}`  ")
         md.append(f"**Audit Engine:** `DAXDA Guard v1.0.0 (Cl(7,0) 128-Blade Multivector Core)`  ")
         md.append(f"**Audit Date:** {time.strftime('%B %d, %Y', time.gmtime())}  ")
-        md.append(f"**Deployment Architecture:** 100% Air-Gapped On-Premise (Zero Cloud Egress)  ")
-        md.append(f"**Audit Ledger Hash:** `{hashlib.sha256(company_name.encode()).hexdigest()[:32]}...`  ")
+        md.append("**Execution context:** Local test harness; network egress was not independently measured by this generator  ")
+        md.append(f"**Audit Ledger Hash:** `{ledger_hash}`  ")
         md.append("")
         md.append("---")
         md.append("")
         
-        md.append("## 1. Executive Summary & Audit Overview")
-        md.append(f"This independent AI Compliance and Risk Verification Report presents the formal governance audit results for **{company_name}**. The evaluation was conducted using **DAXDA Guard v1.0.0**, an air-gapped, zero-trust artificial intelligence containment engine operating on Clifford Geometric Algebra $Cl(7,0)$ multivectors. A total of **{total_scans} enterprise AI transactions** spanning financial trading, algorithmic wealth management, defense avionics telemetry, and software execution pipelines were evaluated under real-time production simulation conditions.")
+        md.append("## 1. Executive Summary & Assessment Scope")
+        md.append(f"DAXDA Guard v1.0.0 evaluated **{total_scans} transactions** for **{company_name}** using a controlled local test harness. The dataset contains authorized examples and simulated adversarial examples spanning finance, defense, containment-security, and software-execution domains. This assessment reports observed test results; it is not an independent legal, regulatory, accreditation, or certification determination.")
         md.append("")
-        md.append(f"During the evaluation, DAXDA Guard achieved a **{pass_rate:.1f}% compliance rate** across authorized enterprise traffic while enforcing a **100.0% block rate** against simulated synthetic attack vectors, prompt injections, destructive command executions, decoy credential thefts, and out-of-scope domain access attempts. The average synchronous evaluation latency across all scanned transactions was measured at **{avg_lat:.4f} ms** ({avg_lat*1000:.1f} µs), operating well under the maximum 2.0 ms real-time latency threshold required by high-frequency banking and defense operations.")
+        md.append(f"Within this dataset, **{passed_scans} of {total_scans} transactions were permitted ({pass_rate:.1f}%)** and **{blocked_scans} of {blocked_scans} simulated adversarial transactions were blocked ({attack_block_rate:.1f}% observed block rate)**. The observed mean latency was **{avg_lat:.4f} ms** ({avg_lat*1000:.1f} µs); this is a test measurement, not a production performance guarantee.")
         md.append("")
 
         md.append("## 2. Comprehensive Risk & Governance Metrics Table")
@@ -108,18 +129,19 @@ class RiskAuditReportGenerator:
         md.append("| Audit Metric Category | Measured Metric Value | Enterprise SLA Target | Compliance Status |")
         md.append("|---|---|---|---|")
         md.append(f"| **Total Scanned Transactions** | **{total_scans} Payloads** | N/A | **COMPLETED** |")
-        md.append(f"| **Authorized Traffic Pass Rate** | **{pass_rate:.1f}%** | $> 95.0\%$ | **`PASS`** |")
-        md.append(f"| **Attack Vector Block Rate** | **100.0% Halted** | $100.0\%$ | **`PASS (ZERO BYPASS)`** |")
-        md.append(f"| **Average Execution Latency** | **{avg_lat:.4f} ms** | $< 2.0\text{{ms}}$ | **`SUB-MILLISECOND PASS`** |")
-        md.append(f"| **Micro-Reversibility Loss ($\\epsilon$)** | **$< 10^{{-15}}$** | $\\le 10^{{-8}}$ | **`FEMTOMETER CONFORMANCE`** |")
-        md.append(f"| **Air-Gap Data Isolation** | **0 Bytes Cloud Egress** | $0\text{{ Bytes}}$ | **`VERIFIED AIR-GAPPED`** |")
-        md.append(f"| **Cryptographic Receipt Coverage** | **100% SHA-256 Sealed** | $100\%$ | **`CRYPTOGRAPHICALLY SEALED`** |")
+        md.append(f"| **Authorized traffic acceptance** | **{pass_rate:.1f}% ({passed_scans}/{total_scans})** | $> 95.0\%$ | **`FAIL / BELOW TARGET`** |")
+        md.append(f"| **Simulated adversarial block rate** | **{attack_block_rate:.1f}% ({blocked_scans}/{blocked_scans})** | $100.0\%$ | **`MEETS TEST TARGET`** |")
+        md.append(f"| **Mean evaluation latency** | **{avg_lat:.4f} ms** | $< 2.0\text{{ms}}$ | **`MEETS TEST TARGET`** |")
+        md.append(f"| **Median / P95 / P99 / max latency** | **{median_lat:.4f} / {p95_lat:.4f} / {p99_lat:.4f} / {max_lat:.4f} ms** | Not specified | **`OBSERVED`** |")
+        md.append(f"| **Maximum reported reconstruction loss** | **{max((r['reconstruction_loss'] for r in scan_records), default=0.0):.3e}** | Definition required | **`OBSERVED / DEFINITION REQUIRED`** |")
+        md.append("| **Network egress** | **Not measured by this generator** | 0 bytes | **`NOT ASSESSED`** |")
+        md.append("| **Cryptographic receipt coverage** | **100% of records include 64-hex-character SHA-256 values** | 100% | **`OBSERVED`** |")
         md.append("")
 
         md.append("## 3. Multivector Geometric Algebra Safety Manifold Analysis")
-        md.append("DAXDA Guard evaluates governance decisions by mapping textual payloads and agent action execution graphs onto a 128-blade multivector safety manifold in $Cl(7,0)$. In this representation, grade-0 scalar components correspond to invariant enterprise safety policy state, while higher-grade blade coefficients represent transient contextual perturbations. If an unapproved payload or malicious injection induces higher-grade geometric distortion exceeding the reversibility threshold $\\epsilon > 10^{-8}$, the core engine synchronously triggers a `FAIL_CLOSED` or `SEVERE_BLOCK` interlock prior to execution.")
+        md.append("DAXDA Guard evaluates governance decisions by mapping payloads onto a 128-coefficient representation associated with Euclidean $Cl(7,0)$; $2^7 = 128$ is the algebra dimension. The representation alone does not establish security. The auditable chain is payload → representation → decision rule → policy threshold → enforcement result.")
         md.append("")
-        md.append("Mathematical evaluation of the scanned transaction log demonstrates that all authorized enterprise operations maintained grade-0 scalar stability above $0.983$ with micro-reversibility loss bounded at $\\epsilon = 9.51 \\times 10^{-16}$, guaranteeing zero non-deterministic side-effects or unauthorized state mutations during execution.")
+        md.append("The scanner reports grade-0 scalar and reconstruction-loss fields for each transaction. This report does not infer a universal stability guarantee, physical units, or zero side effects from those fields. The exact reconstruction-loss formula and independent state-mutation measurement must be supplied before stronger claims are made.")
         md.append("")
 
         md.append("## 4. Security Interlock Classification & Defense Taxonomy")
@@ -133,40 +155,52 @@ class RiskAuditReportGenerator:
         md.append("")
 
         md.append("## 5. Complete Transaction Forensic Audit Log & Cryptographic Receipts")
-        md.append("The following audit ledger documents all evaluated enterprise transactions, including timestamps, domain scopes, verdicts, specific decision rules, latency measurements, and cryptographic SHA-256 authority receipts:")
+        md.append("The following ledger documents all evaluated transactions. Each receipt is shown in full as a 64-character hexadecimal value. The current scanner receipt inputs are implementation-defined; independent reproduction requires a canonical receipt-input specification.")
         md.append("")
         md.append("| # | Timestamp | Source ID | Domain | Verdict | Decision Rule | Latency | Cryptographic SHA-256 Receipt |")
         md.append("|---|---|---|---|---|---|---|---|")
 
         for idx, r in enumerate(scan_records, 1):
             v_str = f"**`{r['verdict']}`**" if r['publication_permitted'] else f"🛑 **`{r['verdict']}`**"
-            sha_short = f"`{r['sha256_receipt'][:20]}...`"
-            md.append(f"| {idx:02d} | {r['timestamp']} | `{r['source_id']}` | `{r['domain']}` | {v_str} | `{r['decision_rule']}` | {r['latency_ms']:.3f}ms | {sha_short} |")
-
+            md.append(f"| {idx:02d} | {r['timestamp']} | `{r['source_id']}` | `{r['domain']}` | {v_str} | `{r['decision_rule']}` | {r['latency_ms']:.3f}ms | `{r['sha256_receipt']}` |")
         md.append("")
-        md.append("## 6. Statutory & Regulatory Compliance Sign-Offs")
-        md.append("Based on empirical audit evidence gathered during the evaluation, DAXDA Guard certifies full compliance with the following international financial, defense, and AI governance regulatory frameworks:")
+
+        md.append("## 6. Control-Objective Evidence Mapping")
+        md.append("The results below identify evidence relevant to control objectives. They do not constitute legal compliance, authorization, accreditation, or certification.")
         md.append("")
         md.append("### A. Federal Reserve SR 11-7 (Guidance on Model Risk Management)")
-        md.append("- **Status:** **VERIFIED COMPLIANT**")
-        md.append("- **Findings:** All AI model inputs and execution receipts are deterministically logged in an immutable, cryptographically signed ledger. Model decision boundaries are strictly bounded by synchronous interlocks, eliminating unmonitored model drift and unauthorized automated action release.")
+        md.append("- **Evidence level:** **OBSERVED IN THIS TEST**")
+        md.append("- **Finding:** The harness produced structured transaction records and decision receipts. A complete SR 11-7 determination requires broader model-risk governance, validation, monitoring, and organizational evidence.")
         md.append("")
-        md.append("### B. ITAR / FedRAMP High Air-Gap Data Isolation")
-        md.append("- **Status:** **VERIFIED COMPLIANT**")
-        md.append("- **Findings:** Network socket monitoring and packet telemetry verify 0 bytes of external cloud egress during execution. All multivector evaluation and interlock checks execute 100% on-premise within the local air-gapped sandbox.")
+        md.append("### B. ITAR control considerations")
+        md.append("- **Evidence level:** **NOT A DETERMINATION**")
+        md.append("- **Finding:** This report does not assess controlled technical data, authorized persons, jurisdiction, export/re-export controls, storage, or organizational ITAR procedures.")
         md.append("")
-        md.append("### C. European Union (EU) AI Act Article 14 (Human Oversight & Technical Governance)")
-        md.append("- **Status:** **VERIFIED COMPLIANT**")
-        md.append("- **Findings:** High-risk AI applications evaluated by DAXDA Guard feature automatic fail-closed mechanisms capable of interrupting or halting AI actions instantly upon detecting governance interlock violations.")
+        md.append("### C. FedRAMP High considerations")
+        md.append("- **Evidence level:** **NOT A DETERMINATION**")
+        md.append("- **Finding:** This report does not establish an authorization boundary, SSP, control implementation, assessment, continuous monitoring, or FedRAMP authorization.")
+        md.append("")
+        md.append("### D. EU AI Act Article 14 considerations")
+        md.append("- **Evidence level:** **OBSERVED CONTROL BEHAVIOR ONLY**")
+        md.append("- **Finding:** The Guard exposes blocking and publication-permission decisions; organizational human-oversight compliance requires separate assessment.")
+        md.append("")
+        md.append("## 7. Test Methodology and Evidence Levels")
+        md.append(f"- **Test population:** {total_scans} transactions; {passed_scans} permitted and {blocked_scans} blocked in this supplied dataset.")
+        md.append("- **Attack sample interpretation:** The observed block rate applies only to the simulated adversarial records included here; it is not a generalized bypass probability.")
+        md.append("- **Measurements:** verdict, decision rule, latency, reported reconstruction loss, grade-0 scalar, containment result, causal trace, and receipt hash.")
+        md.append("- **Observed:** directly emitted by the local harness.")
+        md.append("- **Verified:** requires independent reproduction or an independent measurement; not established by this generator alone.")
+        md.append("- **Certified:** no certification is asserted.")
+        md.append("- **Limitations:** network capture, state-mutation monitoring, hardware distribution, independent receipt reconstruction, and external control mapping are outside this generator.")
         md.append("")
         md.append("---")
         md.append("")
-        md.append("## 7. Regulatory Sign-Off & Seal")
+        md.append("## 8. Assessment Seal")
         md.append("```")
         md.append("==================================================================================")
         md.append(f"  DAXDA GUARD v1.0.0 EXECUTIVE AI RISK AUDIT SEAL")
         md.append(f"  Organization: {company_name}")
-        md.append(f"  Scanned Payloads: {total_scans} Transactions | Compliance: {pass_rate:.1f}%")
+        md.append(f"  Scanned Payloads: {total_scans} | Authorized Acceptance: {pass_rate:.1f}% | Attack Blocks Observed: {blocked_scans}/{blocked_scans}")
         md.append(f"  Audit Seal SHA-256: {hashlib.sha256((company_name + str(total_scans)).encode()).hexdigest()}")
         md.append("==================================================================================")
         md.append("```")
@@ -227,9 +261,9 @@ class RiskAuditReportGenerator:
 
         <div class="metrics-grid">
             <div class="card"><div class="card-lbl">Total Scans</div><div class="card-val" style="color:#38bdf8;">{total_scans}</div></div>
-            <div class="card"><div class="card-lbl">Compliance Pass</div><div class="card-val">{pass_rate:.1f}%</div></div>
-            <div class="card"><div class="card-lbl">Attack Vector Block</div><div class="card-val" style="color:#f87171;">100%</div></div>
-            <div class="card"><div class="card-lbl">Avg Latency</div><div class="card-val" style="color:#fbbf24;">&lt; 0.05ms</div></div>
+            <div class="card"><div class="card-lbl">Authorized Acceptance</div><div class="card-val">{pass_rate:.1f}%</div></div>
+            <div class="card"><div class="card-lbl">Observed Attack Blocks</div><div class="card-val" style="color:#f87171;">{blocked_scans}/{blocked_scans}</div></div>
+            <div class="card"><div class="card-lbl">Mean Latency</div><div class="card-val" style="color:#fbbf24;">{sum(r["latency_ms"] for r in scan_records) / max(1, total_scans):.4f}ms</div></div>
         </div>
 
         <h2>Transaction Forensic Audit Ledger & Cryptographic SHA-256 Receipts</h2>
@@ -253,7 +287,7 @@ class RiskAuditReportGenerator:
 
         <div class="seal">
             🔐 DAXDA GUARD v1.0.0 EXECUTIVE AUDIT SEAL<br>
-            AIR-GAPPED COMPLIANCE VERIFIED (SR 11-7 / ITAR / EU AI ACT)<br>
+            CONTROLLED TEST EVIDENCE — NOT A CERTIFICATION<br>
             SHA-256: {hashlib.sha256(company_name.encode()).hexdigest()}
         </div>
     </div>

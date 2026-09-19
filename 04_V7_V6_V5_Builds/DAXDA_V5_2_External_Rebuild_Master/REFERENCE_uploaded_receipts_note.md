@@ -1,4 +1,4 @@
-Listed directory DAXDA_o_V5_Dev_Package
+ΩListed directory DAXDA_o_V5_Dev_Package
 Ran command: `python3 -c '
 import hashlib
 import os

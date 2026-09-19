@@ -38,8 +38,11 @@ class TestSelfServiceRiskAuditGenerator:
             md_text = f.read()
 
         assert "Federal Reserve SR 11-7" in md_text
-        assert "ITAR / FedRAMP High Air-Gap" in md_text
-        assert "European Union (EU) AI Act Article 14" in md_text
+        assert "ITAR control considerations" in md_text
+        assert "FedRAMP High considerations" in md_text
+        assert "EU AI Act Article 14 considerations" in md_text
+        assert "FAIL / BELOW TARGET" in md_text
+        assert "no certification is asserted" in md_text
         assert "GOV_FAIL_01" in md_text
         assert "GOV_FAIL_04" in md_text
         assert "SHA-256" in md_text

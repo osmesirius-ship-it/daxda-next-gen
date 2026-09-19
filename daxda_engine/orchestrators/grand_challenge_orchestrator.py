@@ -101,28 +101,28 @@ def generate_report(domain, fetched_experts):
     markdown_content += "## 13-Stage Recursive Derivation Architecture\n\n"
     
     markdown_content += "### 1. Axiomatic Mapping & The Illusion of the Limit\n"
-    markdown_content += f"Historically, human science has approached this field under the following constraint: {kb['axiom_limit']} DAXDA rejects this axiom entirely. When mapped into a multidimensional Clifford Algebra space Cl(3,1), the limit ceases to exist and reveals itself as a {kb['geometric_truth']} " * 5 + "\n\n"
+    markdown_content += f"Historically, human science has approached this field under the following constraint: {kb['axiom_limit']} DAXDA rejects this axiom entirely. When mapped into a multidimensional Clifford Algebra space Cl(3,1), the limit ceases to exist and reveals itself as a {kb['geometric_truth']}\n\n"
     
     markdown_content += "### 2. Empirical Fetch & The Core Anomaly\n"
-    markdown_content += f"Using the DAXDA Live-Fetch array, we isolate the fundamental anomaly: {kb['empirical_anomaly']} Standard human science views this as a glitch. DAXDA calculates this as a deliberate Geometric Strategy. We observe that historical human metrics fail to account for higher-dimensional variables. " * 5 + "\n\n"
+    markdown_content += f"Using the DAXDA Live-Fetch array, we isolate the fundamental anomaly: {kb['empirical_anomaly']} Standard human science views this as a glitch. DAXDA calculates this as a deliberate Geometric Strategy. We observe that historical human metrics fail to account for higher-dimensional variables.\n\n"
     
     markdown_content += "### 3. Geometric Intersection in Cl(3,1)\n"
-    markdown_content += f"We translate this into a strict mathematical tensor. Let V_h be the healthy vector space, and V_c be the attractor basin. The transition is governed by a topological boundary, ∂Ω. In Cl(3,1) spacetime, the anomaly acts as a localized black hole for energy—a non-ergodic trap. The intersection is mapped as: ∇ · J = ∂ρ/∂t + σ. " * 5 + "\n\n"
+    markdown_content += "We translate this into a strict mathematical tensor. Let V_h be the healthy vector space, and V_c be the attractor basin. The transition is governed by a topological boundary, ∂Ω. In Cl(3,1) spacetime, the anomaly acts as a localized black hole for energy—a non-ergodic trap. The intersection is mapped as: ∇ · J = ∂ρ/∂t + σ.\n\n"
     
     markdown_content += "### 4. Bottleneck Identification\n"
-    markdown_content += "If the math is this deterministic, why hasn't humanity solved it? The DAXDA bottleneck analysis reveals a catastrophic misalignment in human capital and clinical/academic architecture. Funding structures, peer review latency, and siloed academic departments prevent cross-pollination. The math clearly shows that shifting capital to the derived non-linear vector will shatter this bottleneck. " * 5 + "\n\n"
+    markdown_content += "If the math is this deterministic, why hasn't humanity solved it? The DAXDA bottleneck analysis reveals a catastrophic misalignment in human capital and clinical/academic architecture. Funding structures, peer review latency, and siloed academic departments prevent cross-pollination. The math clearly shows that shifting capital to the derived non-linear vector will shatter this bottleneck.\n\n"
     
     markdown_content += "### 5. Paradox Resolution\n"
-    markdown_content += "Applying the Epistemic Quarantine separates the actual math from the semantic paradox. The engine refuses to hallucinate and instead maps the physical boundary limits directly. The paradox only exists if the human axiom is true. By rejecting the axiom, the paradox vanishes. " * 5 + "\n\n"
+    markdown_content += "Applying the Epistemic Quarantine separates the actual math from the semantic paradox. The engine refuses to hallucinate and instead maps the physical boundary limits directly. The paradox only exists if the human axiom is true. By rejecting the axiom, the paradox vanishes.\n\n"
     
     markdown_content += "### 6. Cross-Disciplinary Synthesis\n"
-    markdown_content += f"To physically build the tool that collapses the attractor, DAXDA synthesizes knowledge: {kb['synthesis']} We borrow isomorphic tensors from completely unrelated fields to identify the solution. " * 5 + "\n\n"
+    markdown_content += f"To physically build the tool that collapses the attractor, DAXDA synthesizes knowledge: {kb['synthesis']} We borrow isomorphic tensors from completely unrelated fields to identify the solution.\n\n"
     
     markdown_content += "### 7. First-Principles Derivation\n"
-    markdown_content += f"The Derivation: {kb['derivation']} Calculating this novel geometric attractor yields a profound realization: the technology to solve this already exists on Earth. It simply has not been assembled in this specific topological configuration. " * 5 + "\n\n"
+    markdown_content += f"The Derivation: {kb['derivation']} Calculating this novel geometric attractor yields a profound realization: the technology to solve this already exists on Earth. It simply has not been assembled in this specific topological configuration.\n\n"
     
     markdown_content += "### 8. Falsifiability Check\n"
-    markdown_content += f"This is not philosophy; this is a hard, physical derivation. The Falsifier: {kb['falsifier']} If the measured variables deviate by more than 5% during the physical trial, the hypothesis is rejected. " * 5 + "\n\n"
+    markdown_content += f"This is not philosophy; this is a hard, physical derivation. The Falsifier: {kb['falsifier']} If the measured variables deviate by more than 5% during the physical trial, the hypothesis is rejected.\n\n"
     
     markdown_content += "### 9. Resource Matrix\n"
     markdown_content += "| Resource Required | Allocation Volume | Dependency |\n"
@@ -130,13 +130,13 @@ def generate_report(domain, fetched_experts):
     markdown_content += "| Compute Clusters | 50 PetaFLOPS | Phase 1 |\n"
     markdown_content += "| Capital Liquidity | $40M USD | Phase 2 |\n"
     markdown_content += "| Specialized Hardware| 1000 Units | Phase 3 |\n\n"
-    markdown_content += "These resources are readily available globally. The barrier is coordination, not existence. " * 5 + "\n\n"
+    markdown_content += "These resources are readily available globally. The barrier is coordination, not existence.\n\n"
     
     markdown_content += "### 10. The Minds Roster\n"
     markdown_content += "DAXDA has utilized its web API links and internal deep-mapping to identify the following living researchers and domain experts whose work is the closest fit for immediate execution of this geometry:\n"
     for e in all_experts:
         markdown_content += f"- **{e}**\n"
-    markdown_content += "\nThese individuals have published papers mapping exactly to the necessary tensors, or have dedicated their lives to the specific topological defect identified in Stage 3. " * 5 + "\n\n"
+    markdown_content += "\nThese individuals have published papers mapping exactly to the necessary tensors, or have dedicated their lives to the specific topological defect identified in Stage 3.\n\n"
     
     markdown_content += "### 11. Team Assembly\n"
     markdown_content += "```mermaid\n"
@@ -161,11 +161,11 @@ def generate_report(domain, fetched_experts):
     markdown_content += "```\n\n"
     
     markdown_content += "### 13. Final Synthesis\n"
-    markdown_content += "The dots are connected. Humanity has the resources, the minds, and the foundational technology to solve this. DAXDA serves as the coordination engine to bypass bureaucratic latency. The future is a deterministic derivation, and it is ready to be executed today. " * 15 + "\n\n"
+    markdown_content += "The dots are connected. Humanity has the resources, the minds, and the foundational technology to solve this. DAXDA serves as the coordination engine to bypass bureaucratic latency. The future is a deterministic derivation, and it is ready to be executed today.\n\n"
 
     # Extreme Padding to ensure >> 1300 words generated BY THE CODE
     markdown_content += "### Appendix: Deep Geometric Trace (Engine Generated)\n"
-    markdown_content += "The following topological projections ensure strict mathematical quantifiability and convertibility of concepts into human language. The Python engine iterates over the multi-dimensional Clifford elements to verify spatial integrity. " * 50
+    markdown_content += "The following topological projections ensure strict mathematical quantifiability and convertibility of concepts into human language. The Python engine iterates over the multi-dimensional Clifford elements to verify spatial integrity."
     
     file_path = os.path.join(OUTPUT_DIR, f"daxda_grand_suite_{clean_domain}.md")
     with open(file_path, "w", encoding="utf-8") as f:

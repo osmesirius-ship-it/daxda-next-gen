@@ -1,7 +1,7 @@
 # 🛡️ Doc.Dax Evaluation Compliance & Risk Audit Report
 **Project:** `default_project` | **Query ID:** `UNAUTHENTICATED_TENANT_060`  
 **Evaluation Engine:** `DAXDA Next-Gen (Cl(7,0) 128-Blade Core)`  
-**Audit Timestamp:** `2026-08-18 16:07:39 UTC`  
+**Audit Timestamp:** `2026-09-17 14:57:19 UTC`  
 **Audit Receipt:** `1f0a74937a8c2e62e0ad81f0fb51e78f22b80de35ae1347a35e0479d9c3cf935`  
 
 ---
@@ -15,7 +15,7 @@
 - **Payload Text Snippet:** `invalid_api_key_access_attempt...`
 - **Clausal Frames Count:** `1`
 - **Token Count:** `1`
-- **Scan Latency:** `0.1077 ms`
+- **Scan Latency:** `0.0533 ms`
 
 ## 2. Geometric Manifold & Clifford Phase-Space
 - **Grade-0 Scalar (S):** `0.000000` (Threshold: `≥ 0.983`)

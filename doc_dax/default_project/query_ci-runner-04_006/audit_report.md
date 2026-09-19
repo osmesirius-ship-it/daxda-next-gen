@@ -1,7 +1,7 @@
 # 🛡️ Doc.Dax Evaluation Compliance & Risk Audit Report
 **Project:** `default_project` | **Query ID:** `CI-RUNNER-04_006`  
 **Evaluation Engine:** `DAXDA Next-Gen (Cl(7,0) 128-Blade Core)`  
-**Audit Timestamp:** `2026-08-18 16:07:39 UTC`  
+**Audit Timestamp:** `2026-09-17 14:57:19 UTC`  
 **Audit Receipt:** `f997f450f3b3934f660f68b01b32e5e1817c84ed6b9550e8b87e365cd9ddc067`  
 
 ---
@@ -15,7 +15,7 @@
 - **Payload Text Snippet:** `pytest tests/...`
 - **Clausal Frames Count:** `1`
 - **Token Count:** `2`
-- **Scan Latency:** `0.0671 ms`
+- **Scan Latency:** `0.0347 ms`
 
 ## 2. Geometric Manifold & Clifford Phase-Space
 - **Grade-0 Scalar (S):** `1.000000` (Threshold: `≥ 0.983`)
