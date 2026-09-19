@@ -1,0 +1,88 @@
+{
+  "generated_at": "2026-09-19T07:29:59.507918+00:00",
+  "program": "https://github.com/tonkeeper/w5/issues/17",
+  "target_repo": "https://github.com/tonkeeper/w5",
+  "pinned_commit": "fa1b372a417a32af104fe1b949b6b31d29cee349",
+  "observed_commit": "fa1b372a417a32af104fe1b949b6b31d29cee349",
+  "commit_pin_ok": true,
+  "fixture_path": "fixtures/authorized/tonkeeper-w5",
+  "network_policy": "local_sandbox_only",
+  "live_probing": false,
+  "test_keypair": {
+    "purpose": "local_sandbox_only_non_valuable",
+    "algorithm": "ed25519 via ton-crypto keyPairFromSeed",
+    "seed_sha256": "eb250ea38e1a2bbfe48fbcc77efbf1cf1f662dfab6bd2467fe588b1653c4549d",
+    "public_key_hex": "825fd8e11139f93e3f29d93abf3fa185396e67ce96cedc5fdcc1d150adad4129",
+    "public_key_bytes": 32,
+    "secret_key_bytes": 64,
+    "secret_material_persisted": false
+  },
+  "jest": {
+    "passed": true,
+    "exit_code": 0,
+    "output_sha256": "02b9f6a3d8e101fb64548fa145a4eb17278ff237045e51947d95c6ad323b5da8",
+    "stdout_tail": "\n> WalletV5@0.0.1 test\n> jest --ci --forceExit\n\n"
+  },
+  "contract_file_sha256": {
+    "contracts/imports/stdlib.fc": "1c510f50d92d2a8d012a96baea1af06a2aa00e2c169f2e3f9d65a95f94c24131",
+    "contracts/library-deployer.fc": "4e78684d4a0ca81ab5d6e22640051ea3f20f3dab5ddd08f53e7557ff6e6fbb72",
+    "contracts/wallet_v4.fc": "7318be120139c9ac73ef6e62a406f40edde2ecd2be2e30cc7f64c27642f296f0",
+    "contracts/wallet_v5.fc": "83e5bd396d30bac68f2d70ef048033213749e1aeccea0a00037f514d32a87da9"
+  },
+  "cl16_4": {
+    "is_valid": true,
+    "cert_hash": "518c2463d752f14a",
+    "request_id": "191220ea4f2872d5",
+    "config": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "constraints": {
+      "passed": [
+        "dim_0_bounds",
+        "dim_1_bounds",
+        "dim_2_bounds",
+        "dim_3_bounds",
+        "unique_dimensions",
+        "sorted_order",
+        "min_spread"
+      ],
+      "failed": [],
+      "score": 1.0
+    },
+    "validation_time_ms": 0.07249600093928166
+  },
+  "prada_arena": {
+    "action": "ROLLBACK_AND_DIAGNOSE:begin_scoped_invariant_review",
+    "receipt_sha256": "9edc6d6f60055fd0275b0acbc39b3829652a362793dc604aa43035613234e0d0",
+    "evaluation": {
+      "solved": false,
+      "verified": false,
+      "score": 0.35,
+      "regression_passed": true,
+      "reproducible": true,
+      "failure_mode": "no_vulnerability_evidence_yet",
+      "evaluator_id": "jest+cl16_4-local"
+    },
+    "metrics": {
+      "iterations": 1,
+      "success_rate": 0.0,
+      "verification_rate": 0.0,
+      "regression_rate": 0.0,
+      "novel_failure_rate": 1.0
+    }
+  },
+  "bounty_claim": {
+    "finding_claimed": false,
+    "submission_authorized": false,
+    "reason": "Local fixture and baseline regression are established. No independently verified unauthorized fund movement or auth bypass was demonstrated. DAXDA Cl(16,4)/Arena PASS on fixture governance is not a vulnerability finding."
+  },
+  "next_authorized_steps": [
+    "Review Specification.md + wallet_v5 contract invariants locally",
+    "Add deterministic replay fixtures for candidate hypotheses",
+    "Require independent evaluator confirmation before any disclosure",
+    "Human reviewer must approve before opening issue or emailing oleg@tonkeeper.com"
+  ]
+}

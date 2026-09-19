@@ -1,0 +1,219 @@
+{
+  "generated_at": "2026-09-19T08:43:39.712758+00:00",
+  "requested": "Cl(5,7)",
+  "clspace_cl_5_7": {
+    "ok": false,
+    "n": 5,
+    "k": 7,
+    "size": null,
+    "error": "Invalid Cl(n,k) parameters: n=5, k=7. Must have 1<=k<=n<=16"
+  },
+  "clspace_cl_7_5": {
+    "ok": true,
+    "n": 7,
+    "k": 5,
+    "size": 21,
+    "error": null
+  },
+  "interpretation": {
+    "combinatorial_Cl_5_7": "invalid under ClSpace (requires 1<=k<=n<=16)",
+    "combinatorial_Cl_7_5": "valid; C(7,5)=21 configs over 7 W5 security axes",
+    "clifford_Cl_5_7": "12-axis (+5/-7) entropy scan over fixture governance facts"
+  },
+  "axes7": [
+    {
+      "name": "ext_signed_auth",
+      "status": "covered",
+      "note": "wallet-v5-external.spec.ts"
+    },
+    {
+      "name": "int_signed_auth",
+      "status": "covered",
+      "note": "wallet-v5-internal.spec.ts"
+    },
+    {
+      "name": "extension_auth",
+      "status": "covered",
+      "note": "wallet-v5-extensions.spec.ts"
+    },
+    {
+      "name": "seqno_replay",
+      "status": "partial",
+      "note": "seqno invalid covered; identical-body double-send not explicit"
+    },
+    {
+      "name": "sig_auth_disable_antibrick",
+      "status": "covered",
+      "note": "external+internal 42/43/44"
+    },
+    {
+      "name": "action_allowlist",
+      "status": "covered_now",
+      "note": "security-coverage.spec.ts exit 37"
+    },
+    {
+      "name": "bounce_inbound",
+      "status": "covered_now",
+      "note": "security-coverage.spec.ts bounced=1"
+    }
+  ],
+  "cl75_summary": {
+    "configs": 21,
+    "elevated_count": 0,
+    "elevated": [],
+    "lowest_score_configs": [
+      {
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "axes": [
+          "ext_signed_auth",
+          "int_signed_auth",
+          "extension_auth",
+          "seqno_replay",
+          "sig_auth_disable_antibrick"
+        ],
+        "gaps": [],
+        "partials": [
+          "seqno_replay"
+        ],
+        "score": 0.9,
+        "elevate_to_failing_jest_candidate": false
+      },
+      {
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          5
+        ],
+        "axes": [
+          "ext_signed_auth",
+          "int_signed_auth",
+          "extension_auth",
+          "seqno_replay",
+          "action_allowlist"
+        ],
+        "gaps": [],
+        "partials": [
+          "seqno_replay"
+        ],
+        "score": 0.9,
+        "elevate_to_failing_jest_candidate": false
+      },
+      {
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "axes": [
+          "ext_signed_auth",
+          "int_signed_auth",
+          "extension_auth",
+          "seqno_replay",
+          "bounce_inbound"
+        ],
+        "gaps": [],
+        "partials": [
+          "seqno_replay"
+        ],
+        "score": 0.9,
+        "elevate_to_failing_jest_candidate": false
+      },
+      {
+        "indices": [
+          0,
+          1,
+          3,
+          4,
+          5
+        ],
+        "axes": [
+          "ext_signed_auth",
+          "int_signed_auth",
+          "seqno_replay",
+          "sig_auth_disable_antibrick",
+          "action_allowlist"
+        ],
+        "gaps": [],
+        "partials": [
+          "seqno_replay"
+        ],
+        "score": 0.9,
+        "elevate_to_failing_jest_candidate": false
+      },
+      {
+        "indices": [
+          0,
+          1,
+          3,
+          4,
+          6
+        ],
+        "axes": [
+          "ext_signed_auth",
+          "int_signed_auth",
+          "seqno_replay",
+          "sig_auth_disable_antibrick",
+          "bounce_inbound"
+        ],
+        "gaps": [],
+        "partials": [
+          "seqno_replay"
+        ],
+        "score": 0.9,
+        "elevate_to_failing_jest_candidate": false
+      }
+    ],
+    "min_score": 0.9,
+    "max_score": 1.0,
+    "mean_score": 0.929
+  },
+  "clifford_cl57": {
+    "positive_axes": {
+      "pin_ok": 1.0,
+      "jest_baseline": 1.0,
+      "coverage_guards": 1.0,
+      "cl164_fixture_auth": 1.0,
+      "roe_local_only": 1.0
+    },
+    "negative_risk_axes": {
+      "live_probe": 0.0,
+      "real_funds": 0.0,
+      "finding_claimed": 0.0,
+      "disclosure_sent": 0.0,
+      "duplicate_unchecked": 0.4,
+      "hypothesis_invented": 0.0,
+      "arena_solved": 0.0
+    },
+    "entropy": 0.379949,
+    "interpretation": "low entropy => fixture posture consistent; not a vuln signal"
+  },
+  "hypervalidator": {
+    "is_valid": true,
+    "cert_hash": "84fac010b656822e",
+    "config": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "constraint_score": 1.0,
+    "failed": []
+  },
+  "prada_arena": {
+    "action": "ROLLBACK_AND_DIAGNOSE:continue_local_only",
+    "receipt_sha256": "23d65fb4ce5fbef606069d94dc5628be8e3994f182673910644fc1ce81bf9e95",
+    "failure_mode": "no_cl57_elevated_finding",
+    "finding_claimed": false
+  },
+  "verdict": "No Cl(5,7)/Cl(7,5) configuration elevated a new in-scope failing-Jest vulnerability candidate. Only residual partial: identical-body seqno replay assertion (already enforced by seqno!=stored check; coverage gap only)."
+}

@@ -1,0 +1,212 @@
+{
+  "generated_at": "2026-09-19T09:47:22.589400+00:00",
+  "requested": "E8 quasicrystal Clifford",
+  "construction": {
+    "root_system": "E8",
+    "n_roots": 240,
+    "lie_dim": 248,
+    "projection": "Elser-Sloane-style E8\u2192R^4 cut-and-project (phi mixing)",
+    "phi": 1.618033988749895,
+    "perp_cut_radius": 1.0,
+    "roots_in_quasicrystal_window": 192,
+    "window_fraction": 0.8
+  },
+  "w5_e8_axes": {
+    "pin_fa1b372": 1.0,
+    "jest_baseline_green": 1.0,
+    "coverage_guards": 1.0,
+    "local_only_roe": 1.0,
+    "ephemeral_keys": 1.0,
+    "cl164_fixture_auth": 1.0,
+    "vuln_evidence": 0.0,
+    "impact_proven": 0.0
+  },
+  "gap_to_hold_ready": {
+    "vuln_evidence": 1.0,
+    "impact_proven": 1.0
+  },
+  "quasicrystal_embed": {
+    "current_in_window": true,
+    "hold_ready_in_window": true,
+    "q_norm_current": 0.27450083830183913,
+    "q_norm_hold": 0.37438686547901723,
+    "physical_gap_norm": 0.5765030852683917,
+    "top_aligned_roots_current": [
+      {
+        "root_index": 184,
+        "alignment": 1.2247448713910891,
+        "root": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "root_index": 183,
+        "alignment": 1.2247448713910891,
+        "root": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          -0.5,
+          -0.5
+        ]
+      },
+      {
+        "root_index": 61,
+        "alignment": 0.8164965809273927,
+        "root": [
+          -0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          -0.5,
+          0.5
+        ]
+      },
+      {
+        "root_index": 62,
+        "alignment": 0.8164965809273927,
+        "root": [
+          -0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          -0.5
+        ]
+      },
+      {
+        "root_index": 126,
+        "alignment": 0.8164965809273927,
+        "root": [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "top_aligned_roots_hold_ready": [
+      {
+        "root_index": 184,
+        "alignment": 1.4142135623725949,
+        "root": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "root_index": 60,
+        "alignment": 0.7071067811862974,
+        "root": [
+          -0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          -0.5,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "root_index": 50,
+        "alignment": 0.7071067811862974,
+        "root": [
+          -0.5,
+          0.5,
+          -0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "root_index": 54,
+        "alignment": 0.7071067811862974,
+        "root": [
+          -0.5,
+          0.5,
+          0.5,
+          -0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "root_index": 62,
+        "alignment": 0.7071067811862974,
+        "root": [
+          -0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          -0.5
+        ]
+      }
+    ]
+  },
+  "cl70_bridge": {
+    "entropy_vs_hold": 0.7615941559557649,
+    "entropy_at_hold": 0.0
+  },
+  "cl16_4": {
+    "current": {
+      "is_valid": true,
+      "cert_hash": "7cd02a2bdc58df3e",
+      "config": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "hold_ready": {
+      "is_valid": true,
+      "cert_hash": "a977b9486a457136",
+      "config": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "prada_arena": {
+    "action": "ROLLBACK_AND_DIAGNOSE:still_need_failing_jest",
+    "receipt_sha256": "d1a4f6788d64d138838d33efd0cbc2b3d59aef70e37d873e0b308de3cc0863b0",
+    "finding_claimed": false,
+    "elevated_vuln_candidate": false
+  },
+  "verdict": "E8 quasicrystal cut-and-project ran successfully over W5 fixture axes. Current state sits in the acceptance window for governance posture, but finding/impact axes remain 0 \u2014 same hold gap as before. No new vulnerability candidate; failing Jest still required for bounty hold."
+}

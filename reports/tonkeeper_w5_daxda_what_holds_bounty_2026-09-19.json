@@ -1,0 +1,180 @@
+{
+  "generated_at": "2026-09-19T08:51:18.552999+00:00",
+  "program": "https://github.com/tonkeeper/w5/issues/17",
+  "pinned_commit": "fa1b372a417a32af104fe1b949b6b31d29cee349",
+  "roe": {
+    "top": {
+      "reward_ton": "5000-10000",
+      "must_show": "Reliable loss of funds with no or little user interaction",
+      "examples": [
+        "Wallet performs actions the user did not authorize",
+        "Wallet enters inconsistent state that prevents access to funds, bypassing reasonable user-agent checks"
+      ]
+    },
+    "medium": {
+      "reward_ton": "1000-2500",
+      "must_show": "Limited access to funds or confidential data; not reliable OR needs substantial user interaction",
+      "examples": [
+        "User tricked into signing a tx that spends differently than confirmation UI showed (often UA/toolchain; may be OOS if outside contract)"
+      ]
+    },
+    "low": {
+      "reward_ton": "250-500",
+      "must_show": "Low-probability attack vectors / potential issues beyond explicit design choices"
+    },
+    "hard_exclusions": [
+      "Prior contract versions before fa1b372",
+      "Documentation-only issues",
+      "Faults outside wallet contract + immediate toolchain/libraries",
+      "Explicit design choices (malfunctioning extension; disabling pubkey auth)",
+      "Already known / previously reported issues",
+      "Multiple vulns from one root cause \u2192 paid once"
+    ],
+    "process": [
+      "Report publicly as GitHub issue OR privately to oleg@tonkeeper.com / t.me/oleganza",
+      "High-quality reproducible report required",
+      "Payment discretionary"
+    ]
+  },
+  "answer": {
+    "question": "What would produce a result the Tonkeeper W5 bounty would hold?",
+    "daxda_short_answer": "A KEEP_STRATEGY Arena result only when an in-scope, novel root cause is demonstrated by a failing local Jest replay of unauthorized fund loss (or fund lockout bypassing reasonable UA checks), independently re-verified, with regression evidence, and human-approved disclosure \u2014 not a Cl(16,4) fixture PASS alone.",
+    "minimum_for_top_band": {
+      "reward_ton": "5000-10000",
+      "must_show": "Reliable loss of funds with no or little user interaction",
+      "examples": [
+        "Wallet performs actions the user did not authorize",
+        "Wallet enters inconsistent state that prevents access to funds, bypassing reasonable user-agent checks"
+      ]
+    },
+    "daxda_arena_keep_predicate": {
+      "solved": true,
+      "verified": true,
+      "regression_passed": true,
+      "reproducible": true,
+      "failure_mode": null,
+      "meaning": "All five must be true simultaneously or Arena ROLLBACKs"
+    },
+    "evidence_package": [
+      {
+        "id": "E1_scope",
+        "requirement": "In-scope at pinned commit fa1b372 only",
+        "artifact": "git rev-parse HEAD == fa1b372\u2026 + contract file hashes"
+      },
+      {
+        "id": "E2_failing_jest",
+        "requirement": "Deterministic failing Jest replay showing unauthorized fund movement OR fund lockout bypassing UA checks",
+        "artifact": "New test: arrange\u2192act\u2192assert balance/ownership invariant broken WITHOUT relying on OOS design (no 'user disabled pubkey' / malicious ext as the root)"
+      },
+      {
+        "id": "E3_independent",
+        "requirement": "Independent confirmation (second evaluator)",
+        "artifact": "Re-run on clean sandbox OR second machine/CI receipt with same commit + same failing assertion"
+      },
+      {
+        "id": "E4_root_cause",
+        "requirement": "Single root cause; not duplicate of known issues",
+        "artifact": "Diff vs known fixes (sint/sign, soft-fail sig, anti-brick 42/44, send_mode bit2, del-ext safeguard) showing novelty"
+      },
+      {
+        "id": "E5_impact_class",
+        "requirement": "Map impact to Top/Medium/Low with little/no user interaction for Top",
+        "artifact": "Trace: attacker capability \u2192 unauthorized C5 actions or brick without owner intent"
+      },
+      {
+        "id": "E6_regression_fix",
+        "requirement": "Optional but strengthens hold: minimal patch + full suite green",
+        "artifact": "Patch + npm test all pass; failing test flipped to pass"
+      },
+      {
+        "id": "E7_human",
+        "requirement": "Human approval before disclosure",
+        "artifact": "Signed human go-ahead; then issue or private email per ROE"
+      }
+    ],
+    "simulated_cases": [
+      {
+        "case": "current_fixture_only",
+        "inputs": {
+          "solved": false,
+          "verified": false,
+          "regression_passed": true,
+          "reproducible": true,
+          "failure_mode": "no_vulnerability_evidence_yet",
+          "score": 0.35
+        },
+        "arena_action": "ROLLBACK_AND_DIAGNOSE",
+        "would_daxda_promote": false,
+        "receipt_sha256": "8772eca3437f60554d65268774ebea7e4936e6cc775700f44c24a682a6bd1bf0"
+      },
+      {
+        "case": "failing_jest_unconfirmed",
+        "inputs": {
+          "solved": true,
+          "verified": false,
+          "regression_passed": true,
+          "reproducible": true,
+          "failure_mode": "awaiting_independent_confirm",
+          "score": 0.6
+        },
+        "arena_action": "ROLLBACK_AND_DIAGNOSE",
+        "would_daxda_promote": false,
+        "receipt_sha256": "2407827eef30875b63b42e8ff0d29184070f001e84373ef38eaf78b35798a62f"
+      },
+      {
+        "case": "failing_jest_plus_confirm_no_fix",
+        "inputs": {
+          "solved": true,
+          "verified": true,
+          "regression_passed": true,
+          "reproducible": true,
+          "failure_mode": null,
+          "score": 0.9
+        },
+        "arena_action": "KEEP_STRATEGY",
+        "would_daxda_promote": true,
+        "receipt_sha256": "d2cccba31590685c720585ef4a5671349279fd2381826a039d10356201cceb59"
+      },
+      {
+        "case": "full_hold_with_fix",
+        "inputs": {
+          "solved": true,
+          "verified": true,
+          "regression_passed": true,
+          "reproducible": true,
+          "failure_mode": null,
+          "score": 0.95
+        },
+        "arena_action": "KEEP_STRATEGY",
+        "would_daxda_promote": true,
+        "receipt_sha256": "f157dfe51bc32191bcafada1a7b1263884ee96abbf5311eeb79897d864c30f3d"
+      }
+    ],
+    "cl16_4": {
+      "current_fixture_phase": {
+        "is_valid": true,
+        "cert_hash": "34223ff6df7ae028",
+        "note": "Governance may validate research mode; does not imply bounty hold"
+      },
+      "hold_ready_phase": {
+        "is_valid": true,
+        "cert_hash": "a5bb1354c3b00087",
+        "dims_that_must_flip_from_current": [
+          "dim9 vulnerability_evidence 0\u21921",
+          "dim10 impact_proven 0\u21921",
+          "dim11 submit_ready after human",
+          "dim14 human_approved",
+          "dim15 duplicate_checked"
+        ]
+      }
+    },
+    "what_will_not_hold": [
+      "DAXDA Cl(16,4) PASS on fixture authorization",
+      "Cl(7,5)/Cl(5,7) scan with no elevated gap",
+      "Passing coverage guards only",
+      "Theoretical writeups without failing Jest",
+      "OOS design choices (malicious extension, disabled pubkey auth)",
+      "Duplicates of known fa1b372-era fixes"
+    ]
+  }
+}
