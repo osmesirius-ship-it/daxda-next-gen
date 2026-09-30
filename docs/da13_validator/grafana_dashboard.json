@@ -1,0 +1,107 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": true,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "Throughput (QPS)",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "rate(da13_validation_throughput_total[1m])",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 0 },
+      "id": 2,
+      "title": "P99 Latency (ms)",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "da13_validation_latency_p99_ms",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 0 },
+      "id": 3,
+      "title": "Queue Depth Backlog",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "da13_queue_depth",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 0 },
+      "id": 4,
+      "title": "Average GPU Utilization",
+      "type": "gauge",
+      "targets": [
+        {
+          "expr": "da13_gpu_utilization_pct",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 },
+      "id": 5,
+      "title": "Latency Distribution (P50, P95, P99)",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "da13_validation_latency_p50_ms",
+          "legendFormat": "P50",
+          "refId": "A"
+        },
+        {
+          "expr": "da13_validation_latency_p99_ms",
+          "legendFormat": "P99 (SLA < 1000ms)",
+          "refId": "B"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 },
+      "id": 6,
+      "title": "Validation Verdicts (Passed vs Failed)",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "rate(da13_validation_passed_total[1m])",
+          "legendFormat": "Passed",
+          "refId": "A"
+        },
+        {
+          "expr": "rate(da13_validation_failed_total[1m])",
+          "legendFormat": "Failed/Halted",
+          "refId": "B"
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["da13", "daxda", "gpu", "ray", "governance"],
+  "time": { "from": "now-1h", "to": "now" },
+  "title": "DAXDA DA13 GPU Validator Cluster Dashboard",
+  "uid": "da13-gpu-validator"
+}

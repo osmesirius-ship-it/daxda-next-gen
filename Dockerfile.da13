@@ -1,0 +1,46 @@
+# syntax=docker/dockerfile:1
+FROM python:3.11-slim
+
+LABEL maintainer="DAXDA Systems <governance@daxda.ia>"
+LABEL description="DAXDA DA13 Distributed GPU Validator Cluster – Multiversal Transit Hub"
+LABEL version="2.0.0"
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONPATH=/app \
+    DA13_MIN_WORKERS=1 \
+    DA13_MAX_WORKERS=1024 \
+    DA13_INITIAL_WORKERS=4 \
+    DA13_API_PORT=8000 \
+    DA13_METRICS_PORT=9090
+
+WORKDIR /app
+
+# Install minimal system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python requirements
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt pytest
+
+# Copy codebase
+COPY . .
+
+# Run test suite to verify container image integrity at build time
+RUN python -m pytest tests/da13_validator/ -v
+
+# Run performance benchmark during build
+RUN python tools/run_da13_benchmark.py
+
+# Expose HTTP API, Prometheus metrics, and WebSocket ports
+EXPOSE 8000 9090 8765
+
+# Healthcheck testing cluster health endpoint
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+    CMD python -c "from da13_validator import ClusterManager; cm = ClusterManager(); exit(0 if cm.get_status()['healthy'] else 1)"
+
+# Default command: Launch cluster benchmark runner
+CMD ["python", "tools/run_da13_benchmark.py"]

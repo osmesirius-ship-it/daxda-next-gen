@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  da13_head:
+    build:
+      context: ..
+      dockerfile: Dockerfile.da13
+    image: daxda/da13-validator:2.0.0
+    container_name: da13-validator-head
+    ports:
+      - "8000:8000"
+      - "9090:9090"
+      - "8765:8765"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DA13_INITIAL_WORKERS=4
+      - DA13_MIN_WORKERS=1
+      - DA13_MAX_WORKERS=1024
+    volumes:
+      - ../outputs:/app/outputs
+    restart: unless-stopped
+    command: ["python", "tools/run_da13_benchmark.py"]

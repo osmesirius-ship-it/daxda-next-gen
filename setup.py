@@ -67,7 +67,11 @@ setup(
     author="DAXDA Security Engineering",
     author_email="security@daxda.ai",
     url="https://github.com/daxda/daxda-guard",
-    packages=find_packages(include=["daxda_guard", "daxda_guard.*", "daxda_engine", "daxda_engine.*"]),
+    packages=find_packages(include=[
+        "daxda_guard", "daxda_guard.*",
+        "daxda_engine", "daxda_engine.*",
+        "da13_validator", "da13_validator.*"
+    ]),
     package_data={
         "daxda_guard": ["*.so", "*.dylib", "*.dll"],
     },

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+  labels:
+    app.kubernetes.io/name: da13-validator
+    app.kubernetes.io/instance: {{ .Release.Name }}
+data:
+  DA13_CLUSTER_ID: "{{ .Values.cluster.clusterId }}"
+  DA13_RAY_ADDRESS: "{{ .Values.cluster.rayAddress }}"
+  DA13_MIN_WORKERS: "{{ .Values.cluster.minWorkers }}"
+  DA13_MAX_WORKERS: "{{ .Values.cluster.maxWorkers }}"
+  DA13_GPU_PER_WORKER: "{{ .Values.cluster.gpuPerWorker }}"
+  DA13_CPU_PER_WORKER: "{{ .Values.cluster.cpuPerWorker }}"
+  DA13_API_PORT: "{{ .Values.service.apiPort }}"
+  DA13_METRICS_PORT: "{{ .Values.service.metricsPort }}"
+  DA13_WEBSOCKET_PORT: "{{ .Values.service.websocketPort }}"

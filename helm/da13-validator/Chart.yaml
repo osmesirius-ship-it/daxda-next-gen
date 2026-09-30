@@ -1,0 +1,16 @@
+apiVersion: v2
+name: da13-validator
+description: Production Kubernetes Helm Chart for DAXDA DA13 Distributed GPU Validator Cluster
+type: application
+version: 2.0.0
+appVersion: "2.0.0"
+keywords:
+  - daxda
+  - da13
+  - ray
+  - gpu-cluster
+  - ai-governance
+  - kubernetes
+maintainers:
+  - name: DAXDA Engineering
+    email: governance@daxda.ia

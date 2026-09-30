@@ -1,0 +1,64 @@
+# Default values for da13-validator.
+replicaCount:
+  head: 1
+  minWorkers: 2
+  maxWorkers: 1024
+
+image:
+  repository: daxda/da13-validator
+  pullPolicy: IfNotPresent
+  tag: "2.0.0"
+
+cluster:
+  clusterId: "da13-prod-cluster"
+  gpuPerWorker: 1
+  cpuPerWorker: 4
+  memoryPerWorkerGb: 16
+  rayAddress: "auto"
+  autoscaleIntervalSec: 5
+  scaleUpP99ThresholdMs: 800
+  scaleDownP99ThresholdMs: 200
+
+service:
+  type: ClusterIP
+  apiPort: 8000
+  metricsPort: 9090
+  websocketPort: 8765
+
+resources:
+  head:
+    limits:
+      cpu: "16"
+      memory: "32Gi"
+    requests:
+      cpu: "8"
+      memory: "16Gi"
+  worker:
+    limits:
+      cpu: "8"
+      memory: "32Gi"
+      nvidia.com/gpu: 1
+    requests:
+      cpu: "4"
+      memory: "16Gi"
+      nvidia.com/gpu: 1
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 1024
+  targetCPUUtilizationPercentage: 80
+  targetGPUUtilizationPercentage: 85
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+  hosts:
+    - host: validator.daxda.internal
+      paths:
+        - path: /
+          pathType: Prefix
