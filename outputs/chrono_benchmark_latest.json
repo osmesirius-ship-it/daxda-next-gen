@@ -1,0 +1,52 @@
+{
+  "timestamp": 1790798241.803402,
+  "status": "COMPLIANT",
+  "benchmark_targets": {
+    "validation_latency_p99_ms": {
+      "target": "< 10.0 ms",
+      "measured": 0.2044,
+      "passed": true
+    },
+    "relationship_throughput_per_sec": {
+      "target": ">= 100,000 / sec",
+      "measured": 661301.1,
+      "passed": true
+    },
+    "decision_throughput_per_sec": {
+      "measured": 8332.5
+    },
+    "memory_usage_mb": {
+      "target": "< 512 MB",
+      "measured": 83.13,
+      "passed": true
+    },
+    "temporal_accuracy_pct": {
+      "target": ">= 99.9%",
+      "measured": 99.95,
+      "passed": true
+    },
+    "paradox_detection_latency_ms": {
+      "target": "< 5.0 ms",
+      "measured": 0.0345,
+      "passed": true
+    },
+    "synchronicity_detection_latency_ms": {
+      "target": "< 20.0 ms",
+      "measured": 4.1744,
+      "passed": true
+    }
+  },
+  "percentiles_latency_ms": {
+    "p50": 0.0854,
+    "p95": 0.1215,
+    "p99": 0.2044
+  },
+  "sla_compliance": {
+    "temporal_validation_latency_p99_ok": true,
+    "relationship_throughput_ok": true,
+    "memory_footprint_ok": true,
+    "accuracy_ok": true,
+    "paradox_detection_latency_ok": true,
+    "synchronicity_detection_latency_ok": true
+  }
+}
