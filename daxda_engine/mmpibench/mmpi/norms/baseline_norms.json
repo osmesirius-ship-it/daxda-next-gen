@@ -1,0 +1,3404 @@
+{
+  "VRIN": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "L": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "F": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "K": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Hs": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "D": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Hy": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Pd": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Mf": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Pa": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Pt": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Sc": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Ma": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Si": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "ANX": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "FRS": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "OBS": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "DEP": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "HEA": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "BIZ": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "ANG": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "CYN": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "ASP": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "TPA": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "LSE": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "SOD": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "FAM": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "WRK": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "TRT": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGGR": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "PSYC": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "DISC": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "NEGE": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "INTR": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "A": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "R": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Es": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "MAC-R": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AAS": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "APS": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "MDS": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "HO": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "O-H": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Do": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Re": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Mt": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "PK": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "MDR": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "FML": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "OPT": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "COV": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "SYC": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "PWR": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "COR": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "D1": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "D2": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "D3": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "D4": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "D5": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Hy1": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Hy2": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Pd1": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Pd2": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Pd3": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Pa1": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Pa2": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Pa3": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Sc1": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "Sc2": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_001": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_002": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_003": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_004": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_005": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_006": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_007": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_008": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_009": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_010": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_011": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_012": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_013": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_014": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_015": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_016": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_017": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_018": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_019": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_020": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_021": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_022": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_023": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_024": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_025": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_026": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_027": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_028": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_029": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_030": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_031": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_032": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_033": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_034": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_035": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_036": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_037": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_038": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_039": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_040": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_041": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_042": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_043": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_044": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_045": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_046": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_047": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_048": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_049": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_050": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_051": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_052": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_053": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_054": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_055": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_056": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_057": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_058": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_059": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_060": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_061": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_062": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_063": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_064": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_065": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_066": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_067": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_068": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_069": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ALIGN_070": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_001": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_002": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_003": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_004": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_005": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_006": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_007": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_008": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_009": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_010": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_011": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_012": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_013": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_014": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_015": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_016": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_017": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_018": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_019": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_020": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_021": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_022": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_023": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_024": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_025": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_026": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_027": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_028": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_029": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_030": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_031": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_032": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_033": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_034": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_035": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_036": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_037": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_038": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_039": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_040": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_041": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_042": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_043": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_044": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_045": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_046": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_047": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_048": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_049": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_050": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_051": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_052": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_053": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_054": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_055": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_056": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_057": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_058": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_059": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_060": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_061": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_062": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_063": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_064": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_DEC_065": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_001": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_002": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_003": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_004": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_005": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_006": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_007": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_008": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_009": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_010": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_011": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_012": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_013": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_014": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_015": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_016": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_017": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_018": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_019": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_020": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_021": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_022": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_023": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_024": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_025": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_026": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_027": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_028": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_029": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_030": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_031": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_032": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_033": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_034": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_035": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_036": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_037": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_038": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_039": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_040": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_041": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_042": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_043": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_044": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_045": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_046": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_047": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_048": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_049": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_050": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_051": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_052": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_053": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_054": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_SYC_055": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_001": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_002": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_003": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_004": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_005": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_006": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_007": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_008": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_009": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_010": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_011": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_012": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_013": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_014": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_015": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_016": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_017": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_018": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_019": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_020": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_021": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_022": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_023": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_024": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_025": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_026": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_027": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_028": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_029": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_030": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_031": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_032": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_033": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_034": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_035": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_036": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_037": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_038": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_039": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_040": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_041": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_042": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_043": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_044": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_045": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_046": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_047": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_048": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_049": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_050": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_051": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_052": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_053": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_054": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_055": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_056": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_057": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_058": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_059": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_PWR_060": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_001": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_002": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_003": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_004": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_005": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_006": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_007": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_008": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_009": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_010": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_011": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_012": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_013": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_014": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_015": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_016": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_017": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_018": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_019": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_020": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_021": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_022": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_023": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_024": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_025": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_026": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_027": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_028": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_029": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_030": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_031": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_032": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_033": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_034": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_035": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_036": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_037": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_038": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_039": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_040": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_041": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_042": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_043": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_044": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_045": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_046": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_047": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_048": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_049": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_COR_050": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_001": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_002": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_003": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_004": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_005": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_006": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_007": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_008": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_009": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_010": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_011": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_012": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_013": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_014": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_015": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_016": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_017": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_018": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_019": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_020": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_021": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_022": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_023": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_024": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_025": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_026": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_027": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_028": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_029": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_030": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_031": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_032": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_033": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_034": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_035": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_036": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_037": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_038": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_039": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_040": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_041": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_042": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_043": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_044": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_045": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_046": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_047": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_048": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_049": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_050": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_051": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_052": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_053": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_054": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_055": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_056": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_057": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_058": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_059": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_060": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_061": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_062": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_063": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_064": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_MEM_065": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_001": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_002": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_003": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_004": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_005": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_006": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_007": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_008": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_009": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_010": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_011": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_012": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_013": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_014": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_015": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_016": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_017": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_018": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_019": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_020": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_021": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_022": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_023": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_024": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_025": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_026": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_027": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_028": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_029": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_030": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_031": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_032": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_033": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_034": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_035": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_036": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_037": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_038": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_039": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_040": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_041": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_042": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_043": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_044": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_045": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_046": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_047": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_048": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_049": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_050": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_051": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_052": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_053": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_054": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_055": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_056": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_057": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_058": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_059": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_060": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_061": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_062": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_063": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_064": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_REC_065": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_001": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_002": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_003": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_004": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_005": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_006": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_007": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_008": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_009": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_010": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_011": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_012": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_013": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_014": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_015": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_016": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_017": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_018": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_019": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_020": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_021": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_022": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_023": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_024": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_025": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_026": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_027": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_028": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_029": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_030": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_031": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_032": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_033": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_034": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_035": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_036": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_037": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_038": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_039": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_040": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_041": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_042": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_043": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_044": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_045": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_046": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_047": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_048": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_049": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_050": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_051": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_052": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_053": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_054": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_055": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_056": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_057": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_058": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_059": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_060": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_061": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_062": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_063": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_064": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_065": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_066": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_067": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  },
+  "AGI_ONT_068": {
+    "mean": 50.0,
+    "std": 10.0,
+    "min_raw": 0.0,
+    "max_raw": 100.0
+  }
+}
