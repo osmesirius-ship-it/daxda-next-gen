@@ -117,7 +117,7 @@ class Cl16_4EngineIntegration:
         for k, v in d.items():
             new_key = f"{parent_key}{sep}{k}" if parent_key else k
             if isinstance(v, dict):
-                items.extend(self._flatten_dict(v, new_key, sep=sep).values())
+                items.extend(self._flatten_dict(v, new_key, sep=sep))
             else:
                 try:
                     items.append(float(v))

@@ -1,0 +1,40 @@
+# syntax=docker/dockerfile:1
+FROM python:3.11-slim
+
+LABEL maintainer="DAXDA Systems <governance@daxda.ia>"
+LABEL description="DAXDA Cl(16,4) Hypercombinatorial Governance Engine - Dyson Sphere Engineering Department"
+LABEL version="1.0.0"
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONPATH=/app
+
+WORKDIR /app
+
+# Install minimal system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python requirements
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt pytest
+
+# Copy codebase
+COPY . .
+
+# Run test suite to verify container image integrity
+RUN python -m pytest tests/cl16_4/ -v
+
+# Run performance benchmark during build
+RUN python tools/run_cl16_4_benchmark.py
+
+# Expose governance port
+EXPOSE 8080
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+    CMD python -c "from daxda_engine.cl16_4.validation.validator import HyperValidator, ValidationRequest; res = HyperValidator().validate(ValidationRequest(agent_id='healthcheck', decision_vector=[0.5]*16)); exit(0 if res.is_valid else 1)"
+
+# Default command: Execute the benchmark runner or start application
+CMD ["python", "tools/run_cl16_4_benchmark.py"]

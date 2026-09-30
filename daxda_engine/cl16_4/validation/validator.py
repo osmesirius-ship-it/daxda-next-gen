@@ -143,7 +143,7 @@ class HyperValidator:
             is_valid=is_valid,
             constraints=constraints_result,
             validation_time_ms=validation_time_ms,
-            timestamp=datetime.now(timezone.utc).isoformat()
+            timestamp=datetime.fromtimestamp(request.timestamp, tz=timezone.utc).isoformat() if request.timestamp else datetime.now(timezone.utc).isoformat()
         )
         
         return result

@@ -95,10 +95,14 @@ class Cl16_4GuardHooks:
         
         return result
     
-    def _extract_vector(self, decision: Dict[str, Any]) -> list:
+    def _extract_vector(self, decision: Any) -> list:
         """Extract 16D vector from decision."""
-        if isinstance(decision, (list, tuple)) and len(decision) == 16:
-            return list(float(x) for x in decision)
+        if isinstance(decision, (list, tuple)):
+            return [float(x) for x in decision]
+        if isinstance(decision, dict):
+            vals = list(decision.values())
+            if len(vals) == 16:
+                return [float(x) for x in vals]
         return [0.5] * 16
     
     def check_containment_violation(self, result: ValidationResult) -> bool:

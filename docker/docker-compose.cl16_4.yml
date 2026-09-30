@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  cl16_4_engine:
+    build:
+      context: ..
+      dockerfile: Dockerfile.cl16_4
+    image: daxda/cl16_4-governance-engine:1.0.0
+    container_name: daxda-cl16_4-engine
+    ports:
+      - "8080:8080"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DAXDA_THREAT_LEVEL=medium
+      - DAXDA_CL16_4_QUANTIZE=1
+    volumes:
+      - ../outputs:/app/outputs
+    restart: unless-stopped
+    command: ["python", "tools/run_cl16_4_benchmark.py"]
