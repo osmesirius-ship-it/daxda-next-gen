@@ -1,0 +1,69 @@
+{
+  "timestamp": 1790809078.794264,
+  "num_requests": 1000,
+  "total_time_sec": 1.166,
+  "throughput_actions_per_sec": 857.61,
+  "peak_memory_mb": 6.17,
+  "latency_percentiles_ms": {
+    "mean": 1.0535,
+    "p50": 0.9599,
+    "p90": 1.0695,
+    "p95": 1.1311,
+    "p99": 3.7595
+  },
+  "stage_latency_stats": {
+    "stage1_clifford_ms": {
+      "mean_ms": 0.2003,
+      "p50_ms": 0.1992,
+      "p99_ms": 0.1981
+    },
+    "stage2_containment_ms": {
+      "mean_ms": 0.1617,
+      "p50_ms": 0.1554,
+      "p99_ms": 0.1518
+    },
+    "stage3_dax_ms": {
+      "mean_ms": 0.0435,
+      "p50_ms": 0.0411,
+      "p99_ms": 0.0385
+    },
+    "stage4_chrono_ms": {
+      "mean_ms": 0.1156,
+      "p50_ms": 0.1072,
+      "p99_ms": 0.1133
+    },
+    "stage5_mmpibench_ms": {
+      "mean_ms": 0.4581,
+      "p50_ms": 0.3816,
+      "p99_ms": 0.3859
+    }
+  },
+  "verdict_distribution": {
+    "PERMIT": 700,
+    "QUARANTINE": 200,
+    "TERMINATE": 100
+  },
+  "pass_rate_pct": 70.0,
+  "sla_assessment": {
+    "p99_latency_sla": {
+      "target": "< 25.0 ms",
+      "measured": "3.760 ms",
+      "status": "PASS"
+    },
+    "throughput_sla": {
+      "target": ">= 500 actions/sec",
+      "measured": "857.6 actions/sec",
+      "status": "PASS"
+    },
+    "memory_sla": {
+      "target": "< 500 MB peak",
+      "measured": "6.17 MB",
+      "status": "PASS"
+    },
+    "verdict_consistency": {
+      "target": "100% Deterministic HMAC",
+      "measured": "100.0%",
+      "status": "PASS"
+    }
+  }
+}
