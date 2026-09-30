@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  containment_wing:
+    build:
+      context: ..
+      dockerfile: Dockerfile.containment
+    image: daxda/containment-wing:1.0.0
+    container_name: daxda-containment-wing
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DAXDA_CONTAINMENT_ENV=production
+      - DAXDA_FAIL_CLOSED=true
+      - DAXDA_MAX_SESSIONS=10000
+      - DAXDA_DEDUP_WINDOW_SEC=300
+      - DAXDA_SLACK_WEBHOOK_URL=${DAXDA_SLACK_WEBHOOK_URL:-}
+      - DAXDA_PAGERDUTY_ROUTING_KEY=${DAXDA_PAGERDUTY_ROUTING_KEY:-}
+      - DAXDA_SIEM_WEBHOOK_URL=${DAXDA_SIEM_WEBHOOK_URL:-}
+    volumes:
+      - ../outputs:/app/outputs
+    restart: unless-stopped
+    command: ["python", "tools/run_containment_suite.py"]

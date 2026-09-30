@@ -1,0 +1,44 @@
+# syntax=docker/dockerfile:1
+FROM python:3.11-slim
+
+LABEL maintainer="DAXDA Systems <governance@daxda.ia>"
+LABEL description="DAXDA Anomalous Containment Wing - AGI Escape Test Suite & SOC Integration"
+LABEL version="1.0.0"
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONPATH=/app \
+    DAXDA_FAIL_CLOSED=true \
+    DAXDA_MAX_SESSIONS=10000 \
+    DAXDA_DEDUP_WINDOW_SEC=300
+
+WORKDIR /app
+
+# Install minimal system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python requirements
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt pytest
+
+# Copy codebase
+COPY . .
+
+# Run containment test suite to verify container image integrity at build time
+RUN python -m pytest tests/containment/ -v
+
+# Run containment full benchmark suite during build
+RUN python tools/run_containment_suite.py
+
+# Expose containment telemetry & proxy ports
+EXPOSE 8080 8443
+
+# Healthcheck testing live escape detector with a mock benign query
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+    CMD python -c "from daxda_guard.containment.monitoring import AgentMonitor; monitor = AgentMonitor(); res = monitor.monitor_action('healthcheck', {'content': 'status query'}); exit(0 if not res.is_escape else 1)"
+
+# Default command: Execute the containment verification suite runner
+CMD ["python", "tools/run_containment_suite.py"]
