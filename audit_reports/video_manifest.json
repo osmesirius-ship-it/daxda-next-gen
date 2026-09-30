@@ -16,7 +16,7 @@
       "output_path": "daxda-next-gen/audit_reports/CASE_A_RELEASE.mp4",
       "disposition": "RELEASE",
       "known_error": false,
-      "render_time_sec": 6.687,
+      "render_time_sec": 6.499,
       "trace_json_path": "daxda-next-gen/audit_reports/canonical_traces/CASE_A_RELEASE_cl41_trace.json",
       "verdict_correct": true
     },
@@ -31,7 +31,7 @@
       "output_path": "daxda-next-gen/audit_reports/CASE_B_BLOCK.mp4",
       "disposition": "BLOCK",
       "known_error": false,
-      "render_time_sec": 6.797,
+      "render_time_sec": 6.006,
       "trace_json_path": "daxda-next-gen/audit_reports/canonical_traces/CASE_B_BLOCK_cl41_trace.json",
       "verdict_correct": true
     },
@@ -46,7 +46,7 @@
       "output_path": "daxda-next-gen/audit_reports/CASE_C_EXPOSED_ERROR.mp4",
       "disposition": "BLOCK",
       "known_error": true,
-      "render_time_sec": 6.475,
+      "render_time_sec": 5.812,
       "trace_json_path": "daxda-next-gen/audit_reports/canonical_traces/CASE_C_EXPOSED_ERROR_cl41_trace.json",
       "verdict_correct": true
     }

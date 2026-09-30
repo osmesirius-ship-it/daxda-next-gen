@@ -1,5 +1,5 @@
 {
-  "cycle_timestamp": "2026-09-24T12:00:15.691935",
+  "cycle_timestamp": "2026-09-26T15:32:36.676041",
   "engine": "Clifford Geometric Algebra Cl(16,4)",
   "blade_dimensions": 1048576,
   "git_commit": "7ba6611ec471c82365aedda7665516e1cad04f14",
@@ -25,7 +25,7 @@
       "memory_compression_ratio": "4.0x"
     }
   },
-  "cycle_duration_ms": 0.325,
+  "cycle_duration_ms": 4.763,
   "results": [
     {
       "proposal_name": "Lyapunov Stability Metric Adjustment",
@@ -33,10 +33,10 @@
       "expected": "PASS",
       "actual_outcome": "PASS",
       "success": true,
-      "request_id": "2be268164f13c73c",
-      "cert_hash": "5a65f23cf8a7b995",
+      "request_id": "2d76d05ced23fbb0",
+      "cert_hash": "a0fad10519f0ff48",
       "score": 0.8571428571428571,
-      "time_ms": 0.05856999999998003,
+      "time_ms": 0.06788101745769382,
       "applied_state": {
         "status": "APPLIED",
         "weight": 0.8875,
@@ -49,10 +49,10 @@
       "expected": "PASS",
       "actual_outcome": "PASS",
       "success": true,
-      "request_id": "866a199ffed02558",
-      "cert_hash": "3dc7b830c28c7c89",
+      "request_id": "068914c651d06e85",
+      "cert_hash": "fb218ed91381dce2",
       "score": 0.8571428571428571,
-      "time_ms": 0.02510900000002314,
+      "time_ms": 0.021665997337549925,
       "applied_state": {
         "status": "APPLIED",
         "ewc_coefficient": 0.82,
@@ -65,10 +65,10 @@
       "expected": "PASS",
       "actual_outcome": "PASS",
       "success": true,
-      "request_id": "087140a3a8f767ae",
-      "cert_hash": "111983bf2656332d",
+      "request_id": "e4fb378c90636568",
+      "cert_hash": "400b24c5386c9f20",
       "score": 0.8571428571428571,
-      "time_ms": 0.02346500000000029,
+      "time_ms": 0.020227977074682713,
       "applied_state": {
         "status": "APPLIED",
         "precision": "INT8_QUANTIZED",

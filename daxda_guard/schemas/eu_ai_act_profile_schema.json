@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DAXDAEUAIActRegulatoryEvidenceProfile",
+  "description": "Machine-readable regulatory evidence profile schema mapping DAXDA governance controls to Regulation (EU) 2024/1689 (EU AI Act) Articles 5, 6, 9-17, 26, 43, 49, 71, 72, and 73 under frozen v1.1 engineering boundaries.",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "timestamp_utc",
+    "regulatory_snapshot",
+    "system_identification",
+    "legal_determination_boundary",
+    "mathematical_configuration",
+    "intended_purpose",
+    "commercial_statement",
+    "legal_boundary_notice",
+    "prohibited_practices_check",
+    "article_6_classification_support",
+    "article_controls_evidence",
+    "conformity_assessment",
+    "registration_and_eu_database"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "regulatory_snapshot": {
+      "type": "object",
+      "required": ["framework", "assessment_date", "legislative_version", "commission_guidelines", "classification_status", "evidence_taxonomy"],
+      "properties": {
+        "framework": { "type": "string" },
+        "assessment_date": { "type": "string" },
+        "legislative_version": { "type": "string" },
+        "commission_guidelines": { "type": "string" },
+        "classification_status": { "type": "string", "const": "ARTICLE_6_CLASSIFICATION_NOT_YET_DETERMINED" },
+        "evidence_taxonomy": { "type": "string" }
+      }
+    },
+    "system_identification": {
+      "type": "object",
+      "required": ["system_name", "engine_version", "provider", "system_role"],
+      "properties": {
+        "system_name": { "type": "string", "example": "DAXDA NextGen" },
+        "engine_version": { "type": "string", "example": "11.4.0-CANONICAL-FROZEN" },
+        "provider": { "type": "string", "example": "DAXDA.AI" },
+        "system_role": { "type": "string", "example": "AI Governance / Policy Enforcement Point / Decision-Audit Infrastructure" }
+      }
+    },
+    "legal_determination_boundary": {
+      "type": "object",
+      "required": ["legal_determination_authority", "daxda_legal_role", "daxda_regulatory_decision_authority"],
+      "properties": {
+        "legal_determination_authority": {
+          "type": "string",
+          "const": "PROVIDER / DEPLOYER / RELEVANT LEGAL ACTOR"
+        },
+        "daxda_legal_role": {
+          "type": "string",
+          "const": "TECHNICAL_EVIDENCE_GENERATOR"
+        },
+        "daxda_regulatory_decision_authority": {
+          "type": "string",
+          "const": "NONE"
+        }
+      }
+    },
+    "mathematical_configuration": {
+      "type": "object",
+      "required": ["production_runtime", "research_configuration", "equivalence_disclaimer", "decision_authority"],
+      "properties": {
+        "production_runtime": { "type": "object" },
+        "research_configuration": { "type": "object" },
+        "equivalence_disclaimer": { "type": "string" },
+        "decision_authority": {
+          "type": "object",
+          "required": ["production_gate", "research_configuration", "research_can_modify_production_policy"],
+          "properties": {
+            "production_gate": { "type": "string", "const": "Cl(4,1)" },
+            "research_configuration": { "type": "string", "const": "NON_AUTHORITATIVE" },
+            "research_can_modify_production_policy": { "type": "boolean", "const": false }
+          }
+        }
+      }
+    },
+    "intended_purpose": {
+      "type": "string"
+    },
+    "commercial_statement": {
+      "type": "string"
+    },
+    "legal_boundary_notice": {
+      "type": "string"
+    },
+    "prohibited_practices_check": {
+      "type": "object",
+      "required": ["status", "article_5_conformance", "assessment_method", "audit_notes"],
+      "properties": {
+        "status": { "type": "string", "enum": ["NOT_ASSESSED", "PASS", "FAIL", "REVIEW"] },
+        "article_5_conformance": { "type": ["boolean", "null"] },
+        "assessment_method": { "type": "string" },
+        "audit_notes": { "type": "string" }
+      }
+    },
+    "article_6_classification_support": {
+      "type": "object",
+      "required": [
+        "classification_status",
+        "classification_review",
+        "annex_i_path",
+        "annex_iii_path",
+        "article_6_3_derogation",
+        "article_6_3_profiling_override",
+        "legal_determination",
+        "daxda_role"
+      ],
+      "properties": {
+        "classification_status": { "type": "string", "const": "ARTICLE_6_CLASSIFICATION_NOT_YET_DETERMINED" },
+        "classification_review": { "type": "string", "const": "ARTICLE_6_ASSESSMENT_REQUIRED" },
+        "annex_i_path": { "type": "string" },
+        "annex_iii_path": { "type": "string" },
+        "article_6_3_derogation": { "type": "string" },
+        "article_6_3_profiling_override": {
+          "type": "string",
+          "const": "IF profiling_of_natural_persons == TRUE -> HIGH_RISK_REQUIRES_LEGAL_DOCUMENTATION"
+        },
+        "legal_determination": { "type": "string", "const": "PROVIDER / DEPLOYER / RELEVANT LEGAL ACTOR" },
+        "daxda_role": { "type": "string", "const": "CLASSIFICATION_SUPPORT_ONLY" }
+      }
+    },
+    "article_controls_evidence": {
+      "type": "object",
+      "required": [
+        "article_9_risk_management",
+        "article_10_data_governance",
+        "article_11_technical_documentation",
+        "article_12_record_keeping_logging",
+        "article_13_transparency",
+        "article_14_human_oversight",
+        "article_15_accuracy_cybersecurity",
+        "article_16_provider_obligations",
+        "article_17_quality_management",
+        "article_26_deployer_obligations",
+        "article_43_conformity_assessment",
+        "article_49_71_registration_and_database",
+        "article_72_post_market_monitoring",
+        "article_73_serious_incident_reporting"
+      ]
+    },
+    "conformity_assessment": {
+      "type": "object",
+      "required": [
+        "status",
+        "conformity_assessment_support",
+        "conformity_pathway",
+        "legal_route_determination",
+        "applicable_article",
+        "candidate_pathways",
+        "daxda_role",
+        "legal_boundary"
+      ],
+      "properties": {
+        "status": { "type": "string", "const": "DETERMINATION_REQUIRED" },
+        "conformity_assessment_support": { "type": "string", "const": "TECHNICAL_EVIDENCE_AVAILABLE" },
+        "conformity_pathway": { "type": "string", "const": "DEPLOYMENT_AND_CLASSIFICATION_DEPENDENT" },
+        "legal_route_determination": { "type": "string", "const": "REQUIRED" },
+        "applicable_article": { "type": "string", "const": "Article 43" },
+        "candidate_pathways": { "type": "array", "items": { "type": "string" } },
+        "daxda_role": { "type": "string", "const": "EVIDENCE_SUPPORT" },
+        "legal_boundary": { "type": "string" }
+      }
+    },
+    "registration_and_eu_database": {
+      "type": "object",
+      "required": [
+        "registration_status",
+        "registration_trigger",
+        "eu_database",
+        "registration_decision",
+        "daxda_role",
+        "review_trigger",
+        "determination_rationale"
+      ],
+      "properties": {
+        "registration_status": { "type": "string", "const": "NOT_DETERMINED" },
+        "registration_trigger": { "type": "string", "const": "ARTICLE_49_APPLICABILITY_REVIEW_REQUIRED" },
+        "eu_database": { "type": "string", "const": "ARTICLE_71_DATABASE_SCOPE" },
+        "registration_decision": { "type": "string", "const": "PROVIDER / AUTHORIZED_ACTOR RESPONSIBILITY" },
+        "daxda_role": { "type": "string", "const": "REGISTRATION_METADATA_SUPPORT" },
+        "review_trigger": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "determination_rationale": { "type": "string" }
+      }
+    }
+  }
+}

@@ -32,7 +32,14 @@ MOCK_TENANT_DB: Dict[str, TenantProfile] = {
         api_key="daxda_live_def_77182",
         roles=["ADMIN", "AUDITOR"],
         allowed_domains=["defense", "physics", "software"]
-    )
+    ),
+    "daxda_live_gs_44291": TenantProfile(
+        tenant_id="GOLDMAN_01",
+        tenant_name="Goldman Sachs Group, Inc.",
+        api_key="daxda_live_gs_44291",
+        roles=["ADMIN", "AUDITOR"],
+        allowed_domains=["finance", "software", "general"]
+    ),
 }
 
 

@@ -64,6 +64,7 @@ class RecursiveSelfImprovementEngine:
                 "weight": lyapunov_weight,
                 "stability_margin": 0.92
             }
+            self.integration.apply_optimizations({"lyapunov_stability_metric": self.active_optimizations["lyapunov_stability_metric"]})
             applied_meta = self.active_optimizations["lyapunov_stability_metric"]
 
         elif proposal_name == "Elastic Weight Consolidation Gradient Fine-tuning":
@@ -73,15 +74,18 @@ class RecursiveSelfImprovementEngine:
                 "ewc_coefficient": ewc_coeff,
                 "gradient_preservation": True
             }
+            self.integration.apply_optimizations({"ewc_gradient_consolidation": self.active_optimizations["ewc_gradient_consolidation"]})
             applied_meta = self.active_optimizations["ewc_gradient_consolidation"]
 
         elif proposal_name == "Quantization Aware Precision Optimization (FP32 -> INT8)":
+            self.space.enable_quantization_acceleration()
             self.active_optimizations["precision_optimization"] = {
                 "status": "APPLIED",
                 "precision": "INT8_QUANTIZED",
                 "blade_compute_accelerated": True,
                 "memory_compression_ratio": "4.0x"
             }
+            self.integration.apply_optimizations({"precision_optimization": self.active_optimizations["precision_optimization"]})
             applied_meta = self.active_optimizations["precision_optimization"]
 
         return applied_meta

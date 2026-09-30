@@ -33,3 +33,4 @@ yarn-error.log*
 *.swp
 .idea/
 .vscode/
+.env

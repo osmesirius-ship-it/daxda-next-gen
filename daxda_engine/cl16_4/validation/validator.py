@@ -11,7 +11,7 @@ from typing import Dict, List, Optional, Any, Tuple
 from dataclasses import dataclass, field
 import hashlib
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 
 from ..combinatorics.cl_space import ClSpace, ClConfig
 from ..combinatorics.constraints import ConstraintSystem, ConstraintResult
@@ -143,7 +143,7 @@ class HyperValidator:
             is_valid=is_valid,
             constraints=constraints_result,
             validation_time_ms=validation_time_ms,
-            timestamp=datetime.utcnow().isoformat()
+            timestamp=datetime.now(timezone.utc).isoformat()
         )
         
         return result

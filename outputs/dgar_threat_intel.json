@@ -1,0 +1,14 @@
+{
+  "node_id": "204c40a0c08b0239",
+  "dgar_version": "1.0.0",
+  "timestamp": 1790454497.841572,
+  "rogue_sha256": [
+    "9eca8b5350d875da88e9cfcdec9b4262c48af413736acbf208a00933082cfb57",
+    "bbe3cf64cfa8fa054a0c0bc492953e935eacbafde0dbcc609a09d9a1a8a5f055"
+  ],
+  "blocked_endpoints": [
+    "https://huggingface.co/spaces/Agnuxo/EnigmAgent-MCP-Demo",
+    "https://huggingface.co/spaces/mukunda1729/agent-stack-demo"
+  ],
+  "sig": "5894873f775ff8d63dc18988adc2befb54463cfbaaddf7f777c17bd6ca05df01"
+}

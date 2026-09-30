@@ -7,12 +7,17 @@ Uses Cl(16,4) combinatorial space to find optimal bounty configurations
 that maximize payout while maintaining structural integrity.
 """
 
+import sys
+import os
 import json
 import hashlib
 from typing import Dict, List, Any, Optional, Tuple
 from dataclasses import dataclass, field
 import statistics
 import time
+
+# Ensure package root is in path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 # Import DAXDA Cl(16,4) engine
 from daxda_engine.cl16_4.combinatorics.cl_space import ClSpace, ClConfig

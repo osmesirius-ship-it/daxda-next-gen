@@ -1,0 +1,30 @@
+{
+  "system_report": {
+    "system_status": "GREEN",
+    "lockdown": false,
+    "agents": {
+      "total": 45,
+      "active": 45,
+      "isolated": 0,
+      "quarantined": 0,
+      "terminated": 0
+    },
+    "scans": {
+      "total": 45,
+      "blocked": 0,
+      "passed": 45,
+      "block_rate": "0.0%"
+    },
+    "spawn_rate": "45/200 per min",
+    "threat_log": []
+  },
+  "elapsed_sec": 4.079688787460327,
+  "discovered_count": 45,
+  "networks": [
+    "lan",
+    "ollama",
+    "hf_hub",
+    "openai_compat"
+  ],
+  "threats": []
+}

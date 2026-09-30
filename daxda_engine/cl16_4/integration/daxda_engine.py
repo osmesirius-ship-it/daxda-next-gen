@@ -24,7 +24,43 @@ class Cl16_4EngineIntegration:
     def __init__(self, validator: Optional[HyperValidator] = None):
         self.validator = validator or HyperValidator()
         self.space = self.validator.space
-    
+        self.lyapunov_weight: float = 0.8875
+        self.stability_margin: float = 0.92
+        self.ewc_coefficient: float = 0.82
+        self.active_optimizations: Dict[str, Any] = {}
+
+    def apply_optimizations(self, optimizations: Dict[str, Any]) -> None:
+        """Apply self-improvement optimizations to the active engine state."""
+        self.active_optimizations.update(optimizations)
+        if "lyapunov_stability_metric" in optimizations:
+            metric = optimizations["lyapunov_stability_metric"]
+            self.lyapunov_weight = metric.get("weight", self.lyapunov_weight)
+            self.stability_margin = metric.get("stability_margin", self.stability_margin)
+        if "ewc_gradient_consolidation" in optimizations:
+            ewc = optimizations["ewc_gradient_consolidation"]
+            self.ewc_coefficient = ewc.get("ewc_coefficient", self.ewc_coefficient)
+        if "precision_optimization" in optimizations:
+            self.space.enable_quantization_acceleration()
+
+    def compute_stability(self, vector: List[float]) -> float:
+        """
+        Compute Lyapunov-stabilized score for a 16D state vector in Cl(16,4) space.
+        Returns a low score (0.2) for stable configurations meeting constraints,
+        and an unstable score (0.8) for unmappable or constraint-violating vectors.
+        """
+        if not isinstance(vector, (list, tuple)) or len(vector) != 16:
+            return 0.8
+        
+        config = self.space.map_to_config(list(float(x) for x in vector))
+        if config is None:
+            return 0.8
+        
+        res = self.validator.constraints.check_config(config)
+        if res.failed:
+            return 0.8
+        
+        return 0.2
+
     def validate_agent_decision(self, agent_id: str, decision: Dict[str, Any]) -> ValidationResult:
         """
         Validate an agent decision using Cl(16,4) space.

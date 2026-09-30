@@ -1,0 +1,336 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://daxda.ai/schemas/v1.2/daxda_eu_ai_act_evidence_schema.json",
+  "title": "DAXDAEUAIActEvidencePackage",
+  "description": "Machine-auditable regulatory evidence architecture mapping runtime AI governance events to Regulation (EU) 2024/1689 (EU AI Act) requirements under v1.2 specification.",
+  "type": "object",
+  "required": [
+    "package_id",
+    "schema_version",
+    "timestamp_utc",
+    "regulatory_evidence_manifest",
+    "system_identification",
+    "legal_determination_boundary",
+    "mathematical_configuration",
+    "evidence_taxonomy",
+    "controls"
+  ],
+  "properties": {
+    "package_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "1.2.0"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "regulatory_evidence_manifest": {
+      "type": "object",
+      "required": [
+        "manifest_id",
+        "profile_version",
+        "assessment_date",
+        "regulatory_source",
+        "regulatory_source_version",
+        "regulatory_source_hash",
+        "guidance_source",
+        "guidance_version",
+        "guidance_status",
+        "governed_system_id",
+        "deployment_id",
+        "intended_purpose",
+        "operator_role",
+        "provider_role",
+        "deployer_role",
+        "article_6_assessment_id",
+        "classification_status",
+        "production_engine",
+        "research_engine",
+        "authority_boundary",
+        "evidence_items",
+        "evidence_levels",
+        "test_corpus_ids",
+        "software_versions",
+        "environment_fingerprints",
+        "artifact_hashes",
+        "independent_verification_status",
+        "independent_assessor",
+        "regulatory_review_status",
+        "limitations",
+        "customer_dependencies",
+        "legal_determination_authority",
+        "daxda_regulatory_decision_authority"
+      ],
+      "properties": {
+        "manifest_id": { "type": "string", "format": "uuid" },
+        "profile_version": { "type": "string" },
+        "assessment_date": { "type": "string" },
+        "regulatory_source": { "type": "string" },
+        "regulatory_source_version": { "type": "string" },
+        "regulatory_source_hash": { "type": "string" },
+        "guidance_source": { "type": "string" },
+        "guidance_version": { "type": "string" },
+        "guidance_status": { "type": "string" },
+        "governed_system_id": { "type": "string" },
+        "deployment_id": { "type": "string" },
+        "intended_purpose": { "type": "string" },
+        "operator_role": { "type": "string" },
+        "provider_role": { "type": "string" },
+        "deployer_role": { "type": "string" },
+        "article_6_assessment_id": { "type": "string" },
+        "classification_status": { "type": "string" },
+        "production_engine": { "type": "string" },
+        "research_engine": { "type": "string" },
+        "authority_boundary": { "type": "string" },
+        "evidence_items": { "type": "array", "items": { "type": "string" } },
+        "evidence_levels": { "type": "array", "items": { "type": "string" } },
+        "test_corpus_ids": { "type": "array", "items": { "type": "string" } },
+        "software_versions": { "type": "array", "items": { "type": "string" } },
+        "environment_fingerprints": { "type": "array", "items": { "type": "string" } },
+        "artifact_hashes": { "type": "array", "items": { "type": "string" } },
+        "independent_verification_status": { "type": "string" },
+        "independent_assessor": { "type": "string" },
+        "regulatory_review_status": { "type": "string" },
+        "limitations": { "type": "array", "items": { "type": "string" } },
+        "customer_dependencies": { "type": "array", "items": { "type": "string" } },
+        "legal_determination_authority": { "type": "string" },
+        "daxda_regulatory_decision_authority": { "type": "string" }
+      }
+    },
+    "system_identification": {
+      "type": "object",
+      "required": ["system_name", "engine_version", "provider", "system_role", "classification_boundary"],
+      "properties": {
+        "system_name": { "type": "string" },
+        "engine_version": { "type": "string" },
+        "provider": { "type": "string" },
+        "system_role": { "type": "string" },
+        "classification_boundary": { "type": "string" }
+      }
+    },
+    "legal_determination_boundary": {
+      "type": "object",
+      "required": ["legal_determination_authority", "daxda_legal_role", "daxda_regulatory_decision_authority"],
+      "properties": {
+        "legal_determination_authority": {
+          "type": "string",
+          "const": "PROVIDER / DEPLOYER / RELEVANT LEGAL ACTOR"
+        },
+        "daxda_legal_role": {
+          "type": "string",
+          "const": "TECHNICAL_EVIDENCE_GENERATOR"
+        },
+        "daxda_regulatory_decision_authority": {
+          "type": "string",
+          "const": "NONE"
+        }
+      }
+    },
+    "mathematical_configuration": {
+      "type": "object",
+      "required": ["production_runtime", "research_configuration", "equivalence_disclaimer", "decision_authority"],
+      "properties": {
+        "production_runtime": {
+          "type": "object",
+          "required": ["algebra", "basis_blades", "implementation_module"],
+          "properties": {
+            "algebra": { "type": "string", "const": "Cl(4,1)" },
+            "basis_blades": { "type": "integer", "const": 32 },
+            "implementation_module": { "type": "string" }
+          }
+        },
+        "research_configuration": {
+          "type": "object",
+          "required": ["algebra", "blade_dimensions", "four_dimensional_combinations", "status"],
+          "properties": {
+            "algebra": { "type": "string", "const": "Cl(16,4)" },
+            "blade_dimensions": { "type": "integer", "const": 1048576 },
+            "four_dimensional_combinations": { "type": "integer", "const": 1820 },
+            "status": { "type": "string" }
+          }
+        },
+        "equivalence_disclaimer": {
+          "type": "string",
+          "const": "No equivalence is implied between configurations."
+        },
+        "decision_authority": {
+          "type": "object",
+          "required": ["production_gate", "research_configuration", "research_can_modify_production_policy"],
+          "properties": {
+            "production_gate": { "type": "string", "const": "Cl(4,1)" },
+            "research_configuration": { "type": "string", "const": "NON_AUTHORITATIVE" },
+            "research_can_modify_production_policy": { "type": "boolean", "const": false }
+          }
+        }
+      }
+    },
+    "evidence_taxonomy": {
+      "type": "object",
+      "required": ["levels", "governing_rule", "architectural_constraint"],
+      "properties": {
+        "levels": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "governing_rule": { "type": "string" },
+        "architectural_constraint": {
+          "type": "string",
+          "const": "E0–E4 MAY BE GENERATED / VERIFIED THROUGH DAXDA EVIDENCE WORKFLOWS. E5 REQUIRES A QUALIFIED INDEPENDENT ASSESSOR. E6 REQUIRES THE APPLICABLE FORMAL REGULATORY / CONFORMITY-ASSESSMENT PROCESS. DAXDA SHALL NEVER SELF-ASSIGN E5 OR E6."
+        }
+      }
+    },
+    "controls": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/control_evidence_record"
+      }
+    }
+  },
+  "$defs": {
+    "control_evidence_record": {
+      "type": "object",
+      "description": "Granular machine-auditable technical evidence record for a single EU AI Act statutory control.",
+      "required": [
+        "article",
+        "requirement",
+        "actor",
+        "daxda_control",
+        "evidence_id",
+        "evidence_hash",
+        "test_corpus",
+        "software_version",
+        "environment",
+        "status_level",
+        "scope",
+        "limitations",
+        "independent_verification",
+        "customer_responsibility",
+        "regulatory_review_required"
+      ],
+      "properties": {
+        "article": {
+          "type": "string",
+          "description": "Statutory article of Regulation (EU) 2024/1689 (e.g., 'Article 9', 'Article 10', 'Article 49 / Article 71', etc.)."
+        },
+        "requirement": {
+          "type": "string",
+          "description": "Exact statutory requirement description from the EU AI Act."
+        },
+        "actor": {
+          "oneOf": [
+            {
+              "type": "string",
+              "enum": [
+                "PROVIDER",
+                "DEPLOYER",
+                "UPSTREAM_PROVIDER",
+                "JOINT",
+                "INFRASTRUCTURE_PEP",
+                "PROVIDER_WITH_DAXDA_SUPPORT"
+              ]
+            },
+            {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          ],
+          "description": "Legally responsible actor under relevant EU AI Act provisions and contractual allocation, or actor attribution list."
+        },
+        "daxda_control": {
+          "type": "string",
+          "description": "Technical control or mechanism implemented by DAXDA."
+        },
+        "evidence_id": {
+          "type": "string",
+          "description": "Unique identifier for this empirical evidence item."
+        },
+        "evidence_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "Cryptographic SHA-256 hash of the evidence artifact or receipt."
+        },
+        "test_corpus": {
+          "type": "string",
+          "description": "Identifier of the evaluation fixture corpus used to generate this evidence."
+        },
+        "software_version": {
+          "type": "string",
+          "description": "Exact frozen software release version."
+        },
+        "environment": {
+          "type": "object",
+          "required": ["os", "python_version", "runtime_algebra"],
+          "properties": {
+            "os": { "type": "string" },
+            "python_version": { "type": "string" },
+            "runtime_algebra": { "type": "string" }
+          }
+        },
+        "status_level": {
+          "type": "string",
+          "enum": [
+            "E0 — UNTESTED",
+            "E1 — SPECIFIED",
+            "E2 — IMPLEMENTED",
+            "E3 — INTERNALLY VERIFIED",
+            "E4 — INDEPENDENTLY REPRODUCED",
+            "E5 — INDEPENDENTLY ASSESSED",
+            "E6 — REGULATORY / CONFORMITY ASSESSED"
+          ],
+          "description": "Evidence confidence maturity level in the formal DAXDA E0–E6 taxonomy."
+        },
+        "scope": {
+          "type": "string",
+          "description": "Defined technical and operational scope of this control."
+        },
+        "limitations": {
+          "type": "string",
+          "description": "Explicit evidentiary and technical limitations of this control."
+        },
+        "independent_verification": {
+          "type": "string",
+          "description": "Method and status for independent third-party verification of the control evidence."
+        },
+        "customer_responsibility": {
+          "type": "string",
+          "description": "Associated legal, organizational, or operational responsibility of the customer/provider."
+        },
+        "regulatory_review_required": {
+          "type": "boolean",
+          "description": "Indicates whether formal legal, notified body, or regulatory review is required for compliance."
+        },
+        "test_population": {
+          "type": "object",
+          "properties": {
+            "population_type": { "type": "string" },
+            "population_size": { "type": "integer" },
+            "sampling_method": { "type": "string" },
+            "generalization": { "type": "boolean" },
+            "observed_false_releases": { "type": "integer" },
+            "observed_false_blocks": { "type": "integer" },
+            "population_error_rate_estimate": { "type": "string" }
+          }
+        },
+        "benchmark_provenance": {
+          "type": "object",
+          "properties": {
+            "benchmark_method": { "type": "string" },
+            "warmup_iterations": { "type": "integer" },
+            "measurement_iterations": { "type": "integer" },
+            "cpu_model": { "type": "string" },
+            "process_affinity": { "type": "string" },
+            "background_load": { "type": "string" },
+            "timer": { "type": "string" },
+            "numpy_version": { "type": "string" },
+            "benchmark_hash": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}
