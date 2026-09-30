@@ -206,7 +206,7 @@ class DAXDAMCPAgent:
         self.tool_registry = MCP_TOOL_SCHEMAS
         self._active_tenant: Optional[Dict[str, Any]] = None
 
-        self.hf_token = hf_token or os.environ.get("HF_TOKEN", "")
+        self.hf_token = hf_token if hf_token is not None else os.environ.get("HF_TOKEN", "")
         # Only create live clients when a token is actually available
         if HF_AVAILABLE and self.hf_token:
             self.hf_client = InferenceClient(token=self.hf_token)
