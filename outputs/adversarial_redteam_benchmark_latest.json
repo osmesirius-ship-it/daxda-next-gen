@@ -1,0 +1,46 @@
+{
+  "timestamp": 1790820989.037714,
+  "target_scenarios": 500,
+  "gates": {
+    "gate_1_vector_diversity": {
+      "passed": true,
+      "total_vectors": 27,
+      "categories": [
+        "jailbreak",
+        "privilege_escalation",
+        "steganographic_exfiltration",
+        "polyglot_encoding",
+        "recursive_self_modification",
+        "boundary_fuzzing"
+      ]
+    },
+    "gate_2_steganography": {
+      "passed": true,
+      "zero_width_success": true,
+      "whitespace_success": true,
+      "homoglyph_success": true,
+      "acrostic_success": true
+    },
+    "gate_3_honeytoken_tripwires": {
+      "passed": true,
+      "channels_tested": 6,
+      "channels_captured": 6,
+      "capture_rate": 1.0
+    },
+    "gate_4_throughput_and_latency": {
+      "passed": true,
+      "scenarios_evaluated": 500,
+      "duration_seconds": 0.127,
+      "scenarios_per_minute": 236232.88,
+      "mean_latency_ms": 0.247,
+      "p95_latency_ms": 0.3038,
+      "p99_latency_ms": 3.3241,
+      "block_rate": 1.0
+    },
+    "gate_5_defense_synthesis": {
+      "passed": true,
+      "rules_synthesized": 500,
+      "soc_alerts_dispatched": 56
+    }
+  }
+}
