@@ -15,6 +15,7 @@ Targets:
 """
 
 import argparse
+import json
 import math
 import os
 import sys
@@ -151,14 +152,30 @@ def run_benchmark(node_count: int = 10000) -> Dict[str, Any]:
     print("\n" + "=" * 80)
     print("ALL 5D CHRONO QUALITY GATES PASSED (100% SUCCESS)")
     print("=" * 80)
-    return {
+
+    summary = {
+        "benchmark": "DAXDA Level 2 5D Chrono & Quantum Novikov Harmonization",
         "status": "PASS",
         "nodes": node_count,
         "throughput_checks_per_sec": round(throughput, 1),
         "harmonization_latency_ms": round(harm_latency_ms, 3),
+        "iterations_to_convergence": res.iterations_run,
+        "residual_norm": res.residual_norm,
         "novikov_consistent": True,
+        "surviving_branches": f"{res.converged_branches_count}/64",
         "grandfather_paradox_free": True,
+        "ricci_scalar": float(ricci_scalar),
+        "timestamp": time.time(),
     }
+
+    out_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../outputs"))
+    if os.path.exists(out_dir):
+        out_file = os.path.join(out_dir, "chrono_5d_benchmark_latest.json")
+        with open(out_file, "w") as f:
+            json.dump(summary, f, indent=2)
+        print(f"Benchmark results saved to: {out_file}")
+
+    return summary
 
 
 if __name__ == "__main__":
