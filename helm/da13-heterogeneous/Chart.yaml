@@ -1,0 +1,24 @@
+apiVersion: v2
+name: da13-heterogeneous
+description: Multi-Cloud Heterogeneous Hardware Acceleration Helm Chart for DAXDA DA13 Validator
+type: application
+version: 1.0.0
+appVersion: "2.0.0"
+keywords:
+  - daxda
+  - da13
+  - heterogeneous
+  - multi-cloud
+  - gpu-cluster
+  - spot-arbitrage
+  - byzantine-fault-tolerance
+  - ai-governance
+  - kubernetes
+maintainers:
+  - name: DAXDA Engineering
+    email: governance@daxda.ia
+dependencies:
+  - name: da13-validator
+    version: ">=2.0.0"
+    repository: "file://../da13-validator"
+    condition: base.enabled

@@ -1,0 +1,63 @@
+{
+  "gate_1_cold_start": {
+    "cold_start_ms": 0.0504,
+    "devices_registered": 7,
+    "active_backends": 5,
+    "pass": true
+  },
+  "gate_2_latency": {
+    "iterations": 10000,
+    "mean_ms": 0.006774,
+    "p50_ms": 0.006615,
+    "p95_ms": 0.00753,
+    "p99_ms": 0.008502,
+    "pass": true
+  },
+  "gate_3_throughput": {
+    "single_worker_qps": 31434.53,
+    "simulated_workers": 128,
+    "aggregate_qps": 3420077.29,
+    "scaling_efficiency": 0.85,
+    "pass": true
+  },
+  "gate_4_parity": {
+    "backends_tested": [
+      "CUDA",
+      "ROCM",
+      "METAL",
+      "GAUDI",
+      "CPU_SIMD"
+    ],
+    "score_parity": true,
+    "decision_parity": true,
+    "pass": true
+  },
+  "gate_5_preemption": {
+    "events": 10,
+    "mean_migration_ms": 0.02041,
+    "max_migration_ms": 0.077666,
+    "zero_loss_rate": 1.0,
+    "all_successful": true,
+    "pass": true
+  },
+  "gate_6_bft": {
+    "unanimous_valid": true,
+    "rogue_detected": true,
+    "rogue_consensus_correct": true,
+    "pass": true
+  },
+  "gate_7_arbitrage": {
+    "cheapest_provider": "azure",
+    "cheapest_instance": "NV6ads_A10_v5",
+    "cheapest_spot_usd": 0.14,
+    "savings_pct": 68.89,
+    "daily_savings_total_usd": 153.12,
+    "pass": true
+  },
+  "overall": {
+    "all_gates_passed": true,
+    "gates_passed": 7,
+    "total_gates": 7,
+    "timestamp": "2026-10-01T16:10:48Z"
+  }
+}

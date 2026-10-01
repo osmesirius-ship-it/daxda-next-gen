@@ -1,0 +1,159 @@
+# Default values for da13-heterogeneous multi-cloud deployment.
+
+base:
+  enabled: true
+
+replicaCount:
+  scheduler: 1
+  cudaWorkers: 32
+  rocmWorkers: 16
+  metalWorkers: 8
+  gaudiWorkers: 8
+  cpuWorkers: 64
+
+image:
+  repository: daxda/da13-heterogeneous
+  pullPolicy: IfNotPresent
+  tag: "2.0.0"
+
+# ── Heterogeneous Cluster Config ──────────────────────────────────────────────
+cluster:
+  clusterId: "da13-heterogeneous-prod"
+  schedulingStrategy: "round_robin"  # round_robin | cost_optimized | latency_optimized | load_balanced
+  maxRetries: 2
+  enableBFT: true
+  bftQuorum: 3
+
+# ── Multi-Cloud Spot Arbitrage ────────────────────────────────────────────────
+arbitrage:
+  enabled: true
+  spotVolatility: 0.15
+  providers:
+    - name: aws
+      regions: ["us-east-1", "us-west-2", "eu-west-1"]
+      instanceTypes: ["p5.48xlarge", "p4d.24xlarge", "g5.xlarge"]
+    - name: gcp
+      regions: ["us-central1", "europe-west4", "asia-east1"]
+      instanceTypes: ["a3-highgpu-8g", "a2-highgpu-1g", "g2-standard-4"]
+    - name: azure
+      regions: ["eastus", "westeurope", "southeastasia"]
+      instanceTypes: ["ND96isr_H100_v5", "NC24ads_A100_v4", "NV6ads_A10_v5"]
+  preemption:
+    migrationSlaMs: 500
+    standbyPoolSize: 3
+    checkpointEnabled: true
+
+# ── Device Backend Configuration ──────────────────────────────────────────────
+backends:
+  cuda:
+    enabled: true
+    profiles: ["H100_SXM", "A100_80GB"]
+    tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+    resources:
+      limits:
+        nvidia.com/gpu: 1
+        cpu: "8"
+        memory: "32Gi"
+      requests:
+        nvidia.com/gpu: 1
+        cpu: "4"
+        memory: "16Gi"
+
+  rocm:
+    enabled: true
+    profiles: ["MI300X", "MI250X"]
+    tolerations:
+      - key: "amd.com/gpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+    resources:
+      limits:
+        amd.com/gpu: 1
+        cpu: "8"
+        memory: "64Gi"
+      requests:
+        amd.com/gpu: 1
+        cpu: "4"
+        memory: "32Gi"
+
+  gaudi:
+    enabled: true
+    profiles: ["GAUDI3"]
+    tolerations:
+      - key: "habana.ai/gaudi"
+        operator: "Exists"
+        effect: "NoSchedule"
+    resources:
+      limits:
+        habana.ai/gaudi: 1
+        cpu: "8"
+        memory: "64Gi"
+      requests:
+        habana.ai/gaudi: 1
+        cpu: "4"
+        memory: "32Gi"
+
+  cpuSimd:
+    enabled: true
+    profiles: ["XEON_W9_AVX512"]
+    resources:
+      limits:
+        cpu: "56"
+        memory: "128Gi"
+      requests:
+        cpu: "16"
+        memory: "32Gi"
+
+# ── Scheduler Head Node ──────────────────────────────────────────────────────
+scheduler:
+  resources:
+    limits:
+      cpu: "16"
+      memory: "64Gi"
+    requests:
+      cpu: "8"
+      memory: "32Gi"
+
+# ── Autoscaling ──────────────────────────────────────────────────────────────
+autoscaling:
+  enabled: true
+  minReplicas: 8
+  maxReplicas: 1024
+  targetCPUUtilizationPercentage: 75
+  targetGPUUtilizationPercentage: 85
+  scaleUpP99ThresholdMs: 300
+  scaleDownP99ThresholdMs: 100
+
+# ── Service & Ingress ────────────────────────────────────────────────────────
+service:
+  type: ClusterIP
+  apiPort: 8000
+  metricsPort: 9090
+  grpcPort: 50051
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+  hosts:
+    - host: heterogeneous.daxda.internal
+      paths:
+        - path: /
+          pathType: Prefix
+
+# ── Monitoring ───────────────────────────────────────────────────────────────
+monitoring:
+  prometheus:
+    enabled: true
+    scrapeInterval: 15s
+  grafana:
+    enabled: true
+    dashboards:
+      - name: heterogeneous-cluster
+        configMap: da13-heterogeneous-dashboard

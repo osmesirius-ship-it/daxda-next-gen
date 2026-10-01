@@ -1,0 +1,196 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-scheduler
+  labels:
+    app.kubernetes.io/name: da13-heterogeneous
+    app.kubernetes.io/component: scheduler
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount.scheduler }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: da13-heterogeneous
+      app.kubernetes.io/component: scheduler
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: da13-heterogeneous
+        app.kubernetes.io/component: scheduler
+    spec:
+      containers:
+        - name: scheduler
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: api
+              containerPort: {{ .Values.service.apiPort }}
+            - name: metrics
+              containerPort: {{ .Values.service.metricsPort }}
+            - name: grpc
+              containerPort: {{ .Values.service.grpcPort }}
+          env:
+            - name: DAXDA_CLUSTER_ID
+              value: {{ .Values.cluster.clusterId | quote }}
+            - name: DAXDA_SCHEDULING_STRATEGY
+              value: {{ .Values.cluster.schedulingStrategy | quote }}
+            - name: DAXDA_BFT_ENABLED
+              value: {{ .Values.cluster.enableBFT | quote }}
+            - name: DAXDA_BFT_QUORUM
+              value: {{ .Values.cluster.bftQuorum | quote }}
+            - name: DAXDA_ARBITRAGE_ENABLED
+              value: {{ .Values.arbitrage.enabled | quote }}
+            - name: DAXDA_SPOT_VOLATILITY
+              value: {{ .Values.arbitrage.spotVolatility | quote }}
+          resources:
+            {{- toYaml .Values.scheduler.resources | nindent 12 }}
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: api
+            initialDelaySeconds: 10
+            periodSeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: api
+            initialDelaySeconds: 5
+            periodSeconds: 10
+---
+{{- if .Values.backends.cuda.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-cuda-workers
+  labels:
+    app.kubernetes.io/name: da13-heterogeneous
+    app.kubernetes.io/component: cuda-worker
+spec:
+  replicas: {{ .Values.replicaCount.cudaWorkers }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: da13-heterogeneous
+      app.kubernetes.io/component: cuda-worker
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: da13-heterogeneous
+        app.kubernetes.io/component: cuda-worker
+    spec:
+      tolerations:
+        {{- toYaml .Values.backends.cuda.tolerations | nindent 8 }}
+      containers:
+        - name: cuda-worker
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: DAXDA_BACKEND_TYPE
+              value: "CUDA"
+            - name: DAXDA_CLUSTER_ID
+              value: {{ .Values.cluster.clusterId | quote }}
+          resources:
+            {{- toYaml .Values.backends.cuda.resources | nindent 12 }}
+{{- end }}
+---
+{{- if .Values.backends.rocm.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-rocm-workers
+  labels:
+    app.kubernetes.io/name: da13-heterogeneous
+    app.kubernetes.io/component: rocm-worker
+spec:
+  replicas: {{ .Values.replicaCount.rocmWorkers }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: da13-heterogeneous
+      app.kubernetes.io/component: rocm-worker
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: da13-heterogeneous
+        app.kubernetes.io/component: rocm-worker
+    spec:
+      tolerations:
+        {{- toYaml .Values.backends.rocm.tolerations | nindent 8 }}
+      containers:
+        - name: rocm-worker
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: DAXDA_BACKEND_TYPE
+              value: "ROCM"
+            - name: DAXDA_CLUSTER_ID
+              value: {{ .Values.cluster.clusterId | quote }}
+          resources:
+            {{- toYaml .Values.backends.rocm.resources | nindent 12 }}
+{{- end }}
+---
+{{- if .Values.backends.gaudi.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-gaudi-workers
+  labels:
+    app.kubernetes.io/name: da13-heterogeneous
+    app.kubernetes.io/component: gaudi-worker
+spec:
+  replicas: {{ .Values.replicaCount.gaudiWorkers }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: da13-heterogeneous
+      app.kubernetes.io/component: gaudi-worker
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: da13-heterogeneous
+        app.kubernetes.io/component: gaudi-worker
+    spec:
+      tolerations:
+        {{- toYaml .Values.backends.gaudi.tolerations | nindent 8 }}
+      containers:
+        - name: gaudi-worker
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: DAXDA_BACKEND_TYPE
+              value: "GAUDI"
+            - name: DAXDA_CLUSTER_ID
+              value: {{ .Values.cluster.clusterId | quote }}
+          resources:
+            {{- toYaml .Values.backends.gaudi.resources | nindent 12 }}
+{{- end }}
+---
+{{- if .Values.backends.cpuSimd.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-cpu-workers
+  labels:
+    app.kubernetes.io/name: da13-heterogeneous
+    app.kubernetes.io/component: cpu-worker
+spec:
+  replicas: {{ .Values.replicaCount.cpuWorkers }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: da13-heterogeneous
+      app.kubernetes.io/component: cpu-worker
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: da13-heterogeneous
+        app.kubernetes.io/component: cpu-worker
+    spec:
+      containers:
+        - name: cpu-worker
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: DAXDA_BACKEND_TYPE
+              value: "CPU_SIMD"
+            - name: DAXDA_CLUSTER_ID
+              value: {{ .Values.cluster.clusterId | quote }}
+          resources:
+            {{- toYaml .Values.backends.cpuSimd.resources | nindent 12 }}
+{{- end }}
