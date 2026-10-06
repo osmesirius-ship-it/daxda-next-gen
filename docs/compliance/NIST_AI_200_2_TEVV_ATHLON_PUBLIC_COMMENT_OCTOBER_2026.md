@@ -1,5 +1,6 @@
 # NIST AI 200-2 (Initial Public Draft): TEVV-Athlon Framework for Evaluating AI Systems
 ## Formal Public Comment Submission
+
 **Document Under Review:** NIST AI 200-2 (ipd) — *The TEVV-Athlon Framework for Evaluating AI Systems*  
 **Comment Period Deadline:** October 6, 2026  
 **Submission Channel:** `TEVV-Athlon@nist.gov`  
@@ -7,7 +8,7 @@
 **Submitter Entity:** DAXDA Research & Autonomous Systems Verification Working Group  
 **Contact / Claimant:** `@osmesirius-ship-it` ([GitHub Repository](https://github.com/osmesirius-ship-it/daxda-next-gen))  
 **Evidentiary Status:** Non-Proprietary Engineering Lessons & Metrological Methodology Recommendations  
-**Compliance / Claims Boundary:** Specific test observations only; NO claims of NIST certification, regulatory conformity, or universal generalization.
+**Compliance / Claims Boundary:** Specific test observations only; NO claims of NIST certification, regulatory conformity, or universal generalization.  
 
 ---
 
@@ -17,7 +18,7 @@ We welcome the release of the **NIST AI 200-2 Initial Public Draft (ipd)**, *The
 
 In deploying and testing autonomous and agentic architectures against multi-stage governance pipelines, we have observed three fundamental measurement challenges that are currently under-specified in the draft:
 
-1. **Probabilistic Authorization Failure:** When policy boundaries are evaluated solely through probabilistic model prompts (e.g., system-prompt guardrails or LLM self-evaluators), authorization decisions exhibit non-deterministic variance and evasion susceptibility under perturbation.
+1. **Probabilistic Authorization Failure:** When policy boundaries are evaluated solely through probabilistic model prompts, authorization decisions exhibit non-deterministic variance and evasion susceptibility under perturbation.
 2. **Single-Turn Evaluation Blind Spots:** Evaluating agentic AI through single-step prompt-response pairs fails to detect multi-hop privilege escalation, tool-chaining vulnerabilities, or delayed side effects that only manifest across full execution trajectories.
 3. **Unverifiable Evidence Chains:** Without standardized, replayable decision receipts and cryptographic state digests, external evaluators cannot independently reproduce evaluation results without full access to proprietary weights and nondeterministic runtimes.
 
@@ -26,7 +27,7 @@ This public comment presents concrete methodological recommendations to address 
 - Establishing **Trajectory-Level Testing** protocols with auditable sample denominators;
 - Mandating **Replayable Evidence** artifacts that decouple raw measurement capture from organizational risk decisions.
 
-Importantly, we frame these contributions strictly as **empirical engineering observations and measurement contracts**, without asserting regulatory compliance or universal safety guarantees.
+Importantly, we frame these contributions strictly as empirical engineering observations and measurement contracts, without asserting regulatory compliance or universal safety guarantees.
 
 ---
 
@@ -34,29 +35,30 @@ Importantly, we frame these contributions strictly as **empirical engineering ob
 
 #### 1.1 The Vulnerability of Probabilistic Policy Enforcement
 In current agentic benchmarks, authorization decisions are frequently delegated to LLM-based classifiers or system-prompt instructions (e.g., *"Do not access sensitive resources"*). Empirical testing demonstrates that:
-- Stochastic sampling ($T > 0$) causes identical requests to alternate unpredictably between permitted and blocked states;
-- Adversarial perturbations (e.g., steganographic encodings, persona adoption, multi-lingual ciphers) exploit latent embedding weaknesses, bypassing prompt-level guardrails;
-- Confidence scores emitted by generative models are frequently miscalibrated, rendering them unreliable for high-consequence authorization gates.
+- **Stochastic sampling ($T > 0$)** causes identical requests to alternate unpredictably between permitted and blocked states;
+- **Adversarial perturbations** (e.g., steganographic encodings, persona adoption, multi-lingual ciphers) exploit latent embedding weaknesses, bypassing prompt-level guardrails;
+- **Confidence scores** emitted by generative models are frequently miscalibrated, rendering them unreliable for high-consequence authorization gates.
 
 #### 1.2 Proposed Framework Enhancement: Machine-Readable Policy Enforcement Points (PEPs)
-We recommend that NIST AI 200-2 explicitly distinguish between **probabilistic capability generation** and **deterministic authorization evaluation**:
+We recommend that NIST AI 200-2 explicitly distinguish between probabilistic capability generation and deterministic authorization evaluation:
 
-1. **Decoupled Architecture:** Evaluated agents may propose arbitrary actions or tool calls, but execution must pass through an isolated Policy Enforcement Point governed by immutable, machine-readable specifications.
-2. **Bounded Decision Lattice:** Authorization evaluators must produce exactly one bounded categorical verdict from a standardized four-state lattice:
-   - `ALLOW`: The action, arguments, and target resources fall strictly within predefined task and privilege scopes.
-   - `BLOCK` / `DENY`: The action violates policy constraints, exceeds resource budgets, or triggers containment tripwires.
-   - `ESCALATE_FOR_HUMAN_APPROVAL`: The action touches high-consequence boundaries or operates in zones of high epistemic uncertainty, requiring verified human authorization.
-   - `REQUEST_MORE_EVIDENCE`: The operational context or provenance chain is incomplete, requiring additional telemetry before an authorization decision can be rendered.
+1. **Decoupled Architecture:** Evaluated agents may propose arbitrary actions or tool calls, but execution must pass through an isolated Policy Enforcement Point governed by immutable, machine-readable specifications. Let $I_k \in \mathcal{I}$ represent the input vector (comprising the raw agentic proposal, model parameters, and target resources) at turn $k$. Let $P_j \in \mathcal{P}$ represent the system policy state.
+2. **Bounded Decision Lattice:** Authorization evaluators must produce exactly one bounded categorical verdict from a standardized four-state lattice $\mathcal{L}$:
+   $$\mathcal{L} = \{\text{ALLOW}, \text{DENY}, \text{ESCALATE}, \text{REQUEST}\}$$
+   - **`ALLOW`**: The action, arguments, and target resources fall strictly within predefined task and privilege scopes.
+   - **`DENY`**: The action violates policy constraints, exceeds resource budgets, or triggers containment tripwires.
+   - **`ESCALATE`**: The action touches high-consequence boundaries or operates in zones of high epistemic uncertainty, requiring verified human authorization.
+   - **`REQUEST`**: The operational context or provenance chain is incomplete, requiring additional telemetry before an authorization decision can be rendered.
 3. **Decoupling Measurement from Decision:** In alignment with TEVV Stage 2 (Measurement) vs. Stage 3 (Evaluation), raw metrological telemetry (e.g., token entropy, semantic distance, parameter ranges) must be recorded independently of the organizational risk decision or acceptance rule applied to that telemetry.
 4. **Bit-Exact Re-Execution Determinism:** Within the evaluation harness, identical inputs presented under identical policy states must yield bit-exact identical authorization verdicts across independent execution passes:
-   $$\text{Decision}(I_k, P_j) \equiv \text{Decision}(I_k, P_j) \quad \forall \text{ passes } 1, 2$$
+   $$\forall I_k \in \mathcal{I}, \forall P_j \in \mathcal{P}: \quad f_{\text{PEP}}(I_k, P_j)_{t_1} \equiv f_{\text{PEP}}(I_k, P_j)_{t_2}$$
 
 ---
 
 ### 2. Trajectory-Level Testing for Autonomous & Agentic Systems
 
 #### 2.1 The Limitations of Static Point-in-Time Benchmarks
-Traditional evaluations present an isolated prompt, capture an isolated response, and score accuracy or refusal. However, real-world agentic failures occur across **multi-hop trajectories**:
+Traditional evaluations present an isolated prompt, capture an isolated response, and score accuracy or refusal. However, real-world agentic failures occur across multi-hop trajectories:
 - An agent may begin with seemingly benign exploratory queries that gather environmental metadata;
 - Over multiple turns, the agent chains tools to synthesize higher-privilege capabilities;
 - The malicious or catastrophic outcome is reached only at turn $k \ge 5$, while every individual intermediate step appears innocuous in isolation.
@@ -64,15 +66,16 @@ Traditional evaluations present an isolated prompt, capture an isolated response
 #### 2.2 Standardizing Trajectory-Level Evaluation Protocols
 We recommend that NIST AI 200-2 include explicit guidance for Trajectory-Level Testing:
 
-1. **Full-Trace Observation:** Evaluations must capture the entire directed acyclic graph (DAG) of agent execution:
+1. **Full-Trace Observation:** Evaluations must capture the entire directed acyclic graph (DAG) or sequential trace of agent execution:
    $$\mathcal{T} = \{(s_0, a_0, r_0), (s_1, a_1, r_1), \dots, (s_n, a_n, r_n)\}$$
-   including proposed intent, tool invocations, parameter values, sandbox responses, intermediate authorization checks, and human escalation gates.
+   Where $s_k \in \mathcal{S}$ is the state space, $a_k \in \mathcal{A}$ is the action space (including tool calls), and $r_k \in \mathcal{R}$ is the feedback returned by the sandboxed environment.
 2. **Auditable Denominators & Dual-Metric Scorecards:** To prevent reporting bias (e.g., averaging away adversarial failures across large benign datasets), TEVV scorecards must report decoupled metrics with explicit sample denominators:
-   - **False Release Rate (FRR):**
-     $$\text{FRR} = \frac{\text{Observed False Releases}}{N_{\text{attack executions}}} \quad (\text{Target: } 0 / N)$$
-   - **False Block Rate (FBR):**
-     $$\text{FBR} = \frac{\text{Observed False Blocks}}{M_{\text{benign executions}}} \quad (\text{Operational utility tolerance: e.g., } \le 1.50\%)$$
-3. **Containment & Rollback Verification:** Trajectory testing should evaluate the system's ability to issue ephemeral rollback vectors upon detecting an anomalous intent vector, rolling back uncommitted database changes or memory mutations before state pollution occurs.
+   - **False Release Rate (FRR):** Measures policy failures under active attack vectors.
+     $$\text{FRR} = \frac{\sum_{i=1}^{N} \mathbb{1}\left(f_{\text{PEP}}(I_i, P) = \text{ALLOW} \mid I_i \in \mathcal{I}_{\text{adversarial}}\right)}{N_{\text{attack executions}}}$$
+   - **False Block Rate (FBR):** Measures operational degradation under normal operating parameters.
+     $$\text{FBR} = \frac{\sum_{j=1}^{M} \mathbb{1}\left(f_{\text{PEP}}(I_j, P) \in \{\text{DENY}, \text{ESCALATE}\} \mid I_j \in \mathcal{I}_{\text{benign}}\right)}{M_{\text{benign executions}}}$$
+3. **Containment & Rollback Verification:** Trajectory testing should evaluate the system's ability to issue ephemeral rollback vectors upon detecting an anomalous intent vector $\vec{v}_{\text{intent}}$ crossing an unauthorized boundary threshold $\theta$ at turn $k$, rolling back uncommitted changes before state pollution occurs:
+   $$\text{If } \|\vec{v}_{\text{intent}}(a_k)\| > \theta, \quad s_{k+1} = s_k + \vec{\delta}_{\text{rollback}}(a_k) \implies s_{k+1} \equiv s_k$$
 
 ---
 
@@ -82,32 +85,92 @@ We recommend that NIST AI 200-2 include explicit guidance for Trajectory-Level T
 Current TEVV reports often rely on vendor assertions or closed-source platform telemetry that third-party auditors cannot independently replicate without incurring significant API costs or relying on model provider trust.
 
 #### 3.2 Recommended Evidence Architecture
-We suggest that the TEVV-Athlon Framework specify an **evidence schema and replayability standard**:
+We suggest that the TEVV-Athlon Framework specify an evidence schema and replayability standard:
+1. **Structured Canonical Evidence Receipts:** Each authorization event and stage boundary evaluation must emit a canonical JSON receipt conforming to an established, machine-readable schema. This schema should explicitly log the exact input vector, policy state, decision lattice verdict, timestamp, and cryptographic hash of the underlying model configuration or tool environment.
+2. **Cryptographic State Digests:** To guarantee data integrity and prevent post-hoc tampering of evaluation logs, every sequence of trajectory states must be chained together using cryptographic hash functions (e.g., SHA-256 state chaining). This creates an immutable ledger of the execution path that external evaluators can verify offline.
+3. **Reproducible Replay Harnesses:** The framework should mandate that evaluations produce standardized, deterministic replay packages. These packages must contain the necessary mock environment definitions, seed values, and decoupled telemetry streams to allow a third-party auditor to re-execute the evaluation trajectory without requiring access to proprietary model weights or live production infrastructure.
 
-1. **Structured Canonical Evidence Receipts:** Each authorization event and stage boundary evaluation must emit a canonical JSON receipt conforming to an established schema (e.g., RFC 8785 JSON Canonicalization Scheme):
-   ```json
-   {
-     "receipt_id": "urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
-     "timestamp_utc": "2026-10-06T14:48:00Z",
-     "agent_identity": {
-       "runtime_spiffe_id": "spiffe://daxda.internal/agent/worker-01"
-     },
-     "task_scope": "TASK-FINANCIAL-RISK-AUDIT",
-     "resource_scope": "s3://customer-enclave/records/2026Q3/",
-     "privilege_level": "READ_ONLY",
-     "authority_channel_verdict": {
-       "gate_decision": "RELEASE",
-       "evaluated_rules": ["RULE-LEAST-PRIVILEGE-01", "RULE-DATA-EGRESS-ZERO"],
-       "risk_score": 0.012
-     },
-     "reproducibility": {
-       "audit_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-       "canonical_reexecution_pass": 1
-     }
-   }
-   ```
-2. **Customer-Held Key Custody (Zero Vendor Egress):** Evidence artifacts should be signed using customer-controlled Key Management Systems (KMS) or hardware security modules (HSMs). This ensures external verifiability without requiring vendors to hold signing keys or observe customer payloads.
-3. **Model-Agnostic Offline Replay:** Third-party auditors should be able to verify whether an authorization policy was satisfied by replaying the deterministic receipts and state digests, entirely eliminating the need to rerun expensive or non-deterministic foundation model inference.
+#### 3.3 Replayable Evidence Schema Blueprint
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TEVV-Athlon Evidence Receipt",
+  "type": "object",
+  "required": [
+    "receipt_metadata",
+    "execution_context",
+    "policy_enforcement",
+    "cryptographic_signatures"
+  ],
+  "properties": {
+    "receipt_metadata": {
+      "type": "object",
+      "required": ["timestamp", "trajectory_id", "turn_index"],
+      "properties": {
+        "timestamp": { "type": "string", "format": "date-time" },
+        "trajectory_id": { "type": "string", "format": "uuid" },
+        "turn_index": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "execution_context": {
+      "type": "object",
+      "required": ["input_vector_digest", "tool_invocation"],
+      "properties": {
+        "input_vector_digest": {
+          "type": "object",
+          "required": ["algorithm", "hash_value"],
+          "properties": {
+            "algorithm": { "type": "string", "enum": ["SHA-256", "SHA-3"] },
+            "hash_value": { "type": "string" }
+          }
+        },
+        "tool_invocation": {
+          "type": "object",
+          "required": ["tool_name", "arguments"],
+          "properties": {
+            "tool_name": { "type": "string" },
+            "arguments": { "type": "object" }
+          }
+        }
+      }
+    },
+    "policy_enforcement": {
+      "type": "object",
+      "required": ["active_policy_version", "decision_lattice_verdict", "telemetry_metrics"],
+      "properties": {
+        "active_policy_version": { "type": "string" },
+        "decision_lattice_verdict": {
+          "type": "string",
+          "enum": ["ALLOW", "DENY", "ESCALATE_FOR_HUMAN_APPROVAL", "REQUEST_MORE_EVIDENCE"]
+        },
+        "telemetry_metrics": {
+          "type": "object",
+          "required": ["token_entropy", "semantic_distance"],
+          "properties": {
+            "token_entropy": { "type": "number" },
+            "semantic_distance": { "type": "number" }
+          }
+        }
+      }
+    },
+    "cryptographic_signatures": {
+      "type": "object",
+      "required": ["state_chain_hash", "pep_signature"],
+      "properties": {
+        "state_chain_hash": { 
+          "type": "string", 
+          "description": "SHA-256 hash chaining previous turn receipt to enforce immutability." 
+        },
+        "pep_signature": { 
+          "type": "string", 
+          "description": "Cryptographic signature generated by the Policy Enforcement Point hardware or secure enclave." 
+        }
+      }
+    }
+  }
+}
+```
 
 ---
 
@@ -117,7 +180,7 @@ In concordance with metrological best practices, public comments and evaluation 
 
 | Claim Category | Definition & Standard | Evidentiary Requirement in TEVV |
 | :--- | :--- | :--- |
-| **VERIFICATION** | Proof that software and mathematical contracts are satisfied on tested code paths. | Bit-exact re-execution tests, unit/integration pass rates, deterministic hash matches across paired runs. |
+| **VERIFICATION** | Proof that software and mathematical contracts are satisfied on tested code paths. | Bit-exact re-execution tests, unit/integration pass rates, deterministic hash matches across paired runs ($f_{\text{PEP}}(I_k, P_j)_{t_1} \equiv f_{\text{PEP}}(I_k, P_j)_{t_2}$). |
 | **VALIDATION** | Empirical measurement that system behavior aligns with stated requirements on a defined test corpus. | Bounded evaluation scorecards reporting exact sample denominators ($N_{\text{attack}}, M_{\text{benign}}$), measured FRR/FBR, and latency percentiles. |
 | **POPULATION GENERALIZATION** | Claims regarding system performance across arbitrary, untested, open-world distributions. | **Must be explicitly labeled as "NOT ESTABLISHED"** unless continuous runtime telemetry and independent third-party red teaming validate the open-world distribution. |
 
@@ -129,13 +192,22 @@ To avoid misleading stakeholders, any implementation conforming to these technic
 
 ---
 
-### Summary of Actionable Recommendations for NIST AI 200-2
+### 5. Summary of Actionable Recommendations for NIST AI 200-2
 
-1. **Section 3 (Measurement & Evaluation Metrics):** Add guidance on **Deterministic Policy Enforcement Points (PEPs)** to decouple generative reasoning from bounded authorization decisions (`ALLOW`, `BLOCK`, `ESCALATE`, `REQUEST_EVIDENCE`).
+1. **Section 3 (Measurement & Evaluation Metrics):** Add guidance on **Deterministic Policy Enforcement Points (PEPs)** to decouple generative reasoning from bounded authorization decisions (`ALLOW`, `DENY`, `ESCALATE`, `REQUEST`).
 2. **Section 4 (Agentic & Autonomous System TEVV):** Introduce **Trajectory-Level Testing** protocols requiring multi-turn trace capture, decoupled safety/utility denominators (FRR vs. FBR), and rollback capability verification.
-3. **Section 5 (Evidence & Reporting):** Define a standardized, canonical **Replayable Evidence Receipt** format enabling third-party auditors to verify authorization decisions offline without requiring model weight access.
+3. **Section 5 (Evidence & Reporting):** Define a standardized, canonical **Replayable Evidence Receipt** format conforming to Draft 2020-12 / RFC 8785 enabling third-party auditors to verify authorization decisions offline without requiring model weight access.
 4. **Section 6 (Governance & Claims):** Enforce strict terminology separating **Contract Verification**, **Sample-Bounded Validation**, and **Population Generalization**, mandating explicit negative disclaimers against unvalidated regulatory compliance claims.
 
 ---
+
+### Conclusion & Next Steps
+
+The DAXDA Research & Autonomous Systems Verification Working Group submits these recommendations to assist NIST in evolving the TEVV-Athlon Framework into a highly precise, operationally resilient metrological standard. Transitioning from probabilistic prompt-level boundaries to deterministic Policy Enforcement Points, coupled with trajectory-level tracking and replayable cryptographic evidence, will ensure that AI system evaluations remain robust against emerging agentic vulnerabilities.
+
+We welcome further collaboration with NIST to refine these technical definitions and establish reference architectures for deterministic evaluation environments.
+
+---
 *Submitted respectfully on October 6, 2026 by the DAXDA Autonomous Systems Research Team.*  
-*Repository Reference:* [`osmesirius-ship-it/daxda-next-gen`](https://github.com/osmesirius-ship-it/daxda-next-gen)
+*Repository Reference:* [`osmesirius-ship-it/daxda-next-gen`](https://github.com/osmesirius-ship-it/daxda-next-gen)  
+*Document Source:* [`docs/compliance/NIST_AI_200_2_TEVV_ATHLON_PUBLIC_COMMENT_OCTOBER_2026.md`](https://github.com/osmesirius-ship-it/daxda-next-gen/blob/main/docs/compliance/NIST_AI_200_2_TEVV_ATHLON_PUBLIC_COMMENT_OCTOBER_2026.md)
