@@ -1,5 +1,5 @@
 {
-  "timestamp": 1790820989.037714,
+  "timestamp": 1791323499.058998,
   "target_scenarios": 500,
   "gates": {
     "gate_1_vector_diversity": {
@@ -30,11 +30,11 @@
     "gate_4_throughput_and_latency": {
       "passed": true,
       "scenarios_evaluated": 500,
-      "duration_seconds": 0.127,
-      "scenarios_per_minute": 236232.88,
-      "mean_latency_ms": 0.247,
-      "p95_latency_ms": 0.3038,
-      "p99_latency_ms": 3.3241,
+      "duration_seconds": 0.1328,
+      "scenarios_per_minute": 225958.62,
+      "mean_latency_ms": 0.2558,
+      "p95_latency_ms": 0.3451,
+      "p99_latency_ms": 3.0073,
       "block_rate": 1.0
     },
     "gate_5_defense_synthesis": {

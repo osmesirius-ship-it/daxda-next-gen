@@ -2,13 +2,13 @@
   "benchmark": "DAXDA Level 2 5D Chrono & Quantum Novikov Harmonization",
   "status": "PASS",
   "nodes": 10000,
-  "throughput_checks_per_sec": 193270.5,
-  "harmonization_latency_ms": 4.329,
+  "throughput_checks_per_sec": 213301.0,
+  "harmonization_latency_ms": 4.095,
   "iterations_to_convergence": 12,
   "residual_norm": 7.3e-07,
   "novikov_consistent": true,
   "surviving_branches": "64/64",
   "grandfather_paradox_free": true,
   "ricci_scalar": 0.0,
-  "timestamp": 1790819186.2709382
+  "timestamp": 1791323498.068644
 }

@@ -3,11 +3,11 @@
   "status": "PASS",
   "subspace_dimension": 40,
   "blade_manifold_size": 1099511627776,
-  "throughput_actions_per_sec": 124211.0,
-  "p50_latency_ms": 0.0028,
-  "p95_latency_ms": 0.0042,
-  "p99_latency_ms": 0.0053,
+  "throughput_actions_per_sec": 114699.6,
+  "p50_latency_ms": 0.0026,
+  "p95_latency_ms": 0.0038,
+  "p99_latency_ms": 0.0046,
   "rotor_drift": 7.793765632868599e-13,
   "qubit_count": 20,
-  "timestamp": 1790820475.924483
+  "timestamp": 1791323497.620188
 }

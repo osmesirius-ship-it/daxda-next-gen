@@ -1,64 +1,64 @@
 {
-  "timestamp": 1790795661.294795,
+  "timestamp": 1791323481.894374,
   "cluster_id": "da13-gpu-validator-cluster",
   "throughput_scaling": {
     "1_workers": {
       "workers": 1,
-      "elapsed_sec": 0.0063,
-      "throughput_qps": 31694.56
+      "elapsed_sec": 0.0064,
+      "throughput_qps": 31321.99
     },
     "4_workers": {
       "workers": 4,
       "elapsed_sec": 0.0022,
-      "throughput_qps": 89903.81
+      "throughput_qps": 92026.97
     },
     "8_workers": {
       "workers": 8,
-      "elapsed_sec": 0.0022,
-      "throughput_qps": 92106.94
+      "elapsed_sec": 0.0021,
+      "throughput_qps": 96133.42
     }
   },
   "latency_metrics_ms": {
-    "p50": 0.0142,
-    "p95": 0.0165,
-    "p99": 0.0332,
-    "avg": 0.015,
+    "p50": 0.0139,
+    "p95": 0.0143,
+    "p99": 0.0247,
+    "avg": 0.0138,
     "sub_second_sla_passed": true
   },
   "concurrency_test": {
     "tasks_tested": 10000,
-    "enqueue_time_sec": 0.0224,
-    "dequeue_time_sec": 0.0211,
+    "enqueue_time_sec": 0.022,
+    "dequeue_time_sec": 0.0528,
     "passed": true
   },
   "fault_recovery": {
-    "recovery_time_sec": 0.0002,
+    "recovery_time_sec": 0.0003,
     "target_sla_sec": 30.0,
     "passed": true
   },
   "si500_report": {
     "benchmark_standard": "SI-500 Cross-Domain Benchmark v2.4",
-    "timestamp": 1790795661.2942982,
+    "timestamp": 1791323481.893142,
     "total_requests": 250,
-    "total_elapsed_sec": 0.0039,
-    "throughput_qps": 63378.17,
-    "latency_p50_ms": 0.0068,
-    "latency_p95_ms": 0.0091,
-    "latency_p99_ms": 0.0129,
+    "total_elapsed_sec": 0.0101,
+    "throughput_qps": 24714.38,
+    "latency_p50_ms": 0.0079,
+    "latency_p95_ms": 0.0238,
+    "latency_p99_ms": 0.0862,
     "compliance_status": "COMPLIANT",
     "sla_checks": {
       "sub_second_p99": {
         "target_ms": 1000.0,
-        "achieved_ms": 0.0129,
+        "achieved_ms": 0.0862,
         "passed": true
       },
       "throughput_per_gpu": {
         "target_qps": 100.0,
-        "achieved_qps": 63378.17,
+        "achieved_qps": 24714.38,
         "passed": true
       }
     },
-    "certificate_hash": "13d4bcf7f269509ba4a73e473640fdb0cdf9c189fddb41fb1ddaaeff11c64cc9"
+    "certificate_hash": "28412a6d7f190f03fc4588a9f25d786f11056db0268b7ba5be7d10f7a7e3bcc0"
   },
   "compliance_summary": {
     "linear_scaling": true,

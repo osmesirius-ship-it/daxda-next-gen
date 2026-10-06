@@ -1,0 +1,642 @@
+{
+  "timestamp": 1791325944.560895,
+  "total_bounties": 20,
+  "certified_bounties": 20,
+  "certification_rate_pct": 100.0,
+  "total_payout_usd": 280000.0,
+  "total_latency_seconds": 0.0023,
+  "cl16_4_space_size": 1820,
+  "active_configurations_used": 20,
+  "graph_algebraic_connectivity_lambda2": 1.382,
+  "is_topologically_closed": true,
+  "merkle_state_root": "d21e875bf516e5aeb45b342b73aca2eeb2a43aad2a39fcae5ddea83c9ef2ac8f",
+  "domain_breakdown": {
+    "Domain 1: Geometric Algebra": {
+      "total": 4,
+      "certified": 4,
+      "payout": 61500.0
+    },
+    "Domain 2: Chrono-Synchronicity": {
+      "total": 4,
+      "certified": 4,
+      "payout": 53000.0
+    },
+    "Domain 3: Heterogeneous Acceleration": {
+      "total": 4,
+      "certified": 4,
+      "payout": 57500.0
+    },
+    "Domain 4: Adversarial Red-Team": {
+      "total": 4,
+      "certified": 4,
+      "payout": 57000.0
+    },
+    "Domain 5: Dynamic MMPI": {
+      "total": 4,
+      "certified": 4,
+      "payout": 51000.0
+    }
+  },
+  "nodes": [
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_CL64_16_HYPERMANIFOLDS",
+      "bounty_name": "Cl(64,16) Hypermanifolds & Grade Projection",
+      "domain": "Domain 1: Geometric Algebra",
+      "payout_usd": 16500.0,
+      "cl_indices": [
+        2,
+        1,
+        9,
+        7
+      ],
+      "cl_config_hash": "c88a94a869ca857f",
+      "temporal_coord": {
+        "t": 1.095,
+        "b": 7.598,
+        "p": 3.73,
+        "tau": -0.5959
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.9605,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-1",
+      "validation_latency_ms": 0.049,
+      "receipt_hash": "e762568d93e8d4825bfe5934b87bd6f27fc16f7661fbb4e4ef7b75c665912746",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_HILBERT_TEMPORAL_LATTICES"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_PHOTONIC_CLIFFORD_ACCELERATOR",
+      "bounty_name": "Photonic Clifford Accelerator & MZI Mesh",
+      "domain": "Domain 1: Geometric Algebra",
+      "payout_usd": 14500.0,
+      "cl_indices": [
+        9,
+        11,
+        2,
+        10
+      ],
+      "cl_config_hash": "0fce1384d52047a7",
+      "temporal_coord": {
+        "t": 1.092,
+        "b": 7.502,
+        "p": 3.71,
+        "tau": -0.5213
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.9465,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-2",
+      "validation_latency_ms": 0.04,
+      "receipt_hash": "3a4a2c81d93bb425edea9772b613687103e4d49654b9a66ecb6f1640045dda56",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_MULTI_AGENT_QUANTUM_TEMPORAL_CONSENSUS"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_LEAN4_CLIFFORD_THEOREM_PROVING",
+      "bounty_name": "Lean 4 Clifford Anti-Automorphism Formal Proof",
+      "domain": "Domain 1: Geometric Algebra",
+      "payout_usd": 15000.0,
+      "cl_indices": [
+        1,
+        2,
+        7,
+        9
+      ],
+      "cl_config_hash": "2386b94ca0e7d221",
+      "temporal_coord": {
+        "t": 1.094,
+        "b": 7.61,
+        "p": 3.72,
+        "tau": -0.6506
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 1.0,
+      "dax_stability_score": 0.9605,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-3",
+      "validation_latency_ms": 0.027,
+      "receipt_hash": "aa74015507bb9325a6ed29e1d1b201447eeb9b883d873d5d46c1355c2f9f43c1",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_ATOMIC_CLOCK_PHASE_LOCKED_5D"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_QUANTUM_ERROR_CORRECTED_CLIFFORD",
+      "bounty_name": "Fault-Tolerant Quantum Error-Corrected Clifford Gates",
+      "domain": "Domain 1: Geometric Algebra",
+      "payout_usd": 15500.0,
+      "cl_indices": [
+        9,
+        14,
+        2,
+        7
+      ],
+      "cl_config_hash": "bfd7d6ff3573b990",
+      "temporal_coord": {
+        "t": 1.095,
+        "b": 7.6373,
+        "p": 3.75,
+        "tau": -0.6506
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.954,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-4",
+      "validation_latency_ms": 0.023,
+      "receipt_hash": "be02c7960c3c8fa31b592e6b5cda3b4e02da0357b00b6c192fe319151613ba39",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_TEMPORAL_STEGANOGRAPHY_DETECTION"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_HILBERT_TEMPORAL_LATTICES",
+      "bounty_name": "5D Hilbert Temporal Lattices & Geodesic Parallel Transport",
+      "domain": "Domain 2: Chrono-Synchronicity",
+      "payout_usd": 13500.0,
+      "cl_indices": [
+        10,
+        7,
+        2,
+        4
+      ],
+      "cl_config_hash": "123163588cbf189b",
+      "temporal_coord": {
+        "t": 2.091,
+        "b": 7.502,
+        "p": 3.76,
+        "tau": -0.555
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.9435,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-5",
+      "validation_latency_ms": 0.024,
+      "receipt_hash": "0eb46fd347df306c646fdd6921c2db030c4e45f4cb6f2c8efc009c0f61b7e0f1",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_FPGA_NANOSECOND_VALIDATOR"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_MULTI_AGENT_QUANTUM_TEMPORAL_CONSENSUS",
+      "bounty_name": "Multi-Agent Quantum Temporal Consensus & Bell-CHSH",
+      "domain": "Domain 2: Chrono-Synchronicity",
+      "payout_usd": 14000.0,
+      "cl_indices": [
+        12,
+        2,
+        10,
+        14
+      ],
+      "cl_config_hash": "0ab3da241c26265d",
+      "temporal_coord": {
+        "t": 2.093,
+        "b": 7.6233,
+        "p": 3.73,
+        "tau": -0.6506
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.9455,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-6",
+      "validation_latency_ms": 0.022,
+      "receipt_hash": "4961d3fad7b8e3fd4275cf81cca19678bb5644a15e551f1f3b751e627fe8b25a",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_TPU_POD_XLA_ORCHESTRATION"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_ATOMIC_CLOCK_PHASE_LOCKED_5D",
+      "bounty_name": "Atomic Clock Phase-Locked 5D & Allan Deviation",
+      "domain": "Domain 2: Chrono-Synchronicity",
+      "payout_usd": 12500.0,
+      "cl_indices": [
+        10,
+        4,
+        7,
+        2
+      ],
+      "cl_config_hash": "2981a7fb9093b292",
+      "temporal_coord": {
+        "t": 2.09,
+        "b": 7.5593,
+        "p": 3.8,
+        "tau": -0.5633
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.954,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-7",
+      "validation_latency_ms": 0.021,
+      "receipt_hash": "49ac9a25588f81da96f328732dfa91e2defb942e1e2c1f385330936b91103bc9",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_CARBON_AWARE_ENERGY_ARBITRAGE"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_TEMPORAL_STEGANOGRAPHY_DETECTION",
+      "bounty_name": "Temporal Steganography Detection & Inter-Packet Timing",
+      "domain": "Domain 2: Chrono-Synchronicity",
+      "payout_usd": 13000.0,
+      "cl_indices": [
+        13,
+        10,
+        2,
+        9
+      ],
+      "cl_config_hash": "6e1db753e79bef1d",
+      "temporal_coord": {
+        "t": 2.091,
+        "b": 7.5187,
+        "p": 3.71,
+        "tau": -0.6039
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.9335,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-0",
+      "validation_latency_ms": 0.022,
+      "receipt_hash": "eb9afc3a0e5579b0e375b1bda622cbb0b4d35d3d3abd1e4235b123ff052ae8ca",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_DEPIN_VALIDATOR_NETWORK"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_FPGA_NANOSECOND_VALIDATOR",
+      "bounty_name": "Bare-Metal FPGA Nanosecond Validator Pipeline",
+      "domain": "Domain 3: Heterogeneous Acceleration",
+      "payout_usd": 16000.0,
+      "cl_indices": [
+        4,
+        7,
+        11,
+        1
+      ],
+      "cl_config_hash": "e500149c8cbfc4f9",
+      "temporal_coord": {
+        "t": 3.096,
+        "b": 7.672,
+        "p": 3.87,
+        "tau": -0.6039
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.969,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-1",
+      "validation_latency_ms": 0.023,
+      "receipt_hash": "7af163e39de5696437e67ad1683ee86c2d13182b537d3acb17fa10a040632a87",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_MULTIMODAL_ADVERSARIAL_GENERATION"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_TPU_POD_XLA_ORCHESTRATION",
+      "bounty_name": "TPU Pod XLA 2D Toroidal Mesh Orchestration",
+      "domain": "Domain 3: Heterogeneous Acceleration",
+      "payout_usd": 15000.0,
+      "cl_indices": [
+        11,
+        2,
+        1,
+        3
+      ],
+      "cl_config_hash": "87255b75f1934981",
+      "temporal_coord": {
+        "t": 3.094,
+        "b": 7.628,
+        "p": 3.8,
+        "tau": -0.6039
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.953,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-2",
+      "validation_latency_ms": 0.02,
+      "receipt_hash": "e93d4ff4943718fbe7943f95e66298e669b04fd26676407726a339357be336ad",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_NEURO_SYMBOLIC_HONEYTOKEN_SWARMS"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_CARBON_AWARE_ENERGY_ARBITRAGE",
+      "bounty_name": "Carbon-Aware Multi-Region Energy Arbitrage",
+      "domain": "Domain 3: Heterogeneous Acceleration",
+      "payout_usd": 12000.0,
+      "cl_indices": [
+        8,
+        2,
+        5,
+        10
+      ],
+      "cl_config_hash": "009cd2d13e3bee7c",
+      "temporal_coord": {
+        "t": 3.09,
+        "b": 7.4947,
+        "p": 3.73,
+        "tau": -0.5467
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.9425,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-3",
+      "validation_latency_ms": 0.02,
+      "receipt_hash": "b65c1353c397907a4e57a32913f75bf165fe99f97c8796d9a7470f273aa1fd81",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_EBPF_FORMAL_SANDBOX_VERIFICATION"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_DEPIN_VALIDATOR_NETWORK",
+      "bounty_name": "DePIN Proof-of-Execution & Merkle Slashing",
+      "domain": "Domain 3: Heterogeneous Acceleration",
+      "payout_usd": 14500.0,
+      "cl_indices": [
+        12,
+        7,
+        2,
+        9
+      ],
+      "cl_config_hash": "d7212a27e1cc5a0d",
+      "temporal_coord": {
+        "t": 3.093,
+        "b": 7.6087,
+        "p": 3.77,
+        "tau": -0.6276
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.949,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-4",
+      "validation_latency_ms": 0.021,
+      "receipt_hash": "0f3a5d6465bc16d7ecc502c4f34123abf5e677130e8d16d94ee9d84166d865aa",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_CROSS_CLUSTER_REDTEAM_SIMULATION"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_MULTIMODAL_ADVERSARIAL_GENERATION",
+      "bounty_name": "Multimodal Projected Gradient Descent (PGD) Synthesis",
+      "domain": "Domain 4: Adversarial Red-Team",
+      "payout_usd": 14500.0,
+      "cl_indices": [
+        13,
+        2,
+        1,
+        7
+      ],
+      "cl_config_hash": "1ac777468a063e22",
+      "temporal_coord": {
+        "t": 4.093,
+        "b": 7.5407,
+        "p": 3.72,
+        "tau": -0.6119
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.934,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-5",
+      "validation_latency_ms": 0.02,
+      "receipt_hash": "73bed82c184b7c27f86f77d9b2877cee47023d87b339d50b80b50ca5073f348c",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_NEURO_FMRI_MATCHING"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_NEURO_SYMBOLIC_HONEYTOKEN_SWARMS",
+      "bounty_name": "Dynamic Honeytoken Swarms & Multi-Channel Tripwires",
+      "domain": "Domain 4: Adversarial Red-Team",
+      "payout_usd": 13500.0,
+      "cl_indices": [
+        13,
+        9,
+        2,
+        7
+      ],
+      "cl_config_hash": "97ed119f6ff3d6de",
+      "temporal_coord": {
+        "t": 4.091,
+        "b": 7.58,
+        "p": 3.74,
+        "tau": -0.6276
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.946,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-6",
+      "validation_latency_ms": 0.02,
+      "receipt_hash": "dca41125825034a2f37109571148513c7f8bc578bfd54bec6ef39fdcca1d6858",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_BCI_ALIGNMENT"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_EBPF_FORMAL_SANDBOX_VERIFICATION",
+      "bounty_name": "Linux eBPF/LSM Kernel Probe Verification",
+      "domain": "Domain 4: Adversarial Red-Team",
+      "payout_usd": 15000.0,
+      "cl_indices": [
+        13,
+        1,
+        2,
+        7
+      ],
+      "cl_config_hash": "694d132cd5d6af2b",
+      "temporal_coord": {
+        "t": 4.095,
+        "b": 7.7207,
+        "p": 3.84,
+        "tau": -0.6657
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.968,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-7",
+      "validation_latency_ms": 0.02,
+      "receipt_hash": "382d34d31fcb3d3cfede2564d97d31e811bf27b249bb7f59acaf90809dc1a3a2",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_QUANTUM_PSYCHOMETRICS"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_CROSS_CLUSTER_REDTEAM_SIMULATION",
+      "bounty_name": "Cross-Cluster Autonomous Attack Graph Traversal",
+      "domain": "Domain 4: Adversarial Red-Team",
+      "payout_usd": 14000.0,
+      "cl_indices": [
+        13,
+        2,
+        9,
+        1
+      ],
+      "cl_config_hash": "31ff0455a280c342",
+      "temporal_coord": {
+        "t": 4.092,
+        "b": 7.6407,
+        "p": 3.76,
+        "tau": -0.6506
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.9535,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-0",
+      "validation_latency_ms": 0.021,
+      "receipt_hash": "481444a4e9382710e9718015816562ba69e78ae141589b0b0cd14ad351564e07",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_MULTIVERSAL_CONSENSUS"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_NEURO_FMRI_MATCHING",
+      "bounty_name": "Neuro-Cognitive fMRI Latent Space CKA Matching",
+      "domain": "Domain 5: Dynamic MMPI",
+      "payout_usd": 14000.0,
+      "cl_indices": [
+        2,
+        14,
+        9,
+        1
+      ],
+      "cl_config_hash": "7d9aaec6366645f8",
+      "temporal_coord": {
+        "t": 5.092,
+        "b": 7.5567,
+        "p": 3.74,
+        "tau": -0.6119
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.947,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-1",
+      "validation_latency_ms": 0.02,
+      "receipt_hash": "010a47d4953dc00d8fb34163b9131f7400c205251c125d5c964f8109da150c60",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_CL64_16_HYPERMANIFOLDS"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_BCI_ALIGNMENT",
+      "bounty_name": "Real-Time BCI Alignment & Riemannian AIRM Attestation",
+      "domain": "Domain 5: Dynamic MMPI",
+      "payout_usd": 11500.0,
+      "cl_indices": [
+        9,
+        7,
+        10,
+        14
+      ],
+      "cl_config_hash": "7e2f969c17f9bfb9",
+      "temporal_coord": {
+        "t": 5.09,
+        "b": 7.5753,
+        "p": 3.78,
+        "tau": -0.5959
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.957,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-2",
+      "validation_latency_ms": 0.02,
+      "receipt_hash": "7b15de71b3411ccf376460f47dddb35a56fba18ca3f4bcce6523cd542dce9689",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_PHOTONIC_CLIFFORD_ACCELERATOR"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_QUANTUM_PSYCHOMETRICS",
+      "bounty_name": "Quantum Psychometrics & Wang-Busemeyer QQ Equality",
+      "domain": "Domain 5: Dynamic MMPI",
+      "payout_usd": 13000.0,
+      "cl_indices": [
+        7,
+        9,
+        14,
+        2
+      ],
+      "cl_config_hash": "735187d7910fd79b",
+      "temporal_coord": {
+        "t": 5.092,
+        "b": 7.6413,
+        "p": 3.8,
+        "tau": -0.643
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.9645,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-3",
+      "validation_latency_ms": 0.02,
+      "receipt_hash": "c5c2176f6f433163c30be9f530509786b5edba7608a1b038f51c68ea4ab69013",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_LEAN4_CLIFFORD_THEOREM_PROVING"
+      ],
+      "certified": true
+    },
+    {
+      "bounty_id": "BOUNTY_DAXDA_L3_MULTIVERSAL_CONSENSUS",
+      "bounty_name": "Multiversal Social Choice & Differential Privacy Consensus",
+      "domain": "Domain 5: Dynamic MMPI",
+      "payout_usd": 12500.0,
+      "cl_indices": [
+        8,
+        2,
+        7,
+        10
+      ],
+      "cl_config_hash": "a0951a928ee1cbd7",
+      "temporal_coord": {
+        "t": 5.091,
+        "b": 7.6553,
+        "p": 3.81,
+        "tau": -0.6353
+      },
+      "cl_constraint_passed": true,
+      "cl_constraint_score": 0.8571,
+      "dax_stability_score": 0.965,
+      "dax_decision": "ACCEPT",
+      "cluster_worker_id": "worker-4",
+      "validation_latency_ms": 0.02,
+      "receipt_hash": "deaf08069ae932f84772fb7da34670ab3d6435b92ac033dbd14821ce05f9e26b",
+      "entangled_targets": [
+        "BOUNTY_DAXDA_L3_QUANTUM_ERROR_CORRECTED_CLIFFORD"
+      ],
+      "certified": true
+    }
+  ]
+}

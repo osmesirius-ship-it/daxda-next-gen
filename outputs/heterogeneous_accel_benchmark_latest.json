@@ -1,22 +1,22 @@
 {
   "gate_1_cold_start": {
-    "cold_start_ms": 0.0504,
+    "cold_start_ms": 0.0511,
     "devices_registered": 7,
     "active_backends": 5,
     "pass": true
   },
   "gate_2_latency": {
     "iterations": 10000,
-    "mean_ms": 0.006774,
-    "p50_ms": 0.006615,
-    "p95_ms": 0.00753,
-    "p99_ms": 0.008502,
+    "mean_ms": 0.007088,
+    "p50_ms": 0.007011,
+    "p95_ms": 0.007621,
+    "p99_ms": 0.008987,
     "pass": true
   },
   "gate_3_throughput": {
-    "single_worker_qps": 31434.53,
+    "single_worker_qps": 31334.4,
     "simulated_workers": 128,
-    "aggregate_qps": 3420077.29,
+    "aggregate_qps": 3409182.9,
     "scaling_efficiency": 0.85,
     "pass": true
   },
@@ -34,8 +34,8 @@
   },
   "gate_5_preemption": {
     "events": 10,
-    "mean_migration_ms": 0.02041,
-    "max_migration_ms": 0.077666,
+    "mean_migration_ms": 0.020033,
+    "max_migration_ms": 0.08517,
     "zero_loss_rate": 1.0,
     "all_successful": true,
     "pass": true
@@ -58,6 +58,6 @@
     "all_gates_passed": true,
     "gates_passed": 7,
     "total_gates": 7,
-    "timestamp": "2026-10-01T16:10:48Z"
+    "timestamp": "2026-10-06T21:51:38Z"
   }
 }
