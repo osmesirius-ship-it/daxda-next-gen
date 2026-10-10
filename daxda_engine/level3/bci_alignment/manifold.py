@@ -70,8 +70,8 @@ def tangent_space_log_map(P: np.ndarray, base: np.ndarray, reg: float = 1e-8) ->
 
 def frechet_mean_spd(
     matrices: List[np.ndarray],
-    max_iter: int = 30,
-    tol: float = 1e-7,
+    max_iter: int = 15,
+    tol: float = 1e-4,
     reg: float = 1e-8,
 ) -> np.ndarray:
     """

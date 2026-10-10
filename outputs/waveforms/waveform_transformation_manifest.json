@@ -1,0 +1,35 @@
+{
+  "engine_version": "DAXDA-Waveforms/1.0.0",
+  "audio_source": "my_voice_sample.wav",
+  "sample_rate": 48000,
+  "sample_count": 240000,
+  "duration_sec": 5.0,
+  "dsp_metrics": {
+    "instantaneous_f0_mean_hz": 895.53,
+    "spectral_centroid_mean_hz": 2226.31,
+    "attractor_delay_tau": 2,
+    "dsp_time_ms": 109.75
+  },
+  "resonance_metrics": {
+    "nci": 0.2014,
+    "cpc": 0.0134,
+    "faf": 0.0,
+    "blades": {
+      "e1_trust": 0.8531,
+      "e2_factual": 0.0928,
+      "e3_negation": 0.127,
+      "e4_authority": 0.0097,
+      "e15_adversarial": 0.0049
+    },
+    "adversarial_flag": false
+  },
+  "artifacts": {
+    "test_pattern_png": "/Users/user/daxda next gen/DAXDA-NEXTGEN/daxda-next-gen/outputs/waveforms/test_geometric_pattern.png",
+    "sonified_audio_wav": "/Users/user/daxda next gen/DAXDA-NEXTGEN/daxda-next-gen/outputs/waveforms/optical_sonification_synthesis.wav",
+    "visual_cymatics_png": "/Users/user/daxda next gen/DAXDA-NEXTGEN/daxda-next-gen/outputs/waveforms/audio_to_visual_cymatics.png",
+    "video_mp4": "/Users/user/daxda next gen/DAXDA-NEXTGEN/daxda-next-gen/outputs/waveforms/daxda_waveform_transformation.mp4",
+    "video_webm": "/Users/user/daxda next gen/DAXDA-NEXTGEN/daxda-next-gen/outputs/waveforms/daxda_waveform_transformation.webm",
+    "video_gif": "/Users/user/daxda next gen/DAXDA-NEXTGEN/daxda-next-gen/outputs/waveforms/daxda_waveform_transformation.gif",
+    "video_sha256": "00627110599efab644a062e48ef114c2b4ac5eba57be1df07b8edee88adeb89c"
+  }
+}

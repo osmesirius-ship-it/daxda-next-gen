@@ -270,6 +270,9 @@ class DAXDAManifoldVideoGenerator:
 
         self._draw_blade_axes(draw, cx, cy, yaw, pitch, roll, e1_val, e3_val, e15_val, t, is_block)
 
+        if stage <= 2:
+            self._draw_stage1_waveform(draw, cx, cy, t, payload)
+
         if stage >= 3:
             self._draw_double_helix(draw, cx, cy, yaw, pitch, roll, t,
                                     e1_val, e2_val, e3_val, e4_val, e15_val, stage)
@@ -387,6 +390,38 @@ class DAXDAManifoldVideoGenerator:
                 draw.line([(ox, oy), (sx, sy)], fill=col, width=2)
                 draw.ellipse([sx-5, sy-5, sx+5, sy+5], fill=col)
                 draw.text((sx + 6, sy - 8), label, fill=col)
+
+    def _draw_stage1_waveform(self, draw, cx, cy, t, payload):
+        """Draw Stage 1: The Utterance spectral acoustic waveform and phase ripple in dark space."""
+        n_samples = 120
+        pts_wave = []
+        pts_mirror = []
+        amp_scale = min(1.0, t * 10.0)
+        seed_freq = sum(ord(c) for c in payload[:10]) % 17 + 5 if payload else 8
+
+        for i in range(n_samples):
+            u = (i - n_samples / 2) / (n_samples / 2)
+            env = math.exp(-3.5 * u * u) * amp_scale
+            carrier = math.sin(u * math.pi * seed_freq + t * 24.0)
+            sub_carrier = 0.4 * math.sin(u * math.pi * seed_freq * 2.3 + t * 40.0)
+            val = (carrier + sub_carrier) * env
+
+            px = cx + int(u * 280.0)
+            py = cy + int(val * 85.0)
+            py_m = cy - int(val * 85.0)
+            pts_wave.append((px, py))
+            pts_mirror.append((px, py_m))
+
+        for i in range(len(pts_wave) - 1):
+            draw.line([pts_wave[i], pts_wave[i + 1]], fill=C_CYAN, width=2)
+            draw.line([pts_mirror[i], pts_mirror[i + 1]], fill=C_VIOLET, width=1)
+
+        for ring_idx in range(4):
+            ring_phase = (t * 4.0 + ring_idx * 0.25) % 1.0
+            r = int(ring_phase * 180.0)
+            if r > 5:
+                alpha_col = _lerp_color(C_CYAN, BG_GRID, ring_phase)
+                draw.ellipse([cx - r, cy - r, cx + r, cy + r], outline=alpha_col, width=1)
 
     def _draw_double_helix(self, draw, cx, cy, yaw, pitch, roll, t, e1, e2, e3, e4, e15, stage):
         """Draw a 3D double helix formed from the five Clifford blade streams."""

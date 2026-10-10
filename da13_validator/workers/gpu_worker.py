@@ -61,9 +61,10 @@ class GPUValidationWorker:
             is_valid = score_res.decision == "ACCEPT" and cl_valid and not score_res.policy_violation
             elapsed_ms = (time.perf_counter() - t0) * 1000.0
 
-            # Generate validation receipt
+            # Generate deterministic validation receipt
+            payload_nonce = payload.get("nonce") or payload.get("id") or str(sorted(payload.keys()))
             receipt_hash = hashlib.sha256(
-                f"{self.worker_id}:{t0}:{score_res.score}:{score_res.decision}".encode()
+                f"{self.worker_id}:{payload_nonce}:{score_res.score:.6f}:{score_res.decision}:{cl_valid}".encode()
             ).hexdigest()
 
             return {

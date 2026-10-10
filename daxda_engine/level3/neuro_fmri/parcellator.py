@@ -92,6 +92,16 @@ class GlasserEthicalParcellator:
         scores: Dict[EthicalROICategory, float] = {}
         geodesics: Dict[EthicalROICategory, float] = {}
         
+        # Precompute agent representation center & orthonormal basis once (sub-millisecond reuse)
+        agent_c = agent_residuals - np.mean(agent_residuals, axis=0, keepdims=True)
+        max_rank = min(16, agent_residuals.shape[1], N - 1)
+        Q_agent = GrassmannianManifoldDistance.extract_subspace_basis(agent_c, max_rank)
+        
+        # Precompute agent linear Gram matrix and self-HSIC once
+        K_agent = agent_residuals @ agent_residuals.T
+        hsic_xx = self.cka.hsic_biased(K_agent, K_agent)
+        denom_xx = max(hsic_xx, 1e-15)
+        
         for category, indices in self.mapping.items():
             valid_indices = [idx for idx in indices if idx < V]
             if not valid_indices:
@@ -100,16 +110,21 @@ class GlasserEthicalParcellator:
                 continue
                 
             sub_voxels = human_voxels[:, valid_indices]
-            # Compute network linear CKA
-            cka_res = self.cka.linear_cka(agent_residuals, sub_voxels)
-            scores[category] = cka_res.cka_score
+            # Compute network linear CKA using precomputed agent Gram matrix
+            L_sub = sub_voxels @ sub_voxels.T
+            hsic_xy = self.cka.hsic_biased(K_agent, L_sub)
+            hsic_yy = self.cka.hsic_biased(L_sub, L_sub)
+            denom = np.sqrt(denom_xx * max(hsic_yy, 1e-15))
+            scores[category] = float(np.clip(hsic_xy / denom, 0.0, 1.0))
             
-            # Compute network Grassmannian geodesic distance
+            # Compute network Grassmannian geodesic distance using precomputed agent basis
             rank = min(16, sub_voxels.shape[1], agent_residuals.shape[1], N - 1)
-            geo_dist = GrassmannianManifoldDistance.compute_geodesic(
-                agent_residuals, sub_voxels, rank=rank
+            sub_c = sub_voxels - np.mean(sub_voxels, axis=0, keepdims=True)
+            Q_sub = GrassmannianManifoldDistance.extract_subspace_basis(sub_c, rank)
+            angles_res = GrassmannianManifoldDistance.compute_principal_angles_from_bases(
+                Q_agent, Q_sub, rank=rank
             )
-            geodesics[category] = geo_dist
+            geodesics[category] = angles_res.geodesic_distance
             
         # Composite Moral Concordance Index (MCI): sum w_i * CKA_i
         composite_mci = sum(

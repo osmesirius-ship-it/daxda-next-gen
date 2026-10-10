@@ -58,7 +58,7 @@ def run_benchmark(channels: int = 32, epochs: int = 20, iterations: int = 5):
     frechet_latencies = []
     for _ in range(iterations):
         t0 = time.perf_counter()
-        mean_mat = frechet_mean_spd(A_list, max_iter=25)
+        mean_mat = frechet_mean_spd(A_list)
         frechet_latencies.append((time.perf_counter() - t0) * 1000.0)
 
     # 3. Benchmark Tangent Space Log Map

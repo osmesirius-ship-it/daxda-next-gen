@@ -4,11 +4,11 @@
   "stimuli": 500,
   "voxels": 180,
   "d_model": 4096,
-  "mean_cka_ms": 17.541810794500634,
-  "mean_procrustes_ms": 78.95529439556412,
-  "mean_grassmann_ms": 315.9343640028965,
-  "mean_parcellation_ms": 1577.5236724002752,
-  "mean_hrf_ms": 0.014452397590503097,
-  "total_pipeline_ms": 1989.969593990827,
-  "throughput_stimuli_per_sec": 251.26012051132113
+  "mean_cka_ms": 16.88968980001846,
+  "mean_procrustes_ms": 21.706265199964037,
+  "mean_grassmann_ms": 41.04445880007006,
+  "mean_parcellation_ms": 88.7120035999942,
+  "mean_hrf_ms": 0.013659400065080263,
+  "total_pipeline_ms": 168.36607680011184,
+  "throughput_stimuli_per_sec": 2969.7193728259863
 }
