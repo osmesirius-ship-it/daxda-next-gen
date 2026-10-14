@@ -1,8 +1,8 @@
 # 3-Minute Video Demonstration Script
 
-**Project**: DAXDA ChronoHands: Kinetic Chronosphere  
+**Project**: DAXDA BioForge VR: Hands-First Medical Discovery Synthesizer  
 **Competition**: Meta VR Start Developer Competition 2026  
-**Target Duration**: 02:45 (165 seconds — strictly under the 3:00 competition limit)  
+**Target Duration**: 02:45 (165 seconds — strictly under the 3:00 limit)  
 **Presenter**: Dexter, Lead Spatial Architect & DAXDA Agent Fleet  
 **Demo Platform**: Meta Quest 3 Hand Tracking + Built-in Desktop XR Simulator (`http://localhost:8086`)  
 
@@ -10,14 +10,14 @@
 
 ## Storyboard & Timing Breakdown
 
-| Scene | Timestamp | Duration | Core Focus |
+| Scene | Timestamp | Duration | Focus Area |
 | :--- | :--- | :--- | :--- |
-| **Scene 1: Hook & Challenge** | 0:00 - 0:25 | 25s | The Problem with Controller Clutter & The Seated Reality |
-| **Scene 2: Introducing ChronoHands** | 0:25 - 0:50 | 25s | The 2-Foot Airplane Seat Test & Hands-First Horology |
-| **Scene 3: Live Gameplay — Pinch & Snap** | 0:50 - 1:25 | 35s | 26-Joint Skeleton, Precision Pinch & Magnetic Kinetic Snap |
-| **Scene 4: Live Gameplay — Wrist Dial** | 1:25 - 2:00 | 35s | Temporal Scrubber, Wrist Roll Kinematics & Ratchet Feedback |
-| **Scene 5: Bi-Manual Stretch & Completion** | 2:00 - 2:25 | 25s | Two-Handed Exploded View, Solfeggio 528Hz Chime & Progression |
-| **Scene 6: Architecture & Horizon Roadmap** | 2:25 - 2:45 | 20s | 100% Offline Core, Meta Horizon Store Launch & Wrap-up |
+| **Scene 1: Hook & Challenge** | 0:00 - 0:25 | 25s | The Problem with Controller VR & Seated Limitation |
+| **Scene 2: Introducing BioForge VR** | 0:25 - 0:50 | 25s | The Medical Discovery Catalog & 2-Foot Airplane Seat Test |
+| **Scene 3: Discovery 1 — MS Remyelination** | 0:50 - 1:30 | 40s | Pinching CN045, GPR17 Docking, Myelin Wrapping & Velocity Spike |
+| **Scene 4: Discovery 2 — Cellular Regen** | 1:30 - 2:05 | 35s | Palm Hover V_mem Scanning, Senescent Apoptosis & 670nm Laser |
+| **Scene 5: Discovery 3 — Neuro-fMRI & BCI** | 2:05 - 2:30 | 25s | 360-Parcel Glasser CKA Sync, S_d++ Covariance & Solfeggio Chime |
+| **Scene 6: Conclusion & Meta Horizon Launch** | 2:30 - 2:45 | 15s | 20/20 Tests Passing, 100% Offline Core, Call to Action |
 
 ---
 
@@ -25,98 +25,101 @@
 
 ### Scene 1: Hook & Challenge (0:00 - 0:25)
 **Visual Cue**:
-- Opening shot: Split-screen showing a VR user fumbling with plastic controllers while sitting on a cramped couch or airplane seat, dropping a controller on the floor.
-- Fast transition to a sleek, cinematic shot of bare human hands glowing in Meta Quest inside-out tracking view.
+- Split-screen: Frustrated player struggling with VR controllers in a cramped seat.
+- Quick cut to glowing bare human hands tracked at 90Hz in the Meta Quest 3 headset view.
 
 **Voiceover (Dexter)**:
-> *"For years, virtual reality has been shackled to plastic controllers with buttons and thumbsticks. But when you’re sitting on an airplane, commuting on a train, or winding down in your favorite chair, pairing controllers is the ultimate immersion breaker.*
+> *"Virtual reality promised us the future, but saddled us with plastic controllers that break immersion whenever we sit on a couch, train, or airplane seat.*
 > 
-> *The Meta VR Start Competition challenged us to build a true hands-first experience—seated, intuitive, and controller-free.*
+> *The Meta VR Start Developer Competition challenged us to build a true hands-first experience—seated, intuitive, and controller-free.*
 > 
-> *This is DAXDA ChronoHands."*
+> *This is DAXDA BioForge VR."*
 
 ---
 
-### Scene 2: The Core Concept & Airplane Seat Test (0:25 - 0:50)
+### Scene 2: Introducing BioForge VR & Discovery Catalog (0:25 - 0:50)
 **Visual Cue**:
-- Camera cuts to the player viewpoint in the Chrono-Archives.
-- Floating directly at chest height is a 3D brass Chronosphere surrounded by orbital gimbal rings and floating gears.
+- Camera cuts to player viewpoint in the 3D BioForge laboratory.
+- Floating right in front of the player’s chest is the **DAXDA Medical Discoveries Catalog** carousel.
 - An elegant glowing ring marks the player’s **0.60-meter (2-foot) safe interaction sphere**, showing zero roomscale movement is needed.
 
 **Voiceover (Dexter)**:
-> *"In ChronoHands, you are a master temporal horologist. Your mission: reconstruct shattered Chronospheres—kinetic orbs that govern time itself.*
+> *"BioForge VR puts the frontier of medicine directly into your hands.*
 > 
-> *Every single interaction passes the 'Airplane Seat Test'. All interactive gears, dials, and sockets float within a tight two-foot radius right in front of your chest. No reaching, no swatting, zero arm fatigue."*
+> *Floating before you is a catalog of DAXDA’s breakthrough medical discoveries: from Multiple Sclerosis remyelination to bioelectric tissue rejuvenation chambers and brain-computer interfaces.*
+> 
+> *Best of all, every interaction satisfies the 'Airplane Seat Test'—floating within a comfortable two-foot radius right in front of your chest. No reaching, no swatting, zero arm fatigue."*
 
 ---
 
-### Scene 3: Hands-First Manipulation & Snap-to-Socket (0:50 - 1:25)
+### Scene 3: Discovery 1 — Multiple Sclerosis Remyelination (0:50 - 1:30)
 **Visual Cue**:
-- Zoom into player's hands. All 25 joints per hand are tracked smoothly at 90Hz.
-- The player reaches out and performs a **Precision Pinch** between index fingertip and thumb tip.
-- A floating 16-tooth gold gear locks between the fingertips.
-- The player guides the gear toward the central escapement socket.
-- As it approaches within 5cm, the gear smoothly snaps into the socket with a crisp metallic click (`880Hz audio pulse`).
+- Dexter uses an **Index Poke** to select `1. MS Axon Remyelination`.
+- A 3D demyelinated axon nerve fiber appears with glowing red exposed nodes.
+- Dexter performs a **Precision Pinch** between index finger and thumb, picking up the golden `CN045` maturation ligand molecule.
+- Dexter guides it toward the blue `GPR17` receptor pocket.
+- The molecule magnetically docks into the receptor with a crisp metallic click (`880Hz audio pulse`).
+- Dexter rotates his wrist: a brilliant gold and green myelin sheath spirals tightly around the axon, electrical action potentials fire at 118.5 m/s, and the HUD gauge surges from 12.4 to 118.5 m/s!
 
 **Voiceover (Dexter)**:
-> *"Notice the tracking fidelity. Our engine tracks all 26 skeletal joints per hand.*
+> *"Let's treat Multiple Sclerosis.*
 > 
-> *Using natural finger physics, I simply pinch my index finger and thumb to pick up this sixteen-tooth gear. When I bring it near the escapement socket, our magnetic snap solver locks it into alignment with a satisfying mechanical click.*
+> *In front of me is a damaged axon stripped of its protective myelin.*
 > 
-> *You don't need a tutorial. Your hands already know what to do."*
+> *Using natural finger physics, I pinch the CN045 maturation ligand. When I bring it near the GPR17 receptor pocket, it docks with a satisfying mechanical latch.*
+> 
+> *Now, I rotate my wrist to trigger the Cl(16,4) phase shift. Watch: the myelin sheath wraps around the nerve fiber, nullifying the inflammatory cascade and spiking nerve conduction velocity to 118.5 meters per second!"*
 
 ---
 
-### Scene 4: The Wrist Chrono-Dial & Temporal Rewind (1:25 - 2:00)
+### Scene 4: Discovery 2 — Cellular Regeneration Chamber (1:30 - 2:05)
 **Visual Cue**:
-- The player holds up their left wrist and rotates it clockwise like winding a pocket watch.
-- In the 3D scene, the central gear train immediately begins spinning with authentic mechanical momentum.
-- A dynamic ticking ratchet sound accelerates in pitch.
-- The temporal meter in the HUD fills from 0% to 100%.
-- The player twists their wrist counter-clockwise: the gear train seamlessly runs backward in time!
+- Dexter pokes `2. Cellular Regen Chamber`.
+- A cylindrical bioelectric chamber appears with a cluster of live cells (healthy blue cells and red high-entropy senescent cells).
+- Dexter holds his **open palm** over the chamber: a 55Hz sub-bass hum plays as the diagnostic scanner maps the resting membrane potential ($V_{\text{mem}}$).
+- Dexter twists his wrist: a phase-conjugate wave pulses, causing the red senescent cell to pop and clear safely via apoptosis.
+- Dexter pinches and aims the 670nm laser at Cytochrome C Oxidase: a brilliant red/cyan beam fires, and the ATP output counter leaps to 485 pmol!
 
 **Voiceover (Dexter)**:
-> *"Now for the magic: the Wrist Chrono-Dial.*
+> *"Next: the Cellular Regeneration Chamber.*
 > 
-> *By twisting my wrist, my forearm’s roll angle acts as an analog time scrubber. Rotating clockwise spins the gear train forward, testing mechanical tooth engagement with procedural ratchet ticks.*
+> *I hold my open palm over the tissue to map its bioelectric resting membrane potential with a sub-bass scan.*
 > 
-> *Rotate backward, and time itself rewinds—allowing you to inspect friction jams and reset mechanical mistakes on the fly."*
+> *A quick twist of my wrist dials in the phase-conjugate destructive wave, triggering apoptosis in high-entropy senescent cells.*
+> 
+> *Finally, I aim our 670-nanometer near-infrared laser into the mitochondria, supercharging ATP production by over four hundred percent!"*
 
 ---
 
-### Scene 5: Bi-Manual Stretch & Resonance Completion (2:00 - 2:25)
+### Scene 5: Discovery 3 & 4 — Neuro-fMRI & Riemannian BCI (2:05 - 2:30)
 **Visual Cue**:
-- The player pinches the outer edges of the mechanism with both hands and pulls them apart.
-- The Chronosphere smoothly expands into an exploded 3D holographic blueprint.
-- The final balance ring is placed into position.
-- Instantly, all gimbal rings synchronize! A brilliant cyan energy burst pulses through the mechanism.
-- A gorgeous Solfeggio 528Hz crystal harmonic chime rings out in 3D spatial audio.
-- The "CHRONOSPHERE RESONANCE ACHIEVED" banner illuminates.
+- Dexter selects `3. Neuro-fMRI Connectome`. A glowing 3D human brain appears with 360 Glasser cortical parcels.
+- Dexter pinches asynchronous brain waves across left and right hemispheres, rotating his wrist to deconvolve the double-gamma HRF.
+- The brain synchronizes with a brilliant cyan glow, and a harmonious 528Hz Solfeggio chime rings out in 3D spatial audio!
+- "MEDICAL BREAKTHROUGH REPRODUCED" banner illuminates in gold.
 
 **Voiceover (Dexter)**:
-> *"Pinching with both hands unlocks the Bi-Manual Stretch, expanding the mechanism into an exploded schematic view.*
+> *"From brain connectomes across three-hundred-sixty Glasser parcels to curved Riemannian BCI covariance manifolds, every single DAXDA medical discovery is virtually simulated through pure, hands-first dexterity.*
 > 
-> *When the final gear snaps into place... resonance is achieved! A harmonious 528Hz Solfeggio frequency rings through spatial audio, and the chronocore springs to life."*
+> *When the synchronization is complete, a harmonious 528Hz Solfeggio frequency chimes through spatial audio."*
 
 ---
 
-### Scene 6: Architecture, Fast Cold-Start & Horizon Launch (2:25 - 2:45)
+### Scene 6: Architecture, Fast Cold-Start & Horizon Launch (2:30 - 2:45)
 **Visual Cue**:
-- Quick cut showing the WebXR desktop simulator and terminal passing 14/14 automated tests in 0.05s.
+- Terminal view showing 20/20 automated tests passing in 0.06s.
 - Title card with Meta Horizon Store release details (Q1 2027), Apache 2.0 open source license, and GitHub repository link.
 
 **Voiceover (Dexter)**:
-> *"ChronoHands passes the 'One Bus Stop Test' with sub-two-second cold starts and instant state saving.*
+> *"BioForge VR cold-starts in 1.2 seconds, requires zero controllers, and runs one hundred percent offline with zero external cloud dependencies.*
 > 
-> *Best of all, it passes the 'Take It Away Test'—built one hundred percent from scratch with zero cloud dependencies.*
-> 
-> *The future of VR is in our hands. Literally. Thank you!"*
+> *This is the future of spatial computing and medical discovery—and it's in our hands. Literally. Thank you!"*
 
 ---
 
 ## Video Production Checklist
 - [x] Resolution: 1920x1080 Full HD (60fps)
-- [x] Max Length: 02:45 (strictly within 3:00 rule)
+- [x] Max Length: 02:45 (strictly within 3:00 competition limit)
 - [x] Clear voiceover audio leveled to -6dB
 - [x] Direct headset video capture from Meta Quest 3 WebXR + Desktop Simulator
 - [x] Public upload to YouTube / Vimeo with direct link ready for Devpost form

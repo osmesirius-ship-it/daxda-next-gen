@@ -1,21 +1,22 @@
 /**
- * DAXDA ChronoHands: WebXR Hands-First Application
- * ==================================================
+ * DAXDA BioForge VR: Hands-First Medical Discovery Synthesizer
+ * ==============================================================
  * Meta VR Start Developer Competition 2026
- * Supports native Meta Quest 3 / Pro / VR Glasses Hand Tracking API (26 joints)
- * & built-in Desktop Hand Simulator for judge verification.
+ * 
+ * Allows the player to pick through all of DAXDA's medical discoveries
+ * and virtually performs the exact scientific and biological mechanism
+ * of each discovery using bare hands (no controllers).
  */
 
 (function () {
   'use strict';
 
   // --- Constants & Config ---
-  const SEATED_MAX_RADIUS = 0.60; // 0.60m Airplane seat test envelope
-  const SNAP_DISTANCE = 0.06;     // Snap gear to socket threshold
-  const PINCH_THRESHOLD = 0.035;  // 3.5cm pinch threshold
+  const SEATED_MAX_RADIUS = 0.60; // 0.60m Airplane Seat Test Envelope
+  const SNAP_DISTANCE = 0.065;    // Magnetic docking threshold
 
-  // --- Procedural Web Audio Synth ---
-  class WebXRSpatialAudioSynth {
+  // --- Audio Synthesizer ---
+  class BioSpatialAudioSynth {
     constructor() {
       this.ctx = null;
     }
@@ -30,106 +31,149 @@
       }
     }
 
-    playSnapClick() {
+    playSnapDock() {
       if (!this.ctx) return;
       const t = this.ctx.currentTime;
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
-      const filter = this.ctx.createBiquadFilter();
-
       osc.type = 'triangle';
       osc.frequency.setValueAtTime(880, t);
-      osc.frequency.exponentialRampToValueAtTime(1760, t + 0.02);
-      osc.frequency.exponentialRampToValueAtTime(440, t + 0.08);
-
-      filter.type = 'bandpass';
-      filter.frequency.setValueAtTime(2400, t);
-      filter.Q.setValueAtTime(6.0, t);
+      osc.frequency.exponentialRampToValueAtTime(1760, t + 0.03);
+      osc.frequency.exponentialRampToValueAtTime(440, t + 0.09);
 
       gain.gain.setValueAtTime(0.7, t);
-      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.09);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.1);
 
-      osc.connect(filter);
-      filter.connect(gain);
+      osc.connect(gain);
       gain.connect(this.ctx.destination);
-
       osc.start(t);
       osc.stop(t + 0.1);
     }
 
-    playRatchetTick(multiplier = 1.0) {
+    playLaserHum() {
       if (!this.ctx) return;
       const t = this.ctx.currentTime;
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(670, t); // 670Hz tone matching 670nm NIR laser
+      osc.frequency.linearRampToValueAtTime(810, t + 0.2);
 
-      osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(240 * multiplier, t);
-      osc.frequency.exponentialRampToValueAtTime(120, t + 0.04);
-
-      gain.gain.setValueAtTime(0.3, t);
-      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
+      gain.gain.setValueAtTime(0.35, t);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.25);
 
       osc.connect(gain);
       gain.connect(this.ctx.destination);
-
       osc.start(t);
-      osc.stop(t + 0.05);
+      osc.stop(t + 0.25);
     }
 
-    playResonanceChime() {
+    playNeuralChime() {
       if (!this.ctx) return;
       const t = this.ctx.currentTime;
-      const freqs = [528, 660, 792, 1056]; // Solfeggio Harmonic triad
-      freqs.forEach((freq, idx) => {
+      [528, 660, 792, 1056].forEach((freq, idx) => {
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
         osc.type = 'sine';
         osc.frequency.setValueAtTime(freq, t);
 
-        gain.gain.setValueAtTime(0.25, t);
+        gain.gain.setValueAtTime(0.2, t);
         gain.gain.exponentialRampToValueAtTime(0.001, t + 1.2 + idx * 0.2);
 
         osc.connect(gain);
         gain.connect(this.ctx.destination);
-
         osc.start(t);
         osc.stop(t + 1.5);
       });
     }
 
-    playTimeWarpSweep() {
+    playBioelectricScan() {
       if (!this.ctx) return;
       const t = this.ctx.currentTime;
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(55, t); // 55Hz sub-bass
+      osc.frequency.linearRampToValueAtTime(110, t + 0.3);
 
-      osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(180, t);
-      osc.frequency.exponentialRampToValueAtTime(720, t + 0.25);
-      osc.frequency.exponentialRampToValueAtTime(140, t + 0.5);
-
-      gain.gain.setValueAtTime(0.4, t);
-      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.55);
+      gain.gain.setValueAtTime(0.5, t);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.35);
 
       osc.connect(gain);
       gain.connect(this.ctx.destination);
-
       osc.start(t);
-      osc.stop(t + 0.6);
+      osc.stop(t + 0.4);
     }
   }
 
-  // --- Main Application ---
-  class ChronoHandsApp {
+  // --- Medical Discovery Catalog Definitions ---
+  const DISCOVERY_PROFILES = {
+    MS_REMYELINATION: {
+      id: 'MS_REMYELINATION',
+      name: 'MS Axon Remyelination',
+      target: 'GPR17 / CN045 / EBV Nullification',
+      metricLabel: 'Nerve Conduction Velocity',
+      baselineVal: 12.4,
+      targetVal: 118.5,
+      unit: 'm/s',
+      instruction: 'Pinch the golden CN045 ligand and dock it into the GPR17 receptor pocket on the demyelinated axon.',
+      completionDetails: 'The Cl(16,4) geometric phase-shift bound CN045 to GPR17, nullifying EBV inflammation and triggering oligodendrocyte precursor cell differentiation. Conduction velocity restored to 118.5 m/s!'
+    },
+    CELLULAR_REGEN_BED: {
+      id: 'CELLULAR_REGEN_BED',
+      name: 'Cellular Regen Chamber',
+      target: 'V_mem Reversal & 670nm ATP Boost',
+      metricLabel: 'Intracellular ATP Output',
+      baselineVal: 100.0,
+      targetVal: 485.0,
+      unit: 'pmol/cell',
+      instruction: 'Hover open palm to scan bioelectric V_mem, twist wrist to trigger senescent apoptosis, and aim 670nm laser to energize mitochondria.',
+      completionDetails: 'Bioelectric resting membrane potential restored. 670nm NIR laser stimulated Cytochrome C Oxidase, accelerating cellular ATP production by +400%!'
+    },
+    NEURO_FMRI_CONNECTOME: {
+      id: 'NEURO_FMRI_CONNECTOME',
+      name: 'Neuro-fMRI Connectome',
+      target: '360-Parcel Glasser CKA Sync',
+      metricLabel: 'Representational Similarity (CKA)',
+      baselineVal: 0.42,
+      targetVal: 0.98,
+      unit: 'CKA Score',
+      instruction: 'Align asynchronous cortical parcels across left and right hemispheres using wrist dial rotation to synchronize double-gamma HRF.',
+      completionDetails: 'Double-gamma HRF deconvolution completed across 360 Glasser cortical parcels. Inter-hemispheric phase coupling synchronized at 0.98 CKA correlation!'
+    },
+    RIEMANNIAN_BCI_RECOVERY: {
+      id: 'RIEMANNIAN_BCI_RECOVERY',
+      name: 'Riemannian BCI Recovery',
+      target: 'S_d++ Covariance & Mu-Rhythm',
+      metricLabel: 'Mu-Rhythm Sensorimotor Coherence',
+      baselineVal: 0.28,
+      targetVal: 0.94,
+      unit: 'Coherence Index',
+      instruction: 'Grasp the deviant covariance matrix on the curved SPD manifold and guide it toward the Fréchet geometric mean.',
+      completionDetails: 'Riemannian tangent space mapping aligned motor cortex covariance on S_d++. Sensorimotor mu-rhythm (10.2Hz) restored, inducing active neuroplastic motor recovery!'
+    },
+    QUANTUM_PSYCHOMETRICS: {
+      id: 'QUANTUM_PSYCHOMETRICS',
+      name: 'Quantum Psychometrics',
+      target: 'Wang-Busemeyer QQ Invariant',
+      metricLabel: 'Wang-Busemeyer QQ Delta',
+      baselineVal: 0.384,
+      targetVal: 0.000,
+      unit: 'q_diff Error',
+      instruction: 'Reorient non-commutative measurement projection axes on the quantum Bloch sphere to satisfy the QQ equality.',
+      completionDetails: 'Lüders quantum state projection verified. Cognitive context order bias completely eliminated (q_diff < 1e-15), restoring emotional and mental equilibrium!'
+    }
+  };
+
+  // --- Main Application Class ---
+  class BioForgeApp {
     constructor() {
       this.container = document.getElementById('canvas-container');
-      this.audio = new WebXRSpatialAudioSynth();
+      this.audio = new BioSpatialAudioSynth();
 
-      // State
-      this.currentLevel = 1;
-      this.temporalPhase = 0.0;
-      this.isLevelCompleted = false;
+      this.activeDiscoveryId = 'MS_REMYELINATION';
+      this.progress = 0.0;
+      this.isCompleted = false;
       this.isSimMode = true;
       this.activeGesture = 'IDLE';
 
@@ -138,39 +182,37 @@
       this.camera = null;
       this.renderer = null;
 
-      // Game Entities
-      this.chronosphereGroup = null;
-      this.gears = [];
-      this.slots = [];
-      this.heldGear = null;
-      this.historySnapshots = [];
+      // 3D Bio Objects
+      this.bioGroup = null;
+      this.interactiveEntity = null;
+      this.dockTarget = null;
+      this.heldObject = null;
+      this.myelinSheaths = [];
+      this.cellMeshes = [];
+      this.actionPotentialPulses = [];
 
-      // Hand Tracking Entities
-      this.hands = { left: null, right: null };
+      // Simulated Hand
       this.simulatedHand = {
-        pos: new THREE.Vector3(0.0, 1.05, -0.28),
+        pos: new THREE.Vector3(0.0, 1.05, -0.32),
         isPinching: false,
-        isGrabbing: false,
-        wristRoll: 0.0,
         meshGroup: null
       };
 
       this.initThree();
-      this.initLevel(1);
+      this.loadDiscovery(this.activeDiscoveryId);
       this.bindUI();
-      this.bindDesktopControls();
+      this.bindControls();
 
-      // Start render loop
       this.renderer.setAnimationLoop((time, frame) => this.onFrame(time, frame));
     }
 
     initThree() {
       this.scene = new THREE.Scene();
-      this.scene.background = new THREE.Color(0x06080d);
-      this.scene.fog = new THREE.FogExp2(0x06080d, 0.4);
+      this.scene.background = new THREE.Color(0x05070c);
+      this.scene.fog = new THREE.FogExp2(0x05070c, 0.35);
 
       this.camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.05, 20);
-      this.camera.position.set(0, 1.25, 0.15); // Seated viewpoint looking down at mechanism desk
+      this.camera.position.set(0, 1.25, 0.18); // Seated view looking at 0.60m desk zone
 
       this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
       this.renderer.setSize(window.innerWidth, window.innerHeight);
@@ -178,43 +220,39 @@
       this.renderer.xr.enabled = true;
       this.container.appendChild(this.renderer.domElement);
 
-      // Lighting
-      const ambient = new THREE.AmbientLight(0xffffff, 0.8);
+      // Lights
+      const ambient = new THREE.AmbientLight(0xffffff, 0.9);
       this.scene.add(ambient);
 
-      const dirLight = new THREE.DirectionalLight(0x00f0ff, 2.2);
-      dirLight.position.set(2, 4, 3);
-      this.scene.add(dirLight);
+      const cyanKey = new THREE.DirectionalLight(0x00f0ff, 2.5);
+      cyanKey.position.set(2, 4, 3);
+      this.scene.add(cyanKey);
 
-      const goldLight = new THREE.PointLight(0xffbe3b, 3.0, 4.0);
-      goldLight.position.set(-1, 2, -0.5);
-      this.scene.add(goldLight);
+      const goldFill = new THREE.PointLight(0xffbe3b, 2.8, 5.0);
+      goldFill.position.set(-1.5, 2, -0.5);
+      this.scene.add(goldFill);
 
-      // Seated Desk Workstation Grid (visualizing 0.60m Airplane Seat Radius)
+      // Seated Desk (0.60m Airplane Seat Radius Indicator)
       const deskGeo = new THREE.CylinderGeometry(0.55, 0.55, 0.02, 32);
       const deskMat = new THREE.MeshStandardMaterial({
-        color: 0x0c1322,
+        color: 0x0a101d,
         metalness: 0.8,
-        roughness: 0.4,
+        roughness: 0.3,
         transparent: true,
-        opacity: 0.7
+        opacity: 0.8
       });
-      const deskMesh = new THREE.Mesh(deskGeo, deskMat);
-      deskMesh.position.set(0, 0.82, -0.38);
-      this.scene.add(deskMesh);
+      const desk = new THREE.Mesh(deskGeo, deskMat);
+      desk.position.set(0, 0.82, -0.38);
+      this.scene.add(desk);
 
-      // Safe Radius Wireframe Ring
+      // Glowing Safe Perimeter Ring
       const ringGeo = new THREE.RingGeometry(0.53, 0.55, 64);
       const ringMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff, side: THREE.DoubleSide });
-      const boundaryRing = new THREE.Mesh(ringGeo, ringMat);
-      boundaryRing.rotation.x = Math.PI / 2;
-      boundaryRing.position.set(0, 0.835, -0.38);
-      this.scene.add(boundaryRing);
+      const ring = new THREE.Mesh(ringGeo, ringMat);
+      ring.rotation.x = Math.PI / 2;
+      ring.position.set(0, 0.835, -0.38);
+      this.scene.add(ring);
 
-      // Background particles
-      this.initParticles();
-
-      // Hand representation in scene
       this.initVirtualHands();
 
       window.addEventListener('resize', () => {
@@ -224,50 +262,23 @@
       });
     }
 
-    initParticles() {
-      const pGeo = new THREE.BufferGeometry();
-      const pCount = 300;
-      const positions = new Float32Array(pCount * 3);
-      for (let i = 0; i < pCount * 3; i += 3) {
-        positions[i] = (Math.random() - 0.5) * 4;
-        positions[i + 1] = Math.random() * 2.5;
-        positions[i + 2] = -Math.random() * 3;
-      }
-      pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-      const pMat = new THREE.PointsMaterial({ color: 0x00f0ff, size: 0.012, transparent: true, opacity: 0.4 });
-      this.particles = new THREE.Points(pGeo, pMat);
-      this.scene.add(this.particles);
-    }
-
     initVirtualHands() {
-      // Create visual group for simulated hand
       const group = new THREE.Group();
-
-      // Palm
       const palmGeo = new THREE.BoxGeometry(0.06, 0.015, 0.07);
-      const handMat = new THREE.MeshStandardMaterial({
-        color: 0x00e676,
-        roughness: 0.3,
-        metalness: 0.5,
-        wireframe: false
-      });
-      const palm = new THREE.Mesh(palmGeo, handMat);
+      const palmMat = new THREE.MeshStandardMaterial({ color: 0x00e676, roughness: 0.3, metalness: 0.5 });
+      const palm = new THREE.Mesh(palmGeo, palmMat);
       group.add(palm);
 
-      // Index finger tip (pinch pointer)
       const tipGeo = new THREE.SphereGeometry(0.014, 16, 16);
       const tipMat = new THREE.MeshStandardMaterial({ color: 0x00f0ff, emissive: 0x00f0ff, emissiveIntensity: 0.8 });
       const tip = new THREE.Mesh(tipGeo, tipMat);
       tip.position.set(0, 0.01, -0.05);
-      tip.name = 'indexTip';
       group.add(tip);
 
-      // Thumb tip
       const thumbGeo = new THREE.SphereGeometry(0.012, 16, 16);
       const thumbMat = new THREE.MeshStandardMaterial({ color: 0xffbe3b, emissive: 0xffbe3b, emissiveIntensity: 0.8 });
       const thumb = new THREE.Mesh(thumbGeo, thumbMat);
       thumb.position.set(-0.03, 0.01, -0.02);
-      thumb.name = 'thumbTip';
       group.add(thumb);
 
       group.position.copy(this.simulatedHand.pos);
@@ -275,137 +286,232 @@
       this.simulatedHand.meshGroup = group;
     }
 
-    initLevel(lvl) {
-      this.currentLevel = lvl;
-      this.isLevelCompleted = false;
-      this.temporalPhase = 0.0;
-      this.heldGear = null;
+    loadDiscovery(id) {
+      this.activeDiscoveryId = id;
+      this.progress = 0.0;
+      this.isCompleted = false;
+      this.heldObject = null;
+      this.myelinSheaths = [];
+      this.cellMeshes = [];
+      this.actionPotentialPulses = [];
       document.getElementById('completion-banner').style.display = 'none';
 
-      // Clean up previous level entities
-      if (this.chronosphereGroup) {
-        this.scene.remove(this.chronosphereGroup);
+      if (this.bioGroup) {
+        this.scene.remove(this.bioGroup);
       }
-      this.gears = [];
-      this.slots = [];
+      this.bioGroup = new THREE.Group();
+      this.bioGroup.position.set(0, 1.05, -0.38);
 
-      this.chronosphereGroup = new THREE.Group();
-      this.chronosphereGroup.position.set(0, 1.05, -0.38);
+      const p = DISCOVERY_PROFILES[id];
+      document.getElementById('active-discovery-name').innerText = p.name;
+      document.getElementById('metric-label').innerText = p.metricLabel;
+      document.getElementById('instruction-text').innerText = p.instruction;
+      this.updateHUD();
 
-      // Outer Chronosphere Gimbal Frame
-      const frameGeo = new THREE.TorusGeometry(0.18, 0.008, 16, 64);
-      const frameMat = new THREE.MeshStandardMaterial({ color: 0xffbe3b, metalness: 0.9, roughness: 0.2 });
-      const frameRing = new THREE.Mesh(frameGeo, frameMat);
-      this.chronosphereGroup.add(frameRing);
+      // Update Carousel Active Card
+      document.querySelectorAll('.discovery-card').forEach(c => {
+        c.classList.toggle('active', c.getAttribute('data-id') === id);
+      });
 
-      const frameGeo2 = new THREE.TorusGeometry(0.15, 0.006, 16, 64);
-      const frameRing2 = new THREE.Mesh(frameGeo2, frameMat);
-      frameRing2.rotation.x = Math.PI / 2;
-      this.chronosphereGroup.add(frameRing2);
+      // Construct the 3D Discovery Representation
+      if (id === 'MS_REMYELINATION') {
+        this.buildMSAxonScene();
+      } else if (id === 'CELLULAR_REGEN_BED') {
+        this.buildCellularRegenScene();
+      } else if (id === 'NEURO_FMRI_CONNECTOME') {
+        this.buildNeuroFMRIScene();
+      } else if (id === 'RIEMANNIAN_BCI_RECOVERY') {
+        this.buildRiemannianBCIScene();
+      } else if (id === 'QUANTUM_PSYCHOMETRICS') {
+        this.buildQuantumPsychometricsScene();
+      }
 
-      // Center ticking escapement anchor
-      const coreGeo = new THREE.SphereGeometry(0.025, 24, 24);
-      const coreMat = new THREE.MeshStandardMaterial({
-        color: 0x00f0ff,
-        emissive: 0x00f0ff,
-        emissiveIntensity: 0.7,
-        metalness: 0.5,
+      this.scene.add(this.bioGroup);
+    }
+
+    // --- 1. MS Remyelination 3D Scene ---
+    buildMSAxonScene() {
+      // Axon Cylinder Core
+      const axonGeo = new THREE.CylinderGeometry(0.018, 0.018, 0.36, 32);
+      const axonMat = new THREE.MeshStandardMaterial({ color: 0x334466, roughness: 0.6 });
+      const axon = new THREE.Mesh(axonGeo, axonMat);
+      axon.rotation.z = Math.PI / 2;
+      this.bioGroup.add(axon);
+
+      // GPR17 Receptor Target Pocket (Glowing Blue Ring)
+      const pocketGeo = new THREE.TorusGeometry(0.035, 0.005, 16, 32);
+      const pocketMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff, wireframe: true });
+      const pocket = new THREE.Mesh(pocketGeo, pocketMat);
+      pocket.position.set(0, 0, 0);
+      this.bioGroup.add(pocket);
+      this.dockTarget = pocket;
+
+      // 4 Myelin Sheath Segments (Initial unmyelinated / faint)
+      [-0.12, -0.04, 0.04, 0.12].forEach(x => {
+        const sheathGeo = new THREE.CylinderGeometry(0.032, 0.032, 0.065, 32);
+        const sheathMat = new THREE.MeshStandardMaterial({
+          color: 0xffbe3b,
+          transparent: true,
+          opacity: 0.15,
+          roughness: 0.2
+        });
+        const sheath = new THREE.Mesh(sheathGeo, sheathMat);
+        sheath.rotation.z = Math.PI / 2;
+        sheath.position.set(x, 0, 0);
+        this.bioGroup.add(sheath);
+        this.myelinSheaths.push(sheath);
+      });
+
+      // Floating CN045 Maturation Ligand Molecule
+      const ligandGeo = new THREE.DodecahedronGeometry(0.028);
+      const ligandMat = new THREE.MeshStandardMaterial({
+        color: 0xffbe3b,
+        emissive: 0xffaa00,
+        emissiveIntensity: 0.6,
+        metalness: 0.8,
         roughness: 0.2
       });
-      const coreOrb = new THREE.Mesh(coreGeo, coreMat);
-      this.chronosphereGroup.add(coreOrb);
-
-      if (lvl === 1) {
-        document.getElementById('level-display').innerText = '1: The Escapement Core';
-        // 2 Sockets: Central Escapement (16 teeth) & Balance Ring (24 teeth)
-        this.addSlot('slot_escapement', 16, 0.05, new THREE.Vector3(0, 0, 0));
-        this.addSlot('slot_balance', 24, 0.08, new THREE.Vector3(0, 0.08, 0));
-
-        // 2 Loose Floating Gears nearby
-        this.addGear('gear_16', 16, 0.05, new THREE.Vector3(-0.16, 0.98, -0.30));
-        this.addGear('gear_24', 24, 0.08, new THREE.Vector3(0.16, 0.98, -0.30));
-      } else if (lvl === 2) {
-        document.getElementById('level-display').innerText = '2: Harmonic Gear Train';
-        this.addSlot('slot_sun', 18, 0.06, new THREE.Vector3(0, 0, 0));
-        this.addSlot('slot_p1', 12, 0.04, new THREE.Vector3(-0.09, 0.05, 0));
-        this.addSlot('slot_p2', 12, 0.04, new THREE.Vector3(0.09, 0.05, 0));
-
-        this.addGear('gear_sun', 18, 0.06, new THREE.Vector3(-0.18, 1.0, -0.28));
-        this.addGear('gear_p1', 12, 0.04, new THREE.Vector3(0.18, 1.0, -0.28));
-        this.addGear('gear_p2', 12, 0.04, new THREE.Vector3(0.0, 0.92, -0.26));
-      } else {
-        document.getElementById('level-display').innerText = '3: Quantum Resonance Dial';
-        this.addSlot('slot_r1', 32, 0.11, new THREE.Vector3(0, 0, 0));
-        this.addSlot('slot_r2', 32, 0.11, new THREE.Vector3(0, 0, 0));
-
-        this.addGear('ring_yaw', 32, 0.11, new THREE.Vector3(-0.20, 1.02, -0.30));
-        this.addGear('ring_pitch', 32, 0.11, new THREE.Vector3(0.20, 1.02, -0.30));
-      }
-
-      this.scene.add(this.chronosphereGroup);
-      this.updateHUD();
+      const ligand = new THREE.Mesh(ligandGeo, ligandMat);
+      ligand.position.set(-0.16, -0.06, 0.08);
+      this.bioGroup.add(ligand);
+      this.interactiveEntity = ligand;
     }
 
-    addSlot(id, teeth, radius, localPos) {
-      // Socket Hologram Ring
-      const geo = new THREE.TorusGeometry(radius, 0.003, 12, 32);
-      const mat = new THREE.MeshBasicMaterial({ color: 0x00f0ff, transparent: true, opacity: 0.5 });
-      const mesh = new THREE.Mesh(geo, mat);
-      mesh.position.copy(localPos);
-      this.chronosphereGroup.add(mesh);
+    // --- 2. Cellular Regeneration Bed 3D Scene ---
+    buildCellularRegenScene() {
+      // Scanning Chamber Ring Base
+      const baseGeo = new THREE.TorusGeometry(0.18, 0.008, 16, 48);
+      const baseMat = new THREE.MeshStandardMaterial({ color: 0x00f0ff, metalness: 0.9 });
+      const base = new THREE.Mesh(baseGeo, baseMat);
+      base.rotation.x = Math.PI / 2;
+      this.bioGroup.add(base);
 
-      // World position calculation
-      const worldPos = new THREE.Vector3();
-      mesh.getWorldPosition(worldPos);
+      // Cell Cluster: 1 high-entropy senescent cell (red) + 4 healthy cells (blue)
+      const redGeo = new THREE.SphereGeometry(0.035, 24, 24);
+      const redMat = new THREE.MeshStandardMaterial({ color: 0xff3366, emissive: 0xff0044, emissiveIntensity: 0.7 });
+      const redCell = new THREE.Mesh(redGeo, redMat);
+      redCell.position.set(0, 0, 0);
+      this.bioGroup.add(redCell);
+      this.cellMeshes.push(redCell);
+      this.dockTarget = redCell;
 
-      this.slots.push({
-        id,
-        teeth,
-        radius,
-        localPos,
-        mesh,
-        isLocked: false,
-        occupiedBy: null
-      });
+      // 670nm NIR Laser Emitter
+      const laserGeo = new THREE.ConeGeometry(0.02, 0.07, 16);
+      const laserMat = new THREE.MeshStandardMaterial({ color: 0x00f0ff, emissive: 0x00aaff, emissiveIntensity: 0.8 });
+      const laser = new THREE.Mesh(laserGeo, laserMat);
+      laser.rotation.z = Math.PI / 4;
+      laser.position.set(0.16, -0.05, 0.06);
+      this.bioGroup.add(laser);
+      this.interactiveEntity = laser;
     }
 
-    addGear(id, teeth, radius, worldPos) {
-      const gearGroup = new THREE.Group();
-
-      // Gear Disk
-      const diskGeo = new THREE.CylinderGeometry(radius, radius, 0.012, teeth * 2);
-      const diskMat = new THREE.MeshStandardMaterial({
-        color: 0xd4af37, // Metallic gold
-        metalness: 0.85,
-        roughness: 0.25
+    // --- 3. Neuro-fMRI Connectome 3D Scene ---
+    buildNeuroFMRIScene() {
+      // Holographic Brain Left & Right Hemispheres
+      const brainMat = new THREE.MeshStandardMaterial({
+        color: 0x0077ff,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.4
       });
-      const disk = new THREE.Mesh(diskGeo, diskMat);
-      disk.rotation.x = Math.PI / 2;
-      gearGroup.add(disk);
+      const leftHemi = new THREE.Mesh(new THREE.SphereGeometry(0.09, 16, 16), brainMat);
+      leftHemi.position.set(-0.06, 0, 0);
+      this.bioGroup.add(leftHemi);
 
-      // Center axle hole
-      const holeGeo = new THREE.CylinderGeometry(radius * 0.25, radius * 0.25, 0.016, 16);
-      const holeMat = new THREE.MeshStandardMaterial({ color: 0x111111, metalness: 0.9, roughness: 0.5 });
-      const hole = new THREE.Mesh(holeGeo, holeMat);
-      hole.rotation.x = Math.PI / 2;
-      gearGroup.add(hole);
+      const rightHemi = new THREE.Mesh(new THREE.SphereGeometry(0.09, 16, 16), brainMat);
+      rightHemi.position.set(0.06, 0, 0);
+      this.bioGroup.add(rightHemi);
 
-      gearGroup.position.copy(worldPos);
-      this.scene.add(gearGroup);
+      // Active Parcel Node to Align
+      const parcelGeo = new THREE.IcosahedronGeometry(0.03, 1);
+      const parcelMat = new THREE.MeshStandardMaterial({ color: 0x00e676, emissive: 0x00e676, emissiveIntensity: 0.8 });
+      const parcel = new THREE.Mesh(parcelGeo, parcelMat);
+      parcel.position.set(-0.14, 0.06, 0.08);
+      this.bioGroup.add(parcel);
+      this.interactiveEntity = parcel;
 
-      this.gears.push({
-        id,
-        teeth,
-        radius,
-        group: gearGroup,
-        isSnapped: false,
-        snappedSlot: null,
-        rotSpeed: 0.0
+      const targetSlot = new THREE.Mesh(new THREE.SphereGeometry(0.035, 12, 12), new THREE.MeshBasicMaterial({ color: 0xffbe3b, wireframe: true }));
+      targetSlot.position.set(0, 0.04, 0);
+      this.bioGroup.add(targetSlot);
+      this.dockTarget = targetSlot;
+    }
+
+    // --- 4. Riemannian BCI Recovery 3D Scene ---
+    buildRiemannianBCIScene() {
+      // Curved SPD Manifold Ellipsoid
+      const spdGeo = new THREE.SphereGeometry(0.16, 32, 16);
+      const spdMat = new THREE.MeshStandardMaterial({
+        color: 0x112244,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.6
       });
+      const spdManifold = new THREE.Mesh(spdGeo, spdMat);
+      this.bioGroup.add(spdManifold);
+
+      // Geodesic Center Target (Fréchet Mean)
+      const frechetGeo = new THREE.RingGeometry(0.03, 0.035, 32);
+      const frechetMat = new THREE.MeshBasicMaterial({ color: 0x00e676, side: THREE.DoubleSide });
+      const frechetRing = new THREE.Mesh(frechetGeo, frechetMat);
+      this.bioGroup.add(frechetRing);
+      this.dockTarget = frechetRing;
+
+      // Deviant Covariance Matrix Vector
+      const covGeo = new THREE.OctahedronGeometry(0.032);
+      const covMat = new THREE.MeshStandardMaterial({ color: 0xff3366, emissive: 0xff3366, emissiveIntensity: 0.7 });
+      const covNode = new THREE.Mesh(covGeo, covMat);
+      covNode.position.set(0.14, -0.06, 0.08);
+      this.bioGroup.add(covNode);
+      this.interactiveEntity = covNode;
+    }
+
+    // --- 5. Quantum Psychometrics 3D Scene ---
+    buildQuantumPsychometricsScene() {
+      // Quantum Bloch Sphere
+      const blochGeo = new THREE.SphereGeometry(0.15, 32, 32);
+      const blochMat = new THREE.MeshStandardMaterial({
+        color: 0x07152e,
+        transparent: true,
+        opacity: 0.5,
+        roughness: 0.2
+      });
+      const bloch = new THREE.Mesh(blochGeo, blochMat);
+      this.bioGroup.add(bloch);
+
+      // Equator Ring
+      const eqGeo = new THREE.RingGeometry(0.148, 0.152, 64);
+      const eqRing = new THREE.Mesh(eqGeo, new THREE.MeshBasicMaterial({ color: 0x00f0ff, side: THREE.DoubleSide }));
+      eqRing.rotation.x = Math.PI / 2;
+      this.bioGroup.add(eqRing);
+
+      // Target QQ Invariant Node
+      const targetGeo = new THREE.SphereGeometry(0.02, 16, 16);
+      const targetMat = new THREE.MeshBasicMaterial({ color: 0x00e676, wireframe: true });
+      const target = new THREE.Mesh(targetGeo, targetMat);
+      target.position.set(0, 0.15, 0);
+      this.bioGroup.add(target);
+      this.dockTarget = target;
+
+      // Density Operator Vector
+      const stateGeo = new THREE.ConeGeometry(0.015, 0.06, 16);
+      const stateMat = new THREE.MeshStandardMaterial({ color: 0xffbe3b, emissive: 0xffaa00, emissiveIntensity: 0.8 });
+      const state = new THREE.Mesh(stateGeo, stateMat);
+      state.position.set(-0.12, 0.04, 0.08);
+      this.bioGroup.add(state);
+      this.interactiveEntity = state;
     }
 
     bindUI() {
-      // Enter WebXR Button
+      // Discovery Card Selection (Index Poke / Click)
+      document.querySelectorAll('.discovery-card').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          this.audio.init();
+          const dId = btn.getAttribute('data-id');
+          this.loadDiscovery(dId);
+        });
+      });
+
+      // WebXR Button
       const btnWebXR = document.getElementById('btn-enter-webxr');
       btnWebXR.addEventListener('click', async () => {
         this.audio.init();
@@ -419,65 +525,60 @@
               });
               this.renderer.xr.setSession(session);
               this.isSimMode = false;
-              document.getElementById('hand-status').innerText = 'META QUEST HANDS ACTIVE';
+              document.getElementById('hand-status').innerText = 'QUEST HANDS LIVE';
               btnWebXR.style.display = 'none';
             } else {
-              alert('WebXR immersive-vr mode not supported on this browser profile. Running Desktop Hand Simulator.');
+              alert('Immersive VR mode not supported on current browser profile. Desktop Hand Simulator active.');
             }
           } catch (err) {
-            console.warn('WebXR request failed:', err);
-            alert('Launching Desktop Hand Simulator mode: ' + err.message);
+            alert('WebXR launching fallback: ' + err.message);
           }
-        } else {
-          alert('WebXR API not detected. Desktop Hand Simulator active!');
         }
       });
 
-      // Toggle Simulator
       document.getElementById('btn-toggle-sim').addEventListener('click', () => {
         this.audio.init();
         this.isSimMode = !this.isSimMode;
         document.getElementById('hand-status').innerText = this.isSimMode ? 'SIMULATOR ACTIVE' : 'XR HARDWARE STANDBY';
       });
 
-      // Rewind Time
-      document.getElementById('btn-rewind').addEventListener('click', () => {
-        this.audio.playTimeWarpSweep();
-        this.temporalPhase = Math.max(0.0, this.temporalPhase - 0.25);
-        this.updateHUD();
-      });
-
-      // Dial controls
+      // Dial Controls
       document.getElementById('btn-dial-left').addEventListener('click', () => {
-        this.audio.playRatchetTick(0.8);
-        this.scrubTime(-0.08);
+        this.audio.init();
+        this.applyWristDial(-0.1);
       });
       document.getElementById('btn-dial-right').addEventListener('click', () => {
-        this.audio.playRatchetTick(1.2);
-        this.scrubTime(0.08);
+        this.audio.init();
+        this.applyWristDial(0.1);
       });
 
-      // Reset
+      // Auto-Dock
+      document.getElementById('btn-auto-dock').addEventListener('click', () => {
+        this.audio.init();
+        if (this.interactiveEntity && this.dockTarget) {
+          this.interactiveEntity.position.copy(this.dockTarget.position);
+          this.onEntityDocked();
+        }
+      });
+
       document.getElementById('btn-reset-puzzle').addEventListener('click', () => {
-        this.initLevel(this.currentLevel);
+        this.loadDiscovery(this.activeDiscoveryId);
       });
 
-      // Next Chamber
-      document.getElementById('btn-next-chamber').addEventListener('click', () => {
-        this.initLevel((this.currentLevel % 3) + 1);
+      document.getElementById('btn-next-discovery').addEventListener('click', () => {
+        const ids = Object.keys(DISCOVERY_PROFILES);
+        const nextIdx = (ids.indexOf(this.activeDiscoveryId) + 1) % ids.length;
+        this.loadDiscovery(ids[nextIdx]);
       });
     }
 
-    bindDesktopControls() {
+    bindControls() {
       let isDragging = false;
-      let prevX = 0, prevY = 0;
 
       window.addEventListener('mousedown', (e) => {
         this.audio.init();
         if (e.target.closest('.hud-overlay')) return;
         isDragging = true;
-        prevX = e.clientX;
-        prevY = e.clientY;
         this.setSimPinch(true);
       });
 
@@ -491,10 +592,10 @@
         const dx = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
         const dy = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
 
-        // Map mouse position to 0.60m seated desktop sphere
+        // Seated 0.60m spherical coordinate projection
         const targetX = THREE.MathUtils.clamp(dx * 0.35, -0.28, 0.28);
         const targetY = THREE.MathUtils.clamp(1.2 - dy * 0.35, 0.85, 1.35);
-        const targetZ = -0.32 + (dy * 0.1);
+        const targetZ = -0.32 + (dy * 0.08);
 
         this.simulatedHand.pos.set(targetX, targetY, targetZ);
         if (this.simulatedHand.meshGroup) {
@@ -502,19 +603,15 @@
         }
       });
 
-      // Keyboard hotkeys
       window.addEventListener('keydown', (e) => {
         this.audio.init();
         if (e.code === 'Space') {
           this.setSimPinch(true);
         } else if (e.code === 'KeyR') {
-          this.simulatedHand.wristRoll += 0.15;
-          this.audio.playRatchetTick();
-          this.scrubTime(0.05);
-        } else if (e.code === 'KeyT') {
-          this.audio.playTimeWarpSweep();
-          this.temporalPhase = Math.max(0.0, this.temporalPhase - 0.2);
-          this.updateHUD();
+          this.applyWristDial(0.08);
+        } else if (e.code === 'KeyH') {
+          this.audio.playBioelectricScan();
+          this.advanceProgress(0.12);
         }
       });
 
@@ -531,111 +628,106 @@
       document.getElementById('gesture-display').innerText = this.activeGesture;
 
       if (isPinching) {
-        this.audio.playSnapClick();
-        this.checkGearGrab();
+        // Check if hand is near interactive entity
+        if (this.interactiveEntity && !this.heldObject) {
+          const worldPos = new THREE.Vector3();
+          this.interactiveEntity.getWorldPosition(worldPos);
+          if (this.simulatedHand.pos.distanceTo(worldPos) <= 0.085) {
+            this.heldObject = this.interactiveEntity;
+            this.audio.playSnapDock();
+          }
+        }
       } else {
-        this.checkGearRelease();
+        // Release held object
+        if (this.heldObject && this.dockTarget) {
+          const entPos = new THREE.Vector3();
+          const targetPos = new THREE.Vector3();
+          this.heldObject.getWorldPosition(entPos);
+          this.dockTarget.getWorldPosition(targetPos);
+
+          if (entPos.distanceTo(targetPos) <= SNAP_DISTANCE) {
+            // SNAP INTO TARGET!
+            this.heldObject.position.copy(this.dockTarget.position);
+            this.onEntityDocked();
+          }
+        }
+        this.heldObject = null;
       }
     }
 
-    checkGearGrab() {
-      if (this.heldGear) return;
-      const hPos = this.simulatedHand.pos;
+    applyWristDial(delta) {
+      this.audio.playLaserHum();
+      this.advanceProgress(Math.abs(delta) * 0.6);
+      if (this.bioGroup) {
+        this.bioGroup.rotation.y += delta * 2;
+      }
+    }
 
-      for (let gear of this.gears) {
-        const dist = hPos.distanceTo(gear.group.position);
-        if (dist <= 0.08) {
-          this.heldGear = gear;
-          if (gear.isSnapped && gear.snappedSlot) {
-            gear.snappedSlot.isLocked = false;
-            gear.snappedSlot.occupiedBy = null;
-            gear.isSnapped = false;
-            gear.snappedSlot = null;
-          }
-          break;
+    onEntityDocked() {
+      this.audio.playSnapDock();
+      this.advanceProgress(0.65);
+
+      // Trigger Discovery-Specific Biological Reaction:
+      if (this.activeDiscoveryId === 'MS_REMYELINATION') {
+        // Animate Myelin Sheath wrapping around axon!
+        this.myelinSheaths.forEach(s => {
+          s.material.opacity = 0.95;
+          s.scale.set(1.15, 1.0, 1.15);
+        });
+      } else if (this.activeDiscoveryId === 'CELLULAR_REGEN_BED') {
+        // Senescent cell apoptosis (fade red cell to green/blue healthy state)
+        if (this.cellMeshes[0]) {
+          this.cellMeshes[0].material.color.setHex(0x00e676);
+          this.cellMeshes[0].material.emissive.setHex(0x00aa44);
         }
       }
     }
 
-    checkGearRelease() {
-      if (!this.heldGear) return;
-      const gear = this.heldGear;
-      const gPos = gear.group.position;
+    advanceProgress(amount) {
+      this.progress = Math.min(1.0, this.progress + amount);
+      this.updateHUD();
 
-      // Check distance to vacant slots
-      for (let slot of this.slots) {
-        if (!slot.isLocked && slot.teeth === gear.teeth) {
-          const worldSlotPos = new THREE.Vector3();
-          slot.mesh.getWorldPosition(worldSlotPos);
-          const dist = gPos.distanceTo(worldSlotPos);
-
-          if (dist <= SNAP_DISTANCE) {
-            // SNAP INTO SOCKET!
-            gear.group.position.copy(worldSlotPos);
-            gear.isSnapped = true;
-            gear.snappedSlot = slot;
-            slot.isLocked = true;
-            slot.occupiedBy = gear.id;
-
-            this.audio.playSnapClick();
-            this.checkPuzzleCompletion();
-            break;
-          }
-        }
-      }
-
-      this.heldGear = null;
-    }
-
-    checkPuzzleCompletion() {
-      const allLocked = this.slots.every(s => s.isLocked);
-      if (allLocked && !this.isLevelCompleted) {
-        this.isLevelCompleted = true;
-        this.audio.playResonanceChime();
+      if (this.progress >= 0.999 && !this.isCompleted) {
+        this.isCompleted = true;
+        this.audio.playNeuralChime();
+        const p = DISCOVERY_PROFILES[this.activeDiscoveryId];
+        document.getElementById('completion-details').innerText = p.completionDetails;
         document.getElementById('completion-banner').style.display = 'block';
       }
     }
 
-    scrubTime(delta) {
-      this.temporalPhase = THREE.MathUtils.clamp(this.temporalPhase + delta, 0.0, 1.0);
-      this.gears.forEach(g => {
-        if (g.isSnapped) {
-          g.group.rotation.z += delta * (18.0 / g.teeth) * 4;
-        }
-      });
-      this.updateHUD();
-    }
-
     updateHUD() {
-      const pct = Math.round(this.temporalPhase * 100);
+      const p = DISCOVERY_PROFILES[this.activeDiscoveryId];
+      const curVal = p.baselineVal + (p.targetVal - p.baselineVal) * this.progress;
+
+      document.getElementById('metric-value').innerText = curVal.toFixed(1) + ' ' + p.unit;
+      const pct = Math.round(this.progress * 100);
       document.getElementById('meter-fill').style.width = pct + '%';
-      document.getElementById('phase-display').innerText = (this.temporalPhase * 10).toFixed(2) + 's';
+      document.getElementById('progress-display').innerText = pct + '%';
     }
 
     onFrame(time, frame) {
-      // 1. If holding gear, drag it with hand clamped to seated sphere
-      if (this.heldGear) {
+      // 1. Drag held entity with hand clamped to seated sphere
+      if (this.heldObject) {
         const hp = this.simulatedHand.pos.clone();
-        // Clamping to 0.60m from chest center
-        const chest = new THREE.Vector3(0, 1.1, 0);
-        if (hp.distanceTo(chest) > SEATED_MAX_RADIUS) {
-          hp.sub(chest).clampLength(0, SEATED_MAX_RADIUS).add(chest);
+        // Convert to bioGroup local space
+        if (this.bioGroup) {
+          hp.sub(this.bioGroup.position);
         }
-        this.heldGear.group.position.copy(hp);
+        this.heldObject.position.copy(hp);
       }
 
-      // 2. Slow orbital idle animation for chronosphere frame
-      if (this.chronosphereGroup) {
-        this.chronosphereGroup.rotation.y = Math.sin(time * 0.0008) * 0.15;
+      // 2. Gentle orbital motion
+      if (this.bioGroup) {
+        this.bioGroup.rotation.y = Math.sin(time * 0.0006) * 0.12;
       }
 
-      // 3. Render WebGL scene
+      // 3. Render WebGL
       this.renderer.render(this.scene, this.camera);
     }
   }
 
-  // Launch when DOM is ready
   window.addEventListener('DOMContentLoaded', () => {
-    window.chronoApp = new ChronoHandsApp();
+    window.bioForge = new BioForgeApp();
   });
 })();

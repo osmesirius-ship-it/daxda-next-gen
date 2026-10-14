@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>DAXDA ChronoHands — Meta VR Start Competition 2026</title>
+  <title>DAXDA BioForge VR — Hands-First Medical Discovery Synthesizer</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- Three.js from unpkg for zero-dependency standalone execution -->
   <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
 </head>
 <body>
-  <!-- WebGL/WebXR Canvas Container -->
+  <!-- 3D WebGL / WebXR Viewport -->
   <div id="canvas-container"></div>
 
   <!-- HUD Overlay -->
@@ -20,50 +19,102 @@
     <!-- Header -->
     <header class="hud-header">
       <div class="brand">
-        <span class="logo-icon">⏳</span>
+        <span class="logo-icon">🧬</span>
         <div>
-          <h1>DAXDA ChronoHands</h1>
-          <p class="subtitle">Hands-First Kinetic Chronosphere • Meta VR Start Competition 2026</p>
+          <h1>DAXDA BioForge VR</h1>
+          <p class="subtitle">Hands-First Medical Discovery Synthesizer • Meta VR Start Competition 2026</p>
         </div>
       </div>
       <div class="header-badges">
         <span class="badge badge-track">🎮 Gaming Track</span>
         <span class="badge badge-hands">✋ Hands-First (No Controllers)</span>
-        <span class="badge badge-seat" id="seat-badge">🪑 Seated-Optimized (&le;0.6m)</span>
+        <span class="badge badge-seat">🪑 Seated-Optimized (&le;0.6m)</span>
       </div>
     </header>
 
-    <!-- Top Status Bar -->
+    <!-- Medical Discoveries Selection Carousel / List -->
+    <div class="discoveries-carousel" id="discoveries-carousel">
+      <div class="carousel-title">SELECT DAXDA MEDICAL DISCOVERY:</div>
+      <div class="carousel-cards">
+        <button class="discovery-card active" data-id="MS_REMYELINATION">
+          <span class="card-icon">🧠</span>
+          <div class="card-info">
+            <span class="card-name">1. MS Axon Remyelination</span>
+            <span class="card-target">Target: GPR17 / CN045 / EBV Nullification</span>
+          </div>
+        </button>
+        <button class="discovery-card" data-id="CELLULAR_REGEN_BED">
+          <span class="card-icon">⚡</span>
+          <div class="card-info">
+            <span class="card-name">2. Cellular Regen Chamber</span>
+            <span class="card-target">Target: V_mem Reversal & 670nm ATP Boost</span>
+          </div>
+        </button>
+        <button class="discovery-card" data-id="NEURO_FMRI_CONNECTOME">
+          <span class="card-icon">🌐</span>
+          <div class="card-info">
+            <span class="card-name">3. Neuro-fMRI Connectome</span>
+            <span class="card-target">Target: 360-Parcel Glasser CKA Sync</span>
+          </div>
+        </button>
+        <button class="discovery-card" data-id="RIEMANNIAN_BCI_RECOVERY">
+          <span class="card-icon">📈</span>
+          <div class="card-info">
+            <span class="card-name">4. Riemannian BCI Recovery</span>
+            <span class="card-target">Target: S_d++ Covariance & Mu-Rhythm</span>
+          </div>
+        </button>
+        <button class="discovery-card" data-id="QUANTUM_PSYCHOMETRICS">
+          <span class="card-icon">🔮</span>
+          <div class="card-info">
+            <span class="card-name">5. Quantum Psychometrics</span>
+            <span class="card-target">Target: Wang-Busemeyer QQ Invariant</span>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Procedure Status Bar -->
     <div class="status-bar">
       <div class="status-item">
-        <span class="label">Chamber</span>
-        <span class="val" id="level-display">1: The Escapement Core</span>
+        <span class="label">Active Medical Protocol</span>
+        <span class="val highlight-blue" id="active-discovery-name">MS Axon Remyelination</span>
       </div>
       <div class="status-item">
-        <span class="label">Temporal Phase</span>
+        <span class="label" id="metric-label">Conduction Velocity</span>
+        <span class="val metric-val" id="metric-value">12.4 m/s</span>
+      </div>
+      <div class="status-item">
+        <span class="label">Biological Progress</span>
         <div class="meter-bar">
           <div class="meter-fill" id="meter-fill" style="width: 0%;"></div>
         </div>
-        <span class="val" id="phase-display">0.00s</span>
+        <span class="val" id="progress-display">0%</span>
       </div>
       <div class="status-item">
-        <span class="label">Recognized Gesture</span>
+        <span class="label">Hand Gesture</span>
         <span class="val gesture-pill" id="gesture-display">IDLE</span>
       </div>
       <div class="status-item">
-        <span class="label">Hand Tracking</span>
+        <span class="label">Tracking</span>
         <span class="val live-pill" id="hand-status">SIMULATOR READY</span>
       </div>
     </div>
 
-    <!-- Center Completion Banner (Hidden by default) -->
-    <div class="completion-banner" id="completion-banner">
-      <h2>✨ CHRONOSPHERE RESONANCE ACHIEVED! ✨</h2>
-      <p>Kinetic gear train calibrated & balanced in temporal phase.</p>
-      <button class="btn btn-primary" id="btn-next-chamber">Advance to Next Chamber ➔</button>
+    <!-- Instruction Sub-Banner -->
+    <div class="instruction-banner" id="instruction-banner">
+      <span class="instruction-icon">👉</span>
+      <span class="instruction-text" id="instruction-text">Pinch the floating CN045 ligand and dock it into the GPR17 receptor pocket on the axon.</span>
     </div>
 
-    <!-- Bottom Controls Deck -->
+    <!-- Completion Modal -->
+    <div class="completion-banner" id="completion-banner">
+      <h2>✨ MEDICAL BREAKTHROUGH REPRODUCED! ✨</h2>
+      <p id="completion-details">The Cl(16,4) geometric phase-shift bound CN045 to GPR17, nullifying EBV inflammation and restoring nerve conduction velocity to 118.5 m/s.</p>
+      <button class="btn btn-primary" id="btn-next-discovery">Try Next Medical Discovery ➔</button>
+    </div>
+
+    <!-- Footer Controls -->
     <footer class="hud-footer">
       <div class="controls-left">
         <button class="btn btn-primary btn-large" id="btn-enter-webxr">🥽 Enter Meta Quest / VR WebXR</button>
@@ -71,19 +122,19 @@
       </div>
 
       <div class="controls-center">
-        <button class="btn btn-icon" id="btn-rewind" title="Rewind Time 3s (T Key)">⏪ Rewind 3s</button>
-        <button class="btn btn-icon" id="btn-dial-left" title="Twist Left (Wrist Counter-Clockwise)">↺ Dial -</button>
-        <button class="btn btn-icon" id="btn-dial-right" title="Twist Right (Wrist Clockwise)">↻ Dial +</button>
-        <button class="btn btn-icon" id="btn-reset-puzzle" title="Reset Level">🔄 Reset</button>
+        <button class="btn btn-icon" id="btn-dial-left" title="Twist Left (Modulate -)">↺ Dial -</button>
+        <button class="btn btn-icon" id="btn-dial-right" title="Twist Right (Modulate +)">↻ Dial +</button>
+        <button class="btn btn-icon" id="btn-auto-dock" title="Snap / Dock Selected Entity">⚡ Auto-Dock</button>
+        <button class="btn btn-icon" id="btn-reset-puzzle" title="Reset Procedure">🔄 Reset</button>
       </div>
 
       <div class="controls-right">
         <div class="shortcuts-card">
-          <div class="card-title">Desktop Hand Shortcuts</div>
-          <div class="card-row"><span>Move:</span> <b>Mouse Drag</b></div>
-          <div class="card-row"><span>Pinch Grab:</span> <b>Hold Click / Space</b></div>
-          <div class="card-row"><span>Wrist Twist:</span> <b>Hold 'R' + Move</b></div>
-          <div class="card-row"><span>Time Rewind:</span> <b>'T' Key</b></div>
+          <div class="card-title">Hands-First Controls</div>
+          <div class="card-row"><span>Select Discovery:</span> <b>Index Poke / Click</b></div>
+          <div class="card-row"><span>Pinch & Move:</span> <b>Hold Click / Space</b></div>
+          <div class="card-row"><span>Wrist Dial:</span> <b>Hold 'R' + Move</b></div>
+          <div class="card-row"><span>Palm Hover:</span> <b>Hold 'H' (Field Scan)</b></div>
         </div>
       </div>
     </footer>

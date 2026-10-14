@@ -1,12 +1,13 @@
-/* DAXDA ChronoHands: Meta VR Start Competition 2026 Theme */
+/* DAXDA BioForge VR: Meta VR Start Competition 2026 Theme */
 :root {
-  --bg-dark: #07090e;
-  --panel-bg: rgba(14, 18, 27, 0.78);
+  --bg-dark: #05070c;
+  --panel-bg: rgba(12, 17, 28, 0.85);
   --panel-border: rgba(255, 255, 255, 0.12);
   --accent-cyan: #00f0ff;
   --accent-gold: #ffbe3b;
   --accent-emerald: #00e676;
   --accent-magenta: #e040fb;
+  --accent-ruby: #ff3366;
   --text-main: #f0f4f8;
   --text-muted: #8c9ba5;
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -50,10 +51,10 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  padding: 18px 24px;
 }
 
-.hud-header, .status-bar, .hud-footer, .completion-banner {
+.hud-header, .discoveries-carousel, .status-bar, .instruction-banner, .hud-footer, .completion-banner {
   pointer-events: auto;
 }
 
@@ -66,8 +67,8 @@ html, body {
   backdrop-filter: blur(16px);
   border: 1px solid var(--panel-border);
   border-radius: 16px;
-  padding: 12px 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  padding: 10px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 .brand {
@@ -77,8 +78,8 @@ html, body {
 }
 
 .logo-icon {
-  font-size: 2rem;
-  filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.5));
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.6));
 }
 
 .brand h1 {
@@ -103,40 +104,111 @@ html, body {
 .badge {
   font-size: 0.75rem;
   font-weight: 600;
-  padding: 6px 12px;
+  padding: 5px 12px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  letter-spacing: 0.02em;
 }
 
 .badge-track { color: var(--accent-cyan); border-color: rgba(0, 240, 255, 0.3); }
 .badge-hands { color: var(--accent-gold); border-color: rgba(255, 190, 59, 0.3); }
 .badge-seat { color: var(--accent-emerald); border-color: rgba(0, 230, 118, 0.3); }
 
+/* Discoveries Carousel List */
+.discoveries-carousel {
+  margin-top: 10px;
+  background: rgba(10, 14, 23, 0.82);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 8px 16px;
+}
+
+.carousel-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.carousel-cards {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.discovery-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 6px 14px;
+  cursor: pointer;
+  color: var(--text-main);
+  text-align: left;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.discovery-card:hover {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.discovery-card.active {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(0, 119, 255, 0.2));
+  border: 1px solid var(--accent-cyan);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.3);
+}
+
+.card-icon {
+  font-size: 1.25rem;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.card-target {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
 /* Status Bar */
 .status-bar {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   align-self: center;
-  margin-top: 12px;
+  margin-top: 8px;
   background: var(--panel-bg);
   backdrop-filter: blur(12px);
   border: 1px solid var(--panel-border);
-  border-radius: 14px;
-  padding: 10px 20px;
+  border-radius: 12px;
+  padding: 8px 18px;
 }
 
 .status-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.85rem;
+  gap: 8px;
+  font-size: 0.82rem;
 }
 
 .status-item .label {
   color: var(--text-muted);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -144,6 +216,14 @@ html, body {
 .status-item .val {
   font-family: var(--font-mono);
   font-weight: 600;
+}
+
+.highlight-blue {
+  color: var(--accent-cyan);
+}
+
+.metric-val {
+  color: var(--accent-emerald);
 }
 
 .meter-bar {
@@ -156,54 +236,67 @@ html, body {
 
 .meter-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-gold));
-  transition: width 0.1s linear;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-emerald));
+  transition: width 0.15s ease-out;
 }
 
 .gesture-pill {
-  padding: 4px 10px;
-  border-radius: 12px;
+  padding: 3px 8px;
+  border-radius: 10px;
   background: rgba(0, 240, 255, 0.15);
   color: var(--accent-cyan);
   border: 1px solid rgba(0, 240, 255, 0.4);
 }
 
 .live-pill {
-  padding: 4px 10px;
-  border-radius: 12px;
+  padding: 3px 8px;
+  border-radius: 10px;
   background: rgba(0, 230, 118, 0.15);
   color: var(--accent-emerald);
   border: 1px solid rgba(0, 230, 118, 0.4);
 }
 
-/* Completion Banner */
+/* Instruction Banner */
+.instruction-banner {
+  align-self: center;
+  margin-top: 6px;
+  background: rgba(14, 21, 35, 0.9);
+  border: 1px solid rgba(255, 190, 59, 0.4);
+  border-radius: 20px;
+  padding: 6px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--accent-gold);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Completion Modal */
 .completion-banner {
   display: none;
   align-self: center;
   text-align: center;
-  background: rgba(7, 14, 25, 0.92);
+  background: rgba(5, 12, 22, 0.94);
   backdrop-filter: blur(24px);
   border: 2px solid var(--accent-gold);
   border-radius: 20px;
-  padding: 30px 48px;
+  padding: 24px 40px;
   box-shadow: 0 0 50px rgba(255, 190, 59, 0.4);
-  animation: glowPulse 2s infinite ease-in-out;
 }
 
 .completion-banner h2 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--accent-gold);
   margin-bottom: 8px;
 }
 
 .completion-banner p {
-  color: var(--text-muted);
-  margin-bottom: 20px;
-}
-
-@keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 35px rgba(255, 190, 59, 0.3); }
-  50% { box-shadow: 0 0 65px rgba(255, 190, 59, 0.6); }
+  color: var(--text-main);
+  max-width: 580px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 18px;
 }
 
 /* Footer & Controls */
@@ -216,16 +309,16 @@ html, body {
 
 .controls-left, .controls-center {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 
 .btn {
   font-family: var(--font-sans);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 600;
   border: none;
   border-radius: 12px;
-  padding: 10px 18px;
+  padding: 10px 16px;
   cursor: pointer;
   transition: all 0.2s ease;
   backdrop-filter: blur(10px);
@@ -257,9 +350,9 @@ html, body {
   background: var(--panel-bg);
   color: var(--text-main);
   border: 1px solid var(--panel-border);
-  padding: 10px 16px;
+  padding: 8px 14px;
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
 }
 
 .btn-icon:hover {
@@ -268,25 +361,24 @@ html, body {
 }
 
 .btn-large {
-  padding: 12px 24px;
-  font-size: 0.95rem;
+  padding: 12px 22px;
+  font-size: 0.92rem;
 }
 
-/* Shortcuts Card */
 .shortcuts-card {
   background: var(--panel-bg);
   backdrop-filter: blur(16px);
   border: 1px solid var(--panel-border);
   border-radius: 14px;
-  padding: 12px 18px;
-  font-size: 0.78rem;
+  padding: 10px 16px;
+  font-size: 0.75rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card-title {
   font-weight: 700;
   color: var(--accent-gold);
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -294,7 +386,7 @@ html, body {
 .card-row {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
+  gap: 14px;
   margin-bottom: 3px;
   color: var(--text-muted);
 }

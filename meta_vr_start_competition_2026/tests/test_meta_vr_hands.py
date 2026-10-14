@@ -227,3 +227,78 @@ class TestOneBusStopAndTakeItAway:
         panning = audio.compute_3d_spatial_panning((0.2, 1.1, -0.3))
         assert "gain_multiplier" in panning
         assert "azimuth_radians" in panning
+
+
+class TestDAXDAMedicalDiscoveries:
+    """Verifies the interactive simulation of all 5 authentic DAXDA Medical Discoveries."""
+
+    def test_discovery_catalog_integrity(self):
+        from game_core.medical_discoveries import DISCOVERY_CATALOG, MedicalDiscoveryId
+        assert len(DISCOVERY_CATALOG) == 5
+        assert MedicalDiscoveryId.MS_REMYELINATION in DISCOVERY_CATALOG
+        assert MedicalDiscoveryId.CELLULAR_REGEN_BED in DISCOVERY_CATALOG
+        assert MedicalDiscoveryId.NEURO_FMRI_CONNECTOME in DISCOVERY_CATALOG
+        assert MedicalDiscoveryId.RIEMANNIAN_BCI_RECOVERY in DISCOVERY_CATALOG
+        assert MedicalDiscoveryId.QUANTUM_PSYCHOMETRICS in DISCOVERY_CATALOG
+
+    def test_ms_remyelination_procedure(self):
+        from game_core.medical_discoveries import MedicalDiscoveryId, MedicalDiscoveryProcedure
+        proc = MedicalDiscoveryProcedure(MedicalDiscoveryId.MS_REMYELINATION)
+        assert proc.progress == 0.0
+        assert proc.current_metric_val == 12.4
+        assert "cn045_ligand" in proc.entities
+
+        # Pinch CN045 ligand and dock into GPR17 receptor
+        grabbed = proc.interact_pinch_entity(proc.entities["cn045_ligand"].position)
+        assert grabbed == "cn045_ligand"
+
+        # Move to target socket and release
+        proc.update_held_entity("cn045_ligand", proc.entities["cn045_ligand"].target_socket)
+        docked = proc.release_entity("cn045_ligand")
+        assert docked is True
+        assert proc.progress >= 0.60
+
+        # Complete procedure via dial modulation
+        proc.apply_wrist_dial_modulation(1.5)
+        assert proc.is_completed is True
+        assert proc.current_metric_val == 118.5  # Restored nerve conduction velocity (m/s)
+
+    def test_cellular_regen_bed_procedure(self):
+        from game_core.medical_discoveries import MedicalDiscoveryId, MedicalDiscoveryProcedure
+        proc = MedicalDiscoveryProcedure(MedicalDiscoveryId.CELLULAR_REGEN_BED)
+        assert proc.metadata.baseline_metric_val == 100.0
+        assert proc.metadata.target_metric_val == 485.0
+        assert "senescent_cell" in proc.entities
+        assert "nir_laser_670nm" in proc.entities
+
+        # Simulate 670nm photobiomodulation laser alignment
+        proc.update_held_entity("nir_laser_670nm", proc.entities["nir_laser_670nm"].target_socket)
+        proc.release_entity("nir_laser_670nm")
+        proc.apply_wrist_dial_modulation(1.2)
+        assert proc.is_completed is True
+        assert proc.current_metric_val == 485.0  # +400% ATP boost
+
+    def test_neuro_fmri_connectome_procedure(self):
+        from game_core.medical_discoveries import MedicalDiscoveryId, MedicalDiscoveryProcedure
+        proc = MedicalDiscoveryProcedure(MedicalDiscoveryId.NEURO_FMRI_CONNECTOME)
+        assert proc.metadata.target_metric_val == 0.98  # 0.98 CKA Score
+        proc._advance_progress(1.0)
+        assert proc.is_completed is True
+        assert proc.current_metric_val == 0.98
+
+    def test_riemannian_bci_recovery_procedure(self):
+        from game_core.medical_discoveries import MedicalDiscoveryId, MedicalDiscoveryProcedure
+        proc = MedicalDiscoveryProcedure(MedicalDiscoveryId.RIEMANNIAN_BCI_RECOVERY)
+        assert proc.metadata.target_metric_val == 0.94  # Coherence Index
+        proc._advance_progress(1.0)
+        assert proc.is_completed is True
+        assert proc.current_metric_val == 0.94
+
+    def test_quantum_psychometrics_procedure(self):
+        from game_core.medical_discoveries import MedicalDiscoveryId, MedicalDiscoveryProcedure
+        proc = MedicalDiscoveryProcedure(MedicalDiscoveryId.QUANTUM_PSYCHOMETRICS)
+        assert proc.metadata.target_metric_val == 0.000  # Zero order bias
+        proc._advance_progress(1.0)
+        assert proc.is_completed is True
+        assert proc.current_metric_val == 0.000
+

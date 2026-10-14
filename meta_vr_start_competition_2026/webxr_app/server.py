@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-DAXDA ChronoHands: WebXR Standalone Server
+DAXDA BioForge VR: WebXR Standalone Server
 ===========================================
 Serves the WebXR Hands application with headers required for WebXR Device API
 and Meta Quest Browser hand-tracking.
+Exposes REST endpoints for all 5 DAXDA Medical Discoveries.
 """
 
 from __future__ import annotations
@@ -20,19 +21,20 @@ PACKAGE_DIR = CURRENT_DIR.parent
 if str(PACKAGE_DIR) not in sys.path:
     sys.path.insert(0, str(PACKAGE_DIR))
 
-from game_core.chronosphere import ChronosphereEngine, ChronosphereLevel
-from hand_engine.gesture_recognizer import SeatedErgonomicsGuard, Vec3
+from game_core.medical_discoveries import (
+    MedicalDiscoveryId, MedicalDiscoveryProcedure, DISCOVERY_CATALOG
+)
+from hand_engine.gesture_recognizer import SeatedErgonomicsGuard
 
-# Server engine instance
-engine = ChronosphereEngine(ChronosphereLevel.LEVEL_1_ESCAPEMENT)
+# Active procedure instance
+active_proc = MedicalDiscoveryProcedure(MedicalDiscoveryId.MS_REMYELINATION)
 guard = SeatedErgonomicsGuard()
 
-class WebXRServerHandler(SimpleHTTPRequestHandler):
+class BioForgeServerHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(STATIC_DIR), **kwargs)
 
     def end_headers(self):
-        # Mandatory security & WebXR headers
         self.send_header("Access-Control-Allow-Origin", "*")
         self.send_header("Cross-Origin-Opener-Policy", "same-origin")
         self.send_header("Cross-Origin-Embedder-Policy", "require-corp")
@@ -45,12 +47,35 @@ class WebXRServerHandler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         parsed = urlparse(self.path)
-        if parsed.path == "/api/status":
+
+        if parsed.path == "/api/discoveries":
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
-            state = engine.export_state_json()
-            state["seated_guard_max_radius_meters"] = guard.max_radius
+            catalog = [
+                {
+                    "id": m.discovery_id.value,
+                    "name": m.name,
+                    "target_condition": m.target_condition,
+                    "mechanism": m.scientific_mechanism,
+                    "primary_hardware_or_ligand": m.primary_molecule_or_hardware,
+                    "action_summary": m.biological_action_summary,
+                    "metric_label": m.target_metric_label,
+                    "baseline": m.baseline_metric_val,
+                    "target": m.target_metric_val,
+                    "unit": m.unit
+                }
+                for m in DISCOVERY_CATALOG.values()
+            ]
+            self.wfile.write(json.dumps(catalog).encode("utf-8"))
+            return
+
+        elif parsed.path == "/api/status":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            state = active_proc.export_state_json()
+            state["seated_max_radius_meters"] = guard.max_radius
             state["airplane_seat_compliant"] = True
             self.wfile.write(json.dumps(state).encode("utf-8"))
             return
@@ -58,62 +83,58 @@ class WebXRServerHandler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self):
+        global active_proc
         parsed = urlparse(self.path)
         content_length = int(self.headers.get("Content-Length", 0))
         post_data = self.rfile.read(content_length) if content_length > 0 else b"{}"
         body = json.loads(post_data.decode("utf-8")) if post_data else {}
 
-        if parsed.path == "/api/action/solve":
-            # Simulate snapping all gears into vacant slots
-            for g_id, gear in engine.gears.items():
-                for s_id, slot in engine.slots.items():
-                    if slot.occupied_by is None and slot.target_teeth == gear.teeth:
-                        gear.current_pos = slot.position
-                        gear.is_snapped = True
-                        gear.snapped_slot_id = s_id
-                        slot.occupied_by = g_id
-                        slot.is_locked = True
-                        break
-            engine._check_puzzle_completion()
+        if parsed.path == "/api/action/select_discovery":
+            d_id = body.get("discovery_id", "MS_REMYELINATION")
+            try:
+                active_proc = MedicalDiscoveryProcedure(MedicalDiscoveryId(d_id))
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "status": "SUCCESS",
+                    "active_discovery": active_proc.metadata.name
+                }).encode("utf-8"))
+                return
+            except ValueError:
+                self.send_response(400)
+                self.end_headers()
+                return
 
+        elif parsed.path == "/api/action/solve":
+            active_proc._advance_progress(1.0)
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
             self.wfile.write(json.dumps({
                 "status": "SUCCESS",
-                "is_completed": engine.is_completed,
-                "message": "All gears snapped into chronosphere sockets."
+                "is_completed": active_proc.is_completed,
+                "current_metric_val": active_proc.current_metric_val,
+                "metric_label": active_proc.metadata.target_metric_label
             }).encode("utf-8"))
             return
 
         elif parsed.path == "/api/action/reset":
-            engine._setup_level(engine.level)
+            active_proc = MedicalDiscoveryProcedure(active_proc.discovery_id)
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
-            self.wfile.write(json.dumps({"status": "SUCCESS", "message": "Puzzle reset."}).encode("utf-8"))
-            return
-
-        elif parsed.path == "/api/action/scrub":
-            delta = float(body.get("delta", 0.1))
-            engine.scrub_temporal_dial(delta)
-            self.send_response(200)
-            self.send_header("Content-Type", "application/json")
-            self.end_headers()
-            self.wfile.write(json.dumps({
-                "status": "SUCCESS",
-                "temporal_phase": engine.temporal_phase
-            }).encode("utf-8"))
+            self.wfile.write(json.dumps({"status": "SUCCESS", "message": "Procedure reset."}).encode("utf-8"))
             return
 
         self.send_response(404)
         self.end_headers()
 
 def run_server(port: int = 8086):
-    server = HTTPServer(("0.0.0.0", port), WebXRServerHandler)
+    server = HTTPServer(("0.0.0.0", port), BioForgeServerHandler)
     print("=" * 70)
-    print("⏳ DAXDA ChronoHands — Meta VR Start Competition WebXR Server")
-    print(f"📡 Serving WebXR Application at: http://localhost:{port}")
+    print("🧬 DAXDA BioForge VR — Hands-First Medical Discovery Synthesizer")
+    print(f"📡 WebXR Application Live at: http://localhost:{port}")
     print("🥽 Meta Quest & Meta VR Glasses Hands-First Experience Ready")
     print("=" * 70)
     try:
