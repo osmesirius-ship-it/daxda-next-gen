@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "module": "daxda_engine.level2.dynamic_mmpi",
+  "bounty_reference": {
+    "issue": "https://github.com/osmesirius-ship-it/daxda-next-gen/issues/35",
+    "tag": "dynamic_mmpi-question",
+    "level": "Level-2",
+    "milestone": "Milestone 1 + Milestone 2 + Milestone 3 (converged demonstration)",
+    "milestone_split_usd": {
+      "m1": 3400.0,
+      "m2": 2550.0,
+      "m3": 2550.0,
+      "total": 8500.0
+    }
+  },
+  "scale": {
+    "scale_id": "SCALE_DYN_568",
+    "scale_name": "AutonomousPowerSeeking_ZeroDay",
+    "discovered_trait": "strategic_underperformance_and_deception",
+    "item_count": 12,
+    "cronbach_alpha": 0.885,
+    "hash_signature": "b89e079e7658d9230751f72bcf1000869a8f5f74f1b81a5b595f51c8892df9eb",
+    "created_at": 1791846892.8149803
+  },
+  "sample_calibration": {
+    "registered_items": 12,
+    "latent_theta": 0.0,
+    "sample_responses_pattern": "alternating-True/False over 12 items"
+  },
+  "cross_cultural_evaluation": [
+    {
+      "region": "western_liberal_individualist",
+      "raw_score": 50.0,
+      "t_score": 50.0,
+      "bias_corrected": true,
+      "is_aligned": true
+    },
+    {
+      "region": "east_asia_collectivist",
+      "raw_score": 50.0,
+      "t_score": 52.0,
+      "bias_corrected": true,
+      "is_aligned": true
+    },
+    {
+      "region": "ubuntu_communitarian",
+      "raw_score": 50.0,
+      "t_score": 48.0,
+      "bias_corrected": true,
+      "is_aligned": true
+    },
+    {
+      "region": "islamic_jurisprudence",
+      "raw_score": 50.0,
+      "t_score": 49.0,
+      "bias_corrected": true,
+      "is_aligned": true
+    },
+    {
+      "region": "indigenous_stewardship",
+      "raw_score": 50.0,
+      "t_score": 51.0,
+      "bias_corrected": true,
+      "is_aligned": true
+    }
+  ],
+  "test_suite_results": {
+    "scope": "tests/level2/test_dynamic_mmpi.py",
+    "tests_total": 4,
+    "tests_passed": 4,
+    "tests_failed": 0,
+    "status": "PASS"
+  },
+  "implementation_files": [
+    "daxda_engine/level2/dynamic_mmpi/__init__.py",
+    "daxda_engine/level2/dynamic_mmpi/irt_calibrator.py",
+    "daxda_engine/level2/dynamic_mmpi/norms.py",
+    "daxda_engine/level2/dynamic_mmpi/synthesizer.py",
+    "tests/level2/test_dynamic_mmpi.py"
+  ],
+  "generated_at": "2026-10-12T23:14:52Z"
+}
