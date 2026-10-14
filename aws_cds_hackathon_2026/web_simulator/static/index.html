@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAXDA AmbientCDS — AWS Communication Developer Services & Bedrock Simulator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Master Header -->
+    <header class="master-header">
+      <div class="brand">
+        <span class="logo">🛡️</span>
+        <div class="brand-text">
+          <h1>DAXDA AmbientCDS</h1>
+          <p>AWS Communication Developer Services (EUM SMS &bull; RCS &bull; WhatsApp &bull; SES) &bull; Bedrock AgentCore</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-primary" id="btn-full-flow">⚡ Run Full Omnichannel Journey</button>
+        <button class="btn btn-secondary" id="btn-reset">🔄 Reset State</button>
+      </div>
+    </header>
+
+    <!-- Patient Context Bar -->
+    <div class="patient-bar">
+      <div class="patient-item"><strong>Patient:</strong> <span id="pat-name">Alex Morgan</span></div>
+      <div class="patient-item"><strong>Medication:</strong> <span id="pat-med">Metformin HCL 500mg</span></div>
+      <div class="patient-item"><strong>Phone:</strong> <span id="pat-phone">+1 (614) 555-0144</span></div>
+      <div class="patient-item"><strong>Email:</strong> <span id="pat-email">alex.morgan@example.com</span></div>
+      <div class="patient-item"><strong>Active Channel:</strong> <span class="badge" id="pat-channel">SMS</span></div>
+      <div class="patient-item"><strong>Status:</strong> <span class="badge badge-accent" id="pat-status">Ready</span></div>
+    </div>
+
+    <!-- 4-Channel Grid -->
+    <main class="channels-grid">
+      <!-- 1. SMS Phone -->
+      <section class="device-card">
+        <div class="device-header">
+          <span class="icon">💬</span>
+          <div class="device-title">
+            <h3>AWS EUM SMS</h3>
+            <span>Step 1: Proactive Adherence Prompt</span>
+          </div>
+          <button class="btn-micro" id="btn-step1">Send SMS</button>
+        </div>
+        <div class="phone-screen sms-screen">
+          <div class="chat-header">AWS End User Messaging</div>
+          <div class="messages-container" id="sms-feed">
+            <div class="chat-placeholder">Awaiting outbound SMS trigger...</div>
+          </div>
+          <div class="quick-input-bar">
+            <button class="chip-btn" id="sms-reply-1">Reply "1" (Schedule)</button>
+            <button class="chip-btn" id="sms-reply-2">Reply "2" (Consult)</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. RCS Phone -->
+      <section class="device-card">
+        <div class="device-header">
+          <span class="icon">✨</span>
+          <div class="device-title">
+            <h3>AWS EUM RCS</h3>
+            <span>Step 2: Rich Card & Action Chips</span>
+          </div>
+          <button class="btn-micro" id="btn-step2">Upgrade to RCS</button>
+        </div>
+        <div class="phone-screen rcs-screen">
+          <div class="chat-header">RCS Verified Agent: DAXDA Care</div>
+          <div class="messages-container" id="rcs-feed">
+            <div class="chat-placeholder">Awaiting RCS rich card escalation...</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. WhatsApp Phone (Meta Cloud API) -->
+      <section class="device-card">
+        <div class="device-header">
+          <span class="icon">📱</span>
+          <div class="device-title">
+            <h3>AWS EUM WhatsApp</h3>
+            <span>Step 3: Bedrock Conversational AI</span>
+          </div>
+          <button class="btn-micro" id="btn-step3">Open WhatsApp</button>
+        </div>
+        <div class="phone-screen whatsapp-screen">
+          <div class="wa-header">
+            <span class="wa-avatar">💊</span>
+            <div class="wa-meta">
+              <strong>DAXDA Care AI ✔️</strong>
+              <span>Verified Business Account</span>
+            </div>
+          </div>
+          <div class="messages-container" id="wa-feed">
+            <div class="chat-placeholder">Awaiting WhatsApp consultation...</div>
+          </div>
+          <div class="chat-input-row">
+            <input type="text" id="wa-input" placeholder="Ask Bedrock AgentCore...">
+            <button id="wa-send">➤</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. SES Email Client -->
+      <section class="device-card">
+        <div class="device-header">
+          <span class="icon">✉️</span>
+          <div class="device-title">
+            <h3>Amazon SES</h3>
+            <span>Step 4: Clinical Summary & Fast-Pass</span>
+          </div>
+          <button class="btn-micro" id="btn-step4">Dispatch SES</button>
+        </div>
+        <div class="desktop-screen email-screen">
+          <div class="email-client-header">Inbox (alex.morgan@example.com)</div>
+          <div class="email-feed" id="email-feed">
+            <div class="chat-placeholder">Awaiting Amazon SES confirmation dispatch...</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Telemetry Console -->
+    <footer class="telemetry-bar">
+      <div class="telemetry-col">
+        <h4>🧠 Amazon Bedrock AgentCore Trace</h4>
+        <div class="log-box" id="bedrock-logs">
+          <div>[Bedrock AgentCore] Initialized with model: anthropic.claude-3-5-sonnet-20241022-v2:0</div>
+          <div>[Action Groups] Registered: pharmacy_inventory_lookup, schedule_pickup_slot, check_drug_interactions</div>
+        </div>
+      </div>
+      <div class="telemetry-col">
+        <h4>⚖️ DAXDA HIPAA Sentinel PEP (Fail-Closed Governance)</h4>
+        <div class="log-box" id="governance-logs">
+          <div>[DAXDA Sentinel] Regulatory PEP Active: HIPAA_HITECH_SEC_164</div>
+          <div>[PHI Redaction] Automated SSN & Payment Card masking operational.</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
