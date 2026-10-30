@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 REPO = "osmesirius-ship-it/daxda-next-gen"
-PAYOUT_ADDRESS_BTC = "bc1qqg3ahwhrtskau4k2nlg6hwa938ret2783uu0zs"
+PAYOUT_CASH_APP = "$HereThereOnward"
 CLAIMANT = "@osmesirius-ship-it"
 
 def get_github_token() -> str:
@@ -98,8 +98,8 @@ def build_issue_body(bounty: dict) -> str:
 3. **Formal Verification & Topologically Closed Manifold**: Certified with algebraic connectivity $\\lambda_2 = 1.3820$.
 4. **Designated Payout Settlement Details**:
    - **Recipient / Claimant**: `{CLAIMANT}`
-   - **Bitcoin (BTC)**: `{PAYOUT_ADDRESS_BTC}`
-   - **Supported Currencies**: USD Direct Wire, BTC, USDT (BEP-20 / TRC-20), TON
+   - **Cash App**: `{PAYOUT_CASH_APP}`
+   - **Supported Currencies**: USD (Cash App / Direct Wire), USDT (BEP-20 / TRC-20), TON
 
 *Submitted autonomously by DAXDA Next-Gen Consortium of Engines on behalf of {CLAIMANT}.*
 """
