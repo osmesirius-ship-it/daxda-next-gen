@@ -124,9 +124,9 @@ python3 tools/level4/run_cl32_8_validator_map.py
 - **Total Amount Claimed**: **$160,000.00 USD** (Level 4 Total Pool)
 - **Cumulative Claimed to Date**: **$465,000.00 USD**
 - **Claimant**: `@osmesirius-ship-it`
-- **Supported Payment Currencies**: USD (Bank Wire / ACH), BTC, USDT (BEP-20 / TRC-20)
+- **Supported Payment Currencies**: USD (Cash App / Bank Wire / ACH), USDT (BEP-20 / TRC-20)
 - **Designated Disbursement Channels**:
-  - **Bitcoin (BTC)**: `bc1qqg3ahwhrtskau4k2nlg6hwa938ret2783uu0zs`
+  - **Cash App**: `$HereThereOnward`
   - **USDT (BEP-20 / TRC-20)**: Available upon disbursement notification
-  - **Bank Wire / Cash App Direct Deposit**: Domestic Bank Wire / ACH Direct Deposit to Cash App account (Sutton Bank), routing instructions provided securely to Treasury upon authorization
+  - **Bank Wire / ACH**: Routing instructions provided securely to Treasury upon authorization
 
