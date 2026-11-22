@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  daxda_physical_worker:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.physical_worker
+    image: daxda/physical-worker:1.0.0
+    container_name: daxda-physical-worker-node
+    ports:
+      - "8090:8090"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DAXDA_NODE_ROLE=PHYSICAL_COMPUTE_WORKER
+      - DEPIN_DAEMON_URL=http://host.docker.internal:8088
+    volumes:
+      - ./outputs:/app/outputs
+    restart: unless-stopped
+    command: ["python", "tools/daxda_physical_worker_daemon.py", "--host", "0.0.0.0", "--port", "8090", "--batch-size", "2000", "--interval", "2.0", "--depin-url", "http://host.docker.internal:8088"]

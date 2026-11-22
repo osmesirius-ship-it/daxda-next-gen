@@ -1,0 +1,45 @@
+{
+  "invoice_id": "inv_dax_1792827946_16583b51",
+  "issuer": "DAXDA Next Gen Inc.",
+  "founder_and_architect": "Nicole Bess",
+  "treasury_payout_fa": "fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0",
+  "bill_to": {
+    "tenant_id": "tenant-enterprise-demo",
+    "company_name": "DAXDA Enterprise Client",
+    "customer_name": "Enterprise Demo Account",
+    "customer_email": "enterprise@daxda.ia"
+  },
+  "issue_date_utc": "2026-10-24T07:45:46.931530+00:00",
+  "due_date_utc": "2026-11-08T07:45:46.931530+00:00",
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "DAXDA Governed Micro-Inference Calls (1,000 operations @ $0.0008/call)",
+      "quantity": 1000,
+      "unit_price_usd": 0.0008,
+      "total_usd": 0.8
+    },
+    {
+      "description": "Dedicated Substrate Compute Lease: Intel Xeon W-2150B 20-Thread Physical Node (1 Month)",
+      "quantity": 1,
+      "unit_price_usd": 2500.0,
+      "total_usd": 2500.0
+    },
+    {
+      "description": "Enterprise Clifford Cl(16,4) Invariant Governance & Byzantine Firewall SLA",
+      "quantity": 1,
+      "unit_price_usd": 1500.0,
+      "total_usd": 1500.0
+    }
+  ],
+  "subtotal_usd": 4000.8,
+  "total_due_usd": 4000.8,
+  "cryptographic_merkle_seal": "58dfb4378cc71f2528c1c36cba3ecf399cbb3f0258d508c6f79143850f2e8ab8",
+  "stripe_invoice_id": "in_sim_c63854bc9f633c99",
+  "stripe_hosted_url": null,
+  "payment_methods_accepted": [
+    "Corporate ACH Transfer to Stripe Treasury (fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0)",
+    "Stripe Hosted Invoice Credit Card / Debit",
+    "Bitcoin (BTC) On-Chain Settlement (bc1qqg3ahwhrtskau4k2nlg6hwa938ret2783uu0zs)"
+  ]
+}

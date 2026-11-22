@@ -22,6 +22,12 @@ wheels/
 *.egg
 .pytest_cache/
 
+# Swift & Apple builds
+.build/
+*.xcodeproj
+*.xcworkspace
+DerivedData/
+
 # Node
 node_modules/
 npm-debug.log*
@@ -35,3 +41,17 @@ yarn-error.log*
 .vscode/
 .env
 .aider*
+
+# Prevent massive receipts and streaming logs from breaking GitHub 100MB limit
+outputs/*.jsonl
+outputs/*.corrupt.*
+outputs/*.db*
+outputs/*.wav
+outputs/*.mp4
+outputs/*.webm
+outputs/*.zip
+outputs/fleet_daemon.log
+outputs/dgar.db
+outputs/waveforms/*.wav
+outputs/waveforms/*.mp4
+outputs/waveforms/*.webm

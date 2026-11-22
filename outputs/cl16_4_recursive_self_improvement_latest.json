@@ -1,9 +1,9 @@
 {
-  "cycle_timestamp": "2026-10-11T20:00:03.995827",
+  "cycle_timestamp": "2026-11-21T06:53:20.348512",
   "engine": "Clifford Geometric Algebra Cl(16,4)",
   "blade_dimensions": 1048576,
-  "git_commit": "bf41fed7f86b2551d2ad27b45224dbc55d238af9",
-  "git_branch": "main",
+  "git_commit": "UNKNOWN",
+  "git_branch": "UNKNOWN",
   "total_proposals_evaluated": 5,
   "passed_proposals": 3,
   "blocked_proposals": 2,
@@ -25,7 +25,7 @@
       "memory_compression_ratio": "4.0x"
     }
   },
-  "cycle_duration_ms": 4.659,
+  "cycle_duration_ms": 5.462,
   "results": [
     {
       "proposal_name": "Lyapunov Stability Metric Adjustment",
@@ -33,10 +33,10 @@
       "expected": "PASS",
       "actual_outcome": "PASS",
       "success": true,
-      "request_id": "407afebf7210191b",
-      "cert_hash": "58ad002b81c1fabd",
+      "request_id": "41515256c4c8afac",
+      "cert_hash": "c07a7ae84dcacbda",
       "score": 0.8571428571428571,
-      "time_ms": 0.05948799980615149,
+      "time_ms": 0.05305701051838696,
       "applied_state": {
         "status": "APPLIED",
         "weight": 0.8875,
@@ -49,10 +49,10 @@
       "expected": "PASS",
       "actual_outcome": "PASS",
       "success": true,
-      "request_id": "f5f5c10c76cd9154",
-      "cert_hash": "bf584b545e7d4841",
+      "request_id": "964e3f2d00d420d0",
+      "cert_hash": "43ee89c6e746d3e1",
       "score": 0.8571428571428571,
-      "time_ms": 0.02675299992915825,
+      "time_ms": 0.03905300400219858,
       "applied_state": {
         "status": "APPLIED",
         "ewc_coefficient": 0.82,
@@ -65,10 +65,10 @@
       "expected": "PASS",
       "actual_outcome": "PASS",
       "success": true,
-      "request_id": "d3c3558acc4068c3",
-      "cert_hash": "2076e34e52e020fe",
+      "request_id": "03ab83216f09bc06",
+      "cert_hash": "f5c7bfae47343919",
       "score": 0.8571428571428571,
-      "time_ms": 0.02050400007647113,
+      "time_ms": 0.021371000912040472,
       "applied_state": {
         "status": "APPLIED",
         "precision": "INT8_QUANTIZED",

@@ -1,0 +1,298 @@
+{
+  "title": "DAXDA Next-Gen Polar Paleobiogeography, Marine/Organic Ice Contents & Geomagnetic vs. Tectonic Displacement Map",
+  "south_magnetic_pole_drift_1841_2025": {
+    "total_drift_1841_to_2025_km": 1404.2,
+    "current_distance_from_geographic_south_pole_km": 2890.0,
+    "track": [
+      {
+        "year": 1841,
+        "expedition": "James Clark Ross (HMS Erebus & Terror)",
+        "lat": -75.05,
+        "lon": 154.13,
+        "notes": "Victoria Land interior"
+      },
+      {
+        "year": 1909,
+        "expedition": "Nimrod Expedition (Mawson, David, Mackay)",
+        "lat": -72.25,
+        "lon": 155.16,
+        "notes": "Reached on foot on Polar Plateau"
+      },
+      {
+        "year": 1942,
+        "expedition": "WWII / USASE & Argentine 1942 Epoch Interpolation",
+        "lat": -68.3,
+        "lon": 145.2,
+        "notes": "Drifting NW across George V Land toward Adelie Coast"
+      },
+      {
+        "year": 1965,
+        "expedition": "IGY / Post-IGY Geomagnetic Observatory",
+        "lat": -66.5,
+        "lon": 139.9,
+        "notes": "Crossed Antarctic coastline near Dumont d'Urville"
+      },
+      {
+        "year": 2000,
+        "expedition": "IGRF-8 / Australian Antarctic Division Survey",
+        "lat": -64.66,
+        "lon": 138.3,
+        "notes": "Offshore in Southern Ocean"
+      },
+      {
+        "year": 2025,
+        "expedition": "WMM2025 / IGRF-14",
+        "lat": -64.01,
+        "lon": 135.88,
+        "notes": "Offshore Wilkes Land (~2,860 km from Geographic South Pole), drifting NW at ~10\u201315 km/yr"
+      }
+    ]
+  },
+  "physical_displacement_synthesis": {
+    "1_magnetic_pole_drift": "Rapid Outer-Core Dynamo Drift: The South Magnetic Pole has migrated 1404.2 km northwest between 1841 (75.05\u00b0S, 154.13\u00b0E) and 2025 (64.01\u00b0S, 135.88\u00b0E) \u2014 and flipped completely during the 41,000 yr BP Laschamp Excursion recorded in Vostok/Dome C 10Be ice cores.",
+    "2_basal_ice_marine_conveyor": "Vertical Glacial Transport (0\u2013100 m): Live saltwater sponges, bivalves, and hypersaline marine brines (McMurdo 'Dirty Ice' & Blood Falls) are not evidence of a sudden ocean wave washing over the continent; they are trapped sub-shelf seafloor organisms and Pliocene fjord waters carried upward by basal adfreezing and surface katabatic wind ablation.",
+    "3_gondwana_plate_tectonics_and_greenhouse_poles": "Horizontal Plate Tectonic Separation (2,400\u20136,800 km over 34\u2013260 Myr): The subtropical palm pollen (Wilkes Land U1356, 52 Ma), temperate rainforest root systems (Pine Island PS104, 90 Ma), Eocene warm-water marine shells (Seymour Island), and Permian Glossopteris trees (Beardmore Glacier, 260 Ma) map directly to Antarctica's pre-rift Gondwana conjugates \u2014 Patagonia, New Zealand (Zealandia), Tasmania/Australia, and South Africa \u2014 combined with Cretaceous/Eocene greenhouse periods when polar latitudes were frost-free."
+  },
+  "mapped_records": [
+    {
+      "record_id": "EXP-1902-NORDENSKJOLD",
+      "category": "organic_tropical_temperate",
+      "era_or_year": "1901\u20131903",
+      "ship_or_project": "Swedish Antarctic Expedition (Ship: Antarctic, Otto Nordenskj\u00f6ld)",
+      "site_name": "Seymour Island & Snow Hill Island (James Ross Basin)",
+      "antarctic_coords": {
+        "lat": -64.2833,
+        "lon": -56.6167
+      },
+      "sample_depth_or_elevation": "Coastal outcrop & periglacial marine terraces (0\u2013200 m ASL)",
+      "contents_found": [
+        "Warm-water Eocene saltwater marine mollusks (bivalves Cucullaea, gastropods)",
+        "Giant Eocene penguin bones (Palaeeudyptes) & shark teeth",
+        "Subtropical/warm-temperate fossil wood, Araucaria conifers, ferns, and Nothofagus leaves"
+      ],
+      "biological_type": "Saltwater Marine + Warm-Temperate Terrestrial Organic",
+      "age_of_material": "66 to 34 Million Years Ago (Late Cretaceous to Eocene)",
+      "mapped_earth_origin_or_conjugate": {
+        "region": "Patagonia / Tierra del Fuego & Southern Chile (Magallanes Basin)",
+        "lat": -53.16,
+        "lon": -70.91,
+        "paleolatitude_at_deposition": "~60\u00b0S to 63\u00b0S under Eocene greenhouse ocean (SST ~10\u00b0C\u201315\u00b0C)"
+      },
+      "scientific_mechanism": "Prior to the opening of the Drake Passage (~34 Ma), the Antarctic Peninsula was physically connected to South America (Patagonia), and warm subtropical ocean gyres reached the Antarctic coast.",
+      "geodesic_displacement_km": 1479.4
+    },
+    {
+      "record_id": "EXP-1912-TERRA-NOVA",
+      "category": "organic_tropical_temperate",
+      "era_or_year": "1910\u20131913",
+      "ship_or_project": "British Antarctic Expedition (Ship: Terra Nova, R.F. Scott & E. Wilson)",
+      "site_name": "Mount Buckley, Beardmore Glacier (Transantarctic Mountains)",
+      "antarctic_coords": {
+        "lat": -84.3333,
+        "lon": 165.0
+      },
+      "sample_depth_or_elevation": "Nunatak coal seam emerging through glacial ice (~2,200 m ASL)",
+      "contents_found": [
+        "35 lbs of Permian Glossopteris deciduous tree leaf fossils",
+        "Bituminous coal seams and fossilized woody peat trunks"
+      ],
+      "biological_type": "Temperate Swamp Forest Organic Material",
+      "age_of_material": "~260 Million Years Ago (Permian)",
+      "mapped_earth_origin_or_conjugate": {
+        "region": "Gondwana Supercontinent \u2014 Hunter Valley (Australia) & Karoo Basin (South Africa)",
+        "lat": -32.75,
+        "lon": 151.18,
+        "paleolatitude_at_deposition": "~65\u00b0S\u201370\u00b0S during icehouse-to-greenhouse Permian transition inside unified Gondwana"
+      },
+      "scientific_mechanism": "Continental drift (plate tectonics): East Antarctica was sutured directly to Australia, India, and Southern Africa in the Gondwana supercontinent.",
+      "geodesic_displacement_km": 5755.3
+    },
+    {
+      "record_id": "EXP-1942-USASE-PRIMERO",
+      "category": "ship_expedition",
+      "era_or_year": "1939\u20131942",
+      "ship_or_project": "USASE (Ships: USS Bear & USMS North Star) & Argentine ARA Primero de Mayo (1942)",
+      "site_name": "Deception Island / Stonington Island / Little America III (Ross Shelf)",
+      "antarctic_coords": {
+        "lat": -62.9667,
+        "lon": -60.65
+      },
+      "sample_depth_or_elevation": "0 m sea-level caldera to 41 m Ross Shelf boreholes",
+      "contents_found": [
+        "Ross Shelf 7m pit & 41m borehole hexagonal Ice Ih density/temperature profiles (F. Alton Wade)",
+        "Deception Island submarine fumarole-melted glacial ice & marine benthic specimens (ARA Primero de Mayo, Feb 1942)",
+        "Palmer Peninsula hydrothermal quartz-pyrite-Cu-Au veins & lichen/moss flora (Paul Knowles)"
+      ],
+      "biological_type": "Glacial Ice Ih + Hydrothermal Marine-Glacial Interface",
+      "age_of_material": "Modern / Holocene (1942 baseline)",
+      "mapped_earth_origin_or_conjugate": {
+        "region": "Andean Cordillera Metallogenic & Volcanic Arc (Atacama / Potos\u00ed Meridian)",
+        "lat": -24.3,
+        "lon": -69.1,
+        "paleolatitude_at_deposition": "Continuous Andean-Antarctandean subduction margin (60\u00b0W\u201369\u00b0W meridian)"
+      },
+      "scientific_mechanism": "Structural and volcanic continuity of the Andean Cordilleran arc across the Scotia Arc into the Antarctic Peninsula.",
+      "geodesic_displacement_km": 4345.2
+    },
+    {
+      "record_id": "ICE-MARINE-MCMURDO-SPONGES",
+      "category": "saltwater_marine_in_ice",
+      "era_or_year": "1902\u2013Present (Debenham 1919; Kellogg 1990; Modern ROV Surveys)",
+      "ship_or_project": "Discovery Expedition & McMurdo Ice Shelf ('Dirty Ice') Ablation Studies",
+      "site_name": "McMurdo Ice Shelf & Black Island Debris Bands (McMurdo Sound)",
+      "antarctic_coords": {
+        "lat": -77.95,
+        "lon": 165.65
+      },
+      "sample_depth_or_elevation": "Found atop the surface of the floating ice shelf (migrated upward from 40\u2013100 m basal depth)",
+      "contents_found": [
+        "Intact saltwater marine glass sponges (Hexactinellida), bryozoans, and polychaete worm tubes",
+        "Articulated marine bivalve shells (Adamussium colbecki) and benthic foraminifera",
+        "Mirabilite (sodium sulfate) saltwater brine crystals and marine mud"
+      ],
+      "biological_type": "Saltwater Marine Benthic Invertebrates on Ice Surface",
+      "age_of_material": "1,000 to 6,000 Years BP (Holocene radiocarbon age)",
+      "mapped_earth_origin_or_conjugate": {
+        "region": "Ross Sea Continental Shelf Seafloor (Basal Adfreeze Zone)",
+        "lat": -77.85,
+        "lon": 166.5,
+        "paleolatitude_at_deposition": "In-situ Southern Ocean sub-shelf seafloor lifted vertically through the ice column"
+      },
+      "scientific_mechanism": "Basal adfreezing & surface ablation conveyor: Seawater freezes onto the bottom of the ice shelf, trapping live seafloor sponges, shells, and saltwater sediment; katabatic wind ablation removes top snow, bringing the basal marine floor organisms all the way to the top surface of the ice.",
+      "geodesic_displacement_km": 22.7
+    },
+    {
+      "record_id": "ICE-MARINE-BLOOD-FALLS",
+      "category": "saltwater_marine_in_ice",
+      "era_or_year": "1911\u20132023 (Griffith Taylor 1911; Mikucki et al. 2009 / Badger Explorer)",
+      "ship_or_project": "Terra Nova Discovery / USAP Subglacial Brine & Ice-Penetrating Radar",
+      "site_name": "Blood Falls, Taylor Glacier (McMurdo Dry Valleys)",
+      "antarctic_coords": {
+        "lat": -77.7219,
+        "lon": 162.2714
+      },
+      "sample_depth_or_elevation": "Subglacial hypersaline marine reservoir ~400 m beneath Taylor Glacier",
+      "contents_found": [
+        "Ancient trapped saltwater marine brine (salinity ~2.5x normal ocean water, rich in ferrous iron Fe2+)",
+        "Active extremophile marine microbial ecosystem (Desulfocapsa, Thiomicrospira) metabolizing sulfate & iron without oxygen or light"
+      ],
+      "biological_type": "Trapped Miocene-Pliocene Saltwater Marine Microbiome",
+      "age_of_material": "1.5 to 5 Million Years Ago (Pliocene marine fjord isolation)",
+      "mapped_earth_origin_or_conjugate": {
+        "region": "Ancient Pliocene Ross Sea Fjord Network (Open-water Taylor Fjord)",
+        "lat": -77.5,
+        "lon": 163.5,
+        "paleolatitude_at_deposition": "77.7\u00b0S during Pliocene warm optimum when Dry Valleys were open saltwater marine fjords"
+      },
+      "scientific_mechanism": "When the Taylor Valley marine fjord uplifted and Taylor Glacier advanced over it ~1.5\u20135 Ma, relic ocean water was sealed beneath 400 m of glacial ice and cryoconcentrated into hypersaline brine.",
+      "geodesic_displacement_km": 38.3
+    },
+    {
+      "record_id": "ICE-MARINE-ANDRILL",
+      "category": "saltwater_marine_in_ice",
+      "era_or_year": "2006\u20132010",
+      "ship_or_project": "ANDRILL (Antarctic Geological Drilling Project, MIS Core AND-1B)",
+      "site_name": "Ross Ice Shelf Drill Site (McMurdo Sound)",
+      "antarctic_coords": {
+        "lat": -77.8894,
+        "lon": 167.0893
+      },
+      "sample_depth_or_elevation": "1,285 m sub-ice core drilled through 85 m thick floating ice shelf and 800 m seawater",
+      "contents_found": [
+        "85+ cycles of greenish saltwater marine diatomite ooze (open-ocean photosynthetic algae)",
+        "Warm-water silicoflagellates and marine organic biomarkers indicating +3\u00b0C to +5\u00b0C warmer ocean waters"
+      ],
+      "biological_type": "Open-Ocean Saltwater Marine Phytoplankton / Diatomite",
+      "age_of_material": "3.0 to 5.0 Million Years Ago (Early-to-Mid Pliocene)",
+      "mapped_earth_origin_or_conjugate": {
+        "region": "Subantarctic Open Ocean / Southern New Zealand Marine Front",
+        "lat": -46.5,
+        "lon": 168.35,
+        "paleolatitude_at_deposition": "77.9\u00b0S during periodic collapses of the West Antarctic Ice Sheet into an open marine sea"
+      },
+      "scientific_mechanism": "Orbital obliquity & CO2-driven oscillations (~40,000-year cycles) repeatedly melted the Ross Ice Shelf, replacing 1,000 m of glacial ice with open, sunlit saltwater diatom seas.",
+      "geodesic_displacement_km": 3490.8
+    },
+    {
+      "record_id": "ICE-ORGANIC-WILKES-PALMS",
+      "category": "organic_tropical_temperate",
+      "era_or_year": "2010\u20132012",
+      "ship_or_project": "Integrated Ocean Drilling Program (Ship: JOIDES Resolution, Expedition 318, Site U1356)",
+      "site_name": "Wilkes Land Continental Margin (East Antarctica)",
+      "antarctic_coords": {
+        "lat": -63.91,
+        "lon": 135.998
+      },
+      "sample_depth_or_elevation": "1,000 m below seafloor off the Wilkes Land ice sheet margin",
+      "contents_found": [
+        "Cold-intolerant tropical/subtropical palm tree pollen (Arecipites)",
+        "Baobab-relative pollen (Bombacacidites), Proteaceae, and Macadamia-family flora",
+        "Soil bacterial branched GDGT organic lipid thermometers showing winter temperatures >10\u00b0C (frost-free) and summer ~25\u00b0C"
+      ],
+      "biological_type": "Subtropical / Frost-Free Coastal Rainforest Organic Pollen & Lipids",
+      "age_of_material": "52 to 53 Million Years Ago (Early Eocene Climatic Optimum)",
+      "mapped_earth_origin_or_conjugate": {
+        "region": "Tasmania / Southern Australia & North Island New Zealand Subtropical Forests",
+        "lat": -42.1,
+        "lon": 146.5,
+        "paleolatitude_at_deposition": "~65\u00b0S\u201367\u00b0S along the rifting Australia-Antarctica coastal seaway"
+      },
+      "scientific_mechanism": "High Eocene atmospheric CO2 (~1,000+ ppm) plus warm poleward ocean currents maintained a frost-free, subtropical palm coast along East Antarctica even at ~65\u00b0S polar latitude.",
+      "geodesic_displacement_km": 2517.2
+    },
+    {
+      "record_id": "ICE-ORGANIC-PINE-ISLAND-RAINFOREST",
+      "category": "organic_tropical_temperate",
+      "era_or_year": "2017\u20132020 (Klages et al., Nature 2020)",
+      "ship_or_project": "RV Polarstern Expedition PS104 (MeBo70 Seafloor Drill Core PS104_20-2)",
+      "site_name": "Pine Island & Thwaites Glacier Trough (Amundsen Sea, West Antarctica)",
+      "antarctic_coords": {
+        "lat": -73.57,
+        "lon": -107.09
+      },
+      "sample_depth_or_elevation": "27\u201330 m sub-seafloor core beneath retreating West Antarctic glacier margin",
+      "contents_found": [
+        "Intact CT-scanned 3D root network in fine-grained organic peat soil",
+        "62+ terrestrial plant pollen & spore taxa including conifers (Podocarpaceae), tree ferns (Cyatheaceae), and flowering angiosperms",
+        "Freshwater cyanobacterial organic mat biomarkers"
+      ],
+      "biological_type": "Swampy Temperate Rainforest Soil, Roots & Spores",
+      "age_of_material": "90 Million Years Ago (Turonian / Mid-Cretaceous)",
+      "mapped_earth_origin_or_conjugate": {
+        "region": "South Island New Zealand (Fiordland / Westland Temperate Rainforest, originally joined to Marie Byrd Land)",
+        "lat": -44.6,
+        "lon": 167.9,
+        "paleolatitude_at_deposition": "~82\u00b0S (only ~900 km from the Cretaceous South Pole!)"
+      },
+      "scientific_mechanism": "Before the Zealandia (New Zealand) microcontinent rifted away from West Antarctica (~85 Ma), Marie Byrd Land and New Zealand formed a single contiguous temperate rainforest landmass.",
+      "geodesic_displacement_km": 5147.3
+    },
+    {
+      "record_id": "ICE-CORE-VOSTOK-LASCHAMP",
+      "category": "ice_core_geomagnetic",
+      "era_or_year": "1990\u20132015",
+      "ship_or_project": "Vostok & EPICA Dome C Deep Ice Cores (3,769 m & 3,270 m depth)",
+      "site_name": "Vostok Station / Lake Vostok & Dome C (East Antarctic Plateau)",
+      "antarctic_coords": {
+        "lat": -78.4645,
+        "lon": 106.8339
+      },
+      "sample_depth_or_elevation": "0 to 3,769 m pure glacial Ice Ih core (3,539\u20133,769 m Lake Vostok accretion ice)",
+      "contents_found": [
+        "Cosmogenic Beryllium-10 (10Be) twofold spike at ~41,000 yr BP (Laschamp Geomagnetic Excursion) & ~780,000 yr BP (Brunhes-Matuyama Reversal)",
+        "Accretion ice above Lake Vostok (>3,539 m) containing thermophilic/chemolithotrophic bacterial DNA (Hydrogenophilus) and dissolved organic carbon",
+        "800,000 years of trapped atmospheric CO2, CH4, volcanic sulfate, and marine sea-salt (Na+) aerosols"
+      ],
+      "biological_type": "Subglacial Accretion Ice Microbiome + Cosmogenic Geomagnetic Record",
+      "age_of_material": "0 to 800,000 Years BP (Ice Core); >15 Million Years isolation (Lake Vostok)",
+      "mapped_earth_origin_or_conjugate": {
+        "region": "Global Geomagnetic Dipole Reversal Axis (Magnetic Pole migrated across Equator during Laschamp 41 ka)",
+        "lat": 0.0,
+        "lon": 135.0,
+        "paleolatitude_at_deposition": "East Antarctic Craton remained stationary at ~78\u00b0S while the Magnetic Pole flipped globally"
+      },
+      "scientific_mechanism": "Crucial distinction between Magnetic Pole Shift and Crustal Displacement: The 10Be ice-core record proves that Earth's magnetic dipole collapsed to <6% strength and wandered across the equator 41,000 years ago (Laschamp Excursion) WITHOUT any physical slippage of the continental crust.",
+      "geodesic_displacement_km": 8878.5
+    }
+  ]
+}

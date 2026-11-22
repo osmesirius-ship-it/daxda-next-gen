@@ -1,0 +1,39 @@
+{
+  "invoice_id": "inv_dax_1792953749_9ff966d8",
+  "issuer": "DAXDA Next Gen Inc.",
+  "founder_and_architect": "Nicole Bess",
+  "treasury_payout_fa": "fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0",
+  "bill_to": {
+    "tenant_id": "broker-ionet",
+    "company_name": "io.net, Inc.",
+    "customer_name": "io.net Compute Operations",
+    "customer_email": "compute-billing@io.net"
+  },
+  "issue_date_utc": "2026-10-25T18:42:29.467039+00:00",
+  "due_date_utc": "2026-11-09T18:42:29.467039+00:00",
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "io.net GPU Marketplace Cluster Allocation (50 Worker Nodes + Intel Xeon Physical Substrate)",
+      "quantity": 1,
+      "unit_price_usd": 1250.0,
+      "total_usd": 1250.0
+    },
+    {
+      "description": "Hardware & Verification SLA: Monthly high-density tensor compute lease and Clifford Cl(16,4) verification duty-cycles.",
+      "quantity": 1,
+      "unit_price_usd": 0.0,
+      "total_usd": 0.0
+    }
+  ],
+  "subtotal_usd": 1250.0,
+  "total_due_usd": 1250.0,
+  "cryptographic_merkle_seal": "a8a2ea151a8f85a93becbdc632499ddfd8e41fabfbc62b65f991248e4c81283b",
+  "stripe_invoice_id": "in_1UUWNGLw6XbPXOo3gyV3ETDI",
+  "stripe_hosted_url": "https://invoice.stripe.com/i/acct_1RZxTmLw6XbPXOo3/live_YWNjdF8xUlp4VG1MdzZYYlBYT28zLF9WVlhTY0lJVURxcXRqMm9hYk5Mbk10N3lGYWM0eDA3LDE4MzQ5NDU1MQ0200UGWZ9pq3?s=ap",
+  "payment_methods_accepted": [
+    "Corporate ACH Transfer to Stripe Treasury (fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0)",
+    "Stripe Hosted Invoice Credit Card / Debit",
+    "Bitcoin (BTC) On-Chain Settlement (bc1qqg3ahwhrtskau4k2nlg6hwa938ret2783uu0zs)"
+  ]
+}

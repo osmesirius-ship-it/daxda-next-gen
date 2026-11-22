@@ -1,0 +1,14 @@
+{
+  "_comment": "Add this mcpServers block to your claude_desktop_config.json (merge, don't replace)",
+  "mcpServers": {
+    "daxda": {
+      "command": "python",
+      "args": ["/ABSOLUTE/PATH/TO/daxda-next-gen/mcp_server.py"],
+      "env": {
+        "ANTHROPIC_API_KEY": "YOUR_KEY_HERE",
+        "DAXDA_DEFAULT_MODEL": "claude-sonnet-4-6",
+        "DAXDA_API_BASE_URL": "http://localhost:8000"
+      }
+    }
+  }
+}

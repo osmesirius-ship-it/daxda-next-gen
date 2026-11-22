@@ -1,0 +1,685 @@
+{
+  "type": "FeatureCollection",
+  "name": "DAXDA_USA_Metallogeny_and_Structural_Geodesics",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.7892,
+          41.8653
+        ]
+      },
+      "properties": {
+        "element": "Lost Gold Train (Au)",
+        "symbol": "\ud83d\ude82",
+        "crystal_system": "Face-Centered Cubic (FCC) Bullion",
+        "polyhedron_shape": "Gold Ingot / Cuboctahedron (Oh)",
+        "deposit_name": "Ashtabula Gold Train (1876 Disaster Sub-Bed)",
+        "state": "Ohio",
+        "coordinates": {
+          "lat": 41.8653,
+          "lon": -80.7892
+        },
+        "elevation_m": 190,
+        "structural_trend": "Lake Shore & Michigan Southern Rail Corridor (Azimuth 245\u00b0)",
+        "strike_angle_deg": 245.0,
+        "crystallographic_alignment": "Calculated via Clifford Cl(7,0) grade-1 velocity and gravity vectors intersecting the orthogonal riverbed shear plane.",
+        "geological_setting": "Scour-and-fill depression 45m downstream of eastern stone bridge abutment pier in Devonian Chagrin shale; estimated 4.8m depth.",
+        "estimated_endowment": "Estimated ,000,000 in 1876 Gold Bullion / Coin (~M+ modern value)",
+        "color": "#fbbf24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.0112,
+          40.7289
+        ]
+      },
+      "properties": {
+        "element": "Lost Military Gold (Au)",
+        "symbol": "\u269c\ufe0f",
+        "crystal_system": "Face-Centered Cubic (FCC) Coinage",
+        "polyhedron_shape": "Keg / Octahedral Coin Stack",
+        "deposit_name": "Minerva Great Trail French Gold Cache",
+        "state": "Ohio",
+        "coordinates": {
+          "lat": 40.7289,
+          "lon": -81.0112
+        },
+        "elevation_m": 325,
+        "structural_trend": "Tuscarawas / Great Trail & Historic Rail Line (Strike 295\u00b0)",
+        "strike_angle_deg": 295.0,
+        "crystallographic_alignment": "Sits at the intersection of the 045\u00b0 regional conjugate shear fracture and the Pottsville sandstone joint network.",
+        "geological_setting": "Collapsed sandstone cleft 210m north of historic Sandy Creek railroad bridge; estimated 2.2m depth.",
+        "estimated_endowment": "French military payroll of gold/silver bullion and louis d'or coins",
+        "color": "#f59e0b"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.372,
+          40.975
+        ]
+      },
+      "properties": {
+        "element": "Gold",
+        "symbol": "Au",
+        "crystal_system": "Face-Centered Cubic (FCC)",
+        "polyhedron_shape": "Cuboctahedron / Regular Octahedron",
+        "deposit_name": "Carlin Trend (Goldstrike / Betze-Post / Meikle)",
+        "state": "Nevada",
+        "elevation_m": 1750,
+        "structural_trend": "Carlin Trend (NNW strike ~330\u00b0)",
+        "strike_angle_deg": 330.0,
+        "crystallographic_alignment": "Forms a 70\u00b0 conjugate angle with the Battle Mountain-Eureka Trend (040\u00b0), precisely matching the atomic {111} octahedral dihedral angle (70.53\u00b0).",
+        "geological_setting": "Deep-seated Paleozoic silty carbonate shelf sequence deformed during Roberts Mountains thrusting; Eocene magmatic hydrothermal fluid influx.",
+        "estimated_endowment": ">90 million oz Au (Second largest gold province on Earth)",
+        "color": "#f59e0b"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.638,
+          40.161
+        ]
+      },
+      "properties": {
+        "element": "Gold",
+        "symbol": "Au",
+        "crystal_system": "Face-Centered Cubic (FCC)",
+        "polyhedron_shape": "Cuboctahedron / Regular Octahedron",
+        "deposit_name": "Battle Mountain - Eureka Trend (Cortez Hills / Pipeline / Goldrush)",
+        "state": "Nevada",
+        "elevation_m": 1680,
+        "structural_trend": "Cortez / Battle Mountain Trend (NE strike ~040\u00b0)",
+        "strike_angle_deg": 40.0,
+        "crystallographic_alignment": "Direct conjugate counterpart to Carlin Trend across the 40\u00b0N Great Basin crustal node.",
+        "geological_setting": "Lower plate carbonate windows beneath Roberts Mountains allochthon; Carlin-type disseminated sediment-hosted gold.",
+        "estimated_endowment": ">50 million oz Au",
+        "color": "#f59e0b"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.765,
+          44.3528
+        ]
+      },
+      "properties": {
+        "element": "Gold",
+        "symbol": "Au",
+        "crystal_system": "Face-Centered Cubic (FCC)",
+        "polyhedron_shape": "Cuboctahedron / Regular Octahedron",
+        "deposit_name": "Homestake Mine (Lead)",
+        "state": "South Dakota",
+        "elevation_m": 1630,
+        "structural_trend": "Black Hills Cratonic Dome / Trans-Hudson Suture (N-S strike ~005\u00b0)",
+        "strike_angle_deg": 5.0,
+        "crystallographic_alignment": "Located at the intersection of the Trans-Hudson Orogen and the Archean Wyoming Craton margin, aligning with the 44\u00b0N polyhedral lineament.",
+        "geological_setting": "Paleoproterozoic Homestake iron-formation; stratabound quartz-siderite-arsenopyrite replacement.",
+        "estimated_endowment": "41 million oz Au mined (Historic deepest and largest underground gold mine in North America)",
+        "color": "#f59e0b"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.0611,
+          39.2191
+        ]
+      },
+      "properties": {
+        "element": "Gold",
+        "symbol": "Au",
+        "crystal_system": "Face-Centered Cubic (FCC)",
+        "polyhedron_shape": "Cuboctahedron / Regular Octahedron",
+        "deposit_name": "Mother Lode & Grass Valley (Empire-Star / Idaho-Maryland)",
+        "state": "California",
+        "elevation_m": 735,
+        "structural_trend": "Melones Fault Zone / Sierra Foothills (NNW strike ~335\u00b0)",
+        "strike_angle_deg": 335.0,
+        "crystallographic_alignment": "Major suture bivector (e1 ^ e2) between accreted Mesozoic island arcs and the North American continent; steep 70\u00b0 dipping reverse fault planes.",
+        "geological_setting": "Orogenic mesothermal ribbon quartz veins in serpentinite and greenstone greenschist facies.",
+        "estimated_endowment": ">120 million oz Au (California Gold Rush epicenter)",
+        "color": "#f59e0b"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1481,
+          38.7236
+        ]
+      },
+      "properties": {
+        "element": "Gold",
+        "symbol": "Au",
+        "crystal_system": "Face-Centered Cubic (FCC)",
+        "polyhedron_shape": "Cuboctahedron / Regular Octahedron",
+        "deposit_name": "Cripple Creek & Victor Gold Mine",
+        "state": "Colorado",
+        "elevation_m": 2980,
+        "structural_trend": "Colorado Mineral Belt (COMB) / Oligocene Alkaline Diatreme (SW-NE ~045\u00b0)",
+        "strike_angle_deg": 45.0,
+        "crystallographic_alignment": "Occupies an explosive volcanic diatreme breccia pipe at the junction of the 45\u00b0 COMB shear corridor and ancient Proterozoic shear zones.",
+        "geological_setting": "Alkaline igneous volcanic complex; telluride-bearing hydrothermal epithermal vein system.",
+        "estimated_endowment": ">28 million oz Au",
+        "color": "#f59e0b"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.5369,
+          34.6139
+        ]
+      },
+      "properties": {
+        "element": "Gold",
+        "symbol": "Au",
+        "crystal_system": "Face-Centered Cubic (FCC)",
+        "polyhedron_shape": "Cuboctahedron / Regular Octahedron",
+        "deposit_name": "Haile Gold Mine (Carolina Slate Belt)",
+        "state": "South Carolina",
+        "elevation_m": 135,
+        "structural_trend": "Appalachian Gold Belt / Gold Hill Shear Zone (NE strike ~050\u00b0)",
+        "strike_angle_deg": 50.0,
+        "crystallographic_alignment": "Appalachian orogenic suture mirroring the Atlantic continental margin at an azimuthal angle of 050\u00b0.",
+        "geological_setting": "Neoproterozoic to Cambrian volcanic-sedimentary sequence in the Carolina terrane; pyritic disseminated gold deposit.",
+        "estimated_endowment": ">5 million oz Au (Largest operating gold mine on the US East Coast)",
+        "color": "#f59e0b"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -147.3486,
+          64.9961
+        ]
+      },
+      "properties": {
+        "element": "Gold",
+        "symbol": "Au",
+        "crystal_system": "Face-Centered Cubic (FCC)",
+        "polyhedron_shape": "Cuboctahedron / Regular Octahedron",
+        "deposit_name": "Fort Knox & Pogo Mines",
+        "state": "Alaska",
+        "elevation_m": 460,
+        "structural_trend": "Tintina Gold Province / Kaltag-Tintina Fault (NW strike ~300\u00b0)",
+        "strike_angle_deg": 300.0,
+        "crystallographic_alignment": "Massive dextral transcurrent strike-slip fault system in Alaska/Yukon with conjugate dilatational shears.",
+        "geological_setting": "Cretaceous reduced intrusion-related gold system (RIRGS); sheeted quartz vein networks.",
+        "estimated_endowment": ">15 million oz Au",
+        "color": "#f59e0b"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.876,
+          45.385
+        ]
+      },
+      "properties": {
+        "element": "Platinum / Palladium",
+        "symbol": "Pt / Pd",
+        "crystal_system": "Face-Centered Cubic (FCC)",
+        "polyhedron_shape": "Cuboctahedron (12-coordination)",
+        "deposit_name": "Stillwater Complex (J-M Reef)",
+        "state": "Montana",
+        "elevation_m": 2150,
+        "structural_trend": "Beartooth Mountains Archean Suture (WNW strike ~290\u00b0)",
+        "strike_angle_deg": 290.0,
+        "crystallographic_alignment": "Layered mafic-ultramafic cumulate horizons where dense immiscible sulfide droplets settled into horizontal planar sheets along gravitational vector g.",
+        "geological_setting": "2.7 Ga Archean layered intrusion; olivine-plagioclase cumulate stratigraphy with 10:1 Pd-to-Pt ratio.",
+        "estimated_endowment": "Highest grade platinum group metal deposit in the world (>30 million oz Pt+Pd reserves/resources)",
+        "color": "#38bdf8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.9317,
+          47.4989
+        ]
+      },
+      "properties": {
+        "element": "Silver",
+        "symbol": "Ag",
+        "crystal_system": "Face-Centered Cubic (FCC)",
+        "polyhedron_shape": "Cuboctahedron",
+        "deposit_name": "Coeur d'Alene Mining District (Silver Valley)",
+        "state": "Idaho",
+        "elevation_m": 840,
+        "structural_trend": "Lewis and Clark Line / Osburn Fault Zone (WNW strike ~285\u00b0)",
+        "strike_angle_deg": 285.0,
+        "crystallographic_alignment": "Forms an orthogonal 90\u00b0 T-junction with the Idaho Batholith structural front, funneling regional hydrothermal fluid escape.",
+        "geological_setting": "Proterozoic Belt Supergroup siliciclastic metasedimentary rocks; deep polymetallic siderite-tetrahedrite-galena veins.",
+        "estimated_endowment": ">1.25 billion oz Ag mined (Greatest historic silver district in US history)",
+        "color": "#e2e8f0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.6497,
+          39.3094
+        ]
+      },
+      "properties": {
+        "element": "Silver",
+        "symbol": "Ag",
+        "crystal_system": "Face-Centered Cubic (FCC)",
+        "polyhedron_shape": "Cuboctahedron",
+        "deposit_name": "Comstock Lode (Virginia City)",
+        "state": "Nevada",
+        "elevation_m": 1870,
+        "structural_trend": "Walker Lane Dextral Shear Zone (NW strike ~315\u00b0)",
+        "strike_angle_deg": 315.0,
+        "crystallographic_alignment": "45\u00b0 conjugate shear relative to the Basin and Range E-W extension direction.",
+        "geological_setting": "Miocene volcanic epithermal quartz-adularia fissure vein system on the footwall of Mount Davidson.",
+        "estimated_endowment": ">200 million oz Ag and 8 million oz Au",
+        "color": "#e2e8f0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1511,
+          40.5233
+        ]
+      },
+      "properties": {
+        "element": "Copper",
+        "symbol": "Cu",
+        "crystal_system": "Face-Centered Cubic (FCC)",
+        "polyhedron_shape": "Cuboctahedron",
+        "deposit_name": "Bingham Canyon (Kennecott Open Pit)",
+        "state": "Utah",
+        "elevation_m": 1950,
+        "structural_trend": "Uinta-Tooele Structural Lineament / Oquirrh Range (E-W lineament intersecting N-S Wasatch fault)",
+        "strike_angle_deg": 90.0,
+        "crystallographic_alignment": "Direct 90\u00b0 orthogonal structural intersection between the East-West Uinta Trend and the North-South Cordilleran fold-and-thrust belt.",
+        "geological_setting": "Eocene monzonite porphyry stock intruding Pennsylvanian quartzites and limestones; classic hydrothermal concentric zoning.",
+        "estimated_endowment": ">19 million metric tons of copper produced (>40 billion lbs Cu + significant Au, Ag, Mo)",
+        "color": "#f97316"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.3667,
+          33.0531
+        ]
+      },
+      "properties": {
+        "element": "Copper",
+        "symbol": "Cu",
+        "crystal_system": "Face-Centered Cubic (FCC)",
+        "polyhedron_shape": "Cuboctahedron",
+        "deposit_name": "Morenci & Resolution Copper",
+        "state": "Arizona",
+        "elevation_m": 1450,
+        "structural_trend": "Jemez Lineament / Southwest Porphyry Copper Province (NE-SW strike ~045\u00b0)",
+        "strike_angle_deg": 45.0,
+        "crystallographic_alignment": "Aligns with the 45\u00b0 Proterozoic basement boundary (Yavapai-Mazatzal crustal transition).",
+        "geological_setting": "Laramide calc-alkaline porphyry copper deposits with deep supergene enrichment blankets and deep skarns.",
+        "estimated_endowment": "Combined >50 million metric tons Cu (Resolution is one of the largest undeveloped copper deposits on Earth)",
+        "color": "#f97316"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.0644,
+          41.7056
+        ]
+      },
+      "properties": {
+        "element": "Lithium",
+        "symbol": "Li",
+        "crystal_system": "Body-Centered Cubic (BCC)",
+        "polyhedron_shape": "Rhombic Dodecahedron (Coordination Shell)",
+        "deposit_name": "Thacker Pass (McDermitt Caldera)",
+        "state": "Nevada / Oregon",
+        "elevation_m": 1520,
+        "structural_trend": "McDermitt Volcanic Caldera Ring Complex (Circular ring-fault geometry)",
+        "strike_angle_deg": 0.0,
+        "crystallographic_alignment": "Radial and concentric ring-fault fractures associated with the inception of the Yellowstone mantle plume track (~16.5 Ma).",
+        "geological_setting": "Illite-smectite claystone lacustrine sediment formed in caldera lake following supervolcano collapse.",
+        "estimated_endowment": "Largest known lithium deposit in the United States and potentially the world (~20-40 million metric tons LCE)",
+        "color": "#c084fc"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.3411,
+          35.2411
+        ]
+      },
+      "properties": {
+        "element": "Lithium",
+        "symbol": "Li",
+        "crystal_system": "Body-Centered Cubic (BCC)",
+        "polyhedron_shape": "Rhombic Dodecahedron (Coordination Shell)",
+        "deposit_name": "Kings Mountain / Carolina Tin-Spodumene Belt",
+        "state": "North Carolina",
+        "elevation_m": 280,
+        "structural_trend": "Inner Piedmont / Kings Mountain Shear Zone (NE strike ~045\u00b0)",
+        "strike_angle_deg": 45.0,
+        "crystallographic_alignment": "Conjugate ductile shear corridor in the Appalachian crystalline core.",
+        "geological_setting": "Late Paleozoic LCT (Lithium-Cesium-Tantalum) pegmatite dikes intruding amphibolites.",
+        "estimated_endowment": "Premier historic hard-rock spodumene lithium resource in eastern North America",
+        "color": "#c084fc"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.5342,
+          35.4789
+        ]
+      },
+      "properties": {
+        "element": "Rare Earth Elements (Nd, Pr, Dy, Tb)",
+        "symbol": "REE",
+        "crystal_system": "Double Hexagonal Close-Packed (DHCP)",
+        "polyhedron_shape": "Hexagonal Bipyramid / Prism",
+        "deposit_name": "Mountain Pass Mine",
+        "state": "California",
+        "elevation_m": 1530,
+        "structural_trend": "Mojave Desert Crustal Block / Ivanpah Fault (NW strike ~320\u00b0)",
+        "strike_angle_deg": 320.0,
+        "crystallographic_alignment": "Localized along an ancient 1.4 Ga Proterozoic intracontinental shear zone near the craton margin.",
+        "geological_setting": "Carbonatite intrusive stock with bastn\u00e4site mineralization, depleted in radioactive thorium/uranium, rich in light REEs.",
+        "estimated_endowment": "The only operational integrated rare earth mining and processing facility in the United States (~1.5 million tons REO)",
+        "color": "#10b981"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -117.2,
+            41.8
+          ],
+          [
+            -116.7,
+            41.3
+          ],
+          [
+            -116.37,
+            40.97
+          ],
+          [
+            -116.0,
+            40.5
+          ],
+          [
+            -115.5,
+            40.0
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Tectonic Lineament",
+        "name": "Carlin Trend Shear Corridor",
+        "strike": 330.0,
+        "color": "#f59e0b",
+        "weight": 3.5,
+        "description": "Strikes 330\u00b0 (NNW) across Nevada. Hosts over 90 million oz Au. Forms a 70.0\u00b0 conjugate intersection with the Battle Mountain Trend."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -117.5,
+            39.5
+          ],
+          [
+            -116.64,
+            40.16
+          ],
+          [
+            -116.1,
+            40.6
+          ],
+          [
+            -115.4,
+            41.2
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Tectonic Lineament",
+        "name": "Battle Mountain - Eureka (Cortez) Trend",
+        "strike": 40.0,
+        "color": "#d97706",
+        "weight": 3.5,
+        "description": "Strikes 040\u00b0 (NE). Intersects Carlin Trend at 70.0\u00b0, matching Gold's atomic {111} dihedral angle of 70.53\u00b0."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -107.8,
+            37.6
+          ],
+          [
+            -106.8,
+            38.4
+          ],
+          [
+            -106.29,
+            39.25
+          ],
+          [
+            -105.7,
+            39.8
+          ],
+          [
+            -105.25,
+            40.02
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Tectonic Lineament",
+        "name": "Colorado Mineral Belt (COMB)",
+        "strike": 45.0,
+        "color": "#eab308",
+        "weight": 4.0,
+        "description": "Strikes 045\u00b0 (NE) across the Colorado Rockies (San Juan Mts -> Leadville -> Breckenridge -> Boulder). Forms a 90.0\u00b0 orthogonal conjugate with Walker Lane."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -115.5,
+            35.0
+          ],
+          [
+            -117.2,
+            37.0
+          ],
+          [
+            -118.8,
+            38.5
+          ],
+          [
+            -119.65,
+            39.31
+          ],
+          [
+            -120.5,
+            40.2
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Tectonic Lineament",
+        "name": "Walker Lane Dextral Shear Zone",
+        "strike": 315.0,
+        "color": "#94a3b8",
+        "weight": 3.5,
+        "description": "Strikes 315\u00b0 (NW) along CA/NV border. Direct 90.0\u00b0 orthogonal conjugate to the Colorado Mineral Belt (315\u00b0 - 45\u00b0 = 90\u00b0)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -112.0,
+            46.6
+          ],
+          [
+            -114.0,
+            47.0
+          ],
+          [
+            -115.93,
+            47.5
+          ],
+          [
+            -117.5,
+            47.7
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Tectonic Lineament",
+        "name": "Lewis and Clark Line (Osburn Fault)",
+        "strike": 285.0,
+        "color": "#38bdf8",
+        "weight": 3.0,
+        "description": "Strikes 285\u00b0 (WNW) from western Montana through the Coeur d'Alene Silver Valley in Idaho. Giant trans-lithospheric tear fault."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -84.0,
+            34.5
+          ],
+          [
+            -82.5,
+            34.2
+          ],
+          [
+            -80.54,
+            34.61
+          ],
+          [
+            -79.5,
+            35.5
+          ],
+          [
+            -78.5,
+            36.3
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Tectonic Lineament",
+        "name": "Appalachian / Carolina Slate Gold Belt",
+        "strike": 50.0,
+        "color": "#fbbf24",
+        "weight": 3.0,
+        "description": "Strikes 050\u00b0 (NE) from Dahlonega, GA through Haile, SC into North Carolina, paralleling the continental margin."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -141.0,
+            64.0
+          ],
+          [
+            -144.0,
+            64.5
+          ],
+          [
+            -147.35,
+            65.0
+          ],
+          [
+            -151.0,
+            65.5
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Tectonic Lineament",
+        "name": "Tintina Gold Fault Zone (Alaska/Yukon)",
+        "strike": 300.0,
+        "color": "#f59e0b",
+        "weight": 3.0,
+        "description": "Strikes 300\u00b0 (NW) across interior Alaska through the Fairbanks/Fort Knox district, accommodating over 400 km of dextral strike-slip displacement."
+      }
+    }
+  ]
+}

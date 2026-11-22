@@ -13,7 +13,19 @@ from .combinatorics.cl_space import ClSpace
 from .validation.validator import HyperValidator
 from .validation.parallel import ParallelValidator
 from .validation.adaptive import AdaptiveConstraintManager
-from .recursive_self_improvement import run_recursive_self_improvement, RecursiveSelfImprovementEngine
+from .recursive_self_improvement import (
+    run_recursive_self_improvement,
+    run_actuator_governance_self_improvement,
+    RecursiveSelfImprovementEngine
+)
 
 __version__ = "1.0.0"
-__all__ = ["ClSpace", "HyperValidator", "ParallelValidator", "AdaptiveConstraintManager", "run_recursive_self_improvement", "RecursiveSelfImprovementEngine"]
+__all__ = [
+    "ClSpace",
+    "HyperValidator",
+    "ParallelValidator",
+    "AdaptiveConstraintManager",
+    "run_recursive_self_improvement",
+    "run_actuator_governance_self_improvement",
+    "RecursiveSelfImprovementEngine"
+]

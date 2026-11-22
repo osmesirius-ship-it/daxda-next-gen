@@ -1,0 +1,39 @@
+{
+  "invoice_id": "inv_dax_1792916306_0f39827c",
+  "issuer": "DAXDA Next Gen Inc.",
+  "founder_and_architect": "Nicole Bess",
+  "treasury_payout_fa": "fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0",
+  "bill_to": {
+    "tenant_id": "broker-bittensor",
+    "company_name": "OpenTensor Foundation (Bittensor)",
+    "customer_name": "Subnet 19 & 44 Treasury",
+    "customer_email": "invoices@opentensor.ai"
+  },
+  "issue_date_utc": "2026-10-25T08:18:26.977150+00:00",
+  "due_date_utc": "2026-11-09T08:18:26.977150+00:00",
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "Bittensor Subnet 19 & 44 Validator Consensus & Invariant Verification SLA",
+      "quantity": 1,
+      "unit_price_usd": 850.0,
+      "total_usd": 850.0
+    },
+    {
+      "description": "Hardware & Verification SLA: Validator staking quorum, zero-knowledge Merkle state synchronization, and synthetic task evaluation.",
+      "quantity": 1,
+      "unit_price_usd": 0.0,
+      "total_usd": 0.0
+    }
+  ],
+  "subtotal_usd": 850.0,
+  "total_due_usd": 850.0,
+  "cryptographic_merkle_seal": "6792b7eb21217ce3cd7a64db6caba10538b6c88aa20b4c774ec2b6611edb7c1d",
+  "stripe_invoice_id": "in_1UUMdLLw6XbPXOo3C6vuCnAg",
+  "stripe_hosted_url": "https://invoice.stripe.com/i/acct_1RZxTmLw6XbPXOo3/live_YWNjdF8xUlp4VG1MdzZYYlBYT28zLF9WVk5PazQ2blQ0ZjFqZGx1MkV0bkZ6cVN0c3BLOEwxLDE4MzQ1NzEwOA0200tKJ9W89T?s=ap",
+  "payment_methods_accepted": [
+    "Corporate ACH Transfer to Stripe Treasury (fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0)",
+    "Stripe Hosted Invoice Credit Card / Debit",
+    "Bitcoin (BTC) On-Chain Settlement (bc1qqg3ahwhrtskau4k2nlg6hwa938ret2783uu0zs)"
+  ]
+}

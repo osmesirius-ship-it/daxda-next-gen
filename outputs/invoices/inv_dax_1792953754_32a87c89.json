@@ -1,0 +1,39 @@
+{
+  "invoice_id": "inv_dax_1792953754_32a87c89",
+  "issuer": "DAXDA Next Gen Inc.",
+  "founder_and_architect": "Nicole Bess",
+  "treasury_payout_fa": "fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0",
+  "bill_to": {
+    "tenant_id": "broker-render",
+    "company_name": "Render Network Foundation",
+    "customer_name": "Render Compute Treasury",
+    "customer_email": "billing@rendernetwork.com"
+  },
+  "issue_date_utc": "2026-10-25T18:42:34.415162+00:00",
+  "due_date_utc": "2026-11-09T18:42:34.415162+00:00",
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "Render Network Distributed Compute Daemon Reservation (Octane / Cl(16,4) Workloads)",
+      "quantity": 1,
+      "unit_price_usd": 650.0,
+      "total_usd": 650.0
+    },
+    {
+      "description": "Hardware & Verification SLA: Containerized daxda/cl16_4-worker:latest daemon allocation and neural scene rendering acceleration.",
+      "quantity": 1,
+      "unit_price_usd": 0.0,
+      "total_usd": 0.0
+    }
+  ],
+  "subtotal_usd": 650.0,
+  "total_due_usd": 650.0,
+  "cryptographic_merkle_seal": "09b7cf185f15a5ec64bf1c1e310dc9f9d8306d5f5e82260f3cc97e12ded5098f",
+  "stripe_invoice_id": "in_1UUWNKLw6XbPXOo3LXyeBc8T",
+  "stripe_hosted_url": "https://invoice.stripe.com/i/acct_1RZxTmLw6XbPXOo3/live_YWNjdF8xUlp4VG1MdzZYYlBYT28zLF9WVlhTQWNwRVR2UTFkRVBzTjV0QXFrVHdGNURnSDVhLDE4MzQ5NDU1Ng0200pyLAW1w4?s=ap",
+  "payment_methods_accepted": [
+    "Corporate ACH Transfer to Stripe Treasury (fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0)",
+    "Stripe Hosted Invoice Credit Card / Debit",
+    "Bitcoin (BTC) On-Chain Settlement (bc1qqg3ahwhrtskau4k2nlg6hwa938ret2783uu0zs)"
+  ]
+}

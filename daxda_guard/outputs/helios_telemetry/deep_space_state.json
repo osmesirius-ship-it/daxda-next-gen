@@ -1,0 +1,96 @@
+{
+  "mast_stsci": {
+    "facility": "Mikulski Archive for Space Telescopes (STScI)",
+    "telescopes": [
+      "JWST",
+      "Hubble",
+      "TESS",
+      "Kepler"
+    ],
+    "status": "ONLINE",
+    "active_observations": [
+      {
+        "obs_id": "jw01286-o007_s000216535_nirspec_f290lp-g395m",
+        "target_name": "G395M High-z Deep Spectroscopy",
+        "collection": "JWST",
+        "instrument": "NIRSpec/IFU",
+        "filters": "F290LP;G395M",
+        "exposure_time_s": 1420.0
+      },
+      {
+        "obs_id": "jw03990373001_14201_00004_nrca1",
+        "target_name": "SMACS J0723 Deep Cluster Core",
+        "collection": "JWST",
+        "instrument": "NIRCam",
+        "filters": "F090W;F200W;F444W",
+        "exposure_time_s": 2240.0
+      },
+      {
+        "obs_id": "hst_16252_01_wfc3_uvis_f336w",
+        "target_name": "Hubble Ultra-Deep Cosmic Evolution",
+        "collection": "HST",
+        "instrument": "WFC3/UVIS",
+        "filters": "F336W",
+        "exposure_time_s": 3600.0
+      }
+    ]
+  },
+  "nexsci_caltech": {
+    "facility": "NASA Exoplanet Science Institute (Caltech IPAC)",
+    "status": "ONLINE",
+    "recent_exoplanets": [
+      {
+        "planet_name": "TOI-6647 b",
+        "host_star": "TOI-6647",
+        "discovery_method": "Transit",
+        "discovery_year": 2026,
+        "facility": "Transiting Exoplanet Survey Satellite (TESS)",
+        "orbital_period_days": 3.9992,
+        "radius_earth_units": 3.97,
+        "mass_earth_units": null,
+        "distance_pc": 174.397
+      },
+      {
+        "planet_name": "Kepler-1441 b",
+        "host_star": "Kepler-1441",
+        "discovery_method": "Transit",
+        "discovery_year": 2016,
+        "facility": "Kepler",
+        "orbital_period_days": 39.4419839,
+        "radius_earth_units": 1.31,
+        "mass_earth_units": null,
+        "distance_pc": 1110.48
+      },
+      {
+        "planet_name": "Kepler-762 b",
+        "host_star": "Kepler-762",
+        "discovery_method": "Transit",
+        "discovery_year": 2016,
+        "facility": "Kepler",
+        "orbital_period_days": 3.770552098,
+        "radius_earth_units": 12.68,
+        "mass_earth_units": null,
+        "distance_pc": 1898.26
+      },
+      {
+        "planet_name": "Kepler-992 b",
+        "host_star": "Kepler-992",
+        "discovery_method": "Transit",
+        "discovery_year": 2016,
+        "facility": "Kepler",
+        "orbital_period_days": 20.16034462,
+        "radius_earth_units": 1.62,
+        "mass_earth_units": null,
+        "distance_pc": 259.639
+      }
+    ]
+  },
+  "usgs_astrogeology": {
+    "facility": "USGS Astrogeology Planetary Surface Database",
+    "status": "ONLINE",
+    "target_body": "Mars",
+    "layer": "MDIM21 (Viking Global Mosaic)",
+    "local_map_file": "usgs_mars_mdim21_surface.jpg"
+  },
+  "synchronized_at": "2026-11-22T07:46:50Z"
+}

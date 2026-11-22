@@ -1,0 +1,199 @@
+{
+  "mode": "amber",
+  "geometry_form": "persona",
+  "curvature_K": -1.0,
+  "facet_tension": 0.16,
+  "pulse_hz": 0.76,
+  "spin_speed": 1.1,
+  "status_label": "Unified Holodeck v3.0 Form -> PERSONA",
+  "stages": [
+    {
+      "id": "S01",
+      "name": "S01 Claim",
+      "status": "pass"
+    },
+    {
+      "id": "S02",
+      "name": "S02 Symbols",
+      "status": "pass"
+    },
+    {
+      "id": "S03",
+      "name": "S03 Dimensions",
+      "status": "pass"
+    },
+    {
+      "id": "S04",
+      "name": "S04 Closure",
+      "status": "pass"
+    },
+    {
+      "id": "S05",
+      "name": "S05 Limits",
+      "status": "pass"
+    },
+    {
+      "id": "S06",
+      "name": "S06 Counterex",
+      "status": "pass"
+    },
+    {
+      "id": "S07",
+      "name": "S07 Falsify",
+      "status": "pass"
+    },
+    {
+      "id": "S08",
+      "name": "S08 Validation",
+      "status": "pass"
+    },
+    {
+      "id": "S09",
+      "name": "S09 Thesis",
+      "status": "pass"
+    },
+    {
+      "id": "S10",
+      "name": "S10 Package",
+      "status": "pass"
+    },
+    {
+      "id": "S11",
+      "name": "S11 Empirical",
+      "status": "pass"
+    },
+    {
+      "id": "S12",
+      "name": "S12 Verdict",
+      "status": "pass"
+    }
+  ],
+  "updated_at": "2026-11-21T23:35:18.435929Z",
+  "history": [
+    {
+      "ts": "2026-11-21T19:52:05.374724Z",
+      "mode": "facets",
+      "label": "Unified Holodeck v3.0 Form -> ATTRACTOR"
+    },
+    {
+      "ts": "2026-11-21T19:52:07.812479Z",
+      "mode": "facets",
+      "label": "Unified Holodeck v3.0 Form -> CRYSTAL"
+    },
+    {
+      "ts": "2026-11-21T19:52:09.817617Z",
+      "mode": "facets",
+      "label": "Unified Holodeck v3.0 Form -> PLANET"
+    },
+    {
+      "ts": "2026-11-21T19:52:46.968016Z",
+      "mode": "amber",
+      "label": "Mars 26.02\u00b0 Dichotomy Great Circle & Greigite/Ice Ih: 12/12 PASS"
+    },
+    {
+      "ts": "2026-11-21T19:52:47.915712Z",
+      "mode": "amber",
+      "label": "V14.1 CEBRI AI Science: 11/12 PASS (5.46 ms RSI Verification)"
+    },
+    {
+      "ts": "2026-11-21T19:52:52.863280Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> PERSONA"
+    },
+    {
+      "ts": "2026-11-21T21:16:26.722495Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> TORUS"
+    },
+    {
+      "ts": "2026-11-21T21:16:33.771347Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> PERSONA"
+    },
+    {
+      "ts": "2026-11-21T21:16:35.862479Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> TORUS"
+    },
+    {
+      "ts": "2026-11-21T21:16:36.596286Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> ATTRACTOR"
+    },
+    {
+      "ts": "2026-11-21T21:16:40.623222Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> CRYSTAL"
+    },
+    {
+      "ts": "2026-11-21T21:16:46.553279Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> PLANET"
+    },
+    {
+      "ts": "2026-11-21T21:16:49.300943Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> PERSONA"
+    },
+    {
+      "ts": "2026-11-21T21:27:39.984216Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> ATTRACTOR"
+    },
+    {
+      "ts": "2026-11-21T21:32:34.476276Z",
+      "mode": "amber",
+      "label": "V14.1 Verified (12/12 PASS): 'Triad Memory Sealed: 10/10 Blocks \u00b7 96.15% Memor'"
+    },
+    {
+      "ts": "2026-11-21T22:51:07.332406Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> TORUS"
+    },
+    {
+      "ts": "2026-11-21T22:51:09.435468Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> ATTRACTOR"
+    },
+    {
+      "ts": "2026-11-21T22:51:12.812195Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> CRYSTAL"
+    },
+    {
+      "ts": "2026-11-21T22:51:14.511968Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> PLANET"
+    },
+    {
+      "ts": "2026-11-21T22:54:39.533779Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> PERSONA"
+    },
+    {
+      "ts": "2026-11-21T23:35:13.144437Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> PERSONA"
+    },
+    {
+      "ts": "2026-11-21T23:35:14.596503Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> ATTRACTOR"
+    },
+    {
+      "ts": "2026-11-21T23:35:15.463393Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> CRYSTAL"
+    },
+    {
+      "ts": "2026-11-21T23:35:16.470472Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> PLANET"
+    },
+    {
+      "ts": "2026-11-21T23:35:18.435929Z",
+      "mode": "amber",
+      "label": "Unified Holodeck v3.0 Form -> PERSONA"
+    }
+  ]
+}

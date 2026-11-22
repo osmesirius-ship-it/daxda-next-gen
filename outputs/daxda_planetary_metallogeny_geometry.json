@@ -1,0 +1,329 @@
+{
+  "analysis_title": "DAXDA Next-Gen Geometric Analysis: Earth Geodesics & Metallogenic Crystallography",
+  "planetary_geometry": {
+    "geoid_model": "WGS-84 Oblate Spheroid (Semi-major 6378.137 km, Semi-minor 6356.752 km, Flattening 1/298.257)",
+    "mantle_convection_symmetry": "Degree-2 Spherical Harmonics (Pacific & African Antipodal LLSVPs)",
+    "polyhedral_tessellation": "Compound Icosahedron-Dodecahedron (Becker-Hagens UVG 120 Grid with Oh Octahedral Sub-lattice)",
+    "sample_primary_nodes": [
+      {
+        "node_id": 1,
+        "cartesian": [
+          0.0,
+          -0.5257,
+          -0.8507
+        ],
+        "lat": -31.72,
+        "lon": 180.0
+      },
+      {
+        "node_id": 2,
+        "cartesian": [
+          -0.5257,
+          -0.8507,
+          0.0
+        ],
+        "lat": -58.28,
+        "lon": -90.0
+      },
+      {
+        "node_id": 3,
+        "cartesian": [
+          -0.8507,
+          0.0,
+          -0.5257
+        ],
+        "lat": 0.0,
+        "lon": -121.72
+      },
+      {
+        "node_id": 4,
+        "cartesian": [
+          0.0,
+          -0.5257,
+          0.8507
+        ],
+        "lat": -31.72,
+        "lon": 0.0
+      },
+      {
+        "node_id": 5,
+        "cartesian": [
+          -0.5257,
+          0.8507,
+          0.0
+        ],
+        "lat": 58.28,
+        "lon": -90.0
+      },
+      {
+        "node_id": 6,
+        "cartesian": [
+          0.8507,
+          0.0,
+          -0.5257
+        ],
+        "lat": 0.0,
+        "lon": 121.72
+      }
+    ]
+  },
+  "metals_crystallography": [
+    {
+      "element": "Gold",
+      "symbol": "Au",
+      "crystal_system": "Face-Centered Cubic (FCC)",
+      "space_group": "Fm-3m (225)",
+      "point_group": "Oh (m-3m, Octahedral)",
+      "coordination_number": 12,
+      "polyhedron_shape": "Cuboctahedron / Regular Octahedron",
+      "lattice_constant_a_angstrom": 4.0782,
+      "packing_fraction": 0.74048,
+      "density_g_cm3": 19.32,
+      "key_plane_angles_deg": [
+        70.53,
+        109.47,
+        60.0,
+        90.0
+      ],
+      "primary_earth_deposits": [
+        "Witwatersrand Basin, South Africa (Kaapvaal Craton: 26.9\u00b0S, 27.8\u00b0E)",
+        "Carlin Trend, Nevada, USA (Great Basin Lineament: 40.7\u00b0N, 116.3\u00b0W)",
+        "Abitibi Greenstone Belt, Canada (Superior Craton: 48.4\u00b0N, 80.0\u00b0W)",
+        "Kalgoorlie Golden Mile, Australia (Yilgarn Craton: 30.7\u00b0S, 121.5\u00b0E)",
+        "Muruntau, Uzbekistan (Tien Shan Orogenic Belt: 41.5\u00b0N, 64.6\u00b0E)"
+      ]
+    },
+    {
+      "element": "Platinum",
+      "symbol": "Pt",
+      "crystal_system": "Face-Centered Cubic (FCC)",
+      "space_group": "Fm-3m (225)",
+      "point_group": "Oh (m-3m, Octahedral)",
+      "coordination_number": 12,
+      "polyhedron_shape": "Cuboctahedron",
+      "lattice_constant_a_angstrom": 3.9242,
+      "packing_fraction": 0.74048,
+      "density_g_cm3": 21.45,
+      "key_plane_angles_deg": [
+        70.53,
+        109.47,
+        90.0
+      ],
+      "primary_earth_deposits": [
+        "Bushveld Igneous Complex, South Africa (24.5\u00b0S, 28.5\u00b0E)",
+        "Stillwater Complex, Montana, USA (45.4\u00b0N, 109.9\u00b0W)",
+        "Norilsk-Talnakh, Siberia, Russia (69.3\u00b0N, 88.2\u00b0E)",
+        "Sudbury Basin, Ontario, Canada (Impact Ring: 46.6\u00b0N, 81.2\u00b0W)"
+      ]
+    },
+    {
+      "element": "Silver",
+      "symbol": "Ag",
+      "crystal_system": "Face-Centered Cubic (FCC)",
+      "space_group": "Fm-3m (225)",
+      "point_group": "Oh (m-3m, Octahedral)",
+      "coordination_number": 12,
+      "polyhedron_shape": "Cuboctahedron",
+      "lattice_constant_a_angstrom": 4.0853,
+      "packing_fraction": 0.74048,
+      "density_g_cm3": 10.49,
+      "key_plane_angles_deg": [
+        70.53,
+        109.47,
+        90.0
+      ],
+      "primary_earth_deposits": [
+        "Cerro Rico / Potos\u00ed, Bolivia (Andean Caldera: 19.6\u00b0S, 65.7\u00b0W)",
+        "Fresnillo, Zacatecas, Mexico (Sierra Madre Occidental: 23.2\u00b0N, 102.9\u00b0W)",
+        "Keno Hill, Yukon, Canada (63.9\u00b0N, 135.3\u00b0W)"
+      ]
+    },
+    {
+      "element": "Copper",
+      "symbol": "Cu",
+      "crystal_system": "Face-Centered Cubic (FCC)",
+      "space_group": "Fm-3m (225)",
+      "point_group": "Oh (m-3m, Octahedral)",
+      "coordination_number": 12,
+      "polyhedron_shape": "Cuboctahedron",
+      "lattice_constant_a_angstrom": 3.6149,
+      "packing_fraction": 0.74048,
+      "density_g_cm3": 8.96,
+      "key_plane_angles_deg": [
+        70.53,
+        109.47,
+        90.0
+      ],
+      "primary_earth_deposits": [
+        "Escondida / Chuquicamata, Atacama, Chile (24.3\u00b0S, 69.1\u00b0W)",
+        "Bingham Canyon, Utah, USA (40.5\u00b0N, 112.1\u00b0W)",
+        "Grasberg, Papua, Indonesia (4.1\u00b0S, 137.1\u00b0E)"
+      ]
+    },
+    {
+      "element": "Lithium",
+      "symbol": "Li",
+      "crystal_system": "Body-Centered Cubic (BCC)",
+      "space_group": "Im-3m (229)",
+      "point_group": "Oh (m-3m, Octahedral)",
+      "coordination_number": 8,
+      "polyhedron_shape": "Rhombic Dodecahedron (Coordination Shell)",
+      "lattice_constant_a_angstrom": 3.51,
+      "packing_fraction": 0.68017,
+      "density_g_cm3": 0.534,
+      "key_plane_angles_deg": [
+        54.74,
+        90.0,
+        70.53
+      ],
+      "primary_earth_deposits": [
+        "Salar de Atacama & Salar de Uyuni (Lithium Triangle: 23.5\u00b0S, 68.3\u00b0W)",
+        "Greenbushes Pegmatite, Western Australia (33.9\u00b0S, 116.1\u00b0E)",
+        "Kings Mountain / Carolina Tin-Spodumene, USA (35.2\u00b0N, 81.3\u00b0W)"
+      ]
+    },
+    {
+      "element": "Neodymium / REEs",
+      "symbol": "Nd",
+      "crystal_system": "Double Hexagonal Close-Packed (DHCP)",
+      "space_group": "P6_3/mmc (194)",
+      "point_group": "D6h (6/mmm, Dihexagonal Dipyramidal)",
+      "coordination_number": 12,
+      "polyhedron_shape": "Hexagonal Bipyramid / Prism",
+      "lattice_constant_a_angstrom": 3.658,
+      "packing_fraction": 0.74048,
+      "density_g_cm3": 7.01,
+      "key_plane_angles_deg": [
+        60.0,
+        120.0,
+        90.0
+      ],
+      "primary_earth_deposits": [
+        "Bayan Obo, Inner Mongolia, China (Carbonatite: 41.8\u00b0N, 109.9\u00b0E)",
+        "Mountain Pass, California, USA (Carbonatite: 35.5\u00b0N, 115.5\u00b0W)",
+        "Mount Weld, Western Australia (28.9\u00b0S, 122.2\u00b0E)"
+      ]
+    }
+  ],
+  "geometric_alignment_synthesis": [
+    {
+      "metal": "Gold",
+      "symbol": "Au",
+      "crystal_shape": "Cuboctahedron / Regular Octahedron",
+      "coordination": 12,
+      "packing": 0.74048,
+      "characteristic_angles": [
+        70.53,
+        109.47,
+        60.0,
+        90.0
+      ],
+      "structural_alignment": "Gold crystallizes with Oh (m-3m, Octahedral) symmetry (Cuboctahedron / Regular Octahedron). On Earth, the 70.53\u00b0 close-packed octahedral angle directly mirrors the conjugate shear fracture networks (Andersonian faulting & Riedel shears) that localize high-temperature hydrothermal fluid deposition along deep cratonic sutures and mantle plume conduits.",
+      "key_metallogenic_nodes": [
+        "Witwatersrand Basin, South Africa (Kaapvaal Craton: 26.9\u00b0S, 27.8\u00b0E)",
+        "Carlin Trend, Nevada, USA (Great Basin Lineament: 40.7\u00b0N, 116.3\u00b0W)",
+        "Abitibi Greenstone Belt, Canada (Superior Craton: 48.4\u00b0N, 80.0\u00b0W)",
+        "Kalgoorlie Golden Mile, Australia (Yilgarn Craton: 30.7\u00b0S, 121.5\u00b0E)",
+        "Muruntau, Uzbekistan (Tien Shan Orogenic Belt: 41.5\u00b0N, 64.6\u00b0E)"
+      ]
+    },
+    {
+      "metal": "Platinum",
+      "symbol": "Pt",
+      "crystal_shape": "Cuboctahedron",
+      "coordination": 12,
+      "packing": 0.74048,
+      "characteristic_angles": [
+        70.53,
+        109.47,
+        90.0
+      ],
+      "structural_alignment": "Platinum crystallizes with Oh (m-3m, Octahedral) symmetry (Cuboctahedron). On Earth, the 70.53\u00b0 close-packed octahedral angle directly mirrors the conjugate shear fracture networks (Andersonian faulting & Riedel shears) that localize high-temperature hydrothermal fluid deposition along deep cratonic sutures and mantle plume conduits.",
+      "key_metallogenic_nodes": [
+        "Bushveld Igneous Complex, South Africa (24.5\u00b0S, 28.5\u00b0E)",
+        "Stillwater Complex, Montana, USA (45.4\u00b0N, 109.9\u00b0W)",
+        "Norilsk-Talnakh, Siberia, Russia (69.3\u00b0N, 88.2\u00b0E)",
+        "Sudbury Basin, Ontario, Canada (Impact Ring: 46.6\u00b0N, 81.2\u00b0W)"
+      ]
+    },
+    {
+      "metal": "Silver",
+      "symbol": "Ag",
+      "crystal_shape": "Cuboctahedron",
+      "coordination": 12,
+      "packing": 0.74048,
+      "characteristic_angles": [
+        70.53,
+        109.47,
+        90.0
+      ],
+      "structural_alignment": "Silver crystallizes with Oh (m-3m, Octahedral) symmetry (Cuboctahedron). On Earth, the 70.53\u00b0 close-packed octahedral angle directly mirrors the conjugate shear fracture networks (Andersonian faulting & Riedel shears) that localize high-temperature hydrothermal fluid deposition along deep cratonic sutures and mantle plume conduits.",
+      "key_metallogenic_nodes": [
+        "Cerro Rico / Potos\u00ed, Bolivia (Andean Caldera: 19.6\u00b0S, 65.7\u00b0W)",
+        "Fresnillo, Zacatecas, Mexico (Sierra Madre Occidental: 23.2\u00b0N, 102.9\u00b0W)",
+        "Keno Hill, Yukon, Canada (63.9\u00b0N, 135.3\u00b0W)"
+      ]
+    },
+    {
+      "metal": "Copper",
+      "symbol": "Cu",
+      "crystal_shape": "Cuboctahedron",
+      "coordination": 12,
+      "packing": 0.74048,
+      "characteristic_angles": [
+        70.53,
+        109.47,
+        90.0
+      ],
+      "structural_alignment": "Copper crystallizes with Oh (m-3m, Octahedral) symmetry (Cuboctahedron). On Earth, the 70.53\u00b0 close-packed octahedral angle directly mirrors the conjugate shear fracture networks (Andersonian faulting & Riedel shears) that localize high-temperature hydrothermal fluid deposition along deep cratonic sutures and mantle plume conduits.",
+      "key_metallogenic_nodes": [
+        "Escondida / Chuquicamata, Atacama, Chile (24.3\u00b0S, 69.1\u00b0W)",
+        "Bingham Canyon, Utah, USA (40.5\u00b0N, 112.1\u00b0W)",
+        "Grasberg, Papua, Indonesia (4.1\u00b0S, 137.1\u00b0E)"
+      ]
+    },
+    {
+      "metal": "Lithium",
+      "symbol": "Li",
+      "crystal_shape": "Rhombic Dodecahedron (Coordination Shell)",
+      "coordination": 8,
+      "packing": 0.68017,
+      "characteristic_angles": [
+        54.74,
+        90.0,
+        70.53
+      ],
+      "structural_alignment": "Lithium crystallizes with Oh (m-3m, Octahedral) symmetry (Rhombic Dodecahedron (Coordination Shell)). On Earth, the 54.74\u00b0 close-packed octahedral angle directly mirrors the conjugate shear fracture networks (Andersonian faulting & Riedel shears) that localize high-temperature hydrothermal fluid deposition along deep cratonic sutures and mantle plume conduits.",
+      "key_metallogenic_nodes": [
+        "Salar de Atacama & Salar de Uyuni (Lithium Triangle: 23.5\u00b0S, 68.3\u00b0W)",
+        "Greenbushes Pegmatite, Western Australia (33.9\u00b0S, 116.1\u00b0E)",
+        "Kings Mountain / Carolina Tin-Spodumene, USA (35.2\u00b0N, 81.3\u00b0W)"
+      ]
+    },
+    {
+      "metal": "Neodymium / REEs",
+      "symbol": "Nd",
+      "crystal_shape": "Hexagonal Bipyramid / Prism",
+      "coordination": 12,
+      "packing": 0.74048,
+      "characteristic_angles": [
+        60.0,
+        120.0,
+        90.0
+      ],
+      "structural_alignment": "Neodymium / REEs crystallizes with D6h (6/mmm, Dihexagonal Dipyramidal) symmetry (Hexagonal Bipyramid / Prism). On Earth, the 60.0\u00b0 close-packed octahedral angle directly mirrors the conjugate shear fracture networks (Andersonian faulting & Riedel shears) that localize high-temperature hydrothermal fluid deposition along deep cratonic sutures and mantle plume conduits.",
+      "key_metallogenic_nodes": [
+        "Bayan Obo, Inner Mongolia, China (Carbonatite: 41.8\u00b0N, 109.9\u00b0E)",
+        "Mountain Pass, California, USA (Carbonatite: 35.5\u00b0N, 115.5\u00b0W)",
+        "Mount Weld, Western Australia (28.9\u00b0S, 122.2\u00b0E)"
+      ]
+    }
+  ],
+  "clifford_cl70_multivector_mapping": {
+    "blade_0_scalar": "Chemical potential mu and bulk elemental abundance in Earth crust/mantle",
+    "blade_1_vector": "Lithospheric gravity gradient g and mantle thermal buoyancy convection vectors J",
+    "blade_2_bivector": "Planetary tectonic shear planes and {111} crystallographic slip planes (e1 ^ e2)",
+    "blade_3_trivector": "Volumetric crystal unit cells (Cuboctahedron a^3) and hydrothermal crustal pore traps",
+    "blade_4_to_7_higher_tensors": "Deep mantle-core siderophile phase transition tensors and relativistic 6s orbital contractions"
+  }
+}

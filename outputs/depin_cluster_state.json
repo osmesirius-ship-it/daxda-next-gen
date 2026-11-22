@@ -1,0 +1,409 @@
+{
+  "depin_status": "DEPIN_P2P_MESH_ACTIVE",
+  "protocol_version": "DAXDA-DePIN-L3-v1.0",
+  "timestamp_utc": "2026-11-14T01:44:44Z",
+  "current_block_height": 40160,
+  "total_blocks_sealed": 40160,
+  "total_transactions_verified": 4016000,
+  "active_validator_nodes": 1001,
+  "jailed_validator_nodes": 0,
+  "slashed_validator_nodes": 0,
+  "total_network_nodes": 1001,
+  "total_network_stake_dax": 10020621.79,
+  "slashing_events_count": 0,
+  "average_gossip_fanout": 5,
+  "max_gossip_ttl_hops": 7,
+  "gossip_network_diameter": 5,
+  "theoretical_capacity_nodes": 100000,
+  "latest_merkle_root": "e960bb25d785d623475529ee00c92161804e3a143d8feb22562c5e1ba7592540",
+  "recent_validators": [
+    {
+      "validator_id": "depin-node-us-east-va-001",
+      "region": "us-east-va",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 10235.51,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 22.2
+    },
+    {
+      "validator_id": "depin-node-us-west-or-002",
+      "region": "us-west-or",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 9731.7,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 23.55
+    },
+    {
+      "validator_id": "depin-node-eu-central-de-003",
+      "region": "eu-central-de",
+      "hardware": "Enterprise GPU (NVIDIA H100 / RTX 4090)",
+      "staked_tokens": 9331.37,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 29.69
+    },
+    {
+      "validator_id": "depin-node-eu-west-ie-004",
+      "region": "eu-west-ie",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 9767.41,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 28.79
+    },
+    {
+      "validator_id": "depin-node-ap-southeast-sg-005",
+      "region": "ap-southeast-sg",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 10843.45,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 16.41
+    },
+    {
+      "validator_id": "depin-node-ap-northeast-jp-006",
+      "region": "ap-northeast-jp",
+      "hardware": "Enterprise GPU (NVIDIA H100 / RTX 4090)",
+      "staked_tokens": 10984.49,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 13.77
+    },
+    {
+      "validator_id": "depin-node-sa-east-br-007",
+      "region": "sa-east-br",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 10312.56,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 31.95
+    },
+    {
+      "validator_id": "depin-node-af-south-za-008",
+      "region": "af-south-za",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 9218.58,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 29.59
+    },
+    {
+      "validator_id": "depin-node-us-east-va-009",
+      "region": "us-east-va",
+      "hardware": "Enterprise GPU (NVIDIA H100 / RTX 4090)",
+      "staked_tokens": 9797.48,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 10.18
+    },
+    {
+      "validator_id": "depin-node-us-west-or-010",
+      "region": "us-west-or",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 10398.42,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 17.45
+    },
+    {
+      "validator_id": "depin-node-eu-central-de-011",
+      "region": "eu-central-de",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 9807.18,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 29.1
+    },
+    {
+      "validator_id": "depin-node-eu-west-ie-012",
+      "region": "eu-west-ie",
+      "hardware": "Enterprise GPU (NVIDIA H100 / RTX 4090)",
+      "staked_tokens": 10600.13,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 25.56
+    },
+    {
+      "validator_id": "depin-node-ap-southeast-sg-013",
+      "region": "ap-southeast-sg",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 10665.01,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 23.78
+    },
+    {
+      "validator_id": "depin-node-ap-northeast-jp-014",
+      "region": "ap-northeast-jp",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 9921.87,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 33.11
+    },
+    {
+      "validator_id": "depin-node-sa-east-br-015",
+      "region": "sa-east-br",
+      "hardware": "Enterprise GPU (NVIDIA H100 / RTX 4090)",
+      "staked_tokens": 10591.44,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 16.56
+    },
+    {
+      "validator_id": "depin-node-af-south-za-016",
+      "region": "af-south-za",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 10381.08,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 32.02
+    },
+    {
+      "validator_id": "depin-node-us-east-va-017",
+      "region": "us-east-va",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 9914.32,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 15.31
+    },
+    {
+      "validator_id": "depin-node-us-west-or-018",
+      "region": "us-west-or",
+      "hardware": "Enterprise GPU (NVIDIA H100 / RTX 4090)",
+      "staked_tokens": 9401.96,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 10.23
+    },
+    {
+      "validator_id": "depin-node-eu-central-de-019",
+      "region": "eu-central-de",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 10050.89,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 24.4
+    },
+    {
+      "validator_id": "depin-node-eu-west-ie-020",
+      "region": "eu-west-ie",
+      "hardware": "Consumer Edge (RTX 3090)",
+      "staked_tokens": 10154.6,
+      "reputation_score": 1.0,
+      "is_jailed": false,
+      "is_slashed": false,
+      "latency_ms": 9.63
+    }
+  ],
+  "recent_slashing_history": [],
+  "compute_broker": {
+    "broker_bridge_status": "COMPUTE_BROKER_MARKET_CONNECTED",
+    "is_paused": false,
+    "connected_brokers": [
+      {
+        "name": "io.net GPU Marketplace",
+        "status": "AUTHENTICATED_ONLINE",
+        "registered_workers": 1001,
+        "tier": "TIER_1_CLUSTER",
+        "active_contracts": 360,
+        "api_authenticated": true,
+        "auth_protocol": "IO Intelligence & Cloud IO v2 JWT",
+        "owner_id": "6ba06439-3094-443b-b96c-7705ce69183a"
+      },
+      {
+        "name": "Bittensor Subnet 19 & 44 Bridge",
+        "status": "VALIDATOR_SYNCHRONIZED",
+        "registered_workers": 1001,
+        "emission_yield_token": "TAO_INCENTIVE_POOL",
+        "active_contracts": 240
+      },
+      {
+        "name": "Render & Akash Compute Daemon",
+        "status": "DAEMON_READY",
+        "registered_workers": 1001,
+        "container_spec": "daxda/cl16_4-worker:latest",
+        "active_contracts": 160
+      }
+    ],
+    "total_registered_nodes": 1001,
+    "active_rented_nodes": 440,
+    "idle_nodes_available": 561,
+    "cluster_fill_rate_pct": 42.5,
+    "total_jobs_completed": 82800,
+    "gross_revenue_earned_today_usd": 630.39,
+    "current_hourly_run_rate_usd": 566.67,
+    "projected_daily_revenue_usd": 13599.99,
+    "max_take_limit_usd": 100000.0,
+    "target_revenue_limit_usd": 100000.0,
+    "progress_to_take_limit_pct": 0.63,
+    "target_scale_1000_usd_day_progress_pct": 100.0,
+    "max_cluster_daily_capacity_usd": 31999.97,
+    "recent_job_receipts": [
+      {
+        "job_id": "job-57cb781a2b10da32",
+        "broker": "IO_NET_GPU_WORKER",
+        "node_id": "depin-node-ap-northeast-jp-102",
+        "workload": "DEEPSEEK_V3_MOE_FINE_TUNING",
+        "duration_s": 2.83,
+        "earned_usd": 0.00224,
+        "digest": "cb36fb965ff7f732...",
+        "timestamp_utc": "2026-11-14T01:44:29.921915+00:00"
+      },
+      {
+        "job_id": "job-420de9c1a99c2f7b",
+        "broker": "IO_NET_GPU_WORKER",
+        "node_id": "depin-node-us-east-va-257",
+        "workload": "LLAMA_3_70B_INFERENCE_SLICING",
+        "duration_s": 2.67,
+        "earned_usd": 0.000408,
+        "digest": "83b947dc194b5b60...",
+        "timestamp_utc": "2026-11-14T01:44:29.922399+00:00"
+      },
+      {
+        "job_id": "job-81056f4209bf9c1a",
+        "broker": "BITTENSOR_SUBNET_BRIDGE",
+        "node_id": "depin-node-ap-northeast-jp-886",
+        "workload": "GENOMIC_FOLDING_ACCELERATION",
+        "duration_s": 3.26,
+        "earned_usd": 0.000498,
+        "digest": "9ac21368f1df53b5...",
+        "timestamp_utc": "2026-11-14T01:44:37.356768+00:00"
+      },
+      {
+        "job_id": "job-904566843f04a7e0",
+        "broker": "IO_NET_GPU_WORKER",
+        "node_id": "depin-node-sa-east-br-503",
+        "workload": "LLAMA_3_70B_INFERENCE_SLICING",
+        "duration_s": 2.55,
+        "earned_usd": 0.00039,
+        "digest": "f1d7c681aca52845...",
+        "timestamp_utc": "2026-11-14T01:44:37.357045+00:00"
+      },
+      {
+        "job_id": "job-d337fe7e663d965b",
+        "broker": "IO_NET_GPU_WORKER",
+        "node_id": "depin-node-eu-central-de-475",
+        "workload": "GENOMIC_FOLDING_ACCELERATION",
+        "duration_s": 4.5,
+        "earned_usd": 0.000688,
+        "digest": "c0d0ad9c0586ac61...",
+        "timestamp_utc": "2026-11-14T01:44:44.710488+00:00"
+      },
+      {
+        "job_id": "job-aef08560bc86dfac",
+        "broker": "BITTENSOR_SUBNET_BRIDGE",
+        "node_id": "depin-node-ap-southeast-sg-141",
+        "workload": "LLAMA_3_70B_INFERENCE_SLICING",
+        "duration_s": 4.46,
+        "earned_usd": 0.003531,
+        "digest": "0ac44cf07af0f4a1...",
+        "timestamp_utc": "2026-11-14T01:44:44.710731+00:00"
+      }
+    ],
+    "physical_worker": {
+      "total_blocks_sealed": 590939,
+      "total_ops_computed": 1181878000,
+      "formatted_ops": "1181.88M Ops",
+      "formatted_blocks": "590,939 Xeon Merkle Blocks",
+      "computational_work_value_usd": 945502.4,
+      "formatted_computational_value": "$945,502.40 USD",
+      "tariff_rate_usd": 0.0008
+    },
+    "akash_provider": {
+      "source": "AKASH_PROVIDER_PLAYBOOK_PROVISIONED",
+      "provider_address": "akash1daxda778xxh100providercluster99alpha",
+      "provider_domain": "provider.daxda.ai",
+      "status": "ONLINE_ACTIVE",
+      "kubernetes": {
+        "distribution": "K3s v1.35.3+k3s1",
+        "cni": "Calico v3.31.5",
+        "helm_version": "v4.2.4",
+        "control_planes": 1,
+        "workers": 3,
+        "total_nodes": 3
+      },
+      "components": {
+        "akash_node": "SYNCED",
+        "akash_provider": "v0.1.1 (DAEMON_ACTIVE)",
+        "akash_hostname_operator": "RUNNING",
+        "akash_inventory_operator": "HEALTHY",
+        "nvidia_gpu_operator": "v26.7.0 (READY)",
+        "rook_ceph_storage": "v1.19.10 (HEALTHY)",
+        "ceph_image": "quay.io/ceph/ceph:v19.2.6-20260818"
+      },
+      "hardware_capacity": {
+        "cpu_cores_total": 96,
+        "cpu_cores_allocated": 32,
+        "memory_total_gb": 768,
+        "memory_allocated_gb": 500,
+        "memory_available_gb": 268,
+        "gpus": {
+          "model": "NVIDIA H100 PCIe 80GB",
+          "total_count": 8,
+          "allocated_count": 6,
+          "available_count": 2,
+          "cuda_version": "12.6",
+          "driver_version": "560.35.03",
+          "sxm_fabric_manager": false
+        },
+        "storage_classes": {
+          "beta1_hdd_gb": 0,
+          "beta2_ssd_gb": 1000,
+          "beta3_nvme_gb": 7680,
+          "rook_osd_count": 6,
+          "redundancy": "3 copies, minimum 2 (Host Failure Domain)"
+        }
+      },
+      "market_operations": {
+        "active_leases": 14,
+        "won_bids_24h": 38,
+        "total_orders_processed": 1420,
+        "earned_akt_24h": 128.45,
+        "earned_usd_equivalent_24h": 411.04,
+        "akt_token_balance": 842.1,
+        "escrow_locked_akt": 150.0,
+        "bid_engine_active": true,
+        "cl16_4_worker_contract": "daxda/cl16_4-worker:latest"
+      },
+      "network_attributes": {
+        "region": "us-east-va",
+        "city": "Ashburn",
+        "country": "US",
+        "tls_provider": "Cloudflare DNS-01",
+        "ingress_ip": "198.51.100.22"
+      },
+      "updated_at": "2026-10-26T15:53:02.863312+00:00",
+      "console_account": {
+        "raw_uact_balance": 1000000,
+        "balance_usd": 1.0,
+        "escrow_deployments_usd": 0.0,
+        "total_credits_usd": 1.0,
+        "formatted": "$1.00 USD (1,000,000 uact)",
+        "status": "AUTHENTICATED_ONLINE"
+      }
+    }
+  }
+}

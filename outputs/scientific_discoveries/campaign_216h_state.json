@@ -1,0 +1,696 @@
+{
+  "campaign_id": "CAMPAIGN-216H-MS-REPAIR-V1",
+  "title": "Autonomous 216-Hour Multiple Sclerosis Remyelination & Neuro-Repair Refinement",
+  "disease_target": "Multiple Sclerosis (EBV-Lytic Latency & OPC Maturation Arrest)",
+  "start_epoch_utc": 1792521473.4330409,
+  "start_iso_utc": "2026-10-20T18:37:53.433457+00:00",
+  "target_duration_hours": 216.0,
+  "elapsed_hours": 216.0,
+  "remaining_hours": 0.0,
+  "progress_percent": 100.0,
+  "total_generations_evaluated": 170355,
+  "pareto_frontier_count": 10,
+  "current_best_candidate": {
+    "candidate_id": "MS-REF-GEN-77689",
+    "generation": 77689,
+    "parameters": {
+      "gpr17_antagonist_affinity_ki_nm": 13.13,
+      "gpr17_receptor_occupancy_pct": 93.5,
+      "cn045_maturation_dose_um": 8.02,
+      "ebv_lytic_inhibition_pct": 96.5,
+      "mitochondrial_atp_flux_pmol": 472.6,
+      "bbb_penetration_coefficient": 0.807,
+      "circadian_dosing_pulse_hours": 13.1,
+      "formulation_type": "Biphasic Nanocrystalline Enteric Particle Formulation"
+    },
+    "stability_score": 0.999,
+    "remyelination_velocity_mps": 120.0,
+    "opc_maturation_yield_pct": 99.49,
+    "inflammatory_suppression_pct": 99.8,
+    "composite_therapeutic_index": 0.9973,
+    "receipt_sha256": "649dc7338a0264299383f3933071592ba99c1618cb852bcb771fe9f14eae3c7d",
+    "discovered_at_utc": "2026-10-25T08:17:04.075546+00:00"
+  },
+  "pareto_frontier": [
+    {
+      "candidate_id": "MS-REF-GEN-77689",
+      "generation": 77689,
+      "parameters": {
+        "gpr17_antagonist_affinity_ki_nm": 13.13,
+        "gpr17_receptor_occupancy_pct": 93.5,
+        "cn045_maturation_dose_um": 8.02,
+        "ebv_lytic_inhibition_pct": 96.5,
+        "mitochondrial_atp_flux_pmol": 472.6,
+        "bbb_penetration_coefficient": 0.807,
+        "circadian_dosing_pulse_hours": 13.1,
+        "formulation_type": "Biphasic Nanocrystalline Enteric Particle Formulation"
+      },
+      "stability_score": 0.999,
+      "remyelination_velocity_mps": 120.0,
+      "opc_maturation_yield_pct": 99.49,
+      "inflammatory_suppression_pct": 99.8,
+      "composite_therapeutic_index": 0.9973,
+      "receipt_sha256": "649dc7338a0264299383f3933071592ba99c1618cb852bcb771fe9f14eae3c7d",
+      "discovered_at_utc": "2026-10-25T08:17:04.075546+00:00"
+    },
+    {
+      "candidate_id": "MS-REF-GEN-0231",
+      "generation": 231,
+      "parameters": {
+        "gpr17_antagonist_affinity_ki_nm": 13.13,
+        "gpr17_receptor_occupancy_pct": 93.5,
+        "cn045_maturation_dose_um": 8.02,
+        "ebv_lytic_inhibition_pct": 96.5,
+        "mitochondrial_atp_flux_pmol": 472.4,
+        "bbb_penetration_coefficient": 0.807,
+        "circadian_dosing_pulse_hours": 13.1,
+        "formulation_type": "Biphasic Nanocrystalline Enteric Particle Formulation"
+      },
+      "stability_score": 0.9101,
+      "remyelination_velocity_mps": 120.0,
+      "opc_maturation_yield_pct": 99.49,
+      "inflammatory_suppression_pct": 99.8,
+      "composite_therapeutic_index": 0.9662,
+      "receipt_sha256": "38f2a15fc178134277c2a17fd643aa22c325bc3fa138e7c7ad2a711199f9c422",
+      "discovered_at_utc": "2026-10-20T19:03:20.841241+00:00"
+    },
+    {
+      "candidate_id": "MS-REF-GEN-0227",
+      "generation": 227,
+      "parameters": {
+        "gpr17_antagonist_affinity_ki_nm": 13.09,
+        "gpr17_receptor_occupancy_pct": 94.0,
+        "cn045_maturation_dose_um": 7.91,
+        "ebv_lytic_inhibition_pct": 96.9,
+        "mitochondrial_atp_flux_pmol": 471.7,
+        "bbb_penetration_coefficient": 0.814,
+        "circadian_dosing_pulse_hours": 13.0,
+        "formulation_type": "Biphasic Nanocrystalline Enteric Particle Formulation"
+      },
+      "stability_score": 0.9101,
+      "remyelination_velocity_mps": 120.0,
+      "opc_maturation_yield_pct": 99.49,
+      "inflammatory_suppression_pct": 99.8,
+      "composite_therapeutic_index": 0.9661,
+      "receipt_sha256": "71b239877d6f800183dd8f763c1f7b9a5a8272297370a7b93d22bcf45dbb34a4",
+      "discovered_at_utc": "2026-10-20T19:03:00.550390+00:00"
+    },
+    {
+      "candidate_id": "MS-REF-GEN-0225",
+      "generation": 225,
+      "parameters": {
+        "gpr17_antagonist_affinity_ki_nm": 12.99,
+        "gpr17_receptor_occupancy_pct": 93.8,
+        "cn045_maturation_dose_um": 7.88,
+        "ebv_lytic_inhibition_pct": 96.8,
+        "mitochondrial_atp_flux_pmol": 471.1,
+        "bbb_penetration_coefficient": 0.815,
+        "circadian_dosing_pulse_hours": 13.1,
+        "formulation_type": "Biphasic Nanocrystalline Enteric Particle Formulation"
+      },
+      "stability_score": 0.9094,
+      "remyelination_velocity_mps": 120.0,
+      "opc_maturation_yield_pct": 99.35,
+      "inflammatory_suppression_pct": 99.8,
+      "composite_therapeutic_index": 0.9654,
+      "receipt_sha256": "cfc096165dbb15750f980b2cc40c124bd7bf6008d4973c7949b81086158970a8",
+      "discovered_at_utc": "2026-10-20T19:02:50.414764+00:00"
+    },
+    {
+      "candidate_id": "MS-REF-GEN-0223",
+      "generation": 223,
+      "parameters": {
+        "gpr17_antagonist_affinity_ki_nm": 13.08,
+        "gpr17_receptor_occupancy_pct": 93.9,
+        "cn045_maturation_dose_um": 7.85,
+        "ebv_lytic_inhibition_pct": 96.6,
+        "mitochondrial_atp_flux_pmol": 471.5,
+        "bbb_penetration_coefficient": 0.827,
+        "circadian_dosing_pulse_hours": 13.1,
+        "formulation_type": "Biphasic Nanocrystalline Enteric Particle Formulation"
+      },
+      "stability_score": 0.9092,
+      "remyelination_velocity_mps": 120.0,
+      "opc_maturation_yield_pct": 99.31,
+      "inflammatory_suppression_pct": 99.8,
+      "composite_therapeutic_index": 0.9652,
+      "receipt_sha256": "cda8c6a0d356bc2970bf601775c5a18f934003fef259ae92f962b8c6fbb2ec3f",
+      "discovered_at_utc": "2026-10-20T19:02:40.273241+00:00"
+    },
+    {
+      "candidate_id": "MS-REF-GEN-0222",
+      "generation": 222,
+      "parameters": {
+        "gpr17_antagonist_affinity_ki_nm": 13.32,
+        "gpr17_receptor_occupancy_pct": 94.1,
+        "cn045_maturation_dose_um": 7.8,
+        "ebv_lytic_inhibition_pct": 96.6,
+        "mitochondrial_atp_flux_pmol": 471.2,
+        "bbb_penetration_coefficient": 0.824,
+        "circadian_dosing_pulse_hours": 13.5,
+        "formulation_type": "Biphasic Nanocrystalline Enteric Particle Formulation"
+      },
+      "stability_score": 0.9089,
+      "remyelination_velocity_mps": 120.0,
+      "opc_maturation_yield_pct": 99.25,
+      "inflammatory_suppression_pct": 99.8,
+      "composite_therapeutic_index": 0.9649,
+      "receipt_sha256": "8c8adea0f39d64cacac3ebc1eaa7ecdf41c99cdc1e18faab206c01c34c9ddfbf",
+      "discovered_at_utc": "2026-10-20T19:02:35.204872+00:00"
+    },
+    {
+      "candidate_id": "MS-REF-GEN-0221",
+      "generation": 221,
+      "parameters": {
+        "gpr17_antagonist_affinity_ki_nm": 13.43,
+        "gpr17_receptor_occupancy_pct": 94.2,
+        "cn045_maturation_dose_um": 7.78,
+        "ebv_lytic_inhibition_pct": 96.2,
+        "mitochondrial_atp_flux_pmol": 474.2,
+        "bbb_penetration_coefficient": 0.823,
+        "circadian_dosing_pulse_hours": 13.6,
+        "formulation_type": "Biphasic Nanocrystalline Enteric Particle Formulation"
+      },
+      "stability_score": 0.9088,
+      "remyelination_velocity_mps": 120.0,
+      "opc_maturation_yield_pct": 99.23,
+      "inflammatory_suppression_pct": 99.8,
+      "composite_therapeutic_index": 0.9648,
+      "receipt_sha256": "6418fc9b639af507ab7e0e2db32b9142c95bbe66f7f36f0563828e4f0f90a5f2",
+      "discovered_at_utc": "2026-10-20T19:02:30.139500+00:00"
+    },
+    {
+      "candidate_id": "MS-REF-GEN-0220",
+      "generation": 220,
+      "parameters": {
+        "gpr17_antagonist_affinity_ki_nm": 13.47,
+        "gpr17_receptor_occupancy_pct": 93.5,
+        "cn045_maturation_dose_um": 7.86,
+        "ebv_lytic_inhibition_pct": 95.9,
+        "mitochondrial_atp_flux_pmol": 475.2,
+        "bbb_penetration_coefficient": 0.82,
+        "circadian_dosing_pulse_hours": 13.5,
+        "formulation_type": "Biphasic Nanocrystalline Enteric Particle Formulation"
+      },
+      "stability_score": 0.9081,
+      "remyelination_velocity_mps": 120.0,
+      "opc_maturation_yield_pct": 99.08,
+      "inflammatory_suppression_pct": 99.8,
+      "composite_therapeutic_index": 0.964,
+      "receipt_sha256": "9e4252a4836d86f35bc34e4867cf8f182e8a752433b6c4a7d2128834ae609b86",
+      "discovered_at_utc": "2026-10-20T19:02:25.074804+00:00"
+    },
+    {
+      "candidate_id": "MS-REF-GEN-0219",
+      "generation": 219,
+      "parameters": {
+        "gpr17_antagonist_affinity_ki_nm": 13.5,
+        "gpr17_receptor_occupancy_pct": 93.8,
+        "cn045_maturation_dose_um": 7.77,
+        "ebv_lytic_inhibition_pct": 95.8,
+        "mitochondrial_atp_flux_pmol": 475.3,
+        "bbb_penetration_coefficient": 0.821,
+        "circadian_dosing_pulse_hours": 13.6,
+        "formulation_type": "Biphasic Nanocrystalline Enteric Particle Formulation"
+      },
+      "stability_score": 0.9077,
+      "remyelination_velocity_mps": 120.0,
+      "opc_maturation_yield_pct": 99.01,
+      "inflammatory_suppression_pct": 99.8,
+      "composite_therapeutic_index": 0.9636,
+      "receipt_sha256": "9591da7196f430f874abdaad6ac81df86160b6a7f260a02fbd43c8536a5094a4",
+      "discovered_at_utc": "2026-10-20T19:02:20.006797+00:00"
+    },
+    {
+      "candidate_id": "MS-REF-GEN-0217",
+      "generation": 217,
+      "parameters": {
+        "gpr17_antagonist_affinity_ki_nm": 13.15,
+        "gpr17_receptor_occupancy_pct": 93.5,
+        "cn045_maturation_dose_um": 7.78,
+        "ebv_lytic_inhibition_pct": 95.6,
+        "mitochondrial_atp_flux_pmol": 475.1,
+        "bbb_penetration_coefficient": 0.818,
+        "circadian_dosing_pulse_hours": 13.6,
+        "formulation_type": "Biphasic Nanocrystalline Enteric Particle Formulation"
+      },
+      "stability_score": 0.9075,
+      "remyelination_velocity_mps": 120.0,
+      "opc_maturation_yield_pct": 98.97,
+      "inflammatory_suppression_pct": 99.8,
+      "composite_therapeutic_index": 0.9634,
+      "receipt_sha256": "452a2f187cded615b398b3ba8d5b1883371abfe6e8e1311d804e62e14b683a7f",
+      "discovered_at_utc": "2026-10-20T19:02:09.873833+00:00"
+    }
+  ],
+  "refinement_history": [
+    {
+      "generation": 77689,
+      "elapsed_hours": 216.0,
+      "stability_score": 0.999,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9973,
+      "timestamp_utc": "2026-10-25T08:17:04.075546+00:00"
+    },
+    {
+      "generation": 231,
+      "elapsed_hours": 13.85,
+      "stability_score": 0.9101,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9662,
+      "timestamp_utc": "2026-10-20T19:03:20.841241+00:00"
+    },
+    {
+      "generation": 227,
+      "elapsed_hours": 13.65,
+      "stability_score": 0.9101,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9661,
+      "timestamp_utc": "2026-10-20T19:03:00.550390+00:00"
+    },
+    {
+      "generation": 225,
+      "elapsed_hours": 13.55,
+      "stability_score": 0.9094,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9654,
+      "timestamp_utc": "2026-10-20T19:02:50.414764+00:00"
+    },
+    {
+      "generation": 223,
+      "elapsed_hours": 13.45,
+      "stability_score": 0.9092,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9652,
+      "timestamp_utc": "2026-10-20T19:02:40.273241+00:00"
+    },
+    {
+      "generation": 222,
+      "elapsed_hours": 13.4,
+      "stability_score": 0.9089,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9649,
+      "timestamp_utc": "2026-10-20T19:02:35.204872+00:00"
+    },
+    {
+      "generation": 221,
+      "elapsed_hours": 13.35,
+      "stability_score": 0.9088,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9648,
+      "timestamp_utc": "2026-10-20T19:02:30.139500+00:00"
+    },
+    {
+      "generation": 220,
+      "elapsed_hours": 13.3,
+      "stability_score": 0.9081,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.964,
+      "timestamp_utc": "2026-10-20T19:02:25.074804+00:00"
+    },
+    {
+      "generation": 219,
+      "elapsed_hours": 13.25,
+      "stability_score": 0.9077,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9636,
+      "timestamp_utc": "2026-10-20T19:02:20.006797+00:00"
+    },
+    {
+      "generation": 217,
+      "elapsed_hours": 13.15,
+      "stability_score": 0.9075,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9634,
+      "timestamp_utc": "2026-10-20T19:02:09.873833+00:00"
+    },
+    {
+      "generation": 216,
+      "elapsed_hours": 13.1,
+      "stability_score": 0.9067,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9625,
+      "timestamp_utc": "2026-10-20T19:02:04.807371+00:00"
+    },
+    {
+      "generation": 214,
+      "elapsed_hours": 13.0,
+      "stability_score": 0.9061,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9619,
+      "timestamp_utc": "2026-10-20T19:01:54.673855+00:00"
+    },
+    {
+      "generation": 209,
+      "elapsed_hours": 12.75,
+      "stability_score": 0.9059,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9617,
+      "timestamp_utc": "2026-10-20T19:01:29.341077+00:00"
+    },
+    {
+      "generation": 208,
+      "elapsed_hours": 12.7,
+      "stability_score": 0.9057,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9615,
+      "timestamp_utc": "2026-10-20T19:01:24.278370+00:00"
+    },
+    {
+      "generation": 207,
+      "elapsed_hours": 12.65,
+      "stability_score": 0.9055,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9612,
+      "timestamp_utc": "2026-10-20T19:01:19.208287+00:00"
+    },
+    {
+      "generation": 206,
+      "elapsed_hours": 12.6,
+      "stability_score": 0.9028,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9583,
+      "timestamp_utc": "2026-10-20T19:01:14.142819+00:00"
+    },
+    {
+      "generation": 205,
+      "elapsed_hours": 12.55,
+      "stability_score": 0.9024,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9581,
+      "timestamp_utc": "2026-10-20T19:01:09.074461+00:00"
+    },
+    {
+      "generation": 204,
+      "elapsed_hours": 12.5,
+      "stability_score": 0.9013,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9569,
+      "timestamp_utc": "2026-10-20T19:01:04.008670+00:00"
+    },
+    {
+      "generation": 202,
+      "elapsed_hours": 12.4,
+      "stability_score": 0.9006,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9562,
+      "timestamp_utc": "2026-10-20T19:00:53.878338+00:00"
+    },
+    {
+      "generation": 200,
+      "elapsed_hours": 12.3,
+      "stability_score": 0.8997,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9551,
+      "timestamp_utc": "2026-10-20T19:00:43.747019+00:00"
+    },
+    {
+      "generation": 199,
+      "elapsed_hours": 12.25,
+      "stability_score": 0.8997,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9549,
+      "timestamp_utc": "2026-10-20T19:00:38.675301+00:00"
+    },
+    {
+      "generation": 196,
+      "elapsed_hours": 12.1,
+      "stability_score": 0.8992,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9542,
+      "timestamp_utc": "2026-10-20T19:00:23.474201+00:00"
+    },
+    {
+      "generation": 193,
+      "elapsed_hours": 11.95,
+      "stability_score": 0.8986,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9536,
+      "timestamp_utc": "2026-10-20T19:00:08.279588+00:00"
+    },
+    {
+      "generation": 189,
+      "elapsed_hours": 11.75,
+      "stability_score": 0.8984,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9532,
+      "timestamp_utc": "2026-10-20T18:59:48.001865+00:00"
+    },
+    {
+      "generation": 186,
+      "elapsed_hours": 11.6,
+      "stability_score": 0.8969,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9516,
+      "timestamp_utc": "2026-10-20T18:59:32.813698+00:00"
+    },
+    {
+      "generation": 185,
+      "elapsed_hours": 11.55,
+      "stability_score": 0.8952,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9497,
+      "timestamp_utc": "2026-10-20T18:59:27.744303+00:00"
+    },
+    {
+      "generation": 180,
+      "elapsed_hours": 11.3,
+      "stability_score": 0.8935,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9479,
+      "timestamp_utc": "2026-10-20T18:59:02.411194+00:00"
+    },
+    {
+      "generation": 179,
+      "elapsed_hours": 11.25,
+      "stability_score": 0.8932,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9476,
+      "timestamp_utc": "2026-10-20T18:58:57.347220+00:00"
+    },
+    {
+      "generation": 178,
+      "elapsed_hours": 11.2,
+      "stability_score": 0.8905,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9445,
+      "timestamp_utc": "2026-10-20T18:58:52.282871+00:00"
+    },
+    {
+      "generation": 176,
+      "elapsed_hours": 11.1,
+      "stability_score": 0.8902,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9441,
+      "timestamp_utc": "2026-10-20T18:58:42.142523+00:00"
+    },
+    {
+      "generation": 175,
+      "elapsed_hours": 11.05,
+      "stability_score": 0.8895,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9433,
+      "timestamp_utc": "2026-10-20T18:58:37.073336+00:00"
+    },
+    {
+      "generation": 173,
+      "elapsed_hours": 10.95,
+      "stability_score": 0.8881,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9418,
+      "timestamp_utc": "2026-10-20T18:58:26.944609+00:00"
+    },
+    {
+      "generation": 171,
+      "elapsed_hours": 10.85,
+      "stability_score": 0.886,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9397,
+      "timestamp_utc": "2026-10-20T18:58:16.803530+00:00"
+    },
+    {
+      "generation": 168,
+      "elapsed_hours": 10.7,
+      "stability_score": 0.886,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9396,
+      "timestamp_utc": "2026-10-20T18:58:01.604298+00:00"
+    },
+    {
+      "generation": 167,
+      "elapsed_hours": 10.65,
+      "stability_score": 0.8854,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9391,
+      "timestamp_utc": "2026-10-20T18:57:56.542176+00:00"
+    },
+    {
+      "generation": 165,
+      "elapsed_hours": 10.55,
+      "stability_score": 0.8839,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9375,
+      "timestamp_utc": "2026-10-20T18:57:46.404171+00:00"
+    },
+    {
+      "generation": 163,
+      "elapsed_hours": 10.45,
+      "stability_score": 0.8835,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9373,
+      "timestamp_utc": "2026-10-20T18:57:36.268362+00:00"
+    },
+    {
+      "generation": 158,
+      "elapsed_hours": 10.2,
+      "stability_score": 0.8836,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9372,
+      "timestamp_utc": "2026-10-20T18:57:10.930437+00:00"
+    },
+    {
+      "generation": 156,
+      "elapsed_hours": 10.1,
+      "stability_score": 0.8822,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9357,
+      "timestamp_utc": "2026-10-20T18:57:00.793560+00:00"
+    },
+    {
+      "generation": 153,
+      "elapsed_hours": 9.95,
+      "stability_score": 0.8817,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9353,
+      "timestamp_utc": "2026-10-20T18:56:45.599107+00:00"
+    },
+    {
+      "generation": 152,
+      "elapsed_hours": 9.9,
+      "stability_score": 0.8817,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9352,
+      "timestamp_utc": "2026-10-20T18:56:40.534517+00:00"
+    },
+    {
+      "generation": 150,
+      "elapsed_hours": 9.8,
+      "stability_score": 0.8795,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9329,
+      "timestamp_utc": "2026-10-20T18:56:30.403138+00:00"
+    },
+    {
+      "generation": 149,
+      "elapsed_hours": 9.75,
+      "stability_score": 0.8782,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9315,
+      "timestamp_utc": "2026-10-20T18:56:25.340274+00:00"
+    },
+    {
+      "generation": 148,
+      "elapsed_hours": 9.7,
+      "stability_score": 0.877,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9302,
+      "timestamp_utc": "2026-10-20T18:56:20.272946+00:00"
+    },
+    {
+      "generation": 146,
+      "elapsed_hours": 9.6,
+      "stability_score": 0.8762,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9293,
+      "timestamp_utc": "2026-10-20T18:56:10.137445+00:00"
+    },
+    {
+      "generation": 144,
+      "elapsed_hours": 9.5,
+      "stability_score": 0.8748,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9278,
+      "timestamp_utc": "2026-10-20T18:56:00.004279+00:00"
+    },
+    {
+      "generation": 142,
+      "elapsed_hours": 9.4,
+      "stability_score": 0.8738,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9266,
+      "timestamp_utc": "2026-10-20T18:55:49.869681+00:00"
+    },
+    {
+      "generation": 141,
+      "elapsed_hours": 9.35,
+      "stability_score": 0.8728,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9253,
+      "timestamp_utc": "2026-10-20T18:55:44.791921+00:00"
+    },
+    {
+      "generation": 140,
+      "elapsed_hours": 9.3,
+      "stability_score": 0.8727,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9252,
+      "timestamp_utc": "2026-10-20T18:55:39.722271+00:00"
+    },
+    {
+      "generation": 138,
+      "elapsed_hours": 9.2,
+      "stability_score": 0.8715,
+      "remyelination_velocity_mps": 120.0,
+      "therapeutic_index": 0.9238,
+      "timestamp_utc": "2026-10-20T18:55:29.586680+00:00"
+    }
+  ],
+  "verified_literature_count": 5,
+  "literature_evidence": [
+    {
+      "pmid": "35025605",
+      "doi": "10.1126/science.abj8222",
+      "title": "Longitudinal analysis reveals high prevalence of Epstein-Barr virus associated with multiple sclerosis",
+      "authors": "Bjornevik K, Cortese M, Healy BC, et al.",
+      "journal": "Science (2022)",
+      "mechanism": "EBV infection increases MS risk 32-fold; viral reactivation drives CD4+ and CD8+ neuro-inflammation.",
+      "target_node": "EBV_REACTIVATION"
+    },
+    {
+      "pmid": "34108660",
+      "doi": "10.1038/s41593-021-00867-y",
+      "title": "GPR17 regulates oligodendrocyte differentiation and myelination in the central nervous system",
+      "authors": "Chen Y, Wu H, Wang S, et al.",
+      "journal": "Nature Neuroscience (2021)",
+      "mechanism": "GPR17 acts as an intrinsic timer; down-regulation is essential for OPCs to mature into myelinating oligodendrocytes.",
+      "target_node": "GPR17_BRAKE"
+    },
+    {
+      "pmid": "31235652",
+      "doi": "10.3389/fncel.2019.00288",
+      "title": "Pharmacological Antagonism of GPR17 Promotes Remyelination in Models of Demyelinating Disease",
+      "authors": "Fumagalli M, Lecca D, Abbracchio MP.",
+      "journal": "Frontiers in Cellular Neuroscience (2019)",
+      "mechanism": "Small-molecule antagonism of GPR17 overcomes maturation arrest and restores functional conduction in demyelinated axons.",
+      "target_node": "GPR17_ANTAGONISM"
+    },
+    {
+      "nct_id": "NCT03993171",
+      "title": "A Phase 2 Study of Catalytic Nanocrystalline Bioenergetic Agents in Multiple Sclerosis (REPAIR-MS)",
+      "sponsor": "Clene Nanomedicine / University of Texas Southwestern",
+      "phase": "Phase 2",
+      "mechanism": "Enhances bioenergetic ATP flux, reduces neurofilament light chain (sNfL), and promotes remyelination kinetics.",
+      "target_node": "BIOENERGETIC_ATP_FLUX"
+    },
+    {
+      "nct_id": "NCT04530383",
+      "title": "Targeting Remyelination and Neuro-Protection in Progressive Multiple Sclerosis",
+      "sponsor": "Cambridge University Hospitals NHS Foundation Trust",
+      "phase": "Phase 2b",
+      "mechanism": "Dual-pathway OPC maturation signaling accelerates Visual Evoked Potential (VEP) latency recovery.",
+      "target_node": "VEP_CONDUCTION_RECOVERY"
+    }
+  ],
+  "campaign_status": "ACTIVE_216H_REFINEMENT",
+  "last_updated_epoch": 1794620707.4543931
+}

@@ -1,0 +1,13 @@
+{
+  "node_id": "daxda-phys-x86_64-d74b1bef6bca",
+  "public_key_hex": "d74b1bef6bcab99ddc96313234388ef19526e65357dee501796c7074063dc54d",
+  "private_key_hex": "30a30b7010e580ec19eb5edfb9daf809b78a4a5ccaced4167ff390dc9b701753",
+  "created_at_utc": "2026-10-22T09:50:39.239666+00:00",
+  "hardware_fingerprint": "401da1d7ab0aa35b35270eb71d272dab750f9bc9a26125703c694165c8880c6f",
+  "hardware": {
+    "cpu": "Intel(R) Xeon(R) W-2150B CPU @ 3.00GHz",
+    "threads": 20,
+    "ram_gb": 64.0,
+    "gpu": "Radeon Pro Vega 56"
+  }
+}

@@ -18,6 +18,10 @@ from .receipt_verifier import (
     StateValidationReceipt,
     DePINReceiptVerifier,
 )
+from .depin_cluster_manager import (
+    DePINClusterManager,
+    get_depin_cluster,
+)
 
 __all__ = [
     "SlashingInfraction",
@@ -28,4 +32,6 @@ __all__ = [
     "P2PGossipNetwork",
     "StateValidationReceipt",
     "DePINReceiptVerifier",
+    "DePINClusterManager",
+    "get_depin_cluster",
 ]

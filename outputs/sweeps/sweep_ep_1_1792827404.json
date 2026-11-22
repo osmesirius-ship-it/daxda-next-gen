@@ -1,0 +1,24 @@
+{
+  "sweep_id": "sweep_ep_1_1792827404",
+  "epoch_number": 1,
+  "founder": "Nicole Bess",
+  "broker_network": "ALL_BROKERS (io.net + Bittensor + Render + Akash)",
+  "start_block_index": 0,
+  "end_block_index": 5000,
+  "blocks_swept": 5000,
+  "physical_ops_executed": 9999000,
+  "epoch_merkle_root": "1fa2d40853986edb3ed6c206d6a892287d5ef62b6d6c335c01446e3dba43f51c",
+  "gross_reward_usd": 62.5,
+  "settlement_currency": "USD",
+  "payout_destination": "fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0 (Stripe Treasury)",
+  "payout_dispatch": {
+    "status": "SETTLEMENT_DISPATCHED",
+    "payout_amount_usd": 62.5,
+    "stripe_financial_account": "fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0",
+    "owner": "Nicole Bess",
+    "provider_ref": "fa_settled_1792827404",
+    "timestamp_utc": "2026-10-24T07:36:44.177377+00:00",
+    "remaining_treasury_balance_usd": 0.0
+  },
+  "timestamp_utc": "2026-10-24T07:36:44.052045+00:00"
+}

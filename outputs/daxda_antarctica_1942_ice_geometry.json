@@ -1,0 +1,259 @@
+{
+  "analysis_title": "DAXDA Next-Gen Geometric & Crystallographic Synthesis: 1942 Antarctica Expeditions & Glacial Ice (Ih)",
+  "historical_clarification": "In 1942, two critical Antarctic scientific records converged: (1) The February\u2013March 1942 Argentine Antarctic Expedition aboard ARA Primero de Mayo (Deception Island & Melchior Archipelago), which executed the first Argentine Antarctic aerial photogrammetry (F-8 camera) and hydrographic/glaciological surveys; and (2) The wartime scientific compilation and NARA RG 126 archival of the U.S. Antarctic Service Expedition (USASE 1939\u20131941, appropriations closed 1942\u20131943), featuring F. Alton Wade's Ross Ice Shelf 7m pit / 41m thermohm ice-compaction dataset at West Base and Paul H. Knowles's 680-nm Palmer Peninsula geological/glaciological survey at East Base.",
+  "ice_ih_crystallography": {
+    "substance": "Hexagonal Glacial Ice (Ice Ih)",
+    "chemical_formula": "H2O",
+    "crystal_system": "Hexagonal (Disordered Proton Lattice / Pauling Residual Entropy)",
+    "space_group": "P6_3/mmc (194)",
+    "point_group": "D6h (6/mmm, Dihexagonal Dipyramidal)",
+    "coordination_number": 4,
+    "polyhedron_shape": "Tetrahedral Oxygen Sub-lattice within Hexagonal Prism / Bipyramid Unit Cell",
+    "lattice_constant_a_angstrom": 4.518,
+    "lattice_constant_c_angstrom": 7.356,
+    "c_over_a_ratio": 1.628,
+    "ideal_hcp_c_over_a": 1.633,
+    "density_profile_g_cm3": {
+      "surface_snow_firn": 0.35,
+      "pore_close_off_firn_transition": 0.83,
+      "pure_glacial_ice_ih": 0.917
+    },
+    "key_crystallographic_angles_deg": [
+      60.0,
+      120.0,
+      109.47,
+      70.53,
+      90.0
+    ],
+    "dual_symmetry_bridge_with_fcc_metals": "Ice Ih links the two primary crystallographic families in DAXDA's Planetary Metallogeny model: (1) Its macro-unit cell shares Space Group P6_3/mmc (194) and D6h (60\u00b0/120\u00b0) symmetry with Neodymium/REEs; (2) Its internal 4-coordinated oxygen hydrogen-bond network forms regular tetrahedra at 109.47\u00b0, whose supplementary dihedral angle (70.53\u00b0) is mathematically identical to the {111} octahedral slip plane angle of Face-Centered Cubic Gold (Au), Platinum (Pt), Silver (Ag), and Copper (Cu)."
+  },
+  "wade_ross_ice_shelf_depth_profile": [
+    {
+      "depth_m": 0,
+      "density_g_cm3": 0.35,
+      "porosity_air_channel_pct": 61.8,
+      "temperature_c": -23.5
+    },
+    {
+      "depth_m": 2,
+      "density_g_cm3": 0.402,
+      "porosity_air_channel_pct": 56.2,
+      "temperature_c": -23.59
+    },
+    {
+      "depth_m": 5,
+      "density_g_cm3": 0.471,
+      "porosity_air_channel_pct": 48.6,
+      "temperature_c": -23.73
+    },
+    {
+      "depth_m": 7,
+      "density_g_cm3": 0.512,
+      "porosity_air_channel_pct": 44.2,
+      "temperature_c": -23.82
+    },
+    {
+      "depth_m": 10,
+      "density_g_cm3": 0.566,
+      "porosity_air_channel_pct": 38.3,
+      "temperature_c": -23.96
+    },
+    {
+      "depth_m": 15,
+      "density_g_cm3": 0.641,
+      "porosity_air_channel_pct": 30.1,
+      "temperature_c": -24.2
+    },
+    {
+      "depth_m": 20,
+      "density_g_cm3": 0.7,
+      "porosity_air_channel_pct": 23.7,
+      "temperature_c": -22.77
+    },
+    {
+      "depth_m": 25,
+      "density_g_cm3": 0.746,
+      "porosity_air_channel_pct": 18.6,
+      "temperature_c": -21.35
+    },
+    {
+      "depth_m": 30,
+      "density_g_cm3": 0.783,
+      "porosity_air_channel_pct": 14.6,
+      "temperature_c": -19.93
+    },
+    {
+      "depth_m": 35,
+      "density_g_cm3": 0.811,
+      "porosity_air_channel_pct": 11.5,
+      "temperature_c": -18.5
+    },
+    {
+      "depth_m": 41,
+      "density_g_cm3": 0.838,
+      "porosity_air_channel_pct": 8.6,
+      "temperature_c": -16.79
+    },
+    {
+      "depth_m": 55,
+      "density_g_cm3": 0.877,
+      "porosity_air_channel_pct": 4.4,
+      "temperature_c": -12.8
+    },
+    {
+      "depth_m": 70,
+      "density_g_cm3": 0.897,
+      "porosity_air_channel_pct": 2.1,
+      "temperature_c": -8.53
+    }
+  ],
+  "expedition_stations_1942": [
+    {
+      "site_id": "ANT-1942-USASE-WEST",
+      "expedition": "U.S. Antarctic Service Expedition (USASE) \u2014 West Base (Little America III)",
+      "year_collected_or_archived": "1939\u20131941 (Processed & Archived 1942, NARA RG 126; Published APS 1945)",
+      "lead_scientist": "Major F. Alton Wade (Senior Scientist & Chief Glaciologist)",
+      "location_name": "Bay of Whales, Ross Ice Shelf (Little America III)",
+      "lat": -78.4833,
+      "lon": -163.8333,
+      "elevation_or_depth_m": "Surface ~30 m ASL; 7 m glaciological pit shaft; 36\u201341 m thermohm boreholes",
+      "ice_measurements": {
+        "surface_firn_density_g_cm3": 0.35,
+        "shaft_7m_firn_density_g_cm3": 0.58,
+        "deep_glacial_ice_density_g_cm3": 0.917,
+        "temperature_15m_damping_zone_c": -24.2,
+        "temperature_41m_basal_gradient_c": -16.8,
+        "basal_seawater_boundary_c": -1.8,
+        "grain_size_mm": "0.5 mm (upper firn) to 3.2 mm (recrystallized shelf ice)",
+        "compaction_mechanism": "Mechanical settling and grain-boundary fracture compaction without meltwater recrystallization; progressive reduction of intercommunicating air channels."
+      },
+      "geological_and_structural_data": {
+        "structural_regime": "Floating Ross Ice Shelf tabular stress field & Roosevelt Island shear margin",
+        "dominant_crevasse_strike_deg": 60.0,
+        "sastrugi_katabatic_vector_deg": 120.0
+      },
+      "archival_source": "F. Alton Wade, 'The Physical Aspects of the Ross Shelf Ice', Proc. Amer. Phil. Soc. 89(1), 160\u2013173 (1945); NARA RG 126 (1942)."
+    },
+    {
+      "site_id": "ANT-1942-USASE-EAST",
+      "expedition": "U.S. Antarctic Service Expedition (USASE) \u2014 East Base (Stonington Island)",
+      "year_collected_or_archived": "1940\u20131941 (Processed & Archived 1942, NARA RG 126; Published APS 1945)",
+      "lead_scientist": "Paul H. Knowles (Chief Geologist & Glaciologist, Weddell Coast Sledging Party)",
+      "location_name": "Stonington Island, Marguerite Bay, Falli\u00e8res Coast (Palmer Peninsula)",
+      "lat": -68.1839,
+      "lon": -66.9981,
+      "elevation_or_depth_m": "Coastal station 15 m ASL; Neny Fjord & Palmer Plateau traverse to 1,850 m ASL",
+      "ice_measurements": {
+        "glacier_type": "Northeast Glacier & Neny Fjord piedmont/outlet glacier system",
+        "plateau_ice_cap_thickness_est_m": 600.0,
+        "firn_stratigraphy": "Orogenic maritime-to-continental transition firn with wind-crust laminae",
+        "sledging_traverse_distance_nm": 680.0
+      },
+      "geological_and_structural_data": {
+        "structural_regime": "Antarctandes Cordilleran Magmatic Arc & Graben Fault-Block System",
+        "batholith_petrology": "Andean hornblende-biotite diorite, granodiorite, and granitic intrusions",
+        "mineralization_observed": "Hydrothermal quartz-pyrite veins with trace chalcopyrite (Cu), molybdenite (Mo), and gold (Au) along conjugate fault fractures",
+        "conjugate_fault_angle_deg": 70.5
+      },
+      "archival_source": "Paul H. Knowles, 'Geology of the Southern Palmer Peninsula' & 'Glaciology of the Southern Palmer Peninsula', Proc. Amer. Phil. Soc. 89(1), 132\u2013159 (1945); NARA RG 126 (1942)."
+    },
+    {
+      "site_id": "ANT-1942-ARG-DECEPTION",
+      "expedition": "1942 Argentine Antarctic Expedition (ARA Primero de Mayo)",
+      "year_collected_or_archived": "February 6\u20138, 1942 (Aerial Photogrammetry & Hydrographic Survey)",
+      "lead_scientist": "Capt. Alberto J. Oddera & Lt. Eduardo J. Lanusse (Stearman I-E-41 F-8 Aerial Survey)",
+      "location_name": "Port Foster & Pendulum Cove, Deception Island (South Shetland Islands)",
+      "lat": -62.9667,
+      "lon": -60.65,
+      "elevation_or_depth_m": "Sea level caldera lagoon (depth 170 m) to Mount Pond ice cap (539 m ASL)",
+      "ice_measurements": {
+        "glacier_type": "Volcano-glacial ash-stratified ice cap & fumarolic geothermal melt boundary",
+        "thermal_anomaly": "Submarine & coastal hydrothermal fumaroles melting basal hexagonal ice at 65\u00b0C\u201390\u00b0C",
+        "aerial_mapping_sensor": "F-8 vertical aerial survey camera from Stearman 76D-1 biplane (Feb 7, 1942)"
+      },
+      "geological_and_structural_data": {
+        "structural_regime": "Bransfield Strait Back-Arc Rift & Submerged Collapse Caldera Ring Fault (14 km diameter)",
+        "ring_fault_symmetry": "Hexagonal / D6h polygonal caldera fracture vertices intersecting NE-SW Bransfield rift strike (060\u00b0)"
+      },
+      "archival_source": "Expedici\u00f3n Ant\u00e1rtica Argentina 1942 (ARA Primero de Mayo) Hydrographic & F-8 Photogrammetric Logs; Museo Mar\u00edtimo / Servicio de Hidrograf\u00eda Naval (1942)."
+    },
+    {
+      "site_id": "ANT-1942-ARG-MELCHIOR",
+      "expedition": "1942 Argentine Antarctic Expedition (ARA Primero de Mayo)",
+      "year_collected_or_archived": "February\u2013March 1, 1942 (Faro 1.\u00ba de Mayo Inauguration & Survey)",
+      "lead_scientist": "Capt. Alberto J. Oddera & Bernardino Rivadavia Museum Natural Sciences Team",
+      "location_name": "Melchior Archipelago, Dallmann Bay / Gerlache Strait",
+      "lat": -64.3167,
+      "lon": -62.9833,
+      "elevation_or_depth_m": "Coastal bedrock & tidewater ice cliffs (0\u201380 m ASL); bathyal soundings >400 m",
+      "ice_measurements": {
+        "glacier_type": "Maritime Antarctic coastal ice cap & tabular berg calving corridor",
+        "magnetic_declination_survey": "1942 geomagnetic inclination/declination anchor along 64\u00b0S meridian"
+      },
+      "geological_and_structural_data": {
+        "structural_regime": "Gerlache Strait Oblique Extensional Shear Corridor (NE strike ~045\u00b0\u2013060\u00b0)",
+        "petrology": "Quartz-diorite and gabbroic plutonic rocks of the Antarctic Peninsula Batholith"
+      },
+      "archival_source": "Servicio de Hidrograf\u00eda Naval & Museo Argentino de Ciencias Naturales 'Bernardino Rivadavia', Campa\u00f1a Ant\u00e1rtica 1942."
+    }
+  ],
+  "planetary_geodesic_alignments": {
+    "reference_polyhedral_vertex": {
+      "node_id": 2,
+      "name": "DAXDA Icosahedral Vertex #2 (Bellingshausen / Drake Gateway)",
+      "lat": -58.28,
+      "lon": -90.0
+    },
+    "andean_antarctandean_continuity": "East Base (68.18\u00b0S, 67.00\u00b0W), Melchior (64.32\u00b0S, 62.98\u00b0W), and Deception Island (62.97\u00b0S, 60.65\u00b0W) lie along the 176\u00b0\u2013182\u00b0 meridional great-circle extension of the Andean Cu-Au-Ag Metallogenic Belt (Atacama 69.1\u00b0W / Potos\u00ed 65.7\u00b0W), rotated across the Drake Passage sinistral transform.",
+    "station_alignments": [
+      {
+        "site_id": "ANT-1942-USASE-WEST",
+        "location_name": "Bay of Whales, Ross Ice Shelf (Little America III)",
+        "coordinates": {
+          "lat": -78.4833,
+          "lon": -163.8333
+        },
+        "distance_from_icosahedral_node2_km": 3377.61,
+        "azimuth_from_icosahedral_node2_deg": 202.29,
+        "distance_from_atacama_metallogenic_belt_km": 7467.47,
+        "great_circle_azimuth_from_atacama_deg": 192.47
+      },
+      {
+        "site_id": "ANT-1942-USASE-EAST",
+        "location_name": "Stonington Island, Marguerite Bay, Falli\u00e8res Coast (Palmer Peninsula)",
+        "coordinates": {
+          "lat": -68.1839,
+          "lon": -66.9981
+        },
+        "distance_from_icosahedral_node2_km": 1575.92,
+        "azimuth_from_icosahedral_node2_deg": 143.62,
+        "distance_from_atacama_metallogenic_belt_km": 4881.76,
+        "great_circle_azimuth_from_atacama_deg": 178.87
+      },
+      {
+        "site_id": "ANT-1942-ARG-DECEPTION",
+        "location_name": "Port Foster & Pendulum Cove, Deception Island (South Shetland Islands)",
+        "coordinates": {
+          "lat": -62.9667,
+          "lon": -60.65
+        },
+        "distance_from_icosahedral_node2_km": 1666.51,
+        "azimuth_from_icosahedral_node2_deg": 120.52,
+        "distance_from_atacama_metallogenic_belt_km": 4345.19,
+        "great_circle_azimuth_from_atacama_deg": 173.92
+      },
+      {
+        "site_id": "ANT-1942-ARG-MELCHIOR",
+        "location_name": "Melchior Archipelago, Dallmann Bay / Gerlache Strait",
+        "coordinates": {
+          "lat": -64.3167,
+          "lon": -62.9833
+        },
+        "distance_from_icosahedral_node2_km": 1575.24,
+        "azimuth_from_icosahedral_node2_deg": 126.45,
+        "distance_from_atacama_metallogenic_belt_km": 4471.89,
+        "great_circle_azimuth_from_atacama_deg": 175.9
+      }
+    ]
+  }
+}

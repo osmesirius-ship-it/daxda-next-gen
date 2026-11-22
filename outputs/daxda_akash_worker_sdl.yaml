@@ -1,0 +1,67 @@
+---
+version: "2.0"
+
+services:
+  daxda-cl16-worker:
+    image: daxda/cl16_4-worker:latest
+    expose:
+      - port: 8089
+        as: 80
+        to:
+          - global: true
+    env:
+      - DAXDA_ROLE=PHYSICAL_COMPUTE_WORKER
+      - DAXDA_ALGEBRA_SPACE=Cl(16,4)
+      - FLEET_DAEMON_INGRESS=http://127.0.0.1:8088
+      - MERKLE_SEAL_INTERVAL_MS=50
+      - COMMERCIAL_RENTAL_DUTY_PCT=98
+    resources:
+      cpu:
+        units: 32
+      memory:
+        size: 500Gi
+      storage:
+        - size: 1000Gi
+          attributes:
+            persistent: true
+            class: beta3
+      gpu:
+        units: 2
+        attributes:
+          vendor:
+            nvidia:
+              - model: h100
+              - model: rtx4090
+
+profiles:
+  compute:
+    daxda-cl16-worker:
+      resources:
+        cpu:
+          units: 32
+        memory:
+          size: 500Gi
+        storage:
+          - size: 1000Gi
+            attributes:
+              persistent: true
+              class: beta3
+        gpu:
+          units: 2
+          attributes:
+            vendor:
+              nvidia:
+                - model: h100
+                - model: rtx4090
+  placement:
+    akash:
+      pricing:
+        daxda-cl16-worker:
+          denom: uakt
+          amount: 10000
+
+deployment:
+  daxda-cl16-worker:
+    akash:
+      profile: daxda-cl16-worker
+      count: 2

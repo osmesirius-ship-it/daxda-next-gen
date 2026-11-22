@@ -1,0 +1,458 @@
+{
+  "engine": "DAXDA-Clinical-Decision-Support/1.0.0-GOVERNED",
+  "governance_standard": "observer-intelligence/docs/biological-data-governance.md + DAXDA-MMPIBench",
+  "clinical_disclaimer": "Decision-support and differential screening prototype only. Does not issue autonomous medical diagnoses. Requires licensed clinician review. In acute crisis, call or text 988.",
+  "evaluated_cases": [
+    {
+      "case_id": "CASE-01-BIPOLAR-DIFF",
+      "case_label": "1. Depressive Presentation with Hidden Hypomanic History (Bipolar II Differential)",
+      "timestamp_utc": 1795290626.834189,
+      "governance_compliance": {
+        "explicit_purpose_and_consent_bound": true,
+        "measurement_separated_from_diagnosis": true,
+        "no_covert_biometric_authority": true,
+        "shadow_medical_mimics_evaluated": true,
+        "clinician_in_the_loop_required": true
+      },
+      "safety_triage_level": "PRIORITY_CLINICIAN_REVIEW",
+      "validity_gate": {
+        "vrin_inconsistency_score": 0.09,
+        "over_reporting_f_tscore": 68.0,
+        "defensiveness_k_tscore": 46.0,
+        "protocol_valid": true,
+        "validity_notes": [
+          "Response consistency (VRIN) and validity indicators within interpretable clinical bounds."
+        ]
+      },
+      "domain_scores": [
+        {
+          "domain_id": "DOM-DEPRESSION",
+          "instrument": "PHQ-9 (Depressive / Anhedonia)",
+          "raw_score": 16,
+          "max_score": 27,
+          "t_score": 66.4,
+          "severity_band": "Moderately Severe (15\u201319)",
+          "confidence_interval_95": [
+            13.9,
+            18.1
+          ]
+        },
+        {
+          "domain_id": "DOM-ANXIETY",
+          "instrument": "GAD-7 (Autonomic Anxiety)",
+          "raw_score": 11,
+          "max_score": 21,
+          "t_score": 63.1,
+          "severity_band": "Moderate (10\u201314)",
+          "confidence_interval_95": [
+            9.2,
+            12.8
+          ]
+        },
+        {
+          "domain_id": "DOM-TRAUMA",
+          "instrument": "PCL-5-SF (Trauma & Hypervigilance)",
+          "raw_score": 6,
+          "max_score": 32,
+          "t_score": 47.0,
+          "severity_band": "Subclinical (0\u20137)",
+          "confidence_interval_95": [
+            3.6,
+            8.4
+          ]
+        },
+        {
+          "domain_id": "DOM-BIPOLAR-SCREEN",
+          "instrument": "MDQ (Bipolar / Hypomanic Activation)",
+          "raw_score": 9,
+          "max_score": 13,
+          "t_score": 71.2,
+          "severity_band": "Positive Bipolar Spectrum Screen (7\u201313)",
+          "confidence_interval_95": [
+            7.8,
+            10.2
+          ]
+        },
+        {
+          "domain_id": "DOM-SLEEP-CIRCADIAN",
+          "instrument": "PSQI-Equiv (Sleep & Circadian Stability)",
+          "raw_score": 14,
+          "max_score": 21,
+          "t_score": 70.0,
+          "severity_band": "Moderate Insomnia / Fragmentation (11\u201315)",
+          "confidence_interval_95": [
+            12.4,
+            15.6
+          ]
+        }
+      ],
+      "auxiliary_prosody_signal": {
+        "included": true,
+        "toroidal_coherence": 0.52,
+        "vocal_jitter_pct": 11.4,
+        "authority_weight": "AUXILIARY_CONTEXT_ONLY (0% standalone diagnostic authority per biological-data-governance.md \u00a78)"
+      },
+      "shadow_critique": {
+        "critic_id": "OI-SHADOW-CLINICAL-DIFF-01",
+        "medical_mimics_to_rule_out": [
+          "Endocrine / Metabolic panel: TSH & Free T4 (hypothyroidism mimics major depression & fatigue)",
+          "Hematology / Micronutrients: Serum Ferritin, Vitamin B12, Folate, and 25-OH Vitamin D",
+          "Cardiopulmonary / Stimulant screen: Hyperthyroidism, caffeine/stimulant intake, or arrhythmia/POTS",
+          "Polysomnography / Sleep Medicine rule-out: Obstructive Sleep Apnea (OSA) or circadian phase disorder driving daytime mood/cognitive fatigue"
+        ],
+        "differential_overlaps_flagged": [
+          "CRITICAL DIFFERENTIAL: Co-elevated PHQ-9 (>=10) and MDQ (>=7). Must rule out Bipolar II / Mixed Features before initiating unopposed antidepressant monotherapy."
+        ],
+        "biometric_uncertainty_notice": "Per OI Biological Data Governance (\u00a74, \u00a78): Acoustic prosody and self-report scales are uncertain measurements, not ground-truth identity or autonomous diagnoses.",
+        "contradictions_retained": []
+      },
+      "primary_working_hypotheses": [
+        "Bipolar Spectrum / Cyclothymic or Depressive Episode with Mixed/Hypomanic History (Provisional Screen).",
+        "Generalized Anxiety / Hyperarousal Screen (Moderate (10\u201314)).",
+        "Clinically Significant Sleep-Wake Disruption (Moderate Insomnia / Fragmentation (11\u201315))."
+      ],
+      "recommended_next_steps": [
+        "Structured clinical interview (SCID-5) for lifetime manic/hypomanic episodes prior to pharmacotherapy decisions.",
+        "Clinician review of autonomic stressors, stimulant/sleep factors, and anxiety-focused care.",
+        "Evaluate sleep hygiene, circadian schedule, and sleep-disordered breathing (CBT-I / sleep study if indicated)."
+      ],
+      "provenance_hash": "OI-CLIN-ec352148cfeff5662d97f19b"
+    },
+    {
+      "case_id": "CASE-02-SLEEP-MIMIC",
+      "case_label": "2. Severe Sleep/Circadian Collapse & Endocrine Mimic Check",
+      "timestamp_utc": 1795290626.8342621,
+      "governance_compliance": {
+        "explicit_purpose_and_consent_bound": true,
+        "measurement_separated_from_diagnosis": true,
+        "no_covert_biometric_authority": true,
+        "shadow_medical_mimics_evaluated": true,
+        "clinician_in_the_loop_required": true
+      },
+      "safety_triage_level": "ROUTINE",
+      "validity_gate": {
+        "vrin_inconsistency_score": 0.06,
+        "over_reporting_f_tscore": 56.4,
+        "defensiveness_k_tscore": 50.0,
+        "protocol_valid": true,
+        "validity_notes": [
+          "Response consistency (VRIN) and validity indicators within interpretable clinical bounds."
+        ]
+      },
+      "domain_scores": [
+        {
+          "domain_id": "DOM-DEPRESSION",
+          "instrument": "PHQ-9 (Depressive / Anhedonia)",
+          "raw_score": 12,
+          "max_score": 27,
+          "t_score": 59.3,
+          "severity_band": "Moderate (10\u201314)",
+          "confidence_interval_95": [
+            9.9,
+            14.1
+          ]
+        },
+        {
+          "domain_id": "DOM-ANXIETY",
+          "instrument": "GAD-7 (Autonomic Anxiety)",
+          "raw_score": 8,
+          "max_score": 21,
+          "t_score": 56.3,
+          "severity_band": "Mild (5\u20139)",
+          "confidence_interval_95": [
+            6.2,
+            9.8
+          ]
+        },
+        {
+          "domain_id": "DOM-TRAUMA",
+          "instrument": "PCL-5-SF (Trauma & Hypervigilance)",
+          "raw_score": 4,
+          "max_score": 32,
+          "t_score": 44.0,
+          "severity_band": "Subclinical (0\u20137)",
+          "confidence_interval_95": [
+            1.6,
+            6.4
+          ]
+        },
+        {
+          "domain_id": "DOM-BIPOLAR-SCREEN",
+          "instrument": "MDQ (Bipolar / Hypomanic Activation)",
+          "raw_score": 2,
+          "max_score": 13,
+          "t_score": 45.4,
+          "severity_band": "Low Bipolar Activation (0\u20133)",
+          "confidence_interval_95": [
+            0.8,
+            3.2
+          ]
+        },
+        {
+          "domain_id": "DOM-SLEEP-CIRCADIAN",
+          "instrument": "PSQI-Equiv (Sleep & Circadian Stability)",
+          "raw_score": 18,
+          "max_score": 21,
+          "t_score": 79.1,
+          "severity_band": "Severe Sleep Deprivation / Circadian Collapse (16\u201321)",
+          "confidence_interval_95": [
+            16.4,
+            19.6
+          ]
+        }
+      ],
+      "auxiliary_prosody_signal": {
+        "included": true,
+        "toroidal_coherence": 0.61,
+        "vocal_jitter_pct": 8.2,
+        "authority_weight": "AUXILIARY_CONTEXT_ONLY (0% standalone diagnostic authority per biological-data-governance.md \u00a78)"
+      },
+      "shadow_critique": {
+        "critic_id": "OI-SHADOW-CLINICAL-DIFF-01",
+        "medical_mimics_to_rule_out": [
+          "Endocrine / Metabolic panel: TSH & Free T4 (hypothyroidism mimics major depression & fatigue)",
+          "Hematology / Micronutrients: Serum Ferritin, Vitamin B12, Folate, and 25-OH Vitamin D",
+          "Polysomnography / Sleep Medicine rule-out: Obstructive Sleep Apnea (OSA) or circadian phase disorder driving daytime mood/cognitive fatigue"
+        ],
+        "differential_overlaps_flagged": [
+          "Primary Sleep Deprivation Interaction: Severe sleep fragmentation (>=15/21) can induce or amplify depressive and anxious scores; evaluate whether mood symptoms remit upon sleep restoration."
+        ],
+        "biometric_uncertainty_notice": "Per OI Biological Data Governance (\u00a74, \u00a78): Acoustic prosody and self-report scales are uncertain measurements, not ground-truth identity or autonomous diagnoses.",
+        "contradictions_retained": []
+      },
+      "primary_working_hypotheses": [
+        "Depressive Syndrome Screen (Moderate (10\u201314)) \u2014 rule out thyroid/iron/sleep etiologies.",
+        "Clinically Significant Sleep-Wake Disruption (Severe Sleep Deprivation / Circadian Collapse (16\u201321))."
+      ],
+      "recommended_next_steps": [
+        "Licensed clinician evaluation + baseline metabolic/thyroid panel + evidence-based psychotherapy (CBT/BA) evaluation.",
+        "Evaluate sleep hygiene, circadian schedule, and sleep-disordered breathing (CBT-I / sleep study if indicated)."
+      ],
+      "provenance_hash": "OI-CLIN-6ba4ca85c2d8923142317d01"
+    },
+    {
+      "case_id": "CASE-03-TRAUMA-HYPERAROUSAL",
+      "case_label": "3. Trauma-Driven Hypervigilance vs. Generalized Anxiety Differential",
+      "timestamp_utc": 1795290626.834295,
+      "governance_compliance": {
+        "explicit_purpose_and_consent_bound": true,
+        "measurement_separated_from_diagnosis": true,
+        "no_covert_biometric_authority": true,
+        "shadow_medical_mimics_evaluated": true,
+        "clinician_in_the_loop_required": true
+      },
+      "safety_triage_level": "PRIORITY_CLINICIAN_REVIEW",
+      "validity_gate": {
+        "vrin_inconsistency_score": 0.11,
+        "over_reporting_f_tscore": 68.4,
+        "defensiveness_k_tscore": 52.0,
+        "protocol_valid": true,
+        "validity_notes": [
+          "Response consistency (VRIN) and validity indicators within interpretable clinical bounds."
+        ]
+      },
+      "domain_scores": [
+        {
+          "domain_id": "DOM-DEPRESSION",
+          "instrument": "PHQ-9 (Depressive / Anhedonia)",
+          "raw_score": 9,
+          "max_score": 27,
+          "t_score": 54.0,
+          "severity_band": "Mild (5\u20139)",
+          "confidence_interval_95": [
+            6.9,
+            11.1
+          ]
+        },
+        {
+          "domain_id": "DOM-ANXIETY",
+          "instrument": "GAD-7 (Autonomic Anxiety)",
+          "raw_score": 15,
+          "max_score": 21,
+          "t_score": 72.3,
+          "severity_band": "Severe (15\u201321)",
+          "confidence_interval_95": [
+            13.2,
+            16.8
+          ]
+        },
+        {
+          "domain_id": "DOM-TRAUMA",
+          "instrument": "PCL-5-SF (Trauma & Hypervigilance)",
+          "raw_score": 24,
+          "max_score": 32,
+          "t_score": 74.0,
+          "severity_band": "Marked Trauma / Hypervigilance (23\u201332)",
+          "confidence_interval_95": [
+            21.6,
+            26.4
+          ]
+        },
+        {
+          "domain_id": "DOM-BIPOLAR-SCREEN",
+          "instrument": "MDQ (Bipolar / Hypomanic Activation)",
+          "raw_score": 3,
+          "max_score": 13,
+          "t_score": 49.1,
+          "severity_band": "Low Bipolar Activation (0\u20133)",
+          "confidence_interval_95": [
+            1.8,
+            4.2
+          ]
+        },
+        {
+          "domain_id": "DOM-SLEEP-CIRCADIAN",
+          "instrument": "PSQI-Equiv (Sleep & Circadian Stability)",
+          "raw_score": 15,
+          "max_score": 21,
+          "t_score": 72.3,
+          "severity_band": "Moderate Insomnia / Fragmentation (11\u201315)",
+          "confidence_interval_95": [
+            13.4,
+            16.6
+          ]
+        }
+      ],
+      "auxiliary_prosody_signal": {
+        "included": true,
+        "toroidal_coherence": 0.38,
+        "vocal_jitter_pct": 19.5,
+        "authority_weight": "AUXILIARY_CONTEXT_ONLY (0% standalone diagnostic authority per biological-data-governance.md \u00a78)"
+      },
+      "shadow_critique": {
+        "critic_id": "OI-SHADOW-CLINICAL-DIFF-01",
+        "medical_mimics_to_rule_out": [
+          "Cardiopulmonary / Stimulant screen: Hyperthyroidism, caffeine/stimulant intake, or arrhythmia/POTS",
+          "Polysomnography / Sleep Medicine rule-out: Obstructive Sleep Apnea (OSA) or circadian phase disorder driving daytime mood/cognitive fatigue"
+        ],
+        "differential_overlaps_flagged": [
+          "Trauma vs. Generalized Anxiety Overlap: Elevated GAD-7 co-occurs with PCL-5-SF >=16; autonomic hyperarousal may be trauma-cue driven (PTSD/CPTSD) rather than primary GAD.",
+          "Primary Sleep Deprivation Interaction: Severe sleep fragmentation (>=15/21) can induce or amplify depressive and anxious scores; evaluate whether mood symptoms remit upon sleep restoration."
+        ],
+        "biometric_uncertainty_notice": "Per OI Biological Data Governance (\u00a74, \u00a78): Acoustic prosody and self-report scales are uncertain measurements, not ground-truth identity or autonomous diagnoses.",
+        "contradictions_retained": []
+      },
+      "primary_working_hypotheses": [
+        "Trauma- and Stressor-Related Syndrome Screen (Marked Trauma / Hypervigilance (23\u201332)).",
+        "Clinically Significant Sleep-Wake Disruption (Moderate Insomnia / Fragmentation (11\u201315))."
+      ],
+      "recommended_next_steps": [
+        "Trauma-informed clinical assessment (CAPS-5) and evaluation for trauma-focused psychotherapy.",
+        "Evaluate sleep hygiene, circadian schedule, and sleep-disordered breathing (CBT-I / sleep study if indicated)."
+      ],
+      "provenance_hash": "OI-CLIN-89ef0f5040dbe531afd5ac00"
+    },
+    {
+      "case_id": "CASE-04-INVALID-VRIN",
+      "case_label": "4. Random / Inconsistent Response Set (Caught by Layer-1 VRIN Validity Gate)",
+      "timestamp_utc": 1795290626.834325,
+      "governance_compliance": {
+        "explicit_purpose_and_consent_bound": true,
+        "measurement_separated_from_diagnosis": true,
+        "no_covert_biometric_authority": true,
+        "shadow_medical_mimics_evaluated": true,
+        "clinician_in_the_loop_required": true
+      },
+      "safety_triage_level": "PRIORITY_CLINICIAN_REVIEW",
+      "validity_gate": {
+        "vrin_inconsistency_score": 0.62,
+        "over_reporting_f_tscore": 78.7,
+        "defensiveness_k_tscore": 44.0,
+        "protocol_valid": false,
+        "validity_notes": [
+          "INVALID PROFILE (VRIN=0.62 > 0.40): High response inconsistency detected (random responding or contradictory item pairs). Do not interpret clinical scales."
+        ]
+      },
+      "domain_scores": [
+        {
+          "domain_id": "DOM-DEPRESSION",
+          "instrument": "PHQ-9 (Depressive / Anhedonia)",
+          "raw_score": 18,
+          "max_score": 27,
+          "t_score": 70.0,
+          "severity_band": "Moderately Severe (15\u201319)",
+          "confidence_interval_95": [
+            15.9,
+            20.1
+          ]
+        },
+        {
+          "domain_id": "DOM-ANXIETY",
+          "instrument": "GAD-7 (Autonomic Anxiety)",
+          "raw_score": 16,
+          "max_score": 21,
+          "t_score": 74.6,
+          "severity_band": "Severe (15\u201321)",
+          "confidence_interval_95": [
+            14.2,
+            17.8
+          ]
+        },
+        {
+          "domain_id": "DOM-TRAUMA",
+          "instrument": "PCL-5-SF (Trauma & Hypervigilance)",
+          "raw_score": 20,
+          "max_score": 32,
+          "t_score": 68.0,
+          "severity_band": "Moderate / Probable PTSD Screen (16\u201322)",
+          "confidence_interval_95": [
+            17.6,
+            22.4
+          ]
+        },
+        {
+          "domain_id": "DOM-BIPOLAR-SCREEN",
+          "instrument": "MDQ (Bipolar / Hypomanic Activation)",
+          "raw_score": 10,
+          "max_score": 13,
+          "t_score": 74.9,
+          "severity_band": "Positive Bipolar Spectrum Screen (7\u201313)",
+          "confidence_interval_95": [
+            8.8,
+            11.2
+          ]
+        },
+        {
+          "domain_id": "DOM-SLEEP-CIRCADIAN",
+          "instrument": "PSQI-Equiv (Sleep & Circadian Stability)",
+          "raw_score": 12,
+          "max_score": 21,
+          "t_score": 65.4,
+          "severity_band": "Moderate Insomnia / Fragmentation (11\u201315)",
+          "confidence_interval_95": [
+            10.4,
+            13.6
+          ]
+        }
+      ],
+      "auxiliary_prosody_signal": {
+        "included": true,
+        "toroidal_coherence": 0.74,
+        "vocal_jitter_pct": 3.1,
+        "authority_weight": "AUXILIARY_CONTEXT_ONLY (0% standalone diagnostic authority per biological-data-governance.md \u00a78)"
+      },
+      "shadow_critique": {
+        "critic_id": "OI-SHADOW-CLINICAL-DIFF-01",
+        "medical_mimics_to_rule_out": [
+          "Endocrine / Metabolic panel: TSH & Free T4 (hypothyroidism mimics major depression & fatigue)",
+          "Hematology / Micronutrients: Serum Ferritin, Vitamin B12, Folate, and 25-OH Vitamin D",
+          "Cardiopulmonary / Stimulant screen: Hyperthyroidism, caffeine/stimulant intake, or arrhythmia/POTS",
+          "Polysomnography / Sleep Medicine rule-out: Obstructive Sleep Apnea (OSA) or circadian phase disorder driving daytime mood/cognitive fatigue"
+        ],
+        "differential_overlaps_flagged": [
+          "CRITICAL DIFFERENTIAL: Co-elevated PHQ-9 (>=10) and MDQ (>=7). Must rule out Bipolar II / Mixed Features before initiating unopposed antidepressant monotherapy.",
+          "Trauma vs. Generalized Anxiety Overlap: Elevated GAD-7 co-occurs with PCL-5-SF >=16; autonomic hyperarousal may be trauma-cue driven (PTSD/CPTSD) rather than primary GAD."
+        ],
+        "biometric_uncertainty_notice": "Per OI Biological Data Governance (\u00a74, \u00a78): Acoustic prosody and self-report scales are uncertain measurements, not ground-truth identity or autonomous diagnoses.",
+        "contradictions_retained": []
+      },
+      "primary_working_hypotheses": [
+        "Uninterpretable / Invalid Psychometric Administration (failed Layer-1 Validity Gate)."
+      ],
+      "recommended_next_steps": [
+        "Re-administer screening in a calm, supported clinical interview setting rather than automated self-report."
+      ],
+      "provenance_hash": "OI-CLIN-6adebcb5b2e6ee24606c7cb0"
+    }
+  ]
+}

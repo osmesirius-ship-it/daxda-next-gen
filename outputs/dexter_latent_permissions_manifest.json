@@ -1,0 +1,18 @@
+{
+  "authorization_id": "AUTH-DEXTER-LATENT-1794343282",
+  "grantor": "Nicole Bess",
+  "grantor_role": "Founder & Chief Invariant Architect",
+  "grantee": "Dexter (DAXDA.IA Chief Architect)",
+  "timestamp_utc": "2026-11-10T20:41:22.615274+00:00",
+  "permissions_granted": [
+    "U1_AGENT_WATCHDOG_INTERCEPTION",
+    "U2_COGNITIVE_LOOP_CLIFFORD_REASONING",
+    "U3_WEB_BRIDGE_CROSS_SYSTEM_INGESTION",
+    "U4_DUAL_CRYPTOGRAPHIC_DECISION_RECEIPTS",
+    "U5_DOMAIN_SPECIALIZED_GOVERNANCE_PACKS",
+    "U6_MULTI_STAKEHOLDER_PERSPECTIVE_ENGINE",
+    "U7_AUTONOMOUS_RECURSION_SELF_REPAIR"
+  ],
+  "governance_mode": "FAIL_CLOSED_AOG1",
+  "authorization_signature_sha256": "27d2f706d408673e78deac07459e9f1ff17a550287be08190ee869306bc93a51"
+}

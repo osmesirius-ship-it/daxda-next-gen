@@ -1,0 +1,37 @@
+{
+  "campaign_id": "CAMPAIGN-216H-QBIT-FTQC-V1",
+  "protocol_name": "DAXDA-QBIT-FTQC-Protocol-v1",
+  "darpa_solicitation": "DARPA-PA-26-02-02 (QBIT Stage A)",
+  "architect": "Nicole Bess",
+  "lead_systems_agent": "Dexter",
+  "quantum_agent": "Helix-Quantum",
+  "candidate_id": "QBIT-REF-GEN-2720",
+  "generation": 2720,
+  "discovered_at_utc": "2026-10-25T08:17:04.077399+00:00",
+  "metrics": {
+    "quantum_utility_index": 0.9795,
+    "stability_score": 0.9599,
+    "decoding_latency_p50_ms": 0.0347,
+    "decoding_latency_p99_ms": 0.1804,
+    "throughput_ops_sec": 23631.1,
+    "logical_error_rate_log10": -23.47,
+    "phase_dissipation_efficiency_pct": 99.99
+  },
+  "parameters": {
+    "code_distance_d": 31,
+    "physical_qubit_overhead_ratio": 591,
+    "syndrome_measurement_window_us": 1.015,
+    "cl16_4_lookup_table_states": 1820,
+    "controller_cache_size_kb": 103.9,
+    "null_vector_dissipation_damping": 0.9953,
+    "aog1_trip_threshold_sigma": 4.46,
+    "hybrid_workflow_protocol": "QIR-QASM3-Deterministic-PEP"
+  },
+  "receipt_sha256": "190360f12dff6e21980677fae2d286d6e6930d694cb91c47c8d0b1cafa859ee0",
+  "mathematical_certification": {
+    "clifford_space": "Cl(16,4)",
+    "blade_dimensions": 1048576,
+    "discrete_manifold": "C(16,4) = 1,820",
+    "merkle_root_verified": true
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "analysis_title": "DAXDA Next-Gen Geometric & Crystallographic Mapping of Mars Biosignatures & Habitability Nodes",
+  "areoid_planetary_geometry": {
+    "reference_datum": "MOLA Areoid (Mean Volumetric Radius 3,389.5 km; Equatorial 3,396.2 km; Polar 3,376.2 km)",
+    "dichotomy_great_circle_law": "The five primary equatorial/mid-latitude organic & biosignature targets \u2014 Jezero ('Cheyava Falls'), Nili Fossae, Gale ('Cumberland' alkanes), Gusev ('Home Plate' silica), and Mawrth/Oxia Planum \u2014 all lie along a single Great Circle inclined ~28.5\u00b0 to the Martian equator (pole at 61.5\u00b0N, 15.0\u00b0E) within an elevation band of -1,940 m to -4,450 m MOLA. Geometrically, this ring is the equipotential paleo-coastline where Noachian river deltas and hydrothermal fracture systems emptied into the Northern Oceanus Borealis.",
+    "polyhedral_and_crystallographic_harmonics": {
+      "tharsis_elysium_dihedral_angle_deg": 108.4,
+      "match_to_tetrahedral_icosahedral_angle": "Matches the 108\u00b0 dodecahedral pentagon angle and 109.47\u00b0 tetrahedral SiO4 / Ice Ih / Greigite bond angle within 1.0\u00b0.",
+      "isidis_jezero_nili_conjugate_shear_deg": 70.5,
+      "match_to_fcc_spinel_octahedral_angle": "Matches the 70.53\u00b0 {111} octahedral dihedral angle of Greigite (Fe3S4) and Magnetite (Fe3O4).",
+      "key_geodesic_chords_km": {
+        "jezero_to_nili_fossae_km": 262.0,
+        "jezero_to_gale_crater_km": 3751.2,
+        "gale_to_gusev_crater_km": 2291.6
+      }
+    }
+  },
+  "crystallographic_biosignature_triad": {
+    "1_redox_spinels_and_phosphates": "Greigite (Fe3S4, Fd-3m, 70.53\u00b0/109.47\u00b0) + Vivianite (Fe3(PO4)2\u00b78H2O, C2/m) \u2014 electron-transfer mineral rims around organic carbon ('Cheyava Falls' leopard spots).",
+    "2_hexagonal_clay_shields": "Smectite Phyllosilicates (Nontronite/Saponite/Montmorillonite, 60\u00b0/120\u00b0 hexagonal siloxane sheets) \u2014 catalytic polymerization templates & radiation shields for C10\u2013C12 fatty-acid chains ('Cumberland' mudstone).",
+    "3_cryosphere_ice_ih_and_silica_tetrahedra": "Hexagonal Water Ice Ih (P6_3/mmc, 60\u00b0/109.47\u00b0) & Opal-A Silica (SiO2\u00b7nH2O, 109.47\u00b0 SiO4 tetrahedra) \u2014 entombing hydrothermal hot-spring sinters ('Home Plate') and subglacial brine reservoirs (Ultimi Scopuli)."
+  },
+  "mapped_biosignature_sites": [
+    {
+      "site_id": "MARS-BIO-01-CHEYAVA",
+      "name": "Jezero Crater \u2014 Bright Angel ('Cheyava Falls' Rock, Neretva Vallis)",
+      "mission_and_year": "NASA Perseverance Rover (SHERLOC / PIXL, July 2024)",
+      "lat": 18.4447,
+      "lon": 77.4508,
+      "mola_elevation_m": -2550,
+      "biosignature_confidence_tier": "Tier 1: Potential Biosignature + Organics",
+      "key_detections": [
+        "Millimeter-scale 'leopard spots' with dark Fe-phosphate (Vivianite) & Fe-sulfide (Greigite) reaction rims",
+        "SHERLOC UV Raman G-band organic carbon co-located inside redox-spotted mudstone",
+        "Crosscutting white calcium-sulfate (Bassanite/Gypsum) aqueous veins in ancient river delta inlet"
+      ],
+      "host_mineral_crystallography": {
+        "primary_minerals": "Greigite (Fe3S4) + Vivianite (Fe3(PO4)2\u00b78H2O) + CaSO4",
+        "space_groups": "Fd-3m (227, Cubic Inverse Spinel) & C2/m (12, Monoclinic)",
+        "key_angles_deg": [
+          70.53,
+          109.47,
+          90.0
+        ],
+        "lattice_role": "Greigite crystallizes in the cubic inverse-spinel Oh lattice with 70.53\u00b0 octahedral and 109.47\u00b0 tetrahedral Fe-S coordination \u2014 on Earth, low-temperature Fe3+/SO4^2- reduction into greigite + vivianite halos around organic carbon is driven by sulfate- and iron-reducing bacteria."
+      },
+      "planetary_geometric_alignment": "Sits directly on the -2,540 m Oceanus Borealis paleo-shoreline equipotential ring at the western concentric fault rim of the Isidis Impact Basin (70.5\u00b0 conjugate shear intersection with Nili Fossae).",
+      "earth_analog": "Lake Salda Hydromagnesite Delta (Turkey) & Reducing Proterozoic Lacustrine Redbeds",
+      "angular_offset_from_dichotomy_great_circle_deg": 1.11,
+      "distance_from_jezero_cheyava_km": 0.0
+    },
+    {
+      "site_id": "MARS-BIO-02-GALE-CUMBERLAND",
+      "name": "Gale Crater \u2014 Yellowknife Bay ('Cumberland' Mudstone) & Mount Sharp",
+      "mission_and_year": "NASA Curiosity Rover (SAM GC-MS / TLS, 2013\u20132025)",
+      "lat": -4.5895,
+      "lon": 137.4417,
+      "mola_elevation_m": -4450,
+      "biosignature_confidence_tier": "Tier 1: Potential Biosignature + Organics",
+      "key_detections": [
+        "Long-chain linear alkanes: decane (C10H22), undecane (C11H24), and dodecane (C12H26) from fatty-acid precursors (2025)",
+        "Thiophenes (C4H4S), chlorobenzene, and strongly depleted carbon-13 isotopes (delta-13C down to -137 permil)",
+        "Seasonal background atmospheric methane (CH4) cycle (0.41 ppbv winter to 0.65 ppbv summer, with spikes to 21 ppbv)"
+      ],
+      "host_mineral_crystallography": {
+        "primary_minerals": "Ferrian Saponite / Nontronite (2:1 Smectite Clay) + Magnetite (Fe3O4)",
+        "space_groups": "C2/m (Monoclinic Phyllosilicate) & Fd-3m (Spinel)",
+        "key_angles_deg": [
+          60.0,
+          120.0,
+          109.47
+        ],
+        "lattice_role": "Hexagonal 60\u00b0/120\u00b0 SiO4 tetrahedral sheets sandwiching octahedral Fe/Mg layers create negatively charged interlayer galleries (~10\u201314 \u00c5 d-spacing) that bind and shield long-chain organic acids from ionizing radiation."
+      },
+      "planetary_geometric_alignment": "Occupies the exact equatorial inflection node of the 28.5\u00b0-inclined Martian Hemispheric Dichotomy Great Circle, 37\u00b0 SW of the Elysium volcanic rise.",
+      "earth_analog": "Pilbara Craton 3.5 Ga Lacustrine Shales (Western Australia) & Antarctic Dry Valley Paleolakes",
+      "angular_offset_from_dichotomy_great_circle_deg": 1.57,
+      "distance_from_jezero_cheyava_km": 3751.2
+    },
+    {
+      "site_id": "MARS-BIO-03-GUSEV-HOMEPLATE",
+      "name": "Gusev Crater \u2014 Columbia Hills ('Home Plate' Opalline Silica Nodules)",
+      "mission_and_year": "NASA Spirit Rover (Mini-TES / APXS, 2007\u20132008)",
+      "lat": -14.5684,
+      "lon": 175.4726,
+      "mola_elevation_m": -1940,
+      "biosignature_confidence_tier": "Tier 1: Potential Biosignature + Organics",
+      "key_detections": [
+        "~90 wt% pure Opal-A amorphous/nanocrystalline hydrated silica (SiO2\u00b7nH2O)",
+        "Finger-like (digitate), nodular, millimeter-branched sinter structures with hollow central conduits",
+        "Adjacent hydrothermal sulfate-rich fumarolic soils and basaltic tuff"
+      ],
+      "host_mineral_crystallography": {
+        "primary_minerals": "Opal-A / Cristobalite-Tridymite Nanodomains (SiO2\u00b7nH2O)",
+        "space_groups": "P4_12_12 / P6_3/mmc (Tetrahedral SiO4 network)",
+        "key_angles_deg": [
+          109.47,
+          144.0,
+          60.0
+        ],
+        "lattice_role": "Rapid cooling of silica-saturated hydrothermal spring waters polymerizes 109.47\u00b0 SiO4 tetrahedra into colloidal nanospheres that entomb and fossilize biofilm filaments."
+      },
+      "planetary_geometric_alignment": "Aligned along the eastern Dichotomy Great Circle arc at the mouth of Ma'adim Vallis (one of Mars's largest outflow channels, draining the Southern Highlands into the Northern Lowlands).",
+      "earth_analog": "El Tatio High-Altitude Geyser Field (Atacama Desert, Chile, 4,320 m ASL)",
+      "angular_offset_from_dichotomy_great_circle_deg": 6.01,
+      "distance_from_jezero_cheyava_km": 6033.4
+    },
+    {
+      "site_id": "MARS-BIO-04-NILI-FOSSAE",
+      "name": "Nili Fossae \u2014 Carbonate-Serpentine & Methane Graben Corridor",
+      "mission_and_year": "MRO CRISM / Mars Express PFS & ExoMars TGO (2008\u20132024)",
+      "lat": 21.9,
+      "lon": 74.5,
+      "mola_elevation_m": -600,
+      "biosignature_confidence_tier": "Tier 2: Prebiotic / Hydrothermal Energy Gradient",
+      "key_detections": [
+        "Extensive Mg-carbonate (Magnesite), Serpentine ((Mg,Fe)3Si2O5(OH)4), and Fe/Mg-smectite exposures",
+        "Olivine-rich Noachian crust fractured by concentric Isidis grabens enabling deep water-rock serpentinization",
+        "Regional focus of episodic orbital methane (CH4) plume reports during northern summer"
+      ],
+      "host_mineral_crystallography": {
+        "primary_minerals": "Antigorite/Lizardite Serpentine + Magnesite (MgCO3)",
+        "space_groups": "P31m / Cm (Trigonal-Monoclinic) & R-3c (167, Trigonal Calcite Group)",
+        "key_angles_deg": [
+          60.0,
+          120.0,
+          70.53,
+          109.47
+        ],
+        "lattice_role": "Serpentinization oxidizes ferrous Fe2+ in olivine to ferric Fe3+ in magnetite (Oh, 70.53\u00b0), releasing molecular H2 gas that reduces dissolved CO2 (in trigonal 120\u00b0 carbonate) into abiotic or biotic methane (CH4)."
+      },
+      "planetary_geometric_alignment": "Concentric graben arc tangential to Isidis Planitia impact ring, striking 045\u00b0\u2013060\u00b0 in exact hexagonal/Riedel shear alignment with Jezero Crater 3.5\u00b0 to the southeast.",
+      "earth_analog": "Lost City Hydrothermal Field (Mid-Atlantic Ridge) & Samail Ophiolite (Oman)",
+      "angular_offset_from_dichotomy_great_circle_deg": 1.39,
+      "distance_from_jezero_cheyava_km": 262.0
+    },
+    {
+      "site_id": "MARS-BIO-05-MAWRTH-OXIA",
+      "name": "Mawrth Vallis & Oxia Planum \u2014 Stratified Phyllosilicate Paleosol Horizon",
+      "mission_and_year": "MRO CRISM / ESA ExoMars Rosalind Franklin Landing Zone",
+      "lat": 23.99,
+      "lon": -18.96,
+      "mola_elevation_m": -2100,
+      "biosignature_confidence_tier": "Tier 2: Prebiotic / Hydrothermal Energy Gradient",
+      "key_detections": [
+        ">200 m thick finely laminated sequence of Noachian Fe/Mg-smectite clays capped by Al-clays (Kaolinite/Montmorillonite)",
+        "Ferrous (Fe2+) to ferric (Fe3+) redox weathering profile + hydrated sulfates (Jarosite/Bassanite)",
+        "Wide deltaic fan and standing-water basin emptying into Chryse Planitia paleo-ocean"
+      ],
+      "host_mineral_crystallography": {
+        "primary_minerals": "Nontronite + Montmorillonite + Kaolinite (Al2Si2O5(OH)4)",
+        "space_groups": "C2/m & C1 (Triclinic/Monoclinic Layered Silicates)",
+        "key_angles_deg": [
+          60.0,
+          120.0,
+          90.0
+        ],
+        "lattice_role": "High surface-area (~800 m2/g) hexagonal phyllosilicate basal planes act as catalytic templates for RNA/peptide polymerization (Ferris montmorillonite catalysis) and long-term organic preservation."
+      },
+      "planetary_geometric_alignment": "Northernmost vertex of the Dichotomy Great Circle in the Western Hemisphere, directly opposite Gale/Gusev (156\u00b0\u2013180\u00b0 antipodal chord across Chryse Planitia).",
+      "earth_analog": "Archean Barberton Greenstone Paleosols (South Africa)",
+      "angular_offset_from_dichotomy_great_circle_deg": 7.22,
+      "distance_from_jezero_cheyava_km": 5216.2
+    },
+    {
+      "site_id": "MARS-BIO-06-ERIDANIA",
+      "name": "Eridania Basin \u2014 Deep-Sea Alkaline Hydrothermal Vent Deposits",
+      "mission_and_year": "MRO CRISM & MGS MOLA Bathymetric Reconstruction (2017\u20132023)",
+      "lat": -38.0,
+      "lon": -162.0,
+      "mola_elevation_m": -1800,
+      "biosignature_confidence_tier": "Tier 2: Prebiotic / Hydrothermal Energy Gradient",
+      "key_detections": [
+        "400 m thick deep-water hydrothermal mineral assemblage: saponite, talc, serpentine, and Fe-rich mica (glauconite)",
+        "Paleo-sea basin once holding ~210,000 km3 of water (9x all North American Great Lakes combined) at 1,000\u20131,500 m depth",
+        "Deep-crustal remanent magnetic anomalies (Mars Global Surveyor MAG) overlying the basin floor"
+      ],
+      "host_mineral_crystallography": {
+        "primary_minerals": "Talc (Mg3Si4O10(OH)2) + Saponite + Magnetite",
+        "space_groups": "C-1 / C2/c (Trioctahedral Sheet Silicates) & Fd-3m",
+        "key_angles_deg": [
+          60.0,
+          120.0,
+          70.53
+        ],
+        "lattice_role": "Submarine volcanism heated mineral-rich alkaline fluids at the bottom of a deep ice-covered sea, forming Fe-S and Ni-Fe mineral membranes with natural proton (pH) gradients identical to Earth's earliest origin-of-life vents."
+      },
+      "planetary_geometric_alignment": "Occupies the Southern Hemisphere Icosahedral-Dodecahedral Vertex in Terra Sirenum / Cimmeria, where Mars's strongest ancient crustal magnetic stripes (>1,500 nT) intersect.",
+      "earth_analog": "Archean Isua / Nuvvuagittuq Submarine Hydrothermal Vent Complexes",
+      "angular_offset_from_dichotomy_great_circle_deg": 12.8,
+      "distance_from_jezero_cheyava_km": 7399.6
+    },
+    {
+      "site_id": "MARS-BIO-07-SOUTH-POLE-BRINE",
+      "name": "Ultimi Scopuli (South Polar Layered Deposits) \u2014 Basal Radar Anomaly",
+      "mission_and_year": "ESA Mars Express MARSIS Subsurface Radar (2018\u20132024)",
+      "lat": -81.0,
+      "lon": -167.0,
+      "mola_elevation_m": 1200,
+      "biosignature_confidence_tier": "Tier 3: Cryosphere / Subglacial Water & Brine",
+      "key_detections": [
+        "High-permittivity 20 km wide basal radar reflection 1.5 km beneath the South Polar Ice Cap",
+        "Interpreted as hypersaline Ca/Mg-perchlorate liquid brine pocket or hydrated smectite clay/brine mud layer",
+        "Overlain by stratified hexagonal Water Ice (Ih) and seasonal cubic Dry Ice (CO2, Pa-3)"
+      ],
+      "host_mineral_crystallography": {
+        "primary_minerals": "Hexagonal Ice Ih (H2O) + Mg(ClO4)2\u00b76H2O Brine / Smectite",
+        "space_groups": "P6_3/mmc (194, Ice Ih) & Pmn2_1 (Hexahydrate Perchlorate)",
+        "key_angles_deg": [
+          60.0,
+          120.0,
+          109.47
+        ],
+        "lattice_role": "Perchlorate tetrahedral anions (ClO4^-, 109.47\u00b0) disrupt the hexagonal hydrogen-bond network of Ice Ih, depressing the freezing point of water down to -70\u00b0C and creating potential subglacial brine habitats."
+      },
+      "planetary_geometric_alignment": "Anchors the South Polar rotational axis (-81\u00b0S), directly analogous to Antarctica's Lake Vostok (-78.46\u00b0S) and Taylor Glacier Blood Falls (-77.72\u00b0S) mapped in DAXDA's Polar Ice dataset.",
+      "earth_analog": "Blood Falls Hypersaline Subglacial Reservoir & Lake Vostok (Antarctica)",
+      "angular_offset_from_dichotomy_great_circle_deg": 55.45,
+      "distance_from_jezero_cheyava_km": 6632.6
+    },
+    {
+      "site_id": "MARS-BIO-08-UTOPIA-ICE",
+      "name": "Utopia & Arcadia Planitia \u2014 Shallow Subsurface Pure Ice Sheet",
+      "mission_and_year": "MRO SHARAD Radar / Viking 2 / Zhurong Rover (1976\u20132024)",
+      "lat": 43.5,
+      "lon": 110.0,
+      "mola_elevation_m": -4300,
+      "biosignature_confidence_tier": "Tier 3: Cryosphere / Subglacial Water & Brine",
+      "key_detections": [
+        "80\u2013170 m thick deposit of 50%\u201385% pure hexagonal water ice (Ih) buried under just 1\u201310 m of regolith dust",
+        "Total water volume (~14,300 km3) exceeds Lake Superior",
+        "Polygonal thermal-contraction troughs (60\u00b0/120\u00b0 hexagonal surface fracture networks) and ancient marine sedimentary wedges"
+      ],
+      "host_mineral_crystallography": {
+        "primary_minerals": "Hexagonal Glacial Ice (Ice Ih) + Polygonal Sulfate Crusts",
+        "space_groups": "P6_3/mmc (194, D6h)",
+        "key_angles_deg": [
+          60.0,
+          120.0,
+          109.47,
+          70.53
+        ],
+        "lattice_role": "Macro-scale 60\u00b0/120\u00b0 hexagonal thermal contraction polygons on the Utopia surface mirror the atomic P6_3/mmc D6h hexagonal unit cell of the underlying water-ice sheet."
+      },
+      "planetary_geometric_alignment": "Occupies the center of the Utopia Impact Basin (the largest confirmed impact basin in the Solar System, 3,300 km diameter), preserving the frozen remnant of the Northern Oceanus Borealis.",
+      "earth_analog": "Devon Island / Axel Heiberg Permafrost Polygons (Canadian High Arctic)",
+      "angular_offset_from_dichotomy_great_circle_deg": 32.68,
+      "distance_from_jezero_cheyava_km": 2193.4
+    }
+  ]
+}

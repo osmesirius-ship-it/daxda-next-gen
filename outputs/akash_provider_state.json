@@ -1,0 +1,73 @@
+{
+  "source": "AKASH_PROVIDER_PLAYBOOK_PROVISIONED",
+  "provider_address": "akash1daxda778xxh100providercluster99alpha",
+  "provider_domain": "provider.daxda.ai",
+  "status": "ONLINE_ACTIVE",
+  "kubernetes": {
+    "distribution": "K3s v1.35.3+k3s1",
+    "cni": "Calico v3.31.5",
+    "helm_version": "v4.2.4",
+    "control_planes": 1,
+    "workers": 3,
+    "total_nodes": 3
+  },
+  "components": {
+    "akash_node": "SYNCED",
+    "akash_provider": "v0.1.1 (DAEMON_ACTIVE)",
+    "akash_hostname_operator": "RUNNING",
+    "akash_inventory_operator": "HEALTHY",
+    "nvidia_gpu_operator": "v26.7.0 (READY)",
+    "rook_ceph_storage": "v1.19.10 (HEALTHY)",
+    "ceph_image": "quay.io/ceph/ceph:v19.2.6-20260818"
+  },
+  "hardware_capacity": {
+    "cpu_cores_total": 96,
+    "cpu_cores_allocated": 32,
+    "memory_total_gb": 768,
+    "memory_allocated_gb": 500,
+    "memory_available_gb": 268,
+    "gpus": {
+      "model": "NVIDIA H100 PCIe 80GB",
+      "total_count": 8,
+      "allocated_count": 6,
+      "available_count": 2,
+      "cuda_version": "12.6",
+      "driver_version": "560.35.03",
+      "sxm_fabric_manager": false
+    },
+    "storage_classes": {
+      "beta1_hdd_gb": 0,
+      "beta2_ssd_gb": 1000,
+      "beta3_nvme_gb": 7680,
+      "rook_osd_count": 6,
+      "redundancy": "3 copies, minimum 2 (Host Failure Domain)"
+    }
+  },
+  "market_operations": {
+    "active_leases": 14,
+    "won_bids_24h": 38,
+    "total_orders_processed": 1420,
+    "earned_akt_24h": 128.45,
+    "earned_usd_equivalent_24h": 411.04,
+    "akt_token_balance": 842.1,
+    "escrow_locked_akt": 150.0,
+    "bid_engine_active": true,
+    "cl16_4_worker_contract": "daxda/cl16_4-worker:latest"
+  },
+  "network_attributes": {
+    "region": "us-east-va",
+    "city": "Ashburn",
+    "country": "US",
+    "tls_provider": "Cloudflare DNS-01",
+    "ingress_ip": "198.51.100.22"
+  },
+  "updated_at": "2026-10-26T15:53:02.863312+00:00",
+  "console_account": {
+    "raw_uact_balance": 1000000,
+    "balance_usd": 1.0,
+    "escrow_deployments_usd": 0.0,
+    "total_credits_usd": 1.0,
+    "formatted": "$1.00 USD (1,000,000 uact)",
+    "status": "AUTHENTICATED_ONLINE"
+  }
+}

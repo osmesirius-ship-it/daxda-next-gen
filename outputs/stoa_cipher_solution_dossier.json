@@ -1,0 +1,461 @@
+{
+  "timestamp": 1792013019.134881,
+  "execution_duration_sec": 0.096,
+  "total_paragraphs": 4498,
+  "paragraph_stream_len": 4357,
+  "sentence_stream_len": 13980,
+  "total_matches_found": 33,
+  "matches": [
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alpha",
+      "match_type": "FUZZY (Span 4 across 'PALS')",
+      "stream_offset": 137,
+      "paragraph_number": "N/A",
+      "span_length": 4,
+      "preview": "ciphers\u2014 Numerical and musical ciphers\u2014 Code ciphers."
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alpha",
+      "match_type": "FUZZY (Span 4 across 'PTAS')",
+      "stream_offset": 749,
+      "paragraph_number": "N/A",
+      "span_length": 4,
+      "preview": "Nearly all students of the subject believe that subterranean chambers exist beneath the  Great Pyramid. Robert Ballard writes: \"The priests of the Pyramids of Lake Moeris had  thei"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alpha",
+      "match_type": "FUZZY (Span 7 across 'PRPATAS')",
+      "stream_offset": 765,
+      "paragraph_number": "N/A",
+      "span_length": 7,
+      "preview": "THE PYRAMID MYSTERIES"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alpha",
+      "match_type": "FUZZY (Span 6 across 'PYAAIS')",
+      "stream_offset": 943,
+      "paragraph_number": "N/A",
+      "span_length": 6,
+      "preview": "THE MIDNIGHT SUN"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alpha",
+      "match_type": "FUZZY (Span 5 across 'PAIIS')",
+      "stream_offset": 1124,
+      "paragraph_number": "N/A",
+      "span_length": 5,
+      "preview": "\"Plato writes that it is needful for the philosopher to know how the seven circles beneath  the first one are arranged according to the Egyptians. The first triad of fire denotes l"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alpha",
+      "match_type": "FUZZY (Span 5 across 'PAOIS')",
+      "stream_offset": 1265,
+      "paragraph_number": "N/A",
+      "span_length": 5,
+      "preview": "The famous Pythagorean Y signified the power of choice and was used in the Mysteries  as emblematic of the Forking of the Ways. The central stem separated into two parts, one  bran"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alpha",
+      "match_type": "FUZZY (Span 7 across 'PTIAHAS')",
+      "stream_offset": 2245,
+      "paragraph_number": "N/A",
+      "span_length": 7,
+      "preview": "Paracelsus, recognizing derangements of the etheric double as the most important cause  of disease, sought to reharmonize its substances by bringing into contact with it other  bod"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alpha",
+      "match_type": "FUZZY (Span 7 across 'PWBAGIS')",
+      "stream_offset": 3871,
+      "paragraph_number": "N/A",
+      "span_length": 7,
+      "preview": "be chemical experiments or scientific speculations. Every student of symbolism and  philosophy, therefore, should be reasonably well acquainted with the underlying  principles of c"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alpha",
+      "match_type": "FUZZY (Span 5 across 'PAMTS')",
+      "stream_offset": 3959,
+      "paragraph_number": "N/A",
+      "span_length": 5,
+      "preview": "Commenting on the foregoing passage, Godfrey Higgins remarks that it has fortunately  escaped the hands of those destroyers who have attempted to render the Gospel narratives  cons"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alpha",
+      "match_type": "FUZZY (Span 5 across 'PATIS')",
+      "stream_offset": 4167,
+      "paragraph_number": "N/A",
+      "span_length": 5,
+      "preview": "8"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alnum",
+      "match_type": "FUZZY (Span 4 across 'PALS')",
+      "stream_offset": 174,
+      "paragraph_number": "N/A",
+      "span_length": 4,
+      "preview": "perpetuating his tenets became kn own as the Ionic. He died in 546 B.C., and was  succeeded by Anaximander, who in turn was followed by Anaximenes, Anaxagoras, and  Archelaus, with"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alnum",
+      "match_type": "FUZZY (Span 4 across 'PTAS')",
+      "stream_offset": 786,
+      "paragraph_number": "N/A",
+      "span_length": 4,
+      "preview": "Plutarch affirms that many ancient authors believed this goddess to be the daughter of  Hennes; others held the opinion that she was the child of Prometheus. Both of these  demigod"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alnum",
+      "match_type": "FUZZY (Span 7 across 'PRPATAS')",
+      "stream_offset": 802,
+      "paragraph_number": "N/A",
+      "span_length": 7,
+      "preview": "p. 46"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alnum",
+      "match_type": "FUZZY (Span 6 across 'P2AAIS')",
+      "stream_offset": 980,
+      "paragraph_number": "N/A",
+      "span_length": 6,
+      "preview": "p. 54"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alnum",
+      "match_type": "FUZZY (Span 5 across 'PAIIS')",
+      "stream_offset": 1162,
+      "paragraph_number": "N/A",
+      "span_length": 5,
+      "preview": "According to Beaumont, the above is the most authentic form of the Delphian tripod extant; but as the  tripod must have changed considerably during the life of the oracle, hasty co"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alnum",
+      "match_type": "FUZZY (Span 5 across 'PAOIS')",
+      "stream_offset": 1303,
+      "paragraph_number": "N/A",
+      "span_length": 5,
+      "preview": "behind him which others less intelligent, seeing, shall use as a mold for the casting of  idols."
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alnum",
+      "match_type": "FUZZY (Span 7 across 'PTIAHAS')",
+      "stream_offset": 2303,
+      "paragraph_number": "N/A",
+      "span_length": 7,
+      "preview": "From De Monte-Snyders' Metamorphosis Planetarum."
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alnum",
+      "match_type": "FUZZY (Span 7 across 'PWBAGIS')",
+      "stream_offset": 3952,
+      "paragraph_number": "N/A",
+      "span_length": 7,
+      "preview": "Though the temples of Thebes and Karnak be now but majestic heaps of broken and  time-battered stone, the spirit: of Egyptian philosophy still marches triumphant through  the centu"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alnum",
+      "match_type": "FUZZY (Span 5 across 'PAMTS')",
+      "stream_offset": 4040,
+      "paragraph_number": "N/A",
+      "span_length": 5,
+      "preview": "On the mandalas of the Tibetans, heaven is laid out in the form of a cross, with a demon  king at each of the four gates. A remarkable cross of great antiquity was discovered in th"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Paragraph_Alnum",
+      "match_type": "FUZZY (Span 5 across 'PATIS')",
+      "stream_offset": 4288,
+      "paragraph_number": "N/A",
+      "span_length": 5,
+      "preview": "on a perfect and complete equality with man, and the Prophet's teachings often place her  in a position superior to the male in some respects.\" Mr. Webb justifies his stand by  quo"
+    },
+    {
+      "target": "BESS",
+      "label": "Target 2: Bess",
+      "stream": "Sentence_Alpha",
+      "match_type": "FUZZY (Span 9 across 'BPTETSBTS')",
+      "stream_offset": 11511,
+      "paragraph_number": "N/A",
+      "span_length": 9,
+      "preview": ""
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Sentence_Alpha",
+      "match_type": "FUZZY (Span 7 across 'PHAAALS')",
+      "stream_offset": 238,
+      "paragraph_number": "N/A",
+      "span_length": 7,
+      "preview": "And vain Chimasra vomits empty Flame."
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Sentence_Alpha",
+      "match_type": "FUZZY (Span 7 across 'PTTATTS')",
+      "stream_offset": 3546,
+      "paragraph_number": "N/A",
+      "span_length": 7,
+      "preview": "The eighth bottle is divided horizontally by a golden band, from which rises a golden  stem ending in five leaves protruding from the neck of the bottle. The contents of the"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Sentence_Alpha",
+      "match_type": "FUZZY (Span 6 across 'PTTATS')",
+      "stream_offset": 3969,
+      "paragraph_number": "N/A",
+      "span_length": 6,
+      "preview": "According to tradition, Arthur, when a boy of fifteen, was crowned King of Britain, in A.D. 516. Soon after  his ascension to the throne he founded the Order of the Knights of the "
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Sentence_Alpha",
+      "match_type": "FUZZY (Span 6 across 'PIATVS')",
+      "stream_offset": 4103,
+      "paragraph_number": "N/A",
+      "span_length": 6,
+      "preview": "THE CRUCIFIXION IN SPACE."
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Sentence_Alpha",
+      "match_type": "FUZZY (Span 5 across 'PATAS')",
+      "stream_offset": 4868,
+      "paragraph_number": "N/A",
+      "span_length": 5,
+      "preview": ""
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Sentence_Alpha",
+      "match_type": "FUZZY (Span 6 across 'PPAWHS')",
+      "stream_offset": 13516,
+      "paragraph_number": "N/A",
+      "span_length": 6,
+      "preview": ""
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Sentence_Alnum",
+      "match_type": "FUZZY (Span 7 across 'PHAAALS')",
+      "stream_offset": 278,
+      "paragraph_number": "N/A",
+      "span_length": 7,
+      "preview": "Among the French schools of philosophy are Traditionalism (often applied to  Christianity), which esteems tradition as the proper foundation for philosophy; the  Sociological schoo"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Sentence_Alnum",
+      "match_type": "FUZZY (Span 7 across 'PTTATTS')",
+      "stream_offset": 3647,
+      "paragraph_number": "N/A",
+      "span_length": 7,
+      "preview": "After washing and drinking in the garden from a fountain which bore several  inscriptions\u2014 among them one reading, \"Drink, brothers, and live\"\u2014 the guests, led by  Virgo Lucifera, "
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Sentence_Alnum",
+      "match_type": "FUZZY (Span 6 across 'PTTATS')",
+      "stream_offset": 4084,
+      "paragraph_number": "N/A",
+      "span_length": 6,
+      "preview": "The modem world has been misled in its attitude towards the so-called pagan deities, and  has come to view them in a light entirely different from their true characters and  meanin"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Sentence_Alnum",
+      "match_type": "FUZZY (Span 6 across 'PIATVS')",
+      "stream_offset": 4219,
+      "paragraph_number": "N/A",
+      "span_length": 6,
+      "preview": "666"
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Sentence_Alnum",
+      "match_type": "FUZZY (Span 5 across 'PATAS')",
+      "stream_offset": 5012,
+      "paragraph_number": "N/A",
+      "span_length": 5,
+      "preview": ""
+    },
+    {
+      "target": "PAS",
+      "label": "Pass / Authority Invariant",
+      "stream": "Sentence_Alnum",
+      "match_type": "FUZZY (Span 7 across 'P1PAWHS')",
+      "stream_offset": 13950,
+      "paragraph_number": "N/A",
+      "span_length": 7,
+      "preview": ""
+    }
+  ],
+  "chapter_analysis": {
+    "Chapter_06_Initiation_of_the_Pyramid": {
+      "paragraph_count": 219,
+      "para_initials_preview": "TT22334ITSTTTPTPWT556677TPTTTTTTFFFT8889TSPCTOPTTHTFTTQATTTT111111111TRTFAT111TTTCB1111TCFTDUMSTTTTTTATTTCBI111122PIPPTP",
+      "sent_initials_preview": "TT22334ITSTTTPTPWT556677TPTTTTTTFFFT8889TSPCTOP8TTHTFTTQATTTT111111111TRTFAT111TTTCB1111TCFTDUMSITTTTTTATTTCBI111122P11I",
+      "matches": [
+        {
+          "target": "PAS",
+          "label": "Pass / Authority Invariant",
+          "exact_para_offsets": [],
+          "exact_sent_offsets": [],
+          "fuzzy_para_matches": [
+            [
+              125,
+              129,
+              "PALS"
+            ]
+          ],
+          "fuzzy_sent_matches": [
+            [
+              151,
+              158,
+              "PHAAALS"
+            ]
+          ]
+        }
+      ]
+    },
+    "Chapter_13_The_Sun_Universal_Deity": {
+      "paragraph_count": 209,
+      "para_initials_preview": "TTTPTPWT556677TPTTTTTTFFFT8889TSPCTOPTTHTFTTQATTTT111111111TRTFAT111TTTCB1111TCFTDUMSTTTTTTATTTCBI111122PIPPTPSIAWIPALSC",
+      "sent_initials_preview": "TTTPTPWT556677TPTTTTTTFFFT8889TSPCTOP8TTHTFTTQATTTT111111111TRTFAT111TTTCB1111TCFTDUMSITTTTTTATTTCBI111122P11IPTBTPTPITC",
+      "matches": [
+        {
+          "target": "PAS",
+          "label": "Pass / Authority Invariant",
+          "exact_para_offsets": [],
+          "exact_sent_offsets": [],
+          "fuzzy_para_matches": [
+            [
+              115,
+              119,
+              "PALS"
+            ]
+          ],
+          "fuzzy_sent_matches": [
+            [
+              141,
+              148,
+              "PHAAALS"
+            ]
+          ]
+        }
+      ]
+    },
+    "Pythagorean_Theory_of_Numbers": {
+      "paragraph_count": 130,
+      "para_initials_preview": "TNTTPMOTTNTTATTTTETTITATPCTRTPTEESDPTPTPTTTMIBBPETIAWTTTTP11223KTTTTTITAMBATTTTTTTTPTTRMILATPRIBAAFCTFTPITSAWTPRTCHFUPPL",
+      "sent_initials_preview": "TNTTTTITTITAPTMMPGBTOBTTTTITFBNATTTBTFTTTSOUFIATTFTTTTFTFTFBAETTTTFIFTTBTTBTEAFTFPCTRTFIAITTIHTAWPTUTTTTBTAEESFTDFTPFTTT",
+      "matches": []
+    },
+    "Qabbalistic_Keys_Creation": {
+      "paragraph_count": 171,
+      "para_initials_preview": "QATTTT111111111TRTFAT111TTTCB1111TCFTDUMSTTTTTTATTTCBI111122PIPPTPSIAWIPALSCFSPIAHTMTSSTTITTCPFPPCTDTTTPAWCTFI1PPAORTME1",
+      "sent_initials_preview": "QATTTT111111111TRTFAT111TTTCB1111TCFTDUMSITTTTTTATTTCBI111122P11IPTBTPTPITCSWIAHBHIOWTITTBPTTTWSPHAAALSCFSBEBTINBP1ITHAT",
+      "matches": [
+        {
+          "target": "PAS",
+          "label": "Pass / Authority Invariant",
+          "exact_para_offsets": [],
+          "exact_sent_offsets": [],
+          "fuzzy_para_matches": [
+            [
+              71,
+              75,
+              "PALS"
+            ]
+          ],
+          "fuzzy_sent_matches": [
+            [
+              96,
+              103,
+              "PHAAALS"
+            ]
+          ]
+        }
+      ]
+    },
+    "Cryptic_Ciphers_Francis_Bacon": {
+      "paragraph_count": 146,
+      "para_initials_preview": "B1111TCFTDUMSTTTTTTATTTCBI111122PIPPTPSIAWIPALSCFSPIAHTMTSSTTITTCPFPPCTDTTTPAWCTFI1PPAORTME1FETCNFVFATOCBAGATTOHAFPEAWCT",
+      "sent_initials_preview": "B1111TCFTDUMSITTTTTTATTTCBI111122P11IPTBTPTPITCSWIAHBHIOWTITTBPTTTWSPHAAALSCFSBEBTINBP1ITHATAHPBHPHPTIBPTXHPPHMHHZRLLFTD",
+      "matches": [
+        {
+          "target": "PAS",
+          "label": "Pass / Authority Invariant",
+          "exact_para_offsets": [],
+          "exact_sent_offsets": [],
+          "fuzzy_para_matches": [
+            [
+              43,
+              47,
+              "PALS"
+            ]
+          ],
+          "fuzzy_sent_matches": [
+            [
+              68,
+              75,
+              "PHAAALS"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "sha256_verification_seal": "064c4be7520f4088edf4ec1cbea474d82114bd64ead2bc7e0619118f0ba71994",
+  "files_written": {
+    "acrostic_table_csv": "/Users/user/daxda next gen/DAXDA-NEXTGEN/daxda-next-gen/outputs/acrostic_table.csv",
+    "acrostic_report_txt": "/Users/user/daxda next gen/DAXDA-NEXTGEN/daxda-next-gen/outputs/acrostic_report.txt"
+  }
+}

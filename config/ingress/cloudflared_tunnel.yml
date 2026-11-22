@@ -1,0 +1,54 @@
+# Cloudflare Zero Trust Tunnel Configuration for DAXDA.IA
+# ==========================================================
+# Domain: daxda.ia | Ingress: api.daxda.ia & dashboard.daxda.ia
+# Tunnel ID: daxda-production-ingress-tunnel-2026
+
+tunnel: daxda-production-ingress-tunnel-2026
+credentials-file: /etc/cloudflared/daxda-production-ingress-tunnel-2026.json
+
+warp-routing:
+  enabled: true
+
+originRequest:
+  connectTimeout: 10s
+  noTLSVerify: false
+  keepAliveConnections: 256
+  keepAliveTimeout: 90s
+  http2Origin: true
+  tcpKeepAlive: 30s
+
+ingress:
+  # 1. Commercial API Gateway: Metered Invariant Evaluation & Governance ($0.0008 / call)
+  - hostname: api.daxda.ia
+    service: http://127.0.0.1:8088
+    originRequest:
+      originServerName: api.daxda.ia
+      proxyType: ""
+      httpHostHeader: api.daxda.ia
+
+  # 2. Mission Control Live Dashboard & Agent Registry Explorer
+  - hostname: dashboard.daxda.ia
+    service: http://127.0.0.1:8088
+    path: /daxda_fleet_live_dashboard.html
+    originRequest:
+      originServerName: dashboard.daxda.ia
+      httpHostHeader: dashboard.daxda.ia
+
+  # 3. Commercial Billing & Stripe Top-up Portal
+  - hostname: billing.daxda.ia
+    service: http://127.0.0.1:8088
+    path: /api/v1/billing
+    originRequest:
+      originServerName: billing.daxda.ia
+      httpHostHeader: billing.daxda.ia
+
+  # 4. DePIN Sovereign Validator Mesh Endpoint
+  - hostname: depin.daxda.ia
+    service: http://127.0.0.1:8088
+    path: /api/depin
+    originRequest:
+      originServerName: depin.daxda.ia
+      httpHostHeader: depin.daxda.ia
+
+  # Catch-all fail-closed rule
+  - service: http_status:404

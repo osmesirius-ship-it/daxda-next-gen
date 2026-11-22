@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DAX Layers Configuration Schema",
+  "type": "object",
+  "required": ["governance", "model_governance", "human_gates", "layers"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "governance": {
+      "type": "object",
+      "required": ["schema_version", "layers_version", "status", "frozen_at", "approved_by", "change_approval_policy"],
+      "properties": {
+        "schema_version": { "type": "string" },
+        "layers_version": { "type": "string" },
+        "status": { "type": "string", "enum": ["FROZEN_APPROVED", "DRAFT", "UNDER_REVIEW"] },
+        "frozen_at": { "type": "string" },
+        "approved_by": { "type": "array", "items": { "type": "string" } },
+        "change_approval_policy": {
+          "type": "object",
+          "required": ["requires_pr", "minimum_reviewers", "required_reviewer_teams", "mandatory_ci_gates"],
+          "properties": {
+            "requires_pr": { "type": "boolean" },
+            "minimum_reviewers": { "type": "integer", "minimum": 2 },
+            "required_reviewer_teams": { "type": "array", "items": { "type": "string" } },
+            "mandatory_ci_gates": { "type": "array", "items": { "type": "string" } },
+            "regression_tolerance_pct": { "type": "number" },
+            "rollback_procedure": { "type": "string" }
+          }
+        }
+      }
+    },
+    "engine_compatibility_matrix": {
+      "type": "object",
+      "required": ["active_new_engine", "frozen_engines"],
+      "properties": {
+        "active_new_engine": {
+          "type": "object",
+          "required": ["engine_id", "engine_name", "version", "status", "mathematical_basis", "stability_scoring_formula"],
+          "properties": {
+            "engine_id": { "type": "string" },
+            "engine_name": { "type": "string" },
+            "version": { "type": "string" },
+            "status": { "type": "string" },
+            "mathematical_basis": { "type": "string" },
+            "stability_scoring_formula": { "type": "string" },
+            "submillisecond_cpp_core": { "type": "string" },
+            "predictive_failure_manifold": { "type": "string" }
+          }
+        },
+        "frozen_engines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["engine_id", "engine_name", "version", "frozen_date", "status", "mathematical_basis", "governance_adapter"],
+            "properties": {
+              "engine_id": { "type": "string" },
+              "engine_name": { "type": "string" },
+              "version": { "type": "string" },
+              "frozen_date": { "type": "string" },
+              "status": { "type": "string" },
+              "mathematical_basis": { "type": "string" },
+              "governance_adapter": { "type": "string" },
+              "file_location": { "type": "string" },
+              "backward_compatibility_mode": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "model_governance": {
+      "type": "object",
+      "required": ["allowlist", "denylist", "fallback_order"],
+      "properties": {
+        "allowlist": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["provider", "model_id", "pinned_version", "allowed_regions", "tier", "dpa_status", "use_cases"],
+            "properties": {
+              "provider": { "type": "string" },
+              "model_id": { "type": "string" },
+              "pinned_version": { "type": "string" },
+              "allowed_regions": { "type": "array", "items": { "type": "string" } },
+              "tier": { "type": "integer" },
+              "dpa_status": { "type": "string" },
+              "use_cases": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "denylist": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["reason"],
+            "properties": {
+              "provider": { "type": "string" },
+              "pattern": { "type": "string" },
+              "unapproved_regions": { "type": "array", "items": { "type": "string" } },
+              "reason": { "type": "string" }
+            }
+          }
+        },
+        "fallback_order": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "human_gates": {
+      "type": "object",
+      "required": ["DA-7"],
+      "properties": {
+        "DA-7": {
+          "type": "object",
+          "required": ["layer_id", "layer_name", "role", "on_call_rotations", "escalation_triggers", "timeout_policy"],
+          "properties": {
+            "layer_id": { "const": "DA-7" },
+            "layer_name": { "type": "string" },
+            "role": { "type": "string" },
+            "on_call_rotations": { "type": "object" },
+            "escalation_triggers": { "type": "array" },
+            "timeout_policy": {
+              "type": "object",
+              "required": ["default_action", "fail_closed", "timeout_seconds"],
+              "properties": {
+                "default_action": { "type": "string" },
+                "fail_closed": { "type": "boolean" },
+                "timeout_seconds": { "type": "integer" },
+                "receipt_code": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "layers": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "role", "parameters", "prompts"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "parameters": {
+            "type": "object",
+            "required": ["temperature", "seed", "max_tokens"],
+            "properties": {
+              "temperature": { "type": "number" },
+              "seed": { "type": "integer" },
+              "max_tokens": { "type": "integer" }
+            }
+          },
+          "prompts": {
+            "type": "object",
+            "required": ["general_enterprise", "financial_services", "healthcare_lifesciences", "cybersecurity_infosec"],
+            "properties": {
+              "general_enterprise": { "type": "string" },
+              "financial_services": { "type": "string" },
+              "healthcare_lifesciences": { "type": "string" },
+              "cybersecurity_infosec": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

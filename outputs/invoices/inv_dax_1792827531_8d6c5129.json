@@ -1,0 +1,33 @@
+{
+  "invoice_id": "inv_dax_1792827531_8d6c5129",
+  "issuer": "DAXDA Next Gen Inc.",
+  "founder_and_architect": "Nicole Bess",
+  "treasury_payout_fa": "fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0",
+  "bill_to": {
+    "tenant_id": "tenant-enterprise-demo",
+    "company_name": "DAXDA Enterprise Client",
+    "customer_name": "Enterprise Demo Account",
+    "customer_email": "enterprise@daxda.ia"
+  },
+  "issue_date_utc": "2026-10-24T07:38:51.986419+00:00",
+  "due_date_utc": "2026-11-08T07:38:51.986419+00:00",
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "Enterprise Custom Governed Compute Package (tenant-enterprise-demo)",
+      "quantity": 1,
+      "unit_price_usd": 10000.0,
+      "total_usd": 10000.0
+    }
+  ],
+  "subtotal_usd": 10000.0,
+  "total_due_usd": 10000.0,
+  "cryptographic_merkle_seal": "4ff4e141213b8d6b6fc2840258fd080467d014b25c5462a0f7ed68d7c619faf6",
+  "stripe_invoice_id": "in_sim_7d66bc4b9e5e5abb",
+  "stripe_hosted_url": null,
+  "payment_methods_accepted": [
+    "Corporate ACH Transfer to Stripe Treasury (fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0)",
+    "Stripe Hosted Invoice Credit Card / Debit",
+    "USDC Wire to Base/Arbitrum (0x66545035486C8B3b7966c45dc035560F4066aBb5)"
+  ]
+}

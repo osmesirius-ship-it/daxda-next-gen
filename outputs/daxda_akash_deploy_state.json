@@ -1,0 +1,15 @@
+{
+  "source": "DAXDA_AKASH_CONSOLE_API_DEPLOY",
+  "principal_architect": "Nicole Bess",
+  "organization": "DAXDA AI, LLC",
+  "engine": "Clifford Geometric Algebra Cl(16,4)",
+  "protocol": "Nicole Protocol 886-Ops",
+  "deployed_at_utc": "2026-10-30T04:17:55.346496+00:00",
+  "sdl_path": "/Users/user/daxda next gen/DAXDA-NEXTGEN/daxda-next-gen/outputs/daxda_akash_worker_sdl_v2.yaml",
+  "deployment": {
+    "error": "{\"error\":\"BadRequestError\",\"message\":\"Validation error\",\"code\":\"validation_error\",\"type\":\"validation_error\",\"data\":[{\"code\":\"invalid_type\",\"expected\":\"object\",\"received\":\"undefined\",\"path\":[\"data\"],\"message\":\"Required\"}]}",
+    "status_code": 400
+  },
+  "best_bid": {},
+  "lease": {}
+}

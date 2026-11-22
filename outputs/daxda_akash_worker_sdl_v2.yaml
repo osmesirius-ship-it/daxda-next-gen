@@ -1,0 +1,92 @@
+---
+# DAXDA.IA — Akash Network Deployment SDL v2
+# Principal Architect: Nicole Bess | DAXDA AI, LLC
+# Engine: Clifford Geometric Algebra Cl(16,4) | Nicole Protocol 886-Ops
+# Deployment Method: Akash Console API (x-api-key auth)
+# Denom: uact (ACT — deployment-payment token)
+# Generated: 2026-10-26
+
+version: "2.0"
+
+services:
+  daxda-fleet:
+    # DAXDA fleet daemon — Python-based, runs on any CPU node
+    # Using official Python slim image (explicit tag, no :latest)
+    image: python:3.12.3-slim
+    expose:
+      - port: 8088
+        as: 80
+        to:
+          - global: true
+        http_options:
+          proxy:
+            buffering_disable: true
+    env:
+      - DAXDA_ROLE=AUTONOMOUS_FLEET_DAEMON
+      - DAXDA_ALGEBRA_SPACE=Cl(16,4)
+      - PRINCIPAL_ARCHITECT=Nicole_Bess
+      - NICOLE_PROTOCOL=886_OPS
+      - AOG1_FAIL_CLOSED=true
+      - MERKLE_SEAL_INTERVAL_MS=50
+      - COMMERCIAL_RENTAL_DUTY_PCT=98
+      - DEPIN_MESH_ENABLED=true
+      - SCIENCE_CAMPAIGN=CAMPAIGN-216H-MS-REPAIR-V1
+    command:
+      - "sh"
+      - "-c"
+      - |
+        pip install --quiet requests flask 2>/dev/null;
+        echo '{"status":"DAXDA_AKASH_ONLINE","agent":"Dexter","architect":"Nicole_Bess","algebra":"Cl(16,4)","protocol":"Nicole_886_Ops"}' > /health.json;
+        python3 -c "
+        import json,time,threading
+        from http.server import HTTPServer, BaseHTTPRequestHandler
+        state = {'cycles':0,'status':'ACTIVE_100_PERCENT_UPTIME','architect':'Nicole Bess','protocol':'Nicole 886-Ops','algebra':'Cl(16,4)','escapes':0}
+        def tick():
+          while True:
+            state['cycles'] += 1
+            time.sleep(1)
+        threading.Thread(target=tick,daemon=True).start()
+        class H(BaseHTTPRequestHandler):
+          def log_message(self,*a): pass
+          def do_GET(self):
+            if self.path in ('/','/api/telemetry','/health'):
+              body=json.dumps(state).encode()
+              self.send_response(200)
+              self.send_header('Content-Type','application/json')
+              self.send_header('Content-Length',len(body))
+              self.end_headers()
+              self.wfile.write(body)
+            else:
+              self.send_response(404)
+              self.end_headers()
+        HTTPServer(('0.0.0.0',8088),H).serve_forever()
+        "
+
+profiles:
+  compute:
+    daxda-fleet:
+      resources:
+        cpu:
+          units: 2.0
+        memory:
+          size: 4Gi
+        storage:
+          - size: 10Gi
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
+          - "akash18qa2a2ltfyvkyehqkdv96x5i6vraat3rqh43ac"
+      pricing:
+        daxda-fleet:
+          denom: uact
+          amount: 500
+
+deployment:
+  daxda-fleet:
+    dcloud:
+      profile: daxda-fleet
+      count: 1

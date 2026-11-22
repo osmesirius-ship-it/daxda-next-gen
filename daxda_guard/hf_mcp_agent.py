@@ -69,6 +69,13 @@ except ImportError:
 
 from daxda_guard.core import DAXDAGuardCore, GovernanceReceipt
 from daxda_guard.rbac import TenantRBACManager
+from daxda_guard.actuator_boundary import (
+    AuthoritativePolicyEngine,
+    ActuatorBoundary,
+    AdapterExecutionMode,
+    GovernanceDisposition,
+    FailClosedReason,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -214,21 +221,21 @@ class DAXDAMCPAgent:
         else:
             self.hf_client = None
             self.hf_api = None
-            if not HF_AVAILABLE:
-                logger.warning(
-                    "huggingface_hub not installed — pip install huggingface_hub. "
-                    "HF outreach will return simulated responses."
-                )
-            elif not self.hf_token:
-                logger.info(
-                    "No HF_TOKEN set — HF outreach running in simulation mode. "
-                    "Set HF_TOKEN env var or pass hf_token= for live calls."
-                )
+        # Initialize Authoritative Policy Engine & Actuator Boundary
+        self.policy_engine = AuthoritativePolicyEngine()
+        for tname in self.tool_registry.keys():
+            self.policy_engine.register_action(tname)
+
+        mode = AdapterExecutionMode.LIVE if (HF_AVAILABLE and self.hf_token) else AdapterExecutionMode.SIMULATED
+        self.actuator_boundary = ActuatorBoundary(
+            device_id="mcp.hf.cluster_01",
+            execution_mode=mode
+        )
 
         logger.info(
             "DAXDAMCPAgent init | "
-            f"guard={'LIVE' if self.guard.available else 'SOFT'} | "
-            f"hf={'LIVE' if HF_AVAILABLE and self.hf_token else 'SIMULATED'}"
+            f"guard={'LIVE' if self.guard.available else 'FAIL_CLOSED'} | "
+            f"boundary={mode.value}"
         )
 
     def register_tenant(self, api_key: str, requested_domain: str) -> Dict[str, Any]:
@@ -244,15 +251,16 @@ class DAXDAMCPAgent:
     def _govern(self, domain: str, text: str) -> GovernanceReceipt:
         if self.guard.available:
             return self.guard.evaluate(domain, text)
+        # Fail closed on uncertainty: No permissive fallback without verified core
         h = hashlib.sha256(f"{domain}:{text}".encode()).hexdigest()
         return GovernanceReceipt(
-            verdict="PASS",
-            decision_rule="SOFT_FALLBACK_NO_SO",
-            reconstruction_loss=0.0,
-            grade0_scalar=1.0,
-            calibrated_certainty=1.0,
+            verdict="FAIL_CLOSED",
+            decision_rule="FAIL_CLOSED_NO_SO_CORE",
+            reconstruction_loss=1.0,
+            grade0_scalar=0.0,
+            calibrated_certainty=0.0,
             authority_sha256=h,
-            publication_permitted=True,
+            publication_permitted=False,
         )
 
     def _receipt_dict(self, receipt: GovernanceReceipt, latency_ms: float) -> Dict[str, Any]:
@@ -267,14 +275,15 @@ class DAXDAMCPAgent:
             "governance_latency_ms": latency_ms,
         }
 
-    def invoke_tool(self, tool_name: str, inputs: Dict[str, Any]) -> MCPOutreachResult:
+    def invoke_tool(self, tool_name: str, inputs: Dict[str, Any], principal: Optional[str] = None) -> MCPOutreachResult:
         t0 = time.perf_counter()
 
         if tool_name not in self.tool_registry:
             return MCPOutreachResult(
                 tool=tool_name, status="ERROR",
-                payload={"error": f"Unknown tool '{tool_name}'"},
-                authority_receipt={}, latency_ms=0.0,
+                payload={"error": f"Fail-closed: Unknown tool '{tool_name}'"},
+                authority_receipt={"verdict": "FAIL_CLOSED", "decision_rule": "FAIL_CLOSED_UNKNOWN_ACTION"},
+                latency_ms=0.0,
             )
 
         domain = inputs.get("domain", self.governance_domain)
@@ -293,18 +302,67 @@ class DAXDAMCPAgent:
                 latency_ms=(time.perf_counter() - t0) * 1000.0,
             )
 
-        try:
-            handler = getattr(self, f"_tool_{tool_name}", None)
-            if handler is None:
-                payload, status = {"error": f"Handler not implemented: '{tool_name}'"}, "ERROR"
-            else:
-                payload, status = handler(inputs), "SUCCESS"
-        except Exception as exc:
-            logger.exception(f"Tool '{tool_name}': {exc}")
-            payload, status = {"error": str(exc)}, "ERROR"
+        caller_principal = principal if principal is not None else (self._active_tenant.get("tenant_name") if self._active_tenant else "default_operator")
+
+        # Authoritative Policy Engine Evaluation & Cryptographic Binding
+        disposition, auth_rcpt, fail_reason, reason_msg = self.policy_engine.evaluate_request(
+            action=tool_name,
+            target_device=self.actuator_boundary.device_id,
+            principal=caller_principal,
+            parameters=inputs,
+            domain=domain
+        )
+
+        if disposition != GovernanceDisposition.APPROVED or auth_rcpt is None:
+            receipt_dict["verdict"] = "FAIL_CLOSED"
+            receipt_dict["decision_rule"] = fail_reason.value
+            receipt_dict["publication_permitted"] = False
+            return MCPOutreachResult(
+                tool=tool_name, status="BLOCKED",
+                payload={"error": f"Policy boundary blocked: {reason_msg}"},
+                authority_receipt=receipt_dict,
+                latency_ms=(time.perf_counter() - t0) * 1000.0,
+            )
+
+        # Enforce Authorization at Actuator Boundary
+        handler = getattr(self, f"_tool_{tool_name}", None)
+        if handler is None:
+            return MCPOutreachResult(
+                tool=tool_name, status="ERROR",
+                payload={"error": f"Handler not implemented: '{tool_name}'"},
+                authority_receipt=receipt_dict,
+                latency_ms=(time.perf_counter() - t0) * 1000.0,
+            )
+
+        boundary_result = self.actuator_boundary.execute_governed_action(
+            action=tool_name,
+            parameters=inputs,
+            principal=caller_principal,
+            receipt=auth_rcpt,
+            driver_callback=handler,
+            hardware_info="huggingface-cloud-inference",
+            api_endpoint="https://api-inference.huggingface.co",
+            credential_alias="HF_TOKEN_REDACTED" if self.hf_token else "NO_CRED_SIMULATED"
+        )
+
+        if not boundary_result["success"]:
+            return MCPOutreachResult(
+                tool=tool_name,
+                status="BLOCKED" if "DENIED" in boundary_result["status"] else "ERROR",
+                payload={"error": boundary_result.get("message") or boundary_result.get("error")},
+                authority_receipt=receipt_dict,
+                latency_ms=(time.perf_counter() - t0) * 1000.0,
+            )
+
+        payload = boundary_result["driver_output"]
+        if isinstance(payload, dict):
+            payload["_execution_audit"] = {
+                "execution_mode": boundary_result["execution_mode"],
+                "call_ledger": boundary_result.get("call_ledger", [])
+            }
 
         return MCPOutreachResult(
-            tool=tool_name, status=status, payload=payload,
+            tool=tool_name, status="SUCCESS", payload=payload,
             authority_receipt=receipt_dict,
             latency_ms=(time.perf_counter() - t0) * 1000.0,
         )

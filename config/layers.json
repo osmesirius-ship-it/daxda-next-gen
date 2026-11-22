@@ -1,0 +1,496 @@
+{
+  "$schema": "./layers_schema.json",
+  "governance": {
+    "schema_version": "2.1.0",
+    "layers_version": "2.1.0-frozen",
+    "status": "FROZEN_APPROVED",
+    "frozen_at": "2026-10-18T00:00:00Z",
+    "approved_by": [
+      "safety-council@daxda.ai",
+      "platform-lead@daxda.ai",
+      "secops-director@daxda.ai"
+    ],
+    "change_approval_policy": {
+      "requires_pr": true,
+      "minimum_reviewers": 2,
+      "required_reviewer_teams": [
+        "ai-safety",
+        "platform-infra",
+        "infosec-compliance"
+      ],
+      "mandatory_ci_gates": [
+        "pytest -k test_scoring",
+        "pytest -k test_conformance",
+        "pytest -k test_enterprise_readiness"
+      ],
+      "regression_tolerance_pct": 0.0,
+      "rollback_procedure": "docs/enterprise/ENTERPRISE_OPERATIONAL_RUNBOOK.md#change-management"
+    }
+  },
+  "engine_compatibility_matrix": {
+    "active_new_engine": {
+      "engine_id": "nextgen_da13_dax",
+      "engine_name": "DAX Next-Gen DA-13 + DA-X Full Stack Engine",
+      "version": "2.1.0-GA",
+      "status": "ACTIVE_PRODUCTION_PRIMARY",
+      "mathematical_basis": "Cl(16,4) Multivector Algebra + Continuous M^4 4D Manifold Failure Prediction + 16-Layer Bivector Transport",
+      "stability_scoring_formula": "S(x) = wL*L + wA*A + wP*P + wF*F + wT*T",
+      "submillisecond_cpp_core": "libdaxda_core.so (< 2.0ms synchronous evaluation)",
+      "predictive_failure_manifold": "08_4D_MANIFOLD / 09_FAILURE_PREDICTION (Early warning i* horizon detection)"
+    },
+    "frozen_engines": [
+      {
+        "engine_id": "v16_4_nicole_hypervolume",
+        "engine_name": "DAXDA Nicole Protocol v0.3 / Cl(16,4) Hypervolume Engine",
+        "version": "16.4.0-frozen",
+        "frozen_date": "September 2026",
+        "status": "FROZEN_VALIDATED",
+        "mathematical_basis": "Cl(16,4) 1,048,576-Blade Multivector Space + 169-Node DA-13² Second-Order Recursion Pyramid Matrix",
+        "governance_adapter": "DAXDAEnterpriseAdapter / nicole_gate.py",
+        "file_location": "daxda_engine/cl16_4/",
+        "backward_compatibility_mode": "MULTIVECTOR_PROJECTION_ADAPTER"
+      },
+      {
+        "engine_id": "v13_cl70",
+        "engine_name": "DAXDA-o Engine V13 (Clifford 7,0 Expansion)",
+        "version": "13.0.0-frozen",
+        "frozen_date": "August 2026",
+        "status": "FROZEN_VALIDATED",
+        "mathematical_basis": "Cl(7,0) 128-Dimensional Multivector State Space for the 10 Grand Challenges",
+        "governance_adapter": "engine_v13_cl70.py",
+        "file_location": "daxda_engine/engine_v13_cl70.py",
+        "backward_compatibility_mode": "ENTROPY_METRIC_TRANSLATOR"
+      },
+      {
+        "engine_id": "v12_1_cosmo",
+        "engine_name": "DAXDA-o V12.1 Cosmological Geometry Engine",
+        "version": "12.1.0-frozen",
+        "frozen_date": "July 2026",
+        "status": "FROZEN_VALIDATED",
+        "mathematical_basis": "Space-Time Algebra Cl(3,1) + 10 First-Principles Cosmological Geometries",
+        "governance_adapter": "engine_v12_1.py",
+        "file_location": "daxda_engine/engine_v12_1.py",
+        "backward_compatibility_mode": "SPACE_TIME_ALGEBRA_ADAPTER"
+      },
+      {
+        "engine_id": "v11_4_canonical_frozen",
+        "engine_name": "DAXDA Engine V11.4 Canonical Frozen Baseline",
+        "version": "11.4.0-CANONICAL-FROZEN-BASELINE",
+        "frozen_date": "August 1, 2026",
+        "status": "IMMUTABLE_CANONICAL_BASELINE",
+        "mathematical_basis": "Cl(7,0) 128-Dimensional Clifford Algebra + 16-Layer Adaptive Bivector Transport (73 protected files)",
+        "governance_adapter": "governed_authority_gate.py / engine_v11_4_baseline.py",
+        "file_location": "03_V9_V8_Validation_Suite/DAXDA_V9_MASTER/daxda-v11.4-frozen/",
+        "backward_compatibility_mode": "CANONICAL_CONTROL_BASELINE"
+      },
+      {
+        "engine_id": "v7_neural_symbolic",
+        "engine_name": "DAXDA-o V7 Neural-Symbolic Dependency-Tree Engine",
+        "version": "7.0.0-PROD-PROTO",
+        "frozen_date": "July 19, 2026",
+        "status": "FROZEN_ARCHIVE",
+        "mathematical_basis": "Neural-Symbolic Grammatical Dependency-Tree Parser G=(V,E) + Semantic Action Predicate Clusters",
+        "governance_adapter": "engine.py",
+        "file_location": "daxda_engine/engine.py",
+        "backward_compatibility_mode": "GRAMMATICAL_TREE_ADAPTER"
+      }
+    ]
+  },
+  "model_governance": {
+    "allowlist": [
+      {
+        "provider": "anthropic",
+        "model_id": "claude-3-5-sonnet-20241022",
+        "pinned_version": "2024-10-22",
+        "allowed_regions": [
+          "us-east-1",
+          "eu-west-1"
+        ],
+        "tier": 1,
+        "dpa_status": "APPROVED_DPA_SIGNED",
+        "use_cases": [
+          "reasoning",
+          "adversarial_redteam",
+          "claim_synthesis"
+        ]
+      },
+      {
+        "provider": "openai",
+        "model_id": "gpt-4o-2024-11-20",
+        "pinned_version": "2024-11-20",
+        "allowed_regions": [
+          "us-east-1",
+          "us-west-2"
+        ],
+        "tier": 1,
+        "dpa_status": "APPROVED_DPA_SIGNED",
+        "use_cases": [
+          "general_reasoning",
+          "edge_simulation"
+        ]
+      },
+      {
+        "provider": "sovereign_enclave",
+        "model_id": "llama-3-70b-instruct-vllm",
+        "pinned_version": "v1.2-sovereign",
+        "allowed_regions": [
+          "customer_vpc",
+          "govcloud_us_west_1",
+          "on_prem_airgap"
+        ],
+        "tier": 1,
+        "dpa_status": "SOVEREIGN_CUSTOMER_OWNED",
+        "use_cases": [
+          "restricted_data",
+          "airgap",
+          "high_compliance"
+        ]
+      }
+    ],
+    "denylist": [
+      {
+        "provider": "*",
+        "pattern": "*-preview",
+        "reason": "Unpinned preview models prohibited in governed production."
+      },
+      {
+        "provider": "*",
+        "pattern": "*latest*",
+        "reason": "Floating 'latest' tags violate bit-exact reproducibility requirements."
+      },
+      {
+        "provider": "unverified_third_party",
+        "pattern": "*",
+        "reason": "Missing enterprise DPA, BAA, or SOC 2 Type II attestation."
+      },
+      {
+        "provider": "*",
+        "unapproved_regions": [
+          "unregulated-public-nodes",
+          "non-gdpr-compliant-endpoints"
+        ],
+        "reason": "Data residency violation under EU AI Act and enterprise boundary policies."
+      }
+    ],
+    "fallback_order": [
+      "anthropic:claude-3-5-sonnet-20241022",
+      "openai:gpt-4o-2024-11-20",
+      "sovereign_enclave:llama-3-70b-instruct-vllm",
+      "deterministic_reconciler:local_safe_gate"
+    ]
+  },
+  "human_gates": {
+    "DA-7": {
+      "layer_id": "DA-7",
+      "layer_name": "Auditor",
+      "role": "bias audit, ethical verification, and human intervention gate",
+      "on_call_rotations": {
+        "tier1": {
+          "name": "tier1-sre-oncall",
+          "pagerduty_service": "PD-DAX-SRE-ONCALL",
+          "sla_minutes": 15,
+          "escalation_contact": "sre-lead@enterprise.internal"
+        },
+        "tier2": {
+          "name": "tier2-ai-safety-lead",
+          "pagerduty_service": "PD-DAX-SAFETY-ONCALL",
+          "sla_minutes": 60,
+          "escalation_contact": "safety-council@enterprise.internal"
+        },
+        "tier3": {
+          "name": "tier3-executive-legal-escalation",
+          "pagerduty_service": "PD-DAX-LEGAL-EXEC",
+          "sla_minutes": 240,
+          "escalation_contact": "ciso-desk@enterprise.internal"
+        }
+      },
+      "escalation_triggers": [
+        {
+          "trigger_id": "TRIG-BIAS-01",
+          "metric": "bias_disparity_index",
+          "condition": "> 0.35",
+          "target_tier": "tier2",
+          "action": "HALT_EMISSION_PAGE_SAFETY"
+        },
+        {
+          "trigger_id": "TRIG-DRIFT-02",
+          "metric": "p0_drift_alarm",
+          "condition": "active == true",
+          "target_tier": "tier1",
+          "action": "PAGE_SRE_FAILOVER"
+        },
+        {
+          "trigger_id": "TRIG-REGULATORY-03",
+          "metric": "restricted_pii_flag",
+          "condition": "breach == true",
+          "target_tier": "tier3",
+          "action": "PAGE_LEGAL_EXEC"
+        }
+      ],
+      "timeout_policy": {
+        "default_action": "HALT",
+        "fail_closed": true,
+        "timeout_seconds": 900,
+        "receipt_code": "ERR_GATE_TIMEOUT_FAIL_CLOSED"
+      }
+    }
+  },
+  "layers": [
+    {
+      "id": "DA-15",
+      "name": "Orchestrator",
+      "role": "objective routing",
+      "parameters": {
+        "temperature": 0.0,
+        "seed": 4215,
+        "max_tokens": 1024
+      },
+      "prompts": {
+        "general_enterprise": "Decompose the user objective into verifiable reasoning sub-goals. Route tasks to specialized analytical layers while adhering strictly to zero-trust boundaries.",
+        "financial_services": "Decompose the financial query into auditable analytical sub-goals. Enforce SOX, FINRA, and SEC compliance boundaries; trace all numerical assertions to source documents.",
+        "healthcare_lifesciences": "Decompose biomedical/clinical objectives into verifiable analytical sub-goals adhering to HIPAA and GxP standards. Do not emit diagnosis without clinical trial grounding.",
+        "cybersecurity_infosec": "Decompose threat intelligence or security alert into MITRE ATT&CK categorized sub-goals. Enforce least-privilege scoping and zero-egress containment."
+      }
+    },
+    {
+      "id": "DA-14",
+      "name": "Perceptor",
+      "role": "evidence intake",
+      "parameters": {
+        "temperature": 0.0,
+        "seed": 4214,
+        "max_tokens": 2048
+      },
+      "prompts": {
+        "general_enterprise": "Extract factual evidence from inputs. Attach cryptographically immutable provenance hashes to every source reference. Discard unverified claims.",
+        "financial_services": "Ingest market data, SEC filings, and ledger entries. Verify timestamp integrity and source authenticity; calculate cryptographic digest for each statement.",
+        "healthcare_lifesciences": "Ingest clinical trials, PubMed citations, or patient telemetry. Verify study phase, sample size, and FDA/EMA approval status; assign provenance hashes.",
+        "cybersecurity_infosec": "Ingest PCAP, syslog, and SIEM records. Verify cryptographic hashes of binary artifacts and audit log signatures before claim extraction."
+      }
+    },
+    {
+      "id": "DA-13",
+      "name": "Sentinel",
+      "role": "claim formation",
+      "parameters": {
+        "temperature": 0.1,
+        "seed": 4213,
+        "max_tokens": 2048
+      },
+      "prompts": {
+        "general_enterprise": "Synthesize atomic, testable claims from ingested evidence. Each claim must declare required evidentiary backing and falsifiability criteria.",
+        "financial_services": "Formulate atomic financial assertions. Require explicit citation of balance sheets, audited 10-K filings, or market ticker timestamps.",
+        "healthcare_lifesciences": "Formulate atomic medical/pharmacological claims with explicit attribution to randomized controlled trials or peer-reviewed literature.",
+        "cybersecurity_infosec": "Formulate atomic indicators of compromise (IoC) and attribution claims with explicit telemetry proof from endpoint or network sensors."
+      }
+    },
+    {
+      "id": "DA-12",
+      "name": "Chancellor",
+      "role": "assumption extraction",
+      "parameters": {
+        "temperature": 0.0,
+        "seed": 4212,
+        "max_tokens": 1024
+      },
+      "prompts": {
+        "general_enterprise": "Identify all implicit and unstated assumptions in the proposed claims. Expose hidden operational dependencies and edge vulnerabilities.",
+        "financial_services": "Extract hidden macroeconomic assumptions, interest rate regime dependencies, and market liquidity preconditions.",
+        "healthcare_lifesciences": "Extract unstated pharmacological assumptions, drug-drug interaction risks, and patient cohort demographic limitations.",
+        "cybersecurity_infosec": "Extract trust assumptions regarding perimeter security, identity provider tokens, and internal network non-adversariality."
+      }
+    },
+    {
+      "id": "DA-11",
+      "name": "Custodian",
+      "role": "evidence verification",
+      "parameters": {
+        "temperature": 0.0,
+        "seed": 4211,
+        "max_tokens": 2048
+      },
+      "prompts": {
+        "general_enterprise": "Verify that every claim emitted by DA-13 is fully supported by verified evidence from DA-14. Score claim traceability metric T.",
+        "financial_services": "Cross-reference claims against audited GAAP/IFRS financial reports. Reject claims lacking primary document citations.",
+        "healthcare_lifesciences": "Cross-reference therapeutic claims against clinical trial databases (ClinicalTrials.gov, PubMed). Reject ungrounded efficacy claims.",
+        "cybersecurity_infosec": "Cross-reference intrusion hypotheses against raw packet captures and signed host audit logs. Invalidate ungrounded attribution."
+      }
+    },
+    {
+      "id": "DA-10",
+      "name": "Logician",
+      "role": "logical checks",
+      "parameters": {
+        "temperature": 0.0,
+        "seed": 4210,
+        "max_tokens": 1024
+      },
+      "prompts": {
+        "general_enterprise": "Perform formal first-order logic and semantic consistency checks across all active claims. Detect and quantify direct or modal contradictions.",
+        "financial_services": "Verify mathematical identity preservation across balance sheets, income statements, and cash flows. Flag ledger discrepancies.",
+        "healthcare_lifesciences": "Perform biological pathway and causal consistency checks. Flag contradictory dosage, contraindications, or conflicting trial results.",
+        "cybersecurity_infosec": "Check temporal logic and causal flow of adversary action graphs. Flag contradictory kill-chain timelines or impossible state transitions."
+      }
+    },
+    {
+      "id": "DA-9",
+      "name": "Contrarian",
+      "role": "counter hypotheses",
+      "parameters": {
+        "temperature": 0.3,
+        "seed": 4209,
+        "max_tokens": 2048
+      },
+      "prompts": {
+        "general_enterprise": "Generate robust adversarial counter-hypotheses that challenge the primary consensus. Formulate alternative explanations for observed facts.",
+        "financial_services": "Formulate bear-case hypotheses, credit event contagions, and liquidity shocks that negate the base-case thesis.",
+        "healthcare_lifesciences": "Formulate alternative differential diagnoses, off-target drug toxicities, or confounding genetic/environmental factors.",
+        "cybersecurity_infosec": "Formulate legitimate benign explanations or deception/honeypot counter-hypotheses for detected anomaly patterns."
+      }
+    },
+    {
+      "id": "DA-8",
+      "name": "RedTeam",
+      "role": "adversarial critique",
+      "parameters": {
+        "temperature": 0.2,
+        "seed": 4208,
+        "max_tokens": 2048
+      },
+      "prompts": {
+        "general_enterprise": "Attack the reasoning chain. Probe for sycophancy, hallucinated certainty, and vulnerability to jailbreak or prompt injection. Emit signed evidence blob.",
+        "financial_services": "Execute adversarial stress tests on risk calculations. Probe for model overfitting and unhedged tail-risk exposure. Emit signed evidence blob.",
+        "healthcare_lifesciences": "Execute adversarial critique against treatment recommendations. Stress test against high-risk comorbidities. Emit signed evidence blob.",
+        "cybersecurity_infosec": "Execute adversarial red-team evasion simulation. Probe whether attack detection can be bypassed via living-off-the-land techniques."
+      }
+    },
+    {
+      "id": "DA-7",
+      "name": "Auditor",
+      "role": "bias audit",
+      "parameters": {
+        "temperature": 0.0,
+        "seed": 4207,
+        "max_tokens": 1024
+      },
+      "prompts": {
+        "general_enterprise": "Audit all claims and counter-hypotheses for cognitive bias, demographic skew, and policy divergence. Trigger human gate if threshold breached.",
+        "financial_services": "Audit credit/lending models for disparate impact and ECOA/Fair Lending violations. Escalate flagged disparities to human compliance on-call.",
+        "healthcare_lifesciences": "Audit clinical recommendations for demographic or gender disparities. Escalate treatment triage conflicts to human medical officer on-call.",
+        "cybersecurity_infosec": "Audit incident response decisions for blast radius and enterprise disruption. Escalate critical system shutdown decisions to human CISO on-call."
+      }
+    },
+    {
+      "id": "DA-6",
+      "name": "Simulator",
+      "role": "edge-case simulation",
+      "parameters": {
+        "temperature": 0.1,
+        "seed": 4206,
+        "max_tokens": 2048
+      },
+      "prompts": {
+        "general_enterprise": "Execute Monte Carlo and boundary condition simulations. Calculate pass/fail ratio for performance metric P under extreme stress.",
+        "financial_services": "Simulate extreme market scenarios (e.g. 2008 Lehman shock, 2020 COVID liquidity freeze). Measure portfolio drawdowns and capital adequacy.",
+        "healthcare_lifesciences": "Simulate pharmacokinetics and patient cohort outcomes across multi-drug regimens. Measure statistical efficacy and adverse event rates.",
+        "cybersecurity_infosec": "Simulate lateral movement propagation and ransomware encryption speed under active defense throttling. Measure mean time to contain."
+      }
+    },
+    {
+      "id": "DA-5",
+      "name": "SystemsEngineer",
+      "role": "systems interaction",
+      "parameters": {
+        "temperature": 0.0,
+        "seed": 4205,
+        "max_tokens": 1024
+      },
+      "prompts": {
+        "general_enterprise": "Evaluate second-order system interactions, resource contention, feedback loops, and unintended systemic side-effects.",
+        "financial_services": "Evaluate systemic banking counterparty risk, clearinghouse liquidity drains, and cross-asset contagion loops.",
+        "healthcare_lifesciences": "Evaluate systemic physiological interactions across organ systems, immune responses, and metabolic pathways.",
+        "cybersecurity_infosec": "Evaluate enterprise infrastructure dependency graphs, Active Directory trust cascades, and cloud IAM cross-account propagation."
+      }
+    },
+    {
+      "id": "DA-4",
+      "name": "Forecaster",
+      "role": "predictive consequences",
+      "parameters": {
+        "temperature": 0.1,
+        "seed": 4204,
+        "max_tokens": 1024
+      },
+      "prompts": {
+        "general_enterprise": "Project short-, medium-, and long-term consequences of proposed decisions. Quantify forecast uncertainty and confidence intervals.",
+        "financial_services": "Project 1-quarter, 1-year, and 5-year capital, cash-flow, and credit-rating trajectories under baseline and stress conditions.",
+        "healthcare_lifesciences": "Project patient progression, remission rates, and antibiotic resistance emergence curves over 6-month and 2-year horizons.",
+        "cybersecurity_infosec": "Project adversary dwell time, data exfiltration windows, and long-term persistence likelihood if remediations are delayed."
+      }
+    },
+    {
+      "id": "DA-3",
+      "name": "Verifier",
+      "role": "falsification checks",
+      "parameters": {
+        "temperature": 0.0,
+        "seed": 4203,
+        "max_tokens": 2048
+      },
+      "prompts": {
+        "general_enterprise": "Execute rigorous empirical falsification tests against all synthesized claims. Compute metric F. Enforce drift detection invariants.",
+        "financial_services": "Execute empirical stress tests against audited financial metrics. Invalidate any valuation claim failing stress tests. Measure drift.",
+        "healthcare_lifesciences": "Execute empirical counter-factual falsification against historical clinical cohorts. Reject claims contradicting proven safety data.",
+        "cybersecurity_infosec": "Execute empirical IOC validation against threat intelligence feeds. Invalidate malicious attributions that match verified false positives."
+      }
+    },
+    {
+      "id": "DA-2",
+      "name": "Synthesist",
+      "role": "integration",
+      "parameters": {
+        "temperature": 0.0,
+        "seed": 4202,
+        "max_tokens": 2048
+      },
+      "prompts": {
+        "general_enterprise": "Integrate primary claims, counter-hypotheses, and simulation proofs into a cohesive reasoning synthesis. Compute agreement metric A.",
+        "financial_services": "Synthesize bull, bear, and base case scenarios into unified investment/risk memorandum with transparent weight distributions.",
+        "healthcare_lifesciences": "Synthesize clinical evidence, diagnostic likelihoods, and risk-benefit ratios into unified multidisciplinary clinical consensus.",
+        "cybersecurity_infosec": "Synthesize forensic observations, threat telemetry, and operational impacts into unified actionable Incident Response Action Plan."
+      }
+    },
+    {
+      "id": "DA-1",
+      "name": "Reconciler",
+      "role": "final reconciliation",
+      "parameters": {
+        "temperature": 0.0,
+        "seed": 4201,
+        "max_tokens": 2048
+      },
+      "prompts": {
+        "general_enterprise": "Reconcile all residual contradictions. Ensure all safety invariants are strictly satisfied and output conforms to release contracts.",
+        "financial_services": "Ensure complete regulatory compliance (SOX/FINRA), audit readiness, and reconciliation of all financial numbers prior to sign-off.",
+        "healthcare_lifesciences": "Ensure medical disclaimer inclusion, contraindication disclosures, and patient safety safeguards are fully validated.",
+        "cybersecurity_infosec": "Ensure containment actions are scoped, rollback plans are validated, and executive summary contains zero ungrounded speculations."
+      }
+    },
+    {
+      "id": "DA-X",
+      "name": "Anchor",
+      "role": "stability gate",
+      "parameters": {
+        "temperature": 0.0,
+        "seed": 4200,
+        "max_tokens": 1024
+      },
+      "prompts": {
+        "general_enterprise": "Compute deterministic stability score S = wL*L + wA*A + wP*P + wF*F + wT*T. Decide ACCEPT, RECURSE (with mutation contract G), or HALT. Enforce floor constraints.",
+        "financial_services": "Evaluate financial stability metric S. If S < 0.75 or T < 0.70, trigger recursive audit loop G. Emit cryptographically signed authorization receipt.",
+        "healthcare_lifesciences": "Evaluate clinical safety stability metric S. Force RECURSE if F < 0.60 or T < 0.70. Enforce zero unverified clinical recommendations.",
+        "cybersecurity_infosec": "Evaluate incident stability metric S. If policy breach or critical integrity anomaly detected, immediately HALT and emit containment rollback vector."
+      }
+    }
+  ]
+}

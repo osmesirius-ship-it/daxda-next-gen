@@ -1,0 +1,39 @@
+{
+  "invoice_id": "inv_dax_1792916310_d8404de3",
+  "issuer": "DAXDA Next Gen Inc.",
+  "founder_and_architect": "Nicole Bess",
+  "treasury_payout_fa": "fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0",
+  "bill_to": {
+    "tenant_id": "broker-akash",
+    "company_name": "Overclock Labs / Akash Network Foundation",
+    "customer_name": "Akash Compute Marketplace Operations",
+    "customer_email": "billing@akash.network"
+  },
+  "issue_date_utc": "2026-10-25T08:18:30.867204+00:00",
+  "due_date_utc": "2026-11-09T08:18:30.867204+00:00",
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "Akash Provider Physical Compute Space Lease (provider.daxda.ai:8443)",
+      "quantity": 1,
+      "unit_price_usd": 750.0,
+      "total_usd": 750.0
+    },
+    {
+      "description": "Hardware & Verification SLA: Provider hardware reservation: 20 Intel Xeon W-2150B vCPU cores, 64GB DDR4 ECC RAM, 500GB NVMe Rook-Ceph storage.",
+      "quantity": 1,
+      "unit_price_usd": 0.0,
+      "total_usd": 0.0
+    }
+  ],
+  "subtotal_usd": 750.0,
+  "total_due_usd": 750.0,
+  "cryptographic_merkle_seal": "65052fa84fad77a846e936487dddf3ef15cceaa025aec8cdfe78aec330444721",
+  "stripe_invoice_id": "in_1UUMdPLw6XbPXOo3lkn9AdBN",
+  "stripe_hosted_url": "https://invoice.stripe.com/i/acct_1RZxTmLw6XbPXOo3/live_YWNjdF8xUlp4VG1MdzZYYlBYT28zLF9WVk5PbXZHVHVHT0g0ZlczMVpJV2RRaEpDU2pyc2hrLDE4MzQ1NzExMw0200bZ8b9LdM?s=ap",
+  "payment_methods_accepted": [
+    "Corporate ACH Transfer to Stripe Treasury (fa_65VdIIXJjwPA5az6ErF16SjLR86BSQ2gmZByo9KWLCi0O0)",
+    "Stripe Hosted Invoice Credit Card / Debit",
+    "Bitcoin (BTC) On-Chain Settlement (bc1qqg3ahwhrtskau4k2nlg6hwa938ret2783uu0zs)"
+  ]
+}

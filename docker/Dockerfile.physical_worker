@@ -1,0 +1,34 @@
+# syntax=docker/dockerfile:1
+FROM python:3.11-slim
+
+LABEL maintainer="DAXDA Systems <governance@daxda.ia>"
+LABEL description="DAXDA Physical Worker Node Daemon - Hardware-Bound Compute Worker"
+LABEL version="1.0.0"
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONPATH=/app
+
+WORKDIR /app
+
+# Install minimal build tools and curl for healthcheck
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements and install
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy codebase
+COPY . .
+
+# Expose Physical Worker Telemetry and Dashboard Port
+EXPOSE 8090
+
+HEALTHCHECK --interval=15s --timeout=3s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8090/health || exit 1
+
+# Execute physical worker node daemon across container-allocated hardware threads
+CMD ["python", "tools/daxda_physical_worker_daemon.py", "--host", "0.0.0.0", "--port", "8090", "--batch-size", "2000", "--interval", "2.0"]

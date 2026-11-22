@@ -1,0 +1,5 @@
+<!-- Merge these keys into the macOS app target's Info.plist / target Info settings. -->
+<key>NSMicrophoneUsageDescription</key>
+<string>DAXDA Audio Scribe uses the microphone during sessions you explicitly schedule to create local transcripts and records.</string>
+<key>NSAudioCaptureUsageDescription</key>
+<string>DAXDA Audio Scribe captures selected system audio during sessions you explicitly schedule and stores it locally.</string>

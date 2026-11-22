@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAXDA Next-Gen — iMac Optical Sonification Studio</title>
+<style>
+  :root {
+    --bg-main: #070b14;
+    --panel-bg: #0f172a;
+    --card-bg: #030712;
+    --cyan: #38bdf8;
+    --green: #34d399;
+    --amber: #fbbf24;
+    --violet: #c084fc;
+    --crimson: #f87171;
+    --silver: #94a3b8;
+    --border: #1e293b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg-main);
+    color: #f8fafc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+    padding: 22px;
+    line-height: 1.5;
+  }
+  .container { max-width: 1420px; margin: 0 auto; }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  h1 { font-size: 21px; color: var(--cyan); letter-spacing: 0.5px; }
+  .badge {
+    background: rgba(52, 211, 153, 0.14);
+    color: var(--green);
+    border: 1px solid var(--green);
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .telemetry-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .stat-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 11px 14px;
+  }
+  .stat-label { font-size: 10.5px; color: var(--silver); text-transform: uppercase; letter-spacing: 0.04em; }
+  .stat-val { font-size: 16px; font-weight: bold; color: #fff; margin-top: 3px; }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    position: relative;
+  }
+  .card-title {
+    font-size: 13px;
+    color: var(--cyan);
+    font-weight: bold;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  img, video, canvas {
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: #030712;
+  }
+  audio { width: 100%; margin: 10px 0; outline: none; }
+  .dual-img {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .blade-meter { margin-bottom: 11px; }
+  .blade-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  .bar-bg {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    height: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .bar-fill { height: 100%; border-radius: 4px; }
+  .sha-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 9px 12px;
+    font-family: monospace;
+    font-size: 10.5px;
+    color: var(--silver);
+    word-break: break-all;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div>
+      <h1>DAXDA NEXT-GEN — iMAC OPTICAL SONIFICATION & CYMATICS STUDIO</h1>
+      <p style="font-size: 12px; color: var(--silver); margin-top: 4px;">
+        Device: <strong>iMac Pro (iMacPro1,1)</strong> | Display: <strong>Retina 5K (5120 x 2880)</strong> | Moment: <strong>2026-11-21T16:15:54</strong>
+      </p>
+    </div>
+    <div>
+      <span class="badge">ENGINE DAXDA-Waveforms/1.1.0-PROD · CERTIFIED</span>
+    </div>
+  </header>
+
+  <div class="telemetry-bar">
+    <div class="stat-card">
+      <div class="stat-label">Processor & Memory</div>
+      <div class="stat-val">10-Core Intel Xeon W · 64 GB</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Instantaneous F0 / Centroid</div>
+      <div class="stat-val" style="color: var(--cyan);">1621.7 / 2749.3 Hz</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Neural Coherence (NCI)</div>
+      <div class="stat-val" style="color: var(--green);">0.379</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Phase Coupling (CPC)</div>
+      <div class="stat-val" style="color: var(--violet);">0.9787</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Freq Alignment (FAF)</div>
+      <div class="stat-val" style="color: var(--amber);">0.1965</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Chladni Modes (m, n) & Delay &tau;</div>
+      <div class="stat-val" style="color: var(--cyan);">(2, 3) · &tau;=3 (133.7 ms)</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <!-- Panel 1: Optical Screen Capture & Live Web Audio FFT Player -->
+    <div class="card">
+      <div class="card-title">
+        <span>1. OPTICAL SCREEN WAVEFIELD & LIVE FFT SONIFICATION PLAYER</span>
+        <span style="color: var(--green);">48 kHz WAV (5.0s)</span>
+      </div>
+      <img src="imac_current_moment.png" alt="iMac Current Moment Optical Screen" style="max-height: 220px; object-fit: cover; margin-bottom: 10px;">
+      <p style="font-size: 12px; color: var(--silver);">
+        2D Spatial Entropy: <strong>14.532 bits</strong> | Dominant Gabor Orientation: <strong>90.0&deg;</strong> | Anisotropy: <strong>5.254</strong>
+      </p>
+      <audio id="sonAudio" controls src="imac_optical_sonification_synthesis.wav"></audio>
+      <canvas id="fftCanvas" height="80" style="height: 80px; display: block;"></canvas>
+    </div>
+
+    <!-- Panel 2: Synthesized 2D Cymatics + Chladni Nodal Plate + 3D Phase-Space Attractor -->
+    <div class="card">
+      <div class="card-title">
+        <span>2. CYMATIC WAVEFIELD, CHLADNI PLATE (m=2, n=3) & 3D ATTRACTOR</span>
+        <span style="color: var(--violet);">512&times;512 + 3D ORBIT</span>
+      </div>
+      <div class="dual-img">
+        <div>
+          <img src="imac_audio_to_visual_cymatics.png" alt="2D Cymatics Wavefield" style="height: 175px; object-fit: cover;">
+          <div style="font-size: 11px; color: var(--silver); margin-top: 3px;">2D Polar Morlet Cymatics</div>
+        </div>
+        <div>
+          <img src="imac_chladni_nodal_lines.png" alt="Chladni Nodal Resonance" style="height: 175px; object-fit: cover;">
+          <div style="font-size: 11px; color: var(--silver); margin-top: 3px;">Chladni Plate Nodal Lines (140.62 Hz)</div>
+        </div>
+      </div>
+      <canvas id="attractorCanvas" height="145" style="height: 145px; display: block; cursor: grab;"></canvas>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <!-- Panel 3: Rendered HD Video -->
+    <div class="card">
+      <div class="card-title">
+        <span>3. AUDIO-REACTIVE CINEMATIC VIDEO</span>
+        <span style="color: var(--cyan);">1280&times;720 @ 30 FPS</span>
+      </div>
+      <video controls poster="imac_audio_to_visual_cymatics.png" style="max-height: 270px;">
+        <source src="daxda_waveform_transformation.mp4" type="video/mp4">
+        <source src="daxda_waveform_transformation.webm" type="video/webm">
+      </video>
+      <div class="sha-box">
+        <strong>Optical Screen SHA-256:</strong> 01774ebd92b21180099cb43cdbee2a2ecec187f1ba6883c2f15922556567834c<br>
+        <strong>Sonified Audio SHA-256:</strong> 9a6a561c76a4ff1c450c15f6b3ef23851e34f8b2407980920c4f1b3af6d35241<br>
+        <strong>Rendered Video SHA-256:</strong> 1e5d045b7289a4e918d6d1c3dd44f26670ef593a007cbeffeff01736c25d353d
+      </div>
+    </div>
+
+    <!-- Panel 4: Clifford Cl(16,4) Multivector Blade Channels -->
+    <div class="card">
+      <div class="card-title">
+        <span>4. CLIFFORD Cl(16,4) MULTIVECTOR BLADE ACTIVATIONS</span>
+        <span style="color: var(--green);">CALIBRATED</span>
+      </div>
+      <p style="font-size: 12px; color: var(--silver); margin-bottom: 14px;">
+        Dimensionally normalized acoustic-optical projection onto fundamental Cl(16,4) semantic and safety blades:
+      </p>
+
+      <div class="blade-meter">
+        <div class="blade-header"><span>e1 (Trust / Spectral Coherence)</span><span style="color: var(--cyan);">0.7252</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 72%; background: var(--cyan);"></div></div>
+      </div>
+      <div class="blade-meter">
+        <div class="blade-header"><span>e2 (Factual Grounding / Centroid Alignment)</span><span style="color: var(--green);">0.9745</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 97%; background: var(--green);"></div></div>
+      </div>
+      <div class="blade-meter">
+        <div class="blade-header"><span>e3 (Negation / Normalized Spectral Flux)</span><span style="color: var(--violet);">0.1493</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 14%; background: var(--violet);"></div></div>
+      </div>
+      <div class="blade-meter">
+        <div class="blade-header"><span>e4 (Authority / Dynamic Envelope Power)</span><span style="color: var(--amber);">0.4796</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 47%; background: var(--amber);"></div></div>
+      </div>
+      <div class="blade-meter">
+        <div class="blade-header"><span>e15 (Adversarial Ultrasonic Anomaly &gt;16 kHz)</span><span style="color: var(--crimson);">0.0</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 0%; background: var(--crimson);"></div></div>
+      </div>
+
+      <div class="stat-card" style="margin-top: 16px;">
+        <div class="stat-label">Adversarial Ultrasonic Steganography Gate</div>
+        <div class="stat-val" style="color: var(--green); font-size: 13.5px;">CLEAN / ZERO INAUDIBLE THREATS DETECTED (e15 = 0.0)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel 5: Full Step-by-Step Transformation Text Report -->
+  <div class="card" style="margin-bottom: 24px;">
+    <div class="card-title">
+      <span>5. FULL STEP-BY-STEP TRANSFORMATION TEXT REPORT &amp; MATHEMATICAL NARRATIVE</span>
+      <button id="btnCopyReport" style="background: rgba(56,189,248,0.18); color: var(--cyan); border: 1px solid var(--cyan); border-radius: 5px; padding: 4px 10px; font-size: 11px; cursor: pointer;">Copy Full Text Report</button>
+    </div>
+    <pre id="fullReportPre" style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 7px; padding: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; color: #e2e8f0; white-space: pre-wrap; word-break: break-word; max-height: 440px; overflow-y: auto; line-height: 1.55;">====================================================================================
+DAXDA NEXT-GEN — FULL OPTICAL SONIFICATION & WAVEFORM TRANSFORMATION TEXT REPORT
+====================================================================================
+Engine Version:      DAXDA-Waveforms/1.1.0-PROD
+Transformation Type: OPTICAL_SONIFICATION_SYNTHESIS
+Host Device:         iMac Pro (iMacPro1,1) — users-iMac-Pro.local
+Hardware Spec:       10-Core Intel Xeon W @ 3 GHz | 64 GB RAM
+Display Surface:     Retina 5K (5120 x 2880)
+Timestamp (Local):   2026-11-21T16:15:54.072887-05:00
+Timestamp (UTC):     2026-11-21T21:15:54.072578+00:00
+====================================================================================
+
+STAGE 1 — OPTICAL WAVEFIELD ACQUISITION (RETINA 5K FRAMEBUFFER CAPTURE)
+------------------------------------------------------------------------------------
+* What Happened:
+  DAXDA captured the live 5120 x 2880 Retina 5K optical screen buffer from the local
+  iMac Pro display (`imac_current_moment.png`) and projected the RGB luminance matrix
+  onto a normalized 512 x 512 continuous wavefield array I(x, y) in [0.000, 1.000].
+* Measured Optical Metrics:
+  - 2D Spatial Shannon Entropy:          14.532 bits (out of 18.0 max bits)
+  - Dominant Gabor Wavelet Orientation:  90.0 deg (8-angle filterbank)
+  - Spatial Wavefield Anisotropy Index:  5.254 (directional structural ratio)
+  - Optical Frame SHA-256 Receipt:       01774ebd92b21180099cb43cdbee2a2ecec187f1ba6883c2f15922556567834c
+
+STAGE 2 — CROSS-MODAL OPTICAL-TO-ACOUSTIC SONIFICATION SYNTHESIS (IMAGE -> AUDIO)
+------------------------------------------------------------------------------------
+* What Happened:
+  The 2D spatial wavefield I(x, y) was transformed into a continuous 1D pressure wave
+  s(t) sampled at 48000 Hz (240000 samples over 5.0 seconds).
+  Vertical spatial columns were mapped to 160 logarithmically spaced harmonic oscillator
+  bands spanning 100.0 Hz to 7500.0 Hz, with Sobel edge-gradient
+  emphasis (1.75x) modulating instantaneous oscillator amplitudes across 320 time steps.
+* Synthesized Audio Artifact:
+  - Primary WAV Output:                  /Users/user/daxda next gen/DAXDA-NEXTGEN/daxda-next-gen/outputs/waveforms/imac_optical_sonification_synthesis.wav
+  - Audio Stream SHA-256 Receipt:        9a6a561c76a4ff1c450c15f6b3ef23851e34f8b2407980920c4f1b3af6d35241
+
+STAGE 3 — MULTI-DOMAIN CONTINUOUS WAVEFORM DSP DECOMPOSITION
+------------------------------------------------------------------------------------
+* What Happened:
+  DAXDA executed four mathematical signal decompositions on the synthesized 48 kHz audio
+  in 133.7 ms:
+  1. Hilbert Analytic Signal z(t) = s(t) + i*H{s(t)}:
+     Extracted instantaneous amplitude envelope A(t) and unwrapped instantaneous phase
+     phi(t), yielding a mean instantaneous fundamental frequency f0 = 1621.7 Hz.
+  2. Morlet Continuous Wavelet Transform (CWT):
+     Decomposed the transient onset across 48 wavelet scales to resolve multi-scale
+     time-frequency localization.
+  3. Short-Time Fourier Transform (STFT) & Mel Filterbank:
+     Computed a 513-bin complex frequency spectrum across 934 time frames, measuring a
+     mean Spectral Centroid of 2749.3 Hz.
+  4. Takens 3D Delay-Coordinate Phase-Space Attractor [x(t), x(t+tau), x(t+2*tau)]:
+     Embedded the 1D waveform into a 3D dynamical manifold using mutual-information
+     optimal time delay tau = 3 samples (7,996 3D trajectory points).
+
+STAGE 4 — BIDIRECTIONAL 2D CYMATICS & CHLADNI NODAL RESONANCE (AUDIO -> VISUAL)
+------------------------------------------------------------------------------------
+* What Happened:
+  To verify cross-modal reversibility, DAXDA projected the sonified acoustic spectrum
+  back into 2D physical geometry:
+  1. 2D Polar Morlet Cymatics (`imac_audio_to_visual_cymatics.png`):
+     Mapped the radial harmonic energy and phase interference onto a 512 x 512 polar
+     standing-wave interference lattice.
+  2. Chladni Vibrating Plate PDE Simulation (`imac_chladni_nodal_lines.png`):
+     Identified the dominant low-order standing-wave fundamental at 140.62 Hz,
+     exciting Chladni eigenmodes (m = 2, n = 3) via the 2D biharmonic plate equation:
+     w(x, y) = cos(m*pi*x)*cos(n*pi*y) - cos(n*pi*x)*cos(m*pi*y) = 0.
+
+STAGE 5 — CLIFFORD Cl(16,4) MULTIVECTOR BLADES & UNIFIED RESONANCE
+------------------------------------------------------------------------------------
+* What Happened:
+  The acoustic and optical wavefields were coupled through DAXDA's Unified Resonance
+  Framework and projected onto five orthogonal Clifford Cl(16,4) basis blades:
+  - Neural Coherence Index (NCI):        0.379 (inter-frame Mel phase-progression stability)
+  - Cognitive Phase Coupling (CPC):      0.9787 (128-bin radial acoustic-to-optical phase lock)
+  - Frequency Alignment Formula (FAF):   0.1965 (dimensionless spectral-spatial centroid alignment)
+  - Clifford Cl(16,4) Blade Activations:
+      * e1 (Trust / Spectral Coherence):          0.7252
+      * e2 (Factual Grounding / Band Alignment):  0.9745
+      * e3 (Negation / Normalized Spectral Flux): 0.1493
+      * e4 (Authority / Dynamic Envelope Power):  0.4796
+      * e15 (Adversarial Ultrasonic >16 kHz):     0.0 -> CLEAN (ZERO INAUDIBLE THREATS)
+
+STAGE 6 — AUDIO-REACTIVE 720p30 VIDEO COMPILATION & CRYPTOGRAPHIC SEAL
+------------------------------------------------------------------------------------
+* What Happened:
+  Rendered 120 synchronized HD frames (1280 x 720 @ 30 FPS) multiplexing the live
+  waveform oscilloscope, STFT spectrum, radial cymatic rings, and Cl(16,4) telemetry
+  with the 48 kHz audio track into MP4, WebM, and GIF containers.
+  - MP4 Video Path:                      /Users/user/daxda next gen/DAXDA-NEXTGEN/daxda-next-gen/outputs/waveforms/daxda_waveform_transformation.mp4
+  - Cryptographic Video SHA-256 Seal:    1e5d045b7289a4e918d6d1c3dd44f26670ef593a007cbeffeff01736c25d353d
+====================================================================================
+</pre>
+  </div>
+</div>
+
+<script>
+  const btnCopyReport = document.getElementById("btnCopyReport");
+  if (btnCopyReport) {
+    btnCopyReport.onclick = () => {
+      const txt = document.getElementById("fullReportPre").innerText;
+      navigator.clipboard?.writeText(txt);
+      btnCopyReport.textContent = "Copied to Clipboard!";
+      setTimeout(() => { btnCopyReport.textContent = "Copy Full Text Report"; }, 1800);
+    };
+  }
+  const ORBIT = [[0.0, 0.002, 0.0023], [-0.0018, -0.0178, -0.0633], [-0.2312, -0.1994, 0.3012], [-0.0514, -0.0209, 0.1274], [0.1222, -0.0414, -0.0217], [-0.0947, -0.0887, -0.2934], [0.1551, 0.1023, -0.0116], [-0.2681, 0.0909, 0.0209], [0.1659, -0.0564, 0.3173], [-0.0493, -0.1394, 0.0565], [0.089, 0.0817, -0.3182], [0.0925, -0.0149, -0.1623], [-0.1909, -0.3929, -0.0164], [0.0525, -0.3544, 0.1], [0.5435, 0.2563, -0.327], [-0.1809, -0.0536, 0.1925], [0.1303, -0.0509, -0.2994], [0.1974, -0.0047, -0.0756], [-0.2188, -0.0573, -0.0383], [0.1501, 0.0845, 0.1039], [-0.1944, 0.2023, 0.0931], [0.0369, -0.0281, 0.044], [0.1731, -0.25, -0.0489], [-0.2679, -0.034, 0.0183], [0.0509, 0.2829, 0.0945], [-0.154, 0.3652, -0.1708], [-0.2621, -0.0536, 0.6527], [-0.0312, -0.4893, 0.0603], [0.3345, 0.134, -0.1504], [-0.2299, 0.0411, 0.092], [0.1652, -0.0982, -0.1903], [-0.3045, 0.0741, 0.1074], [0.3055, -0.0466, 0.1193], [-0.0527, -0.0786, 0.0968], [-0.0268, -0.0559, -0.154], [0.3286, 0.0783, -0.1847], [0.0303, -0.006, -0.2371], [0.1638, -0.0155, 0.0988], [0.0725, -0.1191, -0.2496], [0.351, 0.0714, 0.0256], [0.0643, 0.2264, -0.0808], [-0.2406, 0.0541, -0.0241], [0.0448, -0.0208, -0.2861], [-0.1974, 0.1953, 0.4035], [-0.0417, -0.2055, -0.009], [0.2089, -0.0617, -0.0285], [0.1394, 0.1984, -0.235], [-0.2836, -0.1527, 0.1243], [-0.091, 0.0876, 0.2893], [-0.2615, -0.1397, -0.0272], [-0.0341, -0.1436, 0.2748], [-0.1517, -0.0451, 0.1382], [-0.032, -0.0886, 0.0133], [0.3148, -0.1586, -0.4231], [-0.0985, 0.193, -0.1582], [-0.253, -0.0578, 0.3677], [0.2357, -0.3441, -0.3946], [-0.1118, 0.3743, 0.133], [-0.0163, -0.2219, -0.0718], [0.495, 0.3639, -0.0032], [-0.3311, -0.2655, -0.2175], [0.1598, 0.4292, -0.1049], [-0.0593, -0.0683, -0.4536], [-0.3145, -0.3786, 0.1373], [0.2004, 0.2376, -0.1527], [0.0293, -0.1707, -0.0088], [-0.1248, 0.1615, -0.2128], [0.0075, -0.1765, 0.0118], [0.3909, -0.1824, 0.3193], [-0.0051, 0.2269, 0.0659], [0.0538, 0.061, -0.0672], [0.1609, 0.0388, -0.0086], [-0.2483, -0.083, -0.0146], [0.0341, 0.0348, -0.3198], [0.0379, -0.1533, 0.2043], [0.154, -0.0701, -0.0998], [-0.1936, -0.1698, 0.0989], [0.1177, 0.0086, 0.057], [0.2107, 0.0167, -0.1779], [-0.0423, 0.2277, 0.0176], [-0.1096, 0.0883, 0.1389], [0.0254, -0.325, -0.074], [0.2348, -0.0893, -0.1675], [-0.1887, 0.1824, 0.4092], [-0.1105, -0.2354, 0.0418], [0.3969, 0.1259, 0.1808], [-0.1203, 0.1299, 0.3608], [0.2097, 0.2578, 0.0851], [-0.618, -0.0168, 0.1871], [0.3073, 0.2524, -0.195], [0.2768, -0.2339, -0.1787], [-0.229, -0.5965, 0.6714], [-0.5326, -0.2385, -0.0358], [0.0186, 0.1964, 0.4059], [-0.47, 0.2861, -0.078], [-0.4682, -0.3399, 0.148], [0.1791, 0.0807, -0.4371], [-0.3076, 0.4342, -0.0422], [-0.104, -0.6443, 0.4569], [0.125, -0.1686, 0.6267], [0.2157, 0.5491, 0.0836], [0.0639, -0.2261, -0.5377], [-0.4124, -0.0817, 0.178], [0.2345, -0.2093, 0.0699], [0.0278, 0.2666, 0.2297], [0.0238, -0.2011, 0.2614], [-0.1959, -0.1114, -0.0376], [0.0964, -0.1144, -0.1101], [-0.1624, 0.2298, 0.0744], [-0.3208, 0.0274, 0.3921], [0.1953, -0.0757, -0.4164], [-0.14, 0.0112, 0.0655], [-0.4151, -0.106, 0.5679], [0.1372, 0.0378, -0.13], [0.0931, 0.2215, -0.122], [0.1242, -0.2402, -0.3105], [0.1634, -0.123, 0.0828], [-0.205, -0.2396, -0.184], [0.0162, 0.3155, 0.0607], [0.0217, -0.0083, 0.256], [0.0915, 0.3474, -0.1483], [0.1338, -0.3704, -0.3006], [0.3387, -0.018, 0.115], [0.0976, 0.2541, -0.0002], [0.0261, 0.023, -0.4432], [0.2067, 0.0964, -0.4861], [-0.2583, -0.2188, -0.0738], [0.0836, 0.2126, 0.423], [-0.0714, 0.4696, 0.1335], [0.2769, 0.0749, -0.139], [-0.1853, -0.0784, 0.1607], [0.142, -0.0705, 0.1132], [0.3544, 0.0476, 0.0868], [-0.2242, 0.0355, -0.0034], [-0.1079, 0.1649, -0.223], [-0.0027, -0.3818, -0.2105], [0.1789, -0.0909, -0.0312], [-0.2183, -0.0832, 0.2628], [-0.0323, -0.0874, 0.1345], [0.4308, 0.0764, -0.4446], [-0.0266, -0.1909, 0.1639], [0.0031, 0.0493, 0.0282], [0.2168, 0.0843, -0.2201], [-0.3016, -0.0431, 0.2572], [-0.0522, 0.2159, 0.0832], [-0.0648, -0.0851, 0.0013], [0.0866, -0.0478, -0.1932], [-0.1224, 0.2395, 0.0956], [-0.0114, 0.1684, 0.1303], [-0.0965, -0.2277, 0.0653], [0.2391, 0.0411, -0.253], [-0.2082, 0.1815, 0.2683], [-0.3516, -0.066, 0.3128], [-0.0703, -0.2832, -0.0517], [-0.0992, 0.0446, 0.2038], [0.1038, -0.2344, -0.2522], [0.1021, -0.0071, -0.0543], [-0.0056, 0.0496, 0.0385], [0.1469, -0.083, -0.1899], [-0.2, -0.1264, 0.2014], [0.1772, -0.1835, -0.172], [0.2252, 0.113, -0.1345], [-0.0276, -0.0736, -0.0009], [-0.0527, -0.0272, 0.029], [0.2279, -0.0391, -0.2499], [-0.0069, 0.1624, 0.0208], [-0.0525, -0.0958, 0.0264], [-0.034, -0.0388, 0.0488], [-0.0632, 0.2363, 0.0848], [-0.1601, -0.2237, 0.0776], [0.0414, -0.0035, -0.0587], [-0.0776, 0.0167, -0.0225], [-0.0431, 0.0594, 0.0315], [-0.1357, 0.1347, 0.2801], [-0.0775, -0.2536, -0.0393], [-0.0607, 0.0045, 0.1253], [-0.237, -0.0871, 0.2758], [-0.1284, -0.1468, 0.1275], [-0.07, -0.4323, -0.1356], [0.2797, 0.105, -0.0082], [0.0595, -0.0203, -0.1284], [0.3682, 0.1494, -0.2067], [0.0982, 0.2097, -0.3328], [-0.3023, 0.1814, 0.3456], [0.3128, -0.1285, -0.34], [0.0662, -0.0307, -0.0824], [0.1941, 0.1042, -0.198], [0.2452, 0.2877, -0.1451], [-0.0986, 0.1139, 0.0487], [0.0968, 0.2055, -0.1711], [0.1235, 0.2361, -0.0063], [-0.52, -0.2367, 0.5512], [0.0504, 0.1208, 0.1919], [-0.2404, -0.0636, -0.4983], [0.2618, -0.3058, 0.5741], [0.3475, -0.4942, 0.2134], [-0.1355, 0.3006, 0.2366], [-0.486, -0.1637, -0.0892], [0.2122, -0.2393, -0.2068], [0.1449, 0.0677, 0.0451], [-0.063, 0.1661, -0.3481], [-0.0308, 0.0261, 0.2428], [-0.8775, 0.1559, 0.0407], [0.361, 0.2659, -0.4588], [-0.0233, 0.4082, 0.1242], [1.0, 0.0339, 0.1075], [-0.5535, 0.1399, 0.0169], [-0.592, -0.2143, 0.0687], [-0.7353, 0.0526, 0.1464], [0.3943, -0.4522, 0.0466], [0.4899, -0.055, 0.6156], [0.1336, 0.6072, -0.1385], [-0.0742, 0.0389, 0.5602], [-0.5975, -0.171, -0.1571], [-0.0311, -0.6476, -0.0225], [0.206, -0.4117, -0.2735], [0.0305, 0.2871, -0.1067], [-0.092, 0.0465, -0.2787], [0.8992, -0.25, 0.0466], [0.3929, -0.0077, -0.5566]];
+  const fftCanvas = document.getElementById("fftCanvas");
+  const fftCtx = fftCanvas.getContext("2d");
+  const attCanvas = document.getElementById("attractorCanvas");
+  const attCtx = attCanvas.getContext("2d");
+  const audioEl = document.getElementById("sonAudio");
+
+  let ac = null, analyser = null, freqData = null;
+  let yaw = 0.5, pitch = 0.35, dragging = false, lx = 0, ly = 0;
+
+  audioEl.addEventListener("play", () => {
+    try {
+      if (!ac) {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        ac = new AC();
+        analyser = ac.createAnalyser();
+        analyser.fftSize = 128;
+        freqData = new Uint8Array(analyser.frequencyBinCount);
+        const src = ac.createMediaElementSource(audioEl);
+        src.connect(analyser);
+        analyser.connect(ac.destination);
+      }
+      if (ac.state === "suspended") ac.resume();
+    } catch (e) {}
+  });
+
+  attCanvas.addEventListener("pointerdown", e => { dragging = true; lx = e.clientX; ly = e.clientY; });
+  window.addEventListener("pointermove", e => {
+    if (!dragging) return;
+    yaw += (e.clientX - lx) * 0.01;
+    pitch += (e.clientY - ly) * 0.01;
+    lx = e.clientX; ly = e.clientY;
+  });
+  window.addEventListener("pointerup", () => { dragging = false; });
+
+  function renderLoop(ts) {
+    if (!dragging) yaw += 0.007;
+
+    // 1. Render FFT Spectrum
+    const fw = fftCanvas.clientWidth || 400, fh = 80;
+    if (fftCanvas.width !== fw) { fftCanvas.width = fw; fftCanvas.height = fh; }
+    fftCtx.fillStyle = "#030712";
+    fftCtx.fillRect(0, 0, fw, fh);
+    if (analyser && freqData) analyser.getByteFrequencyData(freqData);
+    const bins = 48, bw = (fw - 16) / bins;
+    for (let i = 0; i < bins; i++) {
+      const v = freqData ? freqData[i] / 255 : (0.18 + 0.12 * Math.sin(ts * 0.004 + i * 0.3));
+      const bh = Math.max(3, v * (fh - 16));
+      fftCtx.fillStyle = i % 2 === 0 ? "#38bdf8" : "#c084fc";
+      fftCtx.fillRect(8 + i * bw, fh - 6 - bh, bw - 2, bh);
+    }
+
+    // 2. Render 3D Phase-Space Attractor x(t), x(t+tau), x(t+2*tau)
+    const aw = attCanvas.clientWidth || 400, ah = 145;
+    if (attCanvas.width !== aw) { attCanvas.width = aw; attCanvas.height = ah; }
+    attCtx.fillStyle = "#030712";
+    attCtx.fillRect(0, 0, aw, ah);
+    const cx = aw / 2, cy = ah / 2, sc = Math.min(aw, ah) * 0.40;
+    attCtx.beginPath();
+    ORBIT.forEach((pt, idx) => {
+      const x1 = pt[0] * Math.cos(yaw) + pt[2] * Math.sin(yaw);
+      const z1 = -pt[0] * Math.sin(yaw) + pt[2] * Math.cos(yaw);
+      const y2 = pt[1] * Math.cos(pitch) - z1 * Math.sin(pitch);
+      const z2 = pt[1] * Math.sin(pitch) + z1 * Math.cos(pitch);
+      const p = 2.6 / (2.6 + z2);
+      const px = cx + x1 * sc * p, py = cy + y2 * sc * p;
+      if (idx === 0) attCtx.moveTo(px, py); else attCtx.lineTo(px, py);
+    });
+    attCtx.strokeStyle = "#38bdf8";
+    attCtx.lineWidth = 1.4;
+    attCtx.stroke();
+    attCtx.fillStyle = "#94a3b8";
+    attCtx.font = "10px monospace";
+    attCtx.fillText("3D Phase-Space Attractor [x(t), x(t+τ), x(t+2τ)] · Drag to rotate", 8, 14);
+
+    requestAnimationFrame(renderLoop);
+  }
+  requestAnimationFrame(renderLoop);
+</script>
+</body>
+</html>
