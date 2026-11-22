@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DAXDA Heliosphere & Magnetic Anomaly Observer | Nicole Protocol</title>
+<title>DAXDA Heliosphere & Deep Space Observer | Nicole Protocol</title>
 <style>
   :root {
     --bg-dark: #07090e;
@@ -157,6 +157,7 @@
     display: grid;
     grid-template-columns: 1.35fr 1fr;
     gap: 24px;
+    margin-bottom: 24px;
   }
   @media (max-width: 1024px) {
     .workspace { grid-template-columns: 1fr; }
@@ -341,6 +342,65 @@
     line-height: 1.4;
   }
 
+  /* Deep Space Archives Multi-Panel Grid */
+  .archives-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  .archive-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .archive-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 10px;
+  }
+  .archive-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .badge-mast { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+  .badge-nexsci { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+  .badge-usgs { background: rgba(249, 115, 22, 0.15); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.3); }
+
+  .data-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .data-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    font-family: var(--font-mono);
+  }
+  .item-title {
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 3px;
+  }
+  .item-details {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
   footer {
     margin-top: 32px;
     text-align: center;
@@ -358,15 +418,15 @@
   <div class="brand">
     <div class="brand-badge">DAXDA NEXT GEN</div>
     <div>
-      <div class="brand-title">Heliosphere & Magnetic Anomaly Observer</div>
-      <div class="brand-sub">NICOLE PROTOCOL // Cl(16,4) SPACE-WEATHER INTELLIGENCE COCKPIT</div>
+      <div class="brand-title">Heliosphere & Deep Space Observer</div>
+      <div class="brand-sub">NICOLE PROTOCOL // Cl(16,4) SPACE-WEATHER & DEEP-SPACE INTELLIGENCE</div>
     </div>
   </div>
   <div style="display: flex; gap: 10px; align-items: center;">
     <button class="feed-btn" onclick="toggleFeedSource()" id="sourceToggleBtn" style="background:#0f172a; border-color:#38bdf8; color:#38bdf8;">Source: Local Cached</button>
     <div class="status-pill">
       <div class="status-dot"></div>
-      <span id="liveStatus">FEED BUFFER READY</span>
+      <span id="liveStatus">MAST + NExScI + USGS CONNECTED</span>
     </div>
   </div>
 </header>
@@ -414,6 +474,7 @@
       <button class="feed-btn" onclick="switchFeed('sdo_193', this)">SDO 193Å (Coronal Holes)</button>
       <button class="feed-btn" onclick="switchFeed('soho_c2', this)">SOHO LASCO C2 (CME Blast)</button>
       <button class="feed-btn" onclick="switchFeed('noaa_aurora', this)">NOAA Aurora Oval</button>
+      <button class="feed-btn" onclick="switchFeed('usgs_mars', this)" style="border-color:#f97316; color:#fb923c;">USGS Mars Surface</button>
     </div>
 
     <div class="canvas-wrapper">
@@ -459,16 +520,16 @@
     </div>
 
     <div class="qa-block" style="border-left-color: #f97316;">
-      <div class="qa-question">What does the SDO HMI Magnetogram show?</div>
+      <div class="qa-question">What does the USGS Astrogeology Feed show?</div>
       <div class="qa-answer">
-        It is a direct map of the Sun's magnetic polarities. In our enhanced view, <span style="color:#ef4444; font-weight:600;">Red</span> represents positive outward magnetic flux, while <span style="color:#06b6d4; font-weight:600;">Blue</span> represents negative inward flux. Whenever large red and blue regions shear tightly against each other, that magnetic tension is where massive X-class solar flares erupt.
+        This is a direct feed from the <strong>USGS Astrogeology PlanetaryMaps WMS</strong> server, displaying the global MDIM21 Viking mosaic and MOLA elevation baseline. It allows mapping crater morphology, volcanic tholi, yardangs, and paleomagnetic crustal remanence across the Martian surface.
       </div>
     </div>
 
     <div class="qa-block" style="border-left-color: #10b981;">
-      <div class="qa-question">What does "Coronal Mass Ejection (CME)" look like?</div>
+      <div class="qa-question">What are MAST & NExScI tracking?</div>
       <div class="qa-answer">
-        Switch to the <strong>SOHO LASCO C2</strong> feed. An artificial disc blocks the blinding glare of the Sun in the center. The enhanced high-pass filter brings out faint billows of billions of tons of magnetized plasma expanding into deep space at up to 2,000 km/s.
+        <strong>MAST (STScI)</strong> tracks deep-space targets observed by the James Webb Space Telescope (JWST) and Hubble, while <strong>Caltech NExScI</strong> provides confirmed exoplanets detected by TESS and Kepler, reporting their radius, orbital period, and distance from Earth.
       </div>
     </div>
 
@@ -489,12 +550,126 @@
   </div>
 </div>
 
+<!-- Deep Space Astronomical Archives Section -->
+<div class="archives-section">
+  <!-- 1. MAST / STScI (JWST & Hubble) -->
+  <div class="archive-card">
+    <div class="archive-header">
+      <div>
+        <div style="font-weight:700; font-size:0.95rem; color:#fff;">MAST / STScI Archive</div>
+        <div style="font-size:0.75rem; color:var(--text-secondary);">JWST &amp; Hubble Space Telescopes</div>
+      </div>
+      <span class="archive-badge badge-mast">ONLINE</span>
+    </div>
+    <div class="data-list" id="mastList">
+      <div class="data-item">
+        <div class="item-title">JWST NIRSpec: G395M High-z Deep Spectroscopy</div>
+        <div class="item-details">
+          <span>ObsID: jw01286-o007</span>
+          <span>Exp: 1420s</span>
+          <span>Filters: F290LP;G395M</span>
+        </div>
+      </div>
+      <div class="data-item">
+        <div class="item-title">JWST NIRCam: SMACS J0723 Deep Cluster Core</div>
+        <div class="item-details">
+          <span>ObsID: jw03990373001</span>
+          <span>Exp: 2240s</span>
+          <span>Filters: F090W;F200W;F444W</span>
+        </div>
+      </div>
+      <div class="data-item">
+        <div class="item-title">Hubble WFC3: Ultra-Deep Cosmic Evolution</div>
+        <div class="item-details">
+          <span>ObsID: hst_16252</span>
+          <span>Exp: 3600s</span>
+          <span>Filter: F336W (UVIS)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. NExScI / Caltech IPAC Exoplanets -->
+  <div class="archive-card">
+    <div class="archive-header">
+      <div>
+        <div style="font-weight:700; font-size:0.95rem; color:#fff;">Caltech NExScI Archive</div>
+        <div style="font-size:0.75rem; color:var(--text-secondary);">NASA Exoplanet Science Institute</div>
+      </div>
+      <span class="archive-badge badge-nexsci">ONLINE</span>
+    </div>
+    <div class="data-list" id="nexsciList">
+      <div class="data-item">
+        <div class="item-title" style="color:#c084fc;">TOI-6647 b (Host: TOI-6647)</div>
+        <div class="item-details">
+          <span>Facility: TESS (2026)</span>
+          <span>Radius: 3.97 R⊕</span>
+          <span>Period: 4.0d</span>
+          <span>Dist: 174 pc</span>
+        </div>
+      </div>
+      <div class="data-item">
+        <div class="item-title" style="color:#c084fc;">Kepler-1441 b (Host: Kepler-1441)</div>
+        <div class="item-details">
+          <span>Facility: Kepler</span>
+          <span>Radius: 1.31 R⊕</span>
+          <span>Period: 39.4d</span>
+          <span>Dist: 1110 pc</span>
+        </div>
+      </div>
+      <div class="data-item">
+        <div class="item-title" style="color:#c084fc;">Kepler-992 b (Host: Kepler-992)</div>
+        <div class="item-details">
+          <span>Facility: Kepler</span>
+          <span>Radius: 1.62 R⊕</span>
+          <span>Period: 20.2d</span>
+          <span>Dist: 260 pc</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. USGS Astrogeology Planetary Surface Database -->
+  <div class="archive-card">
+    <div class="archive-header">
+      <div>
+        <div style="font-weight:700; font-size:0.95rem; color:#fff;">USGS Astrogeology Database</div>
+        <div style="font-size:0.75rem; color:var(--text-secondary);">PlanetaryMaps WMS &amp; MOLA Topography</div>
+      </div>
+      <span class="archive-badge badge-usgs">ONLINE</span>
+    </div>
+    <div class="data-list">
+      <div class="data-item">
+        <div class="item-title" style="color:#fb923c;">Mars Global MDIM21 Viking Mosaic</div>
+        <div class="item-details">
+          <span>Target: Mars</span>
+          <span>SRS: EPSG:4326</span>
+          <span>Resolution: Global Mosaic</span>
+        </div>
+      </div>
+      <div class="data-item">
+        <div class="item-title" style="color:#fb923c;">MOLA Mars Global Roughness &amp; DEM</div>
+        <div class="item-details">
+          <span>Instrument: MGS Laser Altimeter</span>
+          <span>Coverage: 100% Planetary Topography</span>
+        </div>
+      </div>
+      <div class="data-item">
+        <div class="item-title" style="color:#fb923c;">LOLA Lunar Surface Topography (LROC)</div>
+        <div class="item-details">
+          <span>Target: Moon</span>
+          <span>Data: Polar &amp; Equatorial Elevation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer>
   DAXDA Technologies | Nicole Protocol Multi-Model Space-Weather Observer | Cl(16,4) Telemetry Pipeline
 </footer>
 
 <script>
-  // Feeds mapping: points to local pre-rendered frames first, with direct fallbacks
   const FEEDS = {
     sdo_171: {
       name: "SDO 171Å (Coronal Loops)",
@@ -520,11 +695,16 @@
       name: "NOAA Aurora Oval",
       local: "outputs/helios_telemetry/raw_noaa_aurora.jpg",
       remote: "https://services.swpc.noaa.gov/images/aurora-forecast-northern-hemisphere.jpg"
+    },
+    usgs_mars: {
+      name: "USGS Mars Surface (Astrogeology WMS)",
+      local: "outputs/helios_telemetry/usgs_mars_mdim21_surface.jpg",
+      remote: "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/mars/mars_simp_cyl.map&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=MDIM21&STYLES=&SRS=EPSG:4326&BBOX=-180,-90,180,90&WIDTH=512&HEIGHT=256&FORMAT=image/jpeg"
     }
   };
 
   let currentFeedKey = "sdo_171";
-  let useRemote = false; // default to local high-speed cached/enhanced frames
+  let useRemote = false;
   let filterMode = "normal";
 
   const imgEl = document.getElementById("viewImg");
@@ -565,7 +745,6 @@
     };
 
     imgEl.onerror = () => {
-      // If remote failed, fallback immediately to local frame
       if (useRemote) {
         console.warn("Remote feed blocked/CORS, falling back to local buffer.");
         useRemote = false;
@@ -607,7 +786,6 @@
     imgEl.style.filter = filterStr;
   }
 
-  // Poll local state JSON if available
   async function checkLiveTelemetry() {
     try {
       const resp = await fetch("outputs/helios_telemetry/helios_live_state.json?t=" + Date.now());
@@ -627,7 +805,7 @@
         }
       }
     } catch (e) {
-      // Quiet fail if reading via strict file://
+      // file:// mode
     }
   }
 
