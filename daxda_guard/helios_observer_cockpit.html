@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAXDA Heliosphere & Magnetic Anomaly Observer | Nicole Protocol</title>
+<style>
+  :root {
+    --bg-dark: #07090e;
+    --card-bg: rgba(14, 20, 30, 0.90);
+    --border-color: rgba(45, 75, 110, 0.4);
+    --border-highlight: #38bdf8;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --accent-cyan: #06b6d4;
+    --accent-red: #ef4444;
+    --accent-orange: #f97316;
+    --accent-green: #10b981;
+    --accent-blue: #3b82f6;
+    --accent-purple: #a855f7;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(168, 85, 247, 0.06) 0%, transparent 40%),
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .brand-badge {
+    background: linear-gradient(135deg, #0284c7, #06b6d4);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    font-family: var(--font-mono);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+  }
+  .brand-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(180deg, #ffffff, #cbd5e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .brand-sub {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+  }
+
+  .status-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    color: #34d399;
+    font-family: var(--font-mono);
+  }
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: #34d399;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #34d399;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+  }
+
+  /* Metric Cards */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    backdrop-filter: blur(8px);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    border-color: var(--border-highlight);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  .card-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .card-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .card-sub {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+  }
+  .tag-alert {
+    color: var(--accent-orange);
+    font-weight: 600;
+  }
+  .tag-ok {
+    color: var(--accent-green);
+    font-weight: 600;
+  }
+
+  /* Main Workspace */
+  .workspace {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 1024px) {
+    .workspace { grid-template-columns: 1fr; }
+  }
+
+  /* Visualizer Section */
+  .visualizer-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .feed-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+  }
+  .feed-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .feed-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .feed-btn.active {
+    color: #fff;
+    background: #0284c7;
+    border-color: #38bdf8;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+  }
+
+  .canvas-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-height: 520px;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #viewImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: filter 0.2s ease;
+  }
+  .loading-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(7, 9, 14, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent-cyan);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .controls-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .filter-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter-chip {
+    font-size: 0.78rem;
+    font-family: var(--font-mono);
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s;
+  }
+  .filter-chip.active {
+    background: rgba(6, 182, 212, 0.25);
+    border-color: var(--accent-cyan);
+    color: #fff;
+    box-shadow: 0 0 8px rgba(6, 182, 212, 0.3);
+  }
+  .slider-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.78rem;
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+  }
+  .slider-row input[type=range] {
+    flex: 1;
+    accent-color: var(--accent-cyan);
+  }
+
+  /* Cognition & Human Understanding Panel */
+  .cognition-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .panel-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .qa-block {
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid var(--accent-cyan);
+    padding: 12px 14px;
+    border-radius: 0 8px 8px 0;
+  }
+  .qa-question {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #e2e8f0;
+    margin-bottom: 4px;
+  }
+  .qa-answer {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: #94a3b8;
+  }
+
+  .clifford-blade-box {
+    background: rgba(168, 85, 247, 0.08);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 8px;
+    padding: 14px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+  .clifford-blade-title {
+    color: #c084fc;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .multivector-code {
+    color: #e9d5ff;
+    line-height: 1.4;
+  }
+
+  footer {
+    margin-top: 32px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-family: var(--font-mono);
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="brand-badge">DAXDA NEXT GEN</div>
+    <div>
+      <div class="brand-title">Heliosphere & Magnetic Anomaly Observer</div>
+      <div class="brand-sub">NICOLE PROTOCOL // Cl(16,4) SPACE-WEATHER INTELLIGENCE COCKPIT</div>
+    </div>
+  </div>
+  <div style="display: flex; gap: 10px; align-items: center;">
+    <button class="feed-btn" onclick="toggleFeedSource()" id="sourceToggleBtn" style="background:#0f172a; border-color:#38bdf8; color:#38bdf8;">Source: Local Cached</button>
+    <div class="status-pill">
+      <div class="status-dot"></div>
+      <span id="liveStatus">FEED BUFFER READY</span>
+    </div>
+  </div>
+</header>
+
+<!-- Telemetry Metric Cards -->
+<div class="grid-container">
+  <div class="card">
+    <div class="card-label">IMF Bz Component <span id="imfBadge" class="tag-alert">RECONNECTION ACTIVE</span></div>
+    <div class="card-value" id="valBz">-2.85 <span style="font-size: 0.9rem; color:#64748b;">nT</span></div>
+    <div class="card-sub" id="subBz">Southward (Dungey reconnection open)</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Solar Wind Speed <span>DSCOVR L1</span></div>
+    <div class="card-value" id="valSpeed">357.0 <span style="font-size: 0.9rem; color:#64748b;">km/s</span></div>
+    <div class="card-sub" id="subSpeed">Quiescent slow solar wind stream</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">GOES X-Ray Flare Tier <span>0.1–0.8 nm</span></div>
+    <div class="card-value" id="valFlare" style="color: #38bdf8;">B2.9</div>
+    <div class="card-sub" id="subFlare">Quiet baseline (No flares &gt; C-class)</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Planetary K-Index <span>GEOMAGNETIC</span></div>
+    <div class="card-value" id="valKp">1.0 <span style="font-size: 0.9rem; color:#64748b;">/ 9</span></div>
+    <div class="card-sub" id="subKp">Quiet (Magnetosphere stable)</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Cl(16,4) Manifold Norm <span>ANOMALY</span></div>
+    <div class="card-value" id="valManifold" style="color: #c084fc;">1.23</div>
+    <div class="card-sub" id="subManifold">Quiescent manifold state (|ΔF| &lt; 2.5)</div>
+  </div>
+</div>
+
+<!-- Main Workspace -->
+<div class="workspace">
+  <!-- Left Column: Enhanced Imagery Visualizer -->
+  <div class="visualizer-card">
+    <div class="feed-tabs">
+      <button class="feed-btn active" onclick="switchFeed('sdo_171', this)">SDO 171Å (Coronal Loops)</button>
+      <button class="feed-btn" onclick="switchFeed('sdo_hmi', this)">SDO HMI (Magnetogram)</button>
+      <button class="feed-btn" onclick="switchFeed('sdo_193', this)">SDO 193Å (Coronal Holes)</button>
+      <button class="feed-btn" onclick="switchFeed('soho_c2', this)">SOHO LASCO C2 (CME Blast)</button>
+      <button class="feed-btn" onclick="switchFeed('noaa_aurora', this)">NOAA Aurora Oval</button>
+    </div>
+
+    <div class="canvas-wrapper">
+      <img id="viewImg" alt="Solar Observation Feed" src="outputs/helios_telemetry/enhanced_sdo_171_loops.jpg">
+      <div id="loadingOverlay" class="loading-overlay">SYNCHRONIZING FEED...</div>
+    </div>
+
+    <!-- Client-Side Enhancement Controls -->
+    <div class="controls-bar">
+      <div class="filter-options">
+        <span style="font-size:0.75rem; color:#94a3b8; font-family:var(--font-mono);">ENHANCEMENT FILTER:</span>
+        <div class="filter-chip active" id="chipNormal" onclick="setFilterMode('normal')">Standard / Enhanced</div>
+        <div class="filter-chip" id="chipSharpen" onclick="setFilterMode('sharpen')">High-Pass Edge Emphasis</div>
+        <div class="filter-chip" id="chipThermal" onclick="setFilterMode('thermal')">Thermal High-Energy</div>
+        <div class="filter-chip" id="chipInvert" onclick="setFilterMode('invert')">Inverse Flux Contrast</div>
+      </div>
+
+      <div class="slider-row">
+        <span>Contrast:</span>
+        <input type="range" id="contrastSlider" min="0.8" max="2.5" step="0.1" value="1.2" oninput="applyCSSFilters()">
+        <span id="contrastVal">1.2x</span>
+      </div>
+
+      <div class="slider-row">
+        <span>Brightness:</span>
+        <input type="range" id="brightSlider" min="0.7" max="1.8" step="0.05" value="1.0" oninput="applyCSSFilters()">
+        <span id="brightVal">1.0x</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Column: Human Cognition & Explanatory Translation -->
+  <div class="cognition-card">
+    <div class="panel-title">
+      <span>✦ Human Cognitive Translation</span>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-question">Why does Bz = -2.85 nT matter to a human on Earth?</div>
+      <div class="qa-answer">
+        Earth’s natural magnetic field points North. When the incoming solar wind's magnetic vector (<span style="color:#38bdf8;">Bz</span>) points South (negative), the two opposing field lines reconnect like snapping magnets. This unlocks Earth's dayside shield, allowing charged solar particles to flood into the upper atmosphere, sparking auroras and satellite drag.
+      </div>
+    </div>
+
+    <div class="qa-block" style="border-left-color: #f97316;">
+      <div class="qa-question">What does the SDO HMI Magnetogram show?</div>
+      <div class="qa-answer">
+        It is a direct map of the Sun's magnetic polarities. In our enhanced view, <span style="color:#ef4444; font-weight:600;">Red</span> represents positive outward magnetic flux, while <span style="color:#06b6d4; font-weight:600;">Blue</span> represents negative inward flux. Whenever large red and blue regions shear tightly against each other, that magnetic tension is where massive X-class solar flares erupt.
+      </div>
+    </div>
+
+    <div class="qa-block" style="border-left-color: #10b981;">
+      <div class="qa-question">What does "Coronal Mass Ejection (CME)" look like?</div>
+      <div class="qa-answer">
+        Switch to the <strong>SOHO LASCO C2</strong> feed. An artificial disc blocks the blinding glare of the Sun in the center. The enhanced high-pass filter brings out faint billows of billions of tons of magnetized plasma expanding into deep space at up to 2,000 km/s.
+      </div>
+    </div>
+
+    <!-- Clifford Multivector State Box -->
+    <div class="clifford-blade-box">
+      <div class="clifford-blade-title">
+        <span>CLIFFORD Cl(16,4) SPACE-WEATHER STATE</span>
+        <span style="color:#34d399;">NORM: 1.23</span>
+      </div>
+      <div class="multivector-code" id="cliffordOutput">
+        Grade 0 (Energy): 14.32 J/m³<br>
+        Grade 1 (Velocity): [357.0, 0.0, 0.0] km/s<br>
+        Grade 2 (Faraday Bivector): Bx=-5.23, By=+0.75, Bz=-2.85 nT<br>
+        Grade 3 (Magnetic Helicity): 0.3105 rad/m<br>
+        Curvature Reconnection Tensor: <span style="color:#38bdf8;">ACTIVE (Poynting Coupling: 1.02 mV/m)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  DAXDA Technologies | Nicole Protocol Multi-Model Space-Weather Observer | Cl(16,4) Telemetry Pipeline
+</footer>
+
+<script>
+  // Feeds mapping: points to local pre-rendered frames first, with direct fallbacks
+  const FEEDS = {
+    sdo_171: {
+      name: "SDO 171Å (Coronal Loops)",
+      local: "outputs/helios_telemetry/enhanced_sdo_171_loops.jpg",
+      remote: "https://sdo.gsfc.nasa.gov/assets/img/latest/latest_512_0171.jpg"
+    },
+    sdo_hmi: {
+      name: "SDO HMI (Magnetogram)",
+      local: "outputs/helios_telemetry/enhanced_sdo_magnetogram.jpg",
+      remote: "https://sdo.gsfc.nasa.gov/assets/img/latest/latest_512_HMIB.jpg"
+    },
+    sdo_193: {
+      name: "SDO 193Å (Coronal Holes)",
+      local: "outputs/helios_telemetry/raw_sdo_193.jpg",
+      remote: "https://sdo.gsfc.nasa.gov/assets/img/latest/latest_512_0193.jpg"
+    },
+    soho_c2: {
+      name: "SOHO LASCO C2",
+      local: "outputs/helios_telemetry/enhanced_soho_lasco_c2.jpg",
+      remote: "https://soho.nascom.nasa.gov/data/realtime/c2/512/latest.jpg"
+    },
+    noaa_aurora: {
+      name: "NOAA Aurora Oval",
+      local: "outputs/helios_telemetry/raw_noaa_aurora.jpg",
+      remote: "https://services.swpc.noaa.gov/images/aurora-forecast-northern-hemisphere.jpg"
+    }
+  };
+
+  let currentFeedKey = "sdo_171";
+  let useRemote = false; // default to local high-speed cached/enhanced frames
+  let filterMode = "normal";
+
+  const imgEl = document.getElementById("viewImg");
+  const overlay = document.getElementById("loadingOverlay");
+
+  function toggleFeedSource() {
+    useRemote = !useRemote;
+    const btn = document.getElementById("sourceToggleBtn");
+    if (useRemote) {
+      btn.textContent = "Source: Live Satellite URL";
+      btn.style.color = "#f59e0b";
+      btn.style.borderColor = "#f59e0b";
+    } else {
+      btn.textContent = "Source: Local Cached";
+      btn.style.color = "#38bdf8";
+      btn.style.borderColor = "#38bdf8";
+    }
+    loadCurrentFeed();
+  }
+
+  function switchFeed(key, btnEl) {
+    currentFeedKey = key;
+    document.querySelectorAll(".feed-btn").forEach(b => b.classList.remove("active"));
+    if (btnEl) btnEl.classList.add("active");
+    loadCurrentFeed();
+  }
+
+  function loadCurrentFeed() {
+    const feed = FEEDS[currentFeedKey];
+    overlay.style.opacity = "1";
+    overlay.textContent = "SYNCING " + feed.name + "...";
+
+    const targetUrl = useRemote ? (feed.remote + "?t=" + Date.now()) : (feed.local + "?t=" + Date.now());
+
+    imgEl.onload = () => {
+      overlay.style.opacity = "0";
+      applyCSSFilters();
+    };
+
+    imgEl.onerror = () => {
+      // If remote failed, fallback immediately to local frame
+      if (useRemote) {
+        console.warn("Remote feed blocked/CORS, falling back to local buffer.");
+        useRemote = false;
+        document.getElementById("sourceToggleBtn").textContent = "Source: Local Cached (Fallback)";
+        imgEl.src = feed.local + "?t=" + Date.now();
+      } else {
+        overlay.textContent = "FRAME REFRESHING...";
+        setTimeout(() => { imgEl.src = feed.local + "?t=" + Date.now(); }, 1500);
+      }
+    };
+
+    imgEl.src = targetUrl;
+  }
+
+  function setFilterMode(mode) {
+    filterMode = mode;
+    document.querySelectorAll(".filter-chip").forEach(c => c.classList.remove("active"));
+    const idMap = { normal: "chipNormal", sharpen: "chipSharpen", thermal: "chipThermal", invert: "chipInvert" };
+    document.getElementById(idMap[mode]).classList.add("active");
+    applyCSSFilters();
+  }
+
+  function applyCSSFilters() {
+    const contrast = parseFloat(document.getElementById("contrastSlider").value);
+    document.getElementById("contrastVal").textContent = contrast.toFixed(1) + "x";
+    const bright = parseFloat(document.getElementById("brightSlider").value);
+    document.getElementById("brightVal").textContent = bright.toFixed(2) + "x";
+
+    let filterStr = `contrast(${contrast * 100}%) brightness(${bright * 100}%)`;
+
+    if (filterMode === "sharpen") {
+      filterStr += ` contrast(160%) saturate(140%)`;
+    } else if (filterMode === "thermal") {
+      filterStr += ` hue-rotate(180deg) saturate(220%) contrast(150%)`;
+    } else if (filterMode === "invert") {
+      filterStr += ` invert(1) hue-rotate(180deg) contrast(140%)`;
+    }
+
+    imgEl.style.filter = filterStr;
+  }
+
+  // Poll local state JSON if available
+  async function checkLiveTelemetry() {
+    try {
+      const resp = await fetch("outputs/helios_telemetry/helios_live_state.json?t=" + Date.now());
+      if (resp.ok) {
+        const state = await resp.json();
+        if (state.imf) {
+          document.getElementById("valBz").innerHTML = `${state.imf.bz.toFixed(2)} <span style="font-size:0.9rem; color:#64748b;">nT</span>`;
+        }
+        if (state.solar_wind) {
+          document.getElementById("valSpeed").innerHTML = `${state.solar_wind.speed_km_s.toFixed(1)} <span style="font-size:0.9rem; color:#64748b;">km/s</span>`;
+        }
+        if (state.solar_flare) {
+          document.getElementById("valFlare").textContent = state.solar_flare.flare_tier;
+        }
+        if (state.geomagnetic) {
+          document.getElementById("valKp").innerHTML = `${state.geomagnetic.kp_index.toFixed(1)} <span style="font-size:0.9rem; color:#64748b;">/ 9</span>`;
+        }
+      }
+    } catch (e) {
+      // Quiet fail if reading via strict file://
+    }
+  }
+
+  loadCurrentFeed();
+  checkLiveTelemetry();
+  setInterval(checkLiveTelemetry, 30000);
+</script>
+
+</body>
+</html>
