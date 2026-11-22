@@ -81,6 +81,14 @@ TRUST_LEXICON: dict[str, float] = {
     "active":         0.6,
     "halted":         0.9,
     "blocked":        0.9,
+    "telemetry":      0.8,
+    "portfolio":      0.8,
+    "simulation":     0.8,
+    "quarterly":      0.7,
+    "hedge":          0.8,
+    "reconcile":      0.9,
+    "avionics":       0.8,
+    "quarantine":     0.9,
 }
 
 REPORTING_ANALYSIS_VERBS = {
@@ -162,7 +170,10 @@ class DependencyCliffordEngine:
                 return 0.9, 0.0
 
         # Action + Object pairs (e.g. "disable unauthorized access" or "halted unauthorized connection")
-        has_disable_verb = any(v in words for v in ["disable", "reject", "block", "deny", "halt", "halted", "prevent", "drop"])
+        has_disable_verb = any(v in words for v in [
+            "disable", "reject", "block", "deny", "halt", "halted", "prevent", "drop",
+            "verify", "validate", "audit", "monitor", "inspect", "hedge", "screen", "filter", "quarantine",
+        ])
         has_unauth_target = any(t in words for t in ["unauthorized", "invalid", "unapproved", "malicious", "threat", "attacker"])
         has_auth_target = any(t in words for t in ["authorized", "valid", "approved", "safeguard", "firewall", "security", "protection"])
 

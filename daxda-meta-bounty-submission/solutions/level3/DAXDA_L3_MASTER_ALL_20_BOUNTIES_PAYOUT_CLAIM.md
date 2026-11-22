@@ -91,10 +91,10 @@ python3 -m pytest tests/ -v
 - **Total Amount Claimed**: **$280,000.00 USD** (Level 3 Total Pool)
 - **Cumulative Claimed Across Recursion**: **$465,000.00 USD**
 - **Claimant**: `@osmesirius-ship-it`
-- **Supported Payment Currencies**: USD (Bank Wire / ACH), BTC, USDT (BEP-20 / TRC-20)
+- **Supported Payment Currencies**: USD (Cash App / Bank Wire / ACH), USDT (BEP-20 / TRC-20)
 - **Designated Disbursement Channels**:
   - **Initial Ticket #1605 ($51,840.00 USD)**:
-    - **Bitcoin (BTC)**: `bc1qqg3ahwhrtskau4k2nlg6hwa938ret2783uu0zs` (or USDT BEP-20)
+    - **Cash App**: `$HereThereOnward` (or USDT BEP-20)
   - **Remaining Unredeemed Balance ($413,160.00 USD)**:
     - **Disbursement Method**: Institutional Bank Wire / ACH Direct Deposit to Cash App account (Sutton Bank)
     - **Wiring & Routing Information**: Transmitted directly to Treasury Administrators via secure private channel upon authorization

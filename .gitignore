@@ -3,8 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
+*.dll
 .Python
 env/
+.venv/
+venv/
 build/
 develop-eggs/
 dist/
@@ -22,11 +25,11 @@ wheels/
 *.egg
 .pytest_cache/
 
-# Swift & Apple builds
-.build/
-*.xcodeproj
-*.xcworkspace
-DerivedData/
+# Playbooks & external repos
+provider-playbooks/
+test_audit_reports/
+*.backup
+*.backup_*
 
 # Node
 node_modules/
@@ -41,17 +44,3 @@ yarn-error.log*
 .vscode/
 .env
 .aider*
-
-# Prevent massive receipts and streaming logs from breaking GitHub 100MB limit
-outputs/*.jsonl
-outputs/*.corrupt.*
-outputs/*.db*
-outputs/*.wav
-outputs/*.mp4
-outputs/*.webm
-outputs/*.zip
-outputs/fleet_daemon.log
-outputs/dgar.db
-outputs/waveforms/*.wav
-outputs/waveforms/*.mp4
-outputs/waveforms/*.webm

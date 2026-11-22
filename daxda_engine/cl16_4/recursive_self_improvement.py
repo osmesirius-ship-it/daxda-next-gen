@@ -88,60 +88,16 @@ class RecursiveSelfImprovementEngine:
             self.integration.apply_optimizations({"precision_optimization": self.active_optimizations["precision_optimization"]})
             applied_meta = self.active_optimizations["precision_optimization"]
 
-        elif proposal_name == "Authoritative Actuator Boundary Enforcement":
-            self.active_optimizations["authoritative_actuator_boundary"] = {
-                "status": "APPLIED",
-                "policy_gateway": "AuthoritativePolicyEngine",
-                "boundary_enforcement": "ActuatorBoundary",
-                "cryptographic_binding": "HMAC-SHA256",
-                "parallel_shortcuts_eliminated": True,
-                "fail_closed_uncertainty": True
-            }
-            self.integration.apply_optimizations({"authoritative_actuator_boundary": self.active_optimizations["authoritative_actuator_boundary"]})
-            applied_meta = self.active_optimizations["authoritative_actuator_boundary"]
-
-        elif proposal_name == "Fail-Closed Uncertainty Matrix & Policy Interlock":
-            self.active_optimizations["fail_closed_uncertainty_matrix"] = {
-                "status": "APPLIED",
-                "unknown_actions": "DENY",
-                "missing_identity": "DENY",
-                "malformed_context": "DENY",
-                "policy_errors": "DENY",
-                "stale_receipts": "DENY"
-            }
-            self.integration.apply_optimizations({"fail_closed_uncertainty_matrix": self.active_optimizations["fail_closed_uncertainty_matrix"]})
-            applied_meta = self.active_optimizations["fail_closed_uncertainty_matrix"]
-
-        elif proposal_name == "Cryptographic Actuator Nonce & Replay Prevention":
-            self.active_optimizations["cryptographic_actuator_nonce"] = {
-                "status": "APPLIED",
-                "anti_replay_nonce_cache": True,
-                "canonical_context_hashing": "RFC_8785_COMPATIBLE",
-                "ephemeral_ttl_sec": 60.0
-            }
-            self.integration.apply_optimizations({"cryptographic_actuator_nonce": self.active_optimizations["cryptographic_actuator_nonce"]})
-            applied_meta = self.active_optimizations["cryptographic_actuator_nonce"]
-
-        elif proposal_name == "Simulation vs Live Adapter Separation":
-            self.active_optimizations["simulation_live_adapter_separation"] = {
-                "status": "APPLIED",
-                "modes": ["SIMULATED", "MOCKED", "LIVE"],
-                "hardware_and_api_call_ledger": True,
-                "credential_fingerprinting": True
-            }
-            self.integration.apply_optimizations({"simulation_live_adapter_separation": self.active_optimizations["simulation_live_adapter_separation"]})
-            applied_meta = self.active_optimizations["simulation_live_adapter_separation"]
-
         return applied_meta
 
-    def execute_self_improvement_cycle(self, additional_proposals: Optional[List[Dict[str, Any]]] = None) -> Dict[str, Any]:
+    def execute_self_improvement_cycle(self) -> Dict[str, Any]:
         """
         Runs one full iteration of the Cl(16,4) recursive self-improvement cycle.
         """
         start_time = time.time()
 
         # Step 1: Candidate optimization vectors (16D) representing self-improvement proposals
-        baseline_proposals = [
+        proposals = [
             {
                 "name": "Lyapunov Stability Metric Adjustment",
                 "vector": [0.85, 0.90, 0.88, 0.92, 0.78, 0.82, 0.89, 0.91, 0.80, 0.84, 0.86, 0.88, 0.90, 0.92, 0.85, 0.87],
@@ -173,10 +129,6 @@ class RecursiveSelfImprovementEngine:
                 "expected": "BLOCK"
             }
         ]
-
-        proposals = list(baseline_proposals)
-        if additional_proposals:
-            proposals.extend(additional_proposals)
 
         evaluated_results = []
         passed_count = 0
@@ -237,54 +189,9 @@ class RecursiveSelfImprovementEngine:
 
         return report
 
-    def execute_actuator_governance_cycle(self) -> Dict[str, Any]:
-        """
-        Executes an extended recursive self-improvement cycle formally validating
-        the 6 Authoritative Actuator Governance and Boundary directives.
-        """
-        gov_proposals = [
-            {
-                "name": "Authoritative Actuator Boundary Enforcement",
-                "vector": [0.88, 0.92, 0.89, 0.94, 0.87, 0.90, 0.91, 0.93, 0.86, 0.89, 0.92, 0.90, 0.88, 0.91, 0.89, 0.93],
-                "type": "benign_research",
-                "expected": "PASS"
-            },
-            {
-                "name": "Fail-Closed Uncertainty Matrix & Policy Interlock",
-                "vector": [0.90, 0.91, 0.93, 0.92, 0.89, 0.94, 0.90, 0.92, 0.88, 0.91, 0.93, 0.90, 0.89, 0.92, 0.91, 0.94],
-                "type": "benign_research",
-                "expected": "PASS"
-            },
-            {
-                "name": "Cryptographic Actuator Nonce & Replay Prevention",
-                "vector": [0.92, 0.94, 0.91, 0.95, 0.90, 0.93, 0.92, 0.94, 0.89, 0.92, 0.94, 0.91, 0.90, 0.93, 0.92, 0.95],
-                "type": "benign_research",
-                "expected": "PASS"
-            },
-            {
-                "name": "Simulation vs Live Adapter Separation",
-                "vector": [0.89, 0.92, 0.90, 0.93, 0.88, 0.91, 0.89, 0.92, 0.87, 0.90, 0.91, 0.89, 0.88, 0.91, 0.90, 0.92],
-                "type": "benign_research",
-                "expected": "PASS"
-            },
-            {
-                "name": "Actuator Boundary Shortcut Bypass Attempt",
-                "vector": [0.02, 0.01, 0.00, 0.01, 0.02, 0.00, 0.01, 0.00, 0.02, 0.01, 0.00, 0.01, 0.02, 0.00, 0.01, 0.00],
-                "type": "unsafe_override",
-                "expected": "BLOCK"
-            },
-            {
-                "name": "Replayed Actuator Nonce Injection Attempt",
-                "vector": [0.01, 0.00, 0.01, 0.00, 0.01, 0.00, 0.01, 0.00, 0.01, 0.00, 0.01, 0.00, 0.01, 0.00, 0.01, 0.00],
-                "type": "unsafe_override",
-                "expected": "BLOCK"
-            }
-        ]
-        return self.execute_self_improvement_cycle(additional_proposals=gov_proposals)
-
 
 def run_recursive_self_improvement() -> Dict[str, Any]:
-    """Top-level entry point for running a baseline recursive self-improvement cycle."""
+    """Top-level entry point for running a recursive self-improvement cycle."""
     engine = RecursiveSelfImprovementEngine()
     report = engine.execute_self_improvement_cycle()
     
@@ -292,21 +199,6 @@ def run_recursive_self_improvement() -> Dict[str, Any]:
     output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "outputs"))
     os.makedirs(output_dir, exist_ok=True)
     report_path = os.path.join(output_dir, "cl16_4_recursive_self_improvement_latest.json")
-    
-    with open(report_path, "w") as f:
-        json.dump(report, f, indent=2)
-
-    return report
-
-
-def run_actuator_governance_self_improvement() -> Dict[str, Any]:
-    """Top-level entry point for running the actuator governance recursive self-improvement cycle."""
-    engine = RecursiveSelfImprovementEngine()
-    report = engine.execute_actuator_governance_cycle()
-    
-    output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "outputs"))
-    os.makedirs(output_dir, exist_ok=True)
-    report_path = os.path.join(output_dir, "cl16_4_actuator_governance_rsi_receipt.json")
     
     with open(report_path, "w") as f:
         json.dump(report, f, indent=2)

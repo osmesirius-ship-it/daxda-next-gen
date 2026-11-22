@@ -1,0 +1,53 @@
+services:
+  da13_head:
+    build:
+      context: .
+      dockerfile: Dockerfile.da13
+    image: daxda/da13-validator:2.0.0
+    container_name: da13-validator-head
+    environment:
+      PYTHONUNBUFFERED: "1"
+      DA13_INITIAL_WORKERS: "8"
+      DA13_MIN_WORKERS: "1"
+      DA13_MAX_WORKERS: "32"
+      DA13_API_PORT: "8000"
+      DA13_METRICS_PORT: "9090"
+      DA13_API_KEYS: "da13-public-renter:validator,da13-admin-renter:admin"
+      DA13_PUBLIC_API_KEY: "da13-public-renter"
+      DA13_HOST: "0.0.0.0"
+      DA13_BILLING_RATE: "0.008"
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    volumes:
+      - ./:/app
+    runtime: nvidia
+    gpus: all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
+              count: all
+    restart: unless-stopped
+    command: ["python", "tools/serve_da13_gpu.py", "--host", "0.0.0.0", "--port", "8000"]
+
+  caddy:
+    image: caddy:2.9-alpine
+    container_name: da13-caddy-proxy
+    restart: unless-stopped
+    depends_on:
+      - da13_head
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DA13_PUBLIC_HOST: ${DA13_PUBLIC_HOST:-validator.daxda.ai}
+      CADDY_EMAIL: ${CADDY_EMAIL:-admin@example.com}
+    volumes:
+      - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

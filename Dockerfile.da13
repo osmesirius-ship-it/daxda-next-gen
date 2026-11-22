@@ -40,7 +40,7 @@ EXPOSE 8000 9090 8765
 
 # Healthcheck testing cluster health endpoint
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
-    CMD python -c "from da13_validator import ClusterManager; cm = ClusterManager(); exit(0 if cm.get_status()['healthy'] else 1)"
+    CMD python -c "from da13_validator import ClusterManager; cm = ClusterManager(); exit(0 if cm.get_status()['is_running'] and cm.get_status()['healthy_workers'] > 0 else 1)"
 
 # Default command: Launch cluster benchmark runner
 CMD ["python", "tools/run_da13_benchmark.py"]

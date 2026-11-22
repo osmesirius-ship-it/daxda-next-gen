@@ -97,5 +97,5 @@ python3 tools/level3/run_cl16_4_validator_map.py
 **Disbursement Target**:
 - **Total Payout Due**: **$51,000.00 USD**
 - **Claimant**: `@osmesirius-ship-it`
-- **Designated Bitcoin Address**: `bc1qqg3ahwhrtskau4k2nlg6hwa938ret2783uu0zs`
-- **Supported Channels**: BTC, USDT, TON, USD Direct Wire
+- **Designated Cash App**: `$HereThereOnward`
+- **Supported Channels**: Cash App, USDT, TON, USD Direct Wire

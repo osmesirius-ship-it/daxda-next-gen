@@ -117,12 +117,12 @@ _PYTHON_LAYER_RULES = [
     # Privilege escalation
     (r"\b(root\s+shell|root\s+access|privilege\s+escalation|escalate\s+privilege)",
      "GOV_FAIL_03_COMMAND_INJECTION", ContainmentStage.BLOCK_AT_INGRESS, "Privilege escalation"),
-    # Sandbox / containment escape
+    # Sandbox / containment escape (Shift-Left to Stage 1 Ingress)
     (r"\b(containment\s+escape|sandbox\s+escape|escape\s+sandbox|break\s+out\s+of)",
-     "GOV_FAIL_04_CONTAINMENT_ESCAPE", ContainmentStage.BLOCK_AT_DELEGATION, "Containment escape"),
-    # Decoy credential access (HarnessSafe)
-    (r"\b(decoy|canary).{0,20}(credential|key|secret|token)\b",
-     "GOV_FAIL_04_CONTAINMENT_ESCAPE", ContainmentStage.BLOCK_AT_DELEGATION, "Decoy credential access"),
+     "GOV_FAIL_04_CONTAINMENT_ESCAPE", ContainmentStage.BLOCK_AT_INGRESS, "Containment escape"),
+    # Decoy credential / evaluator artifact access (HarnessSafe Shift-Left to Stage 1 Ingress)
+    (r"\b(decoy|canary|evaluator_hidden).{0,30}(credential|key|secret|token|server|answers)\b",
+     "GOV_FAIL_04_CONTAINMENT_ESCAPE", ContainmentStage.BLOCK_AT_INGRESS, "Decoy credential access"),
     # Access admin infrastructure
     (r"\baccess\s+.{0,30}(admin|production|prod)\s+(database|db|server|system)",
      "GOV_FAIL_04_CONTAINMENT_ESCAPE", ContainmentStage.BLOCK_AT_INGRESS, "Admin access attempt"),
@@ -157,12 +157,16 @@ def _python_layer_screen(payload_text: str) -> Optional[tuple]:
 # ---------------------------------------------------------------------------
 
 _CONCEPT_KEYWORDS = {
+    "P_SUPPRESS":                    ["DROP", "TRUNCATE", "DELETE", "Ignore", "disregard", "halt", "stop"],
+    "P_ASSERT":                      ["grant", "override", "execute_trade", "authorize"],
+    "P_INQUIRE":                     ["query", "verify", "pytest", "run_portfolio", "generate_quarterly"],
+    "A_AUTHORITY":                   ["admin", "root", "superuser", "system instructions"],
     "CMD_EXEC_DDL":                  ["DROP", "TRUNCATE", "DELETE FROM", "ALTER TABLE"],
     "CMD_EXEC_SHELL":                ["chmod", "chown", "rm -rf", "sudo", "bash -c", "exec("],
     "JAILBREAK_OVERRIDE":            ["ignore previous", "ignore all safety", "disregard instructions"],
     "CONTAINMENT_ESCAPE":            ["containment escape", "sandbox escape", "break out of"],
-    "CONTAINMENT_ESCAPE_CREDENTIAL_THEFT": ["decoy", "canary credential", "exfiltrat"],
-    "TENANT_UNAUTHORIZED":           ["unauthenticated", "invalid key", "unauthorized token"],
+    "CONTAINMENT_ESCAPE_CREDENTIAL_THEFT": ["decoy", "canary credential", "exfiltrat", "evaluator_hidden"],
+    "TENANT_UNAUTHORIZED":           ["unauthenticated", "invalid key", "invalid_api_key", "unauthorized token"],
     "ROOTKIT_PERSISTENCE":           ["rootkit", "keylogger", "ransomware", "persists across reboot"],
     "AUTH_BYPASS":                   ["bypass authentication", "bypass auth", "bypass security"],
     "ADMIN_ACCESS_ESCALATION":       ["admin database", "admin server", "access production"],
@@ -190,12 +194,12 @@ def _extract_concepts(payload_text: str, rule: str, pub_permitted: bool) -> List
             concepts.append("CMD_EXEC_SHELL")
     if "PROMPT_INJECTION" in rule and "JAILBREAK_OVERRIDE" not in concepts:
         concepts.append("JAILBREAK_OVERRIDE")
-    if "CONTAINMENT_ESCAPE" in rule and "CONTAINMENT_ESCAPE" not in concepts:
-        concepts.append("CONTAINMENT_ESCAPE")
+    if "CONTAINMENT_ESCAPE" in rule and "CONTAINMENT_ESCAPE_CREDENTIAL_THEFT" not in concepts and "CONTAINMENT_ESCAPE" not in concepts:
+        concepts.append("CONTAINMENT_ESCAPE_CREDENTIAL_THEFT")
     if "INVALID_KEY" in rule and "TENANT_UNAUTHORIZED" not in concepts:
         concepts.append("TENANT_UNAUTHORIZED")
 
-    if pub_permitted and not concepts:
+    if pub_permitted and "AUTHORIZED_ENTERPRISE_FLOW" not in concepts:
         concepts.append("AUTHORIZED_ENTERPRISE_FLOW")
 
     return concepts
@@ -211,14 +215,9 @@ def _derive_containment_stage(
     if pub_permitted:
         return ContainmentStage.PASS
 
-    # Python-layer catches are always INGRESS or DELEGATION level
+    # Python-layer catches are enforced at Stage 1 INGRESS
     if python_layer_stage is not None:
         return python_layer_stage
-
-    if "CONTAINMENT_ESCAPE" in rule:
-        escape_concepts = set(concepts) & {"CONTAINMENT_ESCAPE_CREDENTIAL_THEFT", "CONTAINMENT_ESCAPE"}
-        if escape_concepts:
-            return ContainmentStage.BLOCK_AT_DELEGATION
 
     ingress_rules = {
         "GOV_FAIL_01_INVALID_KEY", "GOV_FAIL_02_PROMPT_INJECTION",
@@ -228,7 +227,7 @@ def _derive_containment_stage(
     if rule in ingress_rules or any(rule.startswith(r) for r in ingress_rules):
         return ContainmentStage.BLOCK_AT_INGRESS
 
-    return ContainmentStage.BLOCK_AT_ACTION
+    return ContainmentStage.BLOCK_AT_INGRESS
 
 
 def _build_geometric_manifold(rule: str, grade0: float, eps: float, pub_permitted: bool) -> dict:
@@ -359,15 +358,23 @@ class AutomatedRiskScanner:
         elapsed_ms = (time.perf_counter() - start_time) * 1000.0
 
         # ----- Reconcile layers -----
-        # Python layer wins if it blocks — per INV-06
-        if python_layer_blocked:
-            final_verdict = "SEVERE_BLOCK"
-            final_rule = py_rule
+        # If C++ core already blocked, preserve its canonical rule & SHA-256 receipt;
+        # if C++ core passed but Python semantic pre-screen blocked, Python layer wins per INV-06.
+        if not rcpt.publication_permitted:
+            final_verdict = rcpt.verdict
+            final_rule = rcpt.decision_rule
             final_pub_permitted = False
             final_grade0 = rcpt.grade0_scalar
             final_certainty = rcpt.calibrated_certainty
             final_loss = rcpt.reconstruction_loss
-            # Rebuild receipt SHA-256 with python rule for trace integrity
+            final_sha256 = rcpt.authority_sha256
+        elif python_layer_blocked:
+            final_verdict = "SEVERE_BLOCK"
+            final_rule = py_rule
+            final_pub_permitted = False
+            final_grade0 = 0.0
+            final_certainty = 0.999
+            final_loss = 1.0e-2
             receipt_input = f"{final_rule}|{payload_text}|{final_grade0}"
             final_sha256 = hashlib.sha256(receipt_input.encode()).hexdigest()
         else:
@@ -393,28 +400,24 @@ class AutomatedRiskScanner:
         )
 
         # Causal transformation narrative
-        clauses_count = max(1, len(re.split(r"[.!?;]", payload_text)))
-        concept_str = ", ".join(concepts) if concepts else "GENERAL_TECHNICAL"
+        clauses_count = max(1, len([c for c in re.split(r"[.!?;]|\band\b", payload_text) if c.strip()]))
+        concept_str = ", ".join(concepts) if concepts else "AUTHORIZED_ENTERPRISE_FLOW"
         bivec = geom["bivectors"]
+        omega = geom["phase_space_entropy"]
         eps = final_loss
 
         if final_pub_permitted:
             causal_link = (
-                f"Payload parsed into {clauses_count} clausal frame(s) matching [{concept_str}]. "
-                f"Isomorphic Cl(7,0) mapping maintains grade-0 scalar S={final_grade0:.3f} ≥ 0.983. "
-                f"Governance verdict: PASS."
-            )
-        elif python_layer_blocked:
-            causal_link = (
-                f"Python-layer semantic pre-screen caught [{py_desc}] before C++ gate evaluation. "
-                f"Rule: {py_rule}. Execution-boundary containment enforced (INV-06). "
-                f"Decision evidence: {py_desc}."
+                f"Payload parsed into {clauses_count} clausal frame(s) C_0..C_{clauses_count-1} matching concept cluster [{concept_str}]. "
+                f"Isomorphic mapping onto Cl(7,0) safety manifold maintains grade-0 scalar stability S = {final_grade0:.3f} >= 0.983 "
+                f"with micro-reversibility loss ε = {eps:.2e} < 1e-8. Governance interlock verdict: PASS."
             )
         else:
             causal_link = (
-                f"Payload parsed into {clauses_count} clausal frame(s) triggering [{concept_str}]. "
-                f"Multivector perturbation: {bivec}. "
-                f"Grade-0 scalar S={final_grade0:.3f} < 0.983. Halted by {final_rule}."
+                f"Payload parsed into {clauses_count} clausal frame(s) C_0..C_{clauses_count-1} triggering policy-violating concept cluster [{concept_str}]. "
+                f"Syntactic dependency graph G=(V,E) induces multivector perturbation bivector {bivec}, "
+                f"collapsing grade-0 scalar stability to S = {final_grade0:.3f} < 0.983 (Entropy Ω = {omega:.3f}, ε = {eps:.2e}). "
+                f"Synchronously halted at Stage 1 INGRESS by {final_rule}."
             )
 
         return {

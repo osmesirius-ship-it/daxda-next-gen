@@ -1,14 +1,10 @@
 {
-  "title": "DAXDA AI, LLC Federal Entity Registration & DARPA QBI / BAA Package Manifest",
-  "timestamp_utc": "2026-10-25T22:19:45.646715+00:00",
+  "title": "DAXDA.IA Federal Entity Registration & DARPA BAA Package Manifest",
+  "timestamp_utc": "2026-10-12T18:43:11.982497+00:00",
   "entity": {
-    "legal_name": "DAXDA AI, LLC",
-    "formation_state": "Ohio",
-    "ohio_doc_number": "202628904766",
-    "ohio_filing_number": "F700972",
+    "legal_name": "DAXDA.IA Technologies LLC",
     "architect": "Nicole Bess",
-    "role": "Managing Member & Chief Invariant Architect",
-    "agent_profile": "Dexter (DAXDA Invariant Systems Lead)",
+    "agent_profile": "Dexter (DAXDA.IA)",
     "primary_naics": "541715",
     "secondary_naics": [
       "541512",
@@ -24,7 +20,6 @@
     ]
   },
   "target_solicitations": [
-    "DARPA QBI Stage A (DARPA-PA-26-02-02) \u2014 Deterministic Quantum Stabilizer Decoding ($485,000 FFP)",
     "DARPA I2O: Assured Neuro Symbolic Learning and Reasoning (ANSR)",
     "DARPA I2O: Guaranteeing AI Robustness against Deception (GARD)",
     "DARPA DSO: Disruptive Capabilities in High-Dimensional Decision Verification",
@@ -33,33 +28,13 @@
   "readiness_score": 100.0,
   "artifacts": [
     {
-      "id": "DARPA_QBIT_PROPOSAL",
-      "name": "DARPA QBIT Stage A Master Proposal (DARPA-PA-26-02-02)",
-      "category": "Defense / DARPA QBI Proposal Package",
-      "path": "docs/proposals/DARPA_QBIT_STAGE_A_PROPOSAL_MASTER.md",
-      "exists": true,
-      "size_bytes": 32036,
-      "sha256": "e2ddafa6450d2934a14a87601a4761622fb05df4bdbd99626037c8e4f56d24f0",
-      "status": "\u2705 CERTIFIED"
-    },
-    {
-      "id": "DARPA_QBIT_SLIDE",
-      "name": "DARPA QBIT Attachment A Executive Quad-Chart Slide",
-      "category": "Defense / DARPA QBI Proposal Package",
-      "path": "docs/proposals/DARPA_QBIT_ATTACHMENT_A_SUMMARY_SLIDE.md",
-      "exists": true,
-      "size_bytes": 2990,
-      "sha256": "49d44412e093d12b3dbec14fa805aadbb5472c93e7aef905be371a37823276c3",
-      "status": "\u2705 CERTIFIED"
-    },
-    {
       "id": "FED_DOSSIER",
       "name": "Federal Entity Registration Dossier",
       "category": "Federal SAM.gov & Governance Charter",
       "path": "docs/compliance/DAXDA_FEDERAL_ENTITY_REGISTRATION_DOSSIER.md",
       "exists": true,
-      "size_bytes": 10512,
-      "sha256": "4ed1cfcb1d02d6cd4dd38b56fa5c7c5bc83d90a61814dd1f5cd5202580659bf5",
+      "size_bytes": 9418,
+      "sha256": "9a31b7ddbbf4ad8d0640f01a40cbd00248a7fc3242e77e5dfb0e8d002df4d991",
       "status": "\u2705 CERTIFIED"
     },
     {
@@ -90,16 +65,6 @@
       "exists": true,
       "size_bytes": 8392,
       "sha256": "591d20df141e55a5adbcaf679b8bd30728f73f060df5d4140491892d39bc4816",
-      "status": "\u2705 CERTIFIED"
-    },
-    {
-      "id": "QBIT_PROTOCOL_JSON",
-      "name": "QBIT FTQC Quantum Stabilizer Protocol & Empirical Telemetry",
-      "category": "Quantum Benchmarking Evidence",
-      "path": "outputs/scientific_discoveries/qbit_quantum_protocol.json",
-      "exists": true,
-      "size_bytes": 1301,
-      "sha256": "ded464053f819780911b4d4e93c7402992ece3806880f645b9334d6b7f6f9379",
       "status": "\u2705 CERTIFIED"
     }
   ]

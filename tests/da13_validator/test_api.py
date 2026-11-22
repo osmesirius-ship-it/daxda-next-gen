@@ -40,6 +40,18 @@ class TestDA13API:
         admin_client.tokens = 2.0
         assert auth.check_rate_limit(admin_client) is True
 
+    def test_api_key_env_override(self, monkeypatch):
+        monkeypatch.setenv("DA13_API_KEYS", "public-demo:validator,team-gpu:admin")
+        auth = AuthMiddleware.from_env()
+
+        public_client = auth.authenticate("public-demo")
+        assert public_client is not None
+        assert public_client.role == UserRole.VALIDATOR
+
+        admin_client = auth.authenticate("team-gpu")
+        assert admin_client is not None
+        assert admin_client.role == UserRole.ADMIN
+
     def test_rest_server_endpoints(self):
         cm = ClusterManager(ClusterConfig(initial_workers=2))
         cm.start()
@@ -85,6 +97,22 @@ class TestDA13API:
         # 6. Healthz probe
         probe = rest.handle_healthz()
         assert probe["status"] == "UP"
+
+        cm.stop()
+
+    def test_dashboard_jwt_login_and_summary(self):
+        cm = ClusterManager(ClusterConfig(initial_workers=2))
+        cm.start()
+        rest = RestServer(cluster_manager=cm)
+
+        login = rest.handle_dashboard_login("da13-admin-key-2026")
+        assert login["status"] == "SUCCESS"
+        assert "token" in login
+
+        summary = rest.handle_dashboard_summary(login["token"])
+        assert summary["status"] == "SUCCESS"
+        assert summary["dashboard_style"]["theme"] == "jwst-cosmic"
+        assert "cluster" in summary
 
         cm.stop()
 

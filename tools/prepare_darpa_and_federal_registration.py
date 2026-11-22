@@ -27,18 +27,6 @@ def main():
 
     required_artifacts = [
         {
-            "id": "DARPA_QBIT_PROPOSAL",
-            "name": "DARPA QBIT Stage A Master Proposal (DARPA-PA-26-02-02)",
-            "category": "Defense / DARPA QBI Proposal Package",
-            "rel_path": "docs/proposals/DARPA_QBIT_STAGE_A_PROPOSAL_MASTER.md",
-        },
-        {
-            "id": "DARPA_QBIT_SLIDE",
-            "name": "DARPA QBIT Attachment A Executive Quad-Chart Slide",
-            "category": "Defense / DARPA QBI Proposal Package",
-            "rel_path": "docs/proposals/DARPA_QBIT_ATTACHMENT_A_SUMMARY_SLIDE.md",
-        },
-        {
             "id": "FED_DOSSIER",
             "name": "Federal Entity Registration Dossier",
             "category": "Federal SAM.gov & Governance Charter",
@@ -62,18 +50,11 @@ def main():
             "category": "Evidentiary Baseline & Verification",
             "rel_path": "daxda-meta-bounty-submission/solutions/level4/DAXDA_L4_MASTER_PAYOUT_CLAIM.md",
         },
-        {
-            "id": "QBIT_PROTOCOL_JSON",
-            "name": "QBIT FTQC Quantum Stabilizer Protocol & Empirical Telemetry",
-            "category": "Quantum Benchmarking Evidence",
-            "rel_path": "outputs/scientific_discoveries/qbit_quantum_protocol.json",
-        },
     ]
 
     print("=" * 80)
-    print("   DAXDA AI, LLC — FEDERAL REGISTRATION & DARPA PROPOSAL VERIFIER")
+    print("   DAXDA.IA — FEDERAL REGISTRATION & DARPA PROPOSAL VERIFIER")
     print("   Nicole Protocol (886-Ops) | Agent: Dexter | Architect: Nicole Bess")
-    print("   Corporate Filing: Ohio Secretary of State Doc #202628904766 / #F700972")
     print("=" * 80)
 
     verified_items = []
@@ -106,22 +87,17 @@ def main():
         print(f"      Size:   {size_bytes} bytes\n")
 
     manifest = {
-        "title": "DAXDA AI, LLC Federal Entity Registration & DARPA QBI / BAA Package Manifest",
+        "title": "DAXDA.IA Federal Entity Registration & DARPA BAA Package Manifest",
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "entity": {
-            "legal_name": "DAXDA AI, LLC",
-            "formation_state": "Ohio",
-            "ohio_doc_number": "202628904766",
-            "ohio_filing_number": "F700972",
+            "legal_name": "DAXDA.IA Technologies LLC",
             "architect": "Nicole Bess",
-            "role": "Managing Member & Chief Invariant Architect",
-            "agent_profile": "Dexter (DAXDA Invariant Systems Lead)",
+            "agent_profile": "Dexter (DAXDA.IA)",
             "primary_naics": "541715",
             "secondary_naics": ["541512", "541511", "541519", "541690"],
             "psc_codes": ["AC12", "AJ11", "DA01", "DJ01"]
         },
         "target_solicitations": [
-            "DARPA QBI Stage A (DARPA-PA-26-02-02) — Deterministic Quantum Stabilizer Decoding ($485,000 FFP)",
             "DARPA I2O: Assured Neuro Symbolic Learning and Reasoning (ANSR)",
             "DARPA I2O: Guaranteeing AI Robustness against Deception (GARD)",
             "DARPA DSO: Disruptive Capabilities in High-Dimensional Decision Verification",

@@ -160,13 +160,14 @@ class ClusterManager:
     def get_status(self) -> Dict[str, Any]:
         """Returns comprehensive cluster health, topology, and metrics."""
         health_summary = self.health_monitor.get_cluster_status()
+        failed_workers = health_summary.get("failed_workers", max(0, len(self.workers) - health_summary.get("healthy_workers", 0)))
         return {
             "cluster_id": self.config.cluster_id,
             "is_running": self.is_running,
             "total_workers": len(self.workers),
-            "healthy_workers": health_summary["healthy_workers"],
-            "failed_workers": health_summary["failed_workers"],
-            "availability_pct": health_summary["availability_pct"],
+            "healthy_workers": health_summary.get("healthy_workers", 0),
+            "failed_workers": failed_workers,
+            "availability_pct": health_summary.get("availability_pct", 100.0),
             "total_dispatched": self.total_dispatched,
             "workers": {
                 w_id: {
